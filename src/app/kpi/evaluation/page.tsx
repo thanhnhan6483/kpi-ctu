@@ -4,11 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut } from '@/lib/api';
-import plansData from '@/data/plans.json';
 
 interface Evaluation {
   id: string;
-  planId: string;
   unitId: string;
   unitName: string;
   cycleName: string;
@@ -77,11 +75,6 @@ export default function EvaluationPage() {
   }, []);
 
   useEffect(() => { loadEvals(); }, [loadEvals]);
-
-  const planNames: Record<string, string> = {};
-  (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planNames[p.id as string] = p.unitName as string; });
-  const planItems: Record<string, any[]> = {};
-  (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planItems[p.id as string] = (p as any).items || []; });
 
   const cycleFilteredEvals = validCycleNames.length > 0
     ? evaluations.filter(ev => validCycleNames.includes(ev.cycleName))
@@ -189,7 +182,7 @@ export default function EvaluationPage() {
         <div className="p-0">
           <table className="table">
             <thead>
-              <tr><th>Mã</th><th>Đơn vị</th><th>Kế hoạch</th><th>Chu kỳ</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Điểm cuối</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
+              <tr><th>Mã</th><th>Đơn vị</th><th>Chu kỳ</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Điểm cuối</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
               {filtered.map((ev) => {
@@ -200,9 +193,6 @@ export default function EvaluationPage() {
                   <tr key={ev.id}>
                     <td><span className="badge badge-info">{ev.id}</span></td>
                     <td className="font-medium">{ev.unitName}</td>
-                    <td className="text-sm">
-                      <a href={`/kpi/plans?detail=${ev.planId}`} className="text-primary hover:underline">{planNames[ev.planId] || ev.planId}</a>
-                    </td>
                     <td className="text-sm">{ev.cycleName}</td>
                     <td className="text-center font-medium">{ev.selfScore ?? '-'}</td>
                     <td className="text-center font-medium">{ev.managerScore ?? '-'}</td>
@@ -245,10 +235,6 @@ export default function EvaluationPage() {
         {selectedEval && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <div>
-                <span className="text-xs text-text-light">Kế hoạch: </span>
-                <a href={`/kpi/plans?detail=${selectedEval.planId}`} className="text-primary hover:underline text-sm font-medium">{planNames[selectedEval.planId] || selectedEval.planId}</a>
-              </div>
               <span className="text-xs text-text-light">{selectedEval.unitName} • {selectedEval.cycleName}</span>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -271,24 +257,6 @@ export default function EvaluationPage() {
                 {selectedEval.councilReviewedAt && <p className="text-[10px] text-text-light mt-2">{new Date(selectedEval.councilReviewedAt).toLocaleString('vi-VN')}</p>}
               </div>
             </div>
-            {planItems[selectedEval.planId]?.length > 0 && (
-              <div>
-                <h4 className="font-heading font-bold text-sm mb-2">Phân tích KPI</h4>
-                <table className="table text-xs">
-                  <thead><tr><th>Mã</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Trọng số</th></tr></thead>
-                  <tbody>
-                    {planItems[selectedEval.planId].map((item: any) => (
-                      <tr key={item.id}>
-                        <td><span className="badge badge-info">{item.indicatorId}</span></td>
-                        <td>{item.indicatorName}</td>
-                        <td>{item.targetValue}{item.unit}</td>
-                        <td>{item.weight}%</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
           </div>
         )}
       </Modal>

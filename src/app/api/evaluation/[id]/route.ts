@@ -11,7 +11,6 @@ function calcGrade(score: number): string {
 
 interface Evaluation {
   id: string;
-  planId: string;
   unitId: string;
   unitName: string;
   cycleName: string;

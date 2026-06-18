@@ -1,0 +1,31 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { readDb, writeDb } from '@/lib/db';
+import type { KPIGroup } from '@/types';
+
+export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const items = readDb<KPIGroup>('kpi-groups');
+  const item = items.find(i => i.id === id);
+  if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  return NextResponse.json(item);
+}
+
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const body = await request.json();
+  const items = readDb<KPIGroup>('kpi-groups');
+  const index = items.findIndex(i => i.id === id);
+  if (index === -1) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  items[index] = { ...items[index], ...body, id };
+  writeDb('kpi-groups', items);
+  return NextResponse.json(items[index]);
+}
+
+export async function DELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const items = readDb<KPIGroup>('kpi-groups');
+  const filtered = items.filter(i => i.id !== id);
+  if (filtered.length === items.length) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  writeDb('kpi-groups', filtered);
+  return NextResponse.json({ success: true });
+}

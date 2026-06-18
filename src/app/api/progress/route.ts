@@ -3,7 +3,6 @@ import { readDb, writeDb, generateId } from '@/lib/db';
 
 interface ProgressRecord {
   id: string;
-  planId: string;
   indicatorId: string;
   indicatorName: string;
   unitId: string;
@@ -28,7 +27,6 @@ export async function POST(request: NextRequest) {
   const now = new Date().toISOString();
   const newRecord: ProgressRecord = {
     id: `PR${generateId()}`,
-    planId: body.planId,
     indicatorId: body.indicatorId,
     indicatorName: body.indicatorName,
     unitId: body.unitId,

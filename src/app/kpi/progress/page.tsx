@@ -6,11 +6,9 @@ import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import indicatorsData from '@/data/indicators.json';
 import unitsData from '@/data/units.json';
-import plansData from '@/data/plans.json';
 
 interface ProgressRecord {
   id: string;
-  planId: string;
   indicatorId: string;
   indicatorName: string;
   unitId: string;
@@ -34,15 +32,12 @@ export default function ProgressPage() {
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState<ProgressRecord | null>(null);
-  const [planFilter, setPlanFilter] = useState('');
   const [indicatorFilter, setIndicatorFilter] = useState('');
   const [loading, setLoading] = useState(true);
   const [validCycleNames, setValidCycleNames] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const pid = params.get('planId');
-    if (pid) setPlanFilter(pid);
     const iid = params.get('indicatorId');
     if (iid) setIndicatorFilter(iid);
   }, []);
@@ -66,18 +61,14 @@ export default function ProgressPage() {
 
   useEffect(() => { loadRecords(); }, [loadRecords]);
 
-  const planNames: Record<string, string> = {};
-  (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planNames[p.id as string] = p.unitName as string; });
-
   const cycleFilteredRecords = validCycleNames.length > 0
     ? records.filter(p => validCycleNames.includes(p.cycleName))
     : records;
 
   const filtered = cycleFilteredRecords.filter((p) => {
     const matchesSearch = p.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) || p.indicatorId.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesPlan = !planFilter || p.planId === planFilter;
     const matchesIndicator = !indicatorFilter || p.indicatorId === indicatorFilter;
-    return matchesSearch && matchesPlan && matchesIndicator;
+    return matchesSearch && matchesIndicator;
   });
 
   const achievedCount = cycleFilteredRecords.filter((p) => p.progressPercent >= 100).length;
@@ -156,20 +147,16 @@ export default function ProgressPage() {
         <div className="p-0">
           <table className="table">
             <thead>
-              <tr><th>Mã KPI</th><th>Tên KPI</th><th>Kế hoạch</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tiến độ</th><th>MC</th><th>Cập nhật</th><th>Ghi chú</th><th>Thao tác</th></tr>
+              <tr><th>Mã KPI</th><th>Tên KPI</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tiến độ</th><th>MC</th><th>Cập nhật</th><th>Ghi chú</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
               {filtered.map((item) => {
                 const isAchieved = item.progressPercent >= 100;
                 const isWarning = item.progressPercent >= 80 && item.progressPercent < 100;
-                const planName = planNames[item.planId] || item.planId;
                 return (
                   <tr key={item.id}>
                     <td><span className="badge badge-info">{item.indicatorId}</span></td>
                     <td className="font-medium text-sm">{item.indicatorName}</td>
-                    <td className="text-sm">
-                      <a href={`/kpi/plans?detail=${item.planId}`} className="text-primary hover:underline">{planName}</a>
-                    </td>
                     <td className="text-sm">{item.unitName}</td>
                     <td>{item.targetValue}{item.unit}</td>
                     <td className="font-bold">{item.actualValue}{item.unit}</td>

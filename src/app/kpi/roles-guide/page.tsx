@@ -27,7 +27,6 @@ const roles = [
     pages: [
       { href: '/', label: 'Dashboard tổng quan' },
       { href: '/kpi', label: 'Chỉ tiêu KPI cấp Trường' },
-      { href: '/kpi/plans', label: 'Kế hoạch KPI đơn vị' },
       { href: '/kpi/evaluation', label: 'Đánh giá KPI đơn vị' },
       { href: '/kpi/approvals', label: 'Phê duyệt' },
       { href: '/reports', label: 'Báo cáo & Thống kê' },
@@ -86,7 +85,6 @@ const roles = [
     ],
     pages: [
       { href: '/kpi', label: 'Chỉ tiêu KPI' },
-      { href: '/kpi/plans', label: 'Kế hoạch KPI' },
       { href: '/kpi/progress', label: 'Tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
       { href: '/kpi/evaluation', label: 'Đánh giá đơn vị' },
@@ -121,7 +119,6 @@ const roles = [
     ],
     pages: [
       { href: '/kpi', label: 'Chỉ tiêu KPI' },
-      { href: '/kpi/plans', label: 'Kế hoạch KPI' },
       { href: '/kpi/progress', label: 'Tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
       { href: '/kpi/evaluation', label: 'Đánh giá' },

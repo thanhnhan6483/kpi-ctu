@@ -79,5 +79,25 @@
     "submitter": "Trường Bách khoa",
     "status": "pending",
     "submittedAt": "2026-06-18T07:03:12.478Z"
+  },
+  {
+    "id": "APmqj9skrrwnhdkivyvak",
+    "objectType": "plan",
+    "objectId": "PLmqj9sarv3y0s67otm4i",
+    "objectTitle": "Kế hoạch KPI Khoa Luật",
+    "unitName": "Khoa Luật",
+    "submitter": "Khoa Luật",
+    "status": "pending",
+    "submittedAt": "2026-06-18T09:00:58.023Z"
+  },
+  {
+    "id": "APmqjan2c26sv6y5cxkjd",
+    "objectType": "plan",
+    "objectId": "PLmqjalvj9r7ysab97ky",
+    "objectTitle": "Kế hoạch KPI Trường Kinh tế",
+    "unitName": "Trường Kinh tế",
+    "submitter": "Trường Kinh tế",
+    "status": "pending",
+    "submittedAt": "2026-06-18T09:24:40.466Z"
   }
 ]

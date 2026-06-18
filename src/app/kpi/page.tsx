@@ -6,6 +6,8 @@ import { getCompletionStatus, calcCompletionRate } from '@/lib/kpi';
 import schoolIndicators from '@/data/indicators.json';
 import unitKPIsData from '@/data/unit-kpis.json';
 import individualKPIsData from '@/data/individual-kpis.json';
+import units from '@/data/units.json';
+import kpiGroups from '@/data/kpi-groups.json';
 
 const demoActual: Record<string, number> = {
   'CTU-KPI-01': 52, 'CTU-KPI-02': 12, 'CTU-KPI-03': 8, 'CTU-KPI-04': 11,
@@ -31,41 +33,27 @@ const demoActual: Record<string, number> = {
   'CV-01': 92, 'CV-02': 98, 'CV-03': 95, 'CV-04': 4.2, 'CV-05': 1, 'CV-06': 100,
 };
 
-const unitGroups = ['Tất cả', 'PDT', 'KHCN', 'TCCB', 'CNTT', 'HTQT', 'KHTC', 'VPT',
-  'ĐBCL', 'KCN', 'BMCN', 'THTV', 'KTX', 'NC', 'TTTT', 'DV'];
+const unitNameByCode: Record<string, string> = {};
+units.forEach(u => { unitNameByCode[u.code] = u.name; });
+
+const unitGroups = ['Tất cả', ...unitKPIsData.map(u => u.code)];
 const individualGroups = ['Tất cả', 'GV', 'GVQL', 'LD', 'BM', 'NCV', 'CV', 'CVDT',
   'CVDBCL', 'CVKHCN', 'CVHTQT', 'CVTCCB', 'CVKHTC', 'CVCNTT', 'CVTT',
   'TV', 'KTX', 'HC', 'KTPTN', 'PV', 'KPISTAFF', 'CN'];
-const schoolGroups = ['Tất cả', 'Đào tạo', 'KHCN', 'Đội ngũ', 'Quốc tế', 'Quản trị', 'CĐS', 'Phục vụ'];
 
-const groupLabels: Record<string, string> = {
-  grp_dao_tao: 'Đào tạo', grp_khcn: 'KHCN', grp_doi_ngu: 'Đội ngũ',
-  grp_quoc_te: 'Quốc tế', grp_quan_tri: 'Quản trị', grp_chuyen_so: 'CĐS', grp_phuc_vu: 'Phục vụ',
-};
+const categoryMap: Record<string, string> = {};
+kpiGroups.forEach(g => { categoryMap[g.id] = g.name; });
 
-const unitNameMap: Record<string, string> = {
-  PDT: 'Phòng Đào tạo', PKHCN: 'Phòng KHCN', PTCCB: 'Phòng TCCB',
-  PHTQT: 'Phòng HTQT', PKHTC: 'Phòng KHTC', VPT: 'Văn phòng Trường',
-  TTCT: 'Trung tâm CĐS', PDBCL: 'Phòng ĐBCL', KCN: 'Khoa CNTT',
-  BMCN: 'Bộ môn CNTT', THTV: 'Thư viện', KTX: 'Ký túc xá',
-  NC: 'Đơn vị NC', TTTT: 'Truyền thông', DV: 'Dịch vụ',
+const catShortLabel: Record<string, string> = {
+  grp_dao_tao: 'Đào tạo & ĐBCL',
+  grp_khcn: 'KHCN & Đổi mới Sáng tạo',
+  grp_doi_ngu: 'Đội ngũ & Phát triển',
+  grp_quoc_te: 'Hợp tác Quốc tế',
+  grp_quan_tri: 'Quản trị & Tài chính',
+  grp_chuyen_so: 'Chuyển đổi Số',
+  grp_phuc_vu: 'Phục vụ Cộng đồng',
 };
-
-const codeLabel: Record<string, string> = {
-  PDT: 'Phòng Đào tạo', PKHCN: 'KHCN', PTCCB: 'TCCB',
-  PHTQT: 'HTQT', PKHTC: 'KHTC', VPT: 'VPT',
-  TTCT: 'CNTT', PDBCL: 'ĐBCL', KCN: 'Khoa CNTT',
-  BMCN: 'Bộ môn', THTV: 'Thư viện', KTX: 'KTX',
-  DVNC: 'NC', TTTT: 'Tuyển sinh', TTDV: 'Dịch vụ',
-};
-
-const unitCodeMap: Record<string, string> = {
-  unit_pdt: 'PDT', unit_khcn: 'PKHCN', unit_tccb: 'PTCCB',
-  unit_htqt: 'PHTQT', unit_khtc: 'PKHTC', unit_vpt: 'VPT',
-  unit_cntt: 'TTCT', unit_dbcl: 'PDBCL', unit_khoa_cntt: 'KCN',
-  unit_bo_mon: 'BMCN', unit_thu_vien: 'THTV', unit_ktx: 'KTX',
-  unit_nghien_cuu: 'DVNC', unit_truyen_thong: 'TTTT', unit_dich_vu: 'TTDV',
-};
+const categories = ['Tất cả', ...kpiGroups.map(g => g.id)];
 
 const posCodeMap: Record<string, string> = {
   position_gv: 'GV', position_gvql: 'GVQL', position_ld: 'LD',
@@ -81,9 +69,9 @@ type TabLevel = 'school' | 'unit' | 'individual';
 
 export default function KPIPage() {
   const [activeTab, setActiveTab] = useState<TabLevel>('school');
-  const [selectedUnit, setSelectedUnit] = useState('PDT');
+  const [selectedUnit, setSelectedUnit] = useState(unitKPIsData[0]?.code ?? 'PDT');
   const [selectedPosition, setSelectedPosition] = useState('GV');
-  const [selectedGroup, setSelectedGroup] = useState('Tất cả');
+  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedIndicator, setExpandedIndicator] = useState<string | null>(null);
 
@@ -91,7 +79,7 @@ export default function KPIPage() {
     ...si,
     target: si.targetValue,
     actual: demoActual[si.id] ?? 0,
-    group: groupLabels[si.groupId] || si.groupId,
+    category: catShortLabel[si.categoryId] || categoryMap[si.categoryId] || si.categoryId,
   }));
 
   const schoolByIndicatorId: Record<string, typeof schoolItems[0]> = {};
@@ -99,22 +87,20 @@ export default function KPIPage() {
 
   const unitKpisForSchool: Record<string, { unitCode: string; unitName: string; kpi: any }[]> = {};
   unitKPIsData.forEach(u => {
-    const code = unitCodeMap[u.id] || u.code;
-    const name = unitNameMap[code] || u.name;
+    const name = unitNameByCode[u.code] || u.name;
     u.kpis.forEach(k => {
       const indId = (k as any).indicatorId;
       if (indId) {
         if (!unitKpisForSchool[indId]) unitKpisForSchool[indId] = [];
-        unitKpisForSchool[indId].push({ unitCode: code, unitName: name, kpi: { ...k, actual: demoActual[k.id] ?? 0 } });
+        unitKpisForSchool[indId].push({ unitCode: u.code, unitName: name, kpi: { ...k, actual: demoActual[k.id] ?? 0 } });
       }
     });
   });
 
   const unitKpisByCode: Record<string, { id: string; name: string; kpis: any[] }> = {};
   unitKPIsData.forEach(u => {
-    const code = unitCodeMap[u.id] || u.code;
-    unitKpisByCode[code] = {
-      id: u.id, name: unitNameMap[code] || u.name,
+    unitKpisByCode[u.code] = {
+      id: u.id, name: unitNameByCode[u.code] || u.name,
       kpis: u.kpis.map(k => ({ ...k, actual: demoActual[k.id] ?? 0, indicatorId: (k as any).indicatorId })),
     };
   });
@@ -130,14 +116,27 @@ export default function KPIPage() {
 
   const renderSchoolKPI = () => {
     const filtered = schoolItems.filter(kpi => {
-      const matchesGroup = selectedGroup === 'Tất cả' || kpi.group === selectedGroup;
+      const matchesCategory = selectedCategory === 'Tất cả' || kpi.categoryId === selectedCategory;
       const matchesSearch = kpi.name.toLowerCase().includes(searchTerm.toLowerCase()) || kpi.id.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesGroup && matchesSearch;
+      return matchesCategory && matchesSearch;
     });
     return (
+      <>
+      <div className="mb-4 p-3 bg-white rounded-lg border border-border flex items-center gap-2 flex-wrap">
+        <span className="text-sm text-text-light">Lĩnh vực:</span>
+        {categories.map((cat) => {
+          const label = cat === 'Tất cả' ? 'Tất cả' : (catShortLabel[cat] || categoryMap[cat] || cat);
+          return (
+            <button key={cat} onClick={() => setSelectedCategory(cat)}
+              className={`px-3 py-1 rounded text-sm ${selectedCategory === cat ? 'bg-primary text-white' : 'bg-white border border-border'}`}>
+              {label}
+            </button>
+          );
+        })}
+      </div>
       <table className="table">
         <thead>
-          <tr><th>Mã KPI</th><th>Tên KPI</th><th>Nhóm</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Phân rã đơn vị</th><th>Thao tác</th></tr>
+          <tr><th>Mã KPI</th><th>Tên KPI</th><th>Lĩnh vực</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Phân rã đơn vị</th><th>Thao tác</th></tr>
         </thead>
         <tbody>
           {filtered.map((kpi) => {
@@ -150,7 +149,7 @@ export default function KPIPage() {
                 <tr key={kpi.id} className={isExpanded ? 'bg-bg-cream' : ''}>
                   <td><span className="badge badge-info">{kpi.id}</span></td>
                   <td className="font-medium">{kpi.name}</td>
-                  <td><span className="badge" style={{ backgroundColor: '#e3f2fd', color: '#1976d2' }}>{kpi.group}</span></td>
+                  <td><span className="badge" style={{ backgroundColor: '#e3f2fd', color: '#1976d2' }}>{kpi.category}</span></td>
                   <td>{kpi.target}{kpi.unit}</td>
                   <td>{kpi.actual}{kpi.unit}</td>
                   <td><span style={{ color: status.color }} className="font-medium">{completionRate.toFixed(1)}%</span></td>
@@ -194,6 +193,7 @@ export default function KPIPage() {
           })}
         </tbody>
       </table>
+    </>
     );
   };
 
@@ -211,7 +211,7 @@ export default function KPIPage() {
           {Object.entries(unitKpisByCode).map(([code, u]) => (
             <button key={code} onClick={() => setSelectedUnit(code)}
               className={`px-3 py-1 rounded text-sm ${selectedUnit === code ? 'bg-primary text-white' : 'bg-white border border-border'}`}>
-              {codeLabel[code] || code}
+              {unitNameByCode[code] || u.name}
             </button>
           ))}
         </div>
@@ -319,7 +319,7 @@ export default function KPIPage() {
         {tabs.map((tab) => {
           const Icon = tab.icon;
           return (
-            <button key={tab.id} onClick={() => { setActiveTab(tab.id); setSearchTerm(''); setSelectedGroup('Tất cả'); }}
+            <button key={tab.id} onClick={() => { setActiveTab(tab.id); setSearchTerm(''); setSelectedCategory('Tất cả'); }}
               className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${activeTab === tab.id ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'}`}>
               <Icon size={16} />
               {tab.label}
@@ -335,27 +335,17 @@ export default function KPIPage() {
           <input type="text" placeholder="Tìm kiếm KPI..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
-        {activeTab === 'school' && (
-          <div className="flex gap-2 flex-wrap">
-            {schoolGroups.map((group) => (
-              <button key={group} onClick={() => setSelectedGroup(group)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${selectedGroup === group ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
-                {group}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
 
       <div className="card">
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">
-            {activeTab === 'school' && `${schoolItems.length} KPI cấp Trường`}
+            {activeTab === 'school' && (selectedCategory === 'Tất cả' ? 'KPI cấp Trường' : `Lĩnh vực: ${catShortLabel[selectedCategory] || categoryMap[selectedCategory]}`)}
             {activeTab === 'unit' && `KPI cấp đơn vị - ${unitKpisByCode[selectedUnit]?.name || selectedUnit}`}
             {activeTab === 'individual' && `KPI cá nhân - ${posByCode[selectedPosition]?.name || selectedPosition}`}
           </h3>
           <span className="text-white/80 text-sm">
-            {activeTab === 'school' && 'Trọng số tổng: 100%'}
+            {activeTab === 'school' && (selectedCategory === 'Tất cả' ? `${schoolItems.length} KPI` : `${schoolItems.filter(si => si.categoryId === selectedCategory).length} KPI`)}
             {activeTab === 'unit' && `${unitKpisByCode[selectedUnit]?.kpis.length} KPI`}
             {activeTab === 'individual' && `${posByCode[selectedPosition]?.kpis.length} KPI`}
           </span>

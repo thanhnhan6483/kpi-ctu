@@ -128,10 +128,7 @@ export default function ReportsPage() {
                 <FileText size={16} />
                 Xem kết quả
               </a>
-              <a href="/kpi/plans" className="btn-secondary flex items-center gap-2">
-                <Download size={16} />
-                Xem kế hoạch
-              </a>
+
             </div>
           </div>
         </div>

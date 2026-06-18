@@ -245,7 +245,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
-                        <a href={activity.type === 'update' ? '/kpi/progress' : activity.type === 'evidence' ? '/kpi/evidences' : activity.type === 'plan' ? '/kpi/plans' : activity.type === 'lock' ? '/kpi/evaluation' : '/kpi/approvals'} className="font-medium text-sm text-text-dark hover:text-primary">{activity.action}</a>
+                        <a href={activity.type === 'update' ? '/kpi/progress' : activity.type === 'evidence' ? '/kpi/evidences' : activity.type === 'lock' ? '/kpi/evaluation' : '/kpi/approvals'} className="font-medium text-sm text-text-dark hover:text-primary">{activity.action}</a>
                         <span className="badge badge-info text-[10px]">{activity.kpi}</span>
                       </div>
                       <div className="flex items-center gap-2 mt-1 text-xs text-text-light">

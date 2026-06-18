@@ -421,5 +421,59 @@
     "type": "department",
     "managerId": "u001",
     "status": "active"
+  },
+  {
+    "id": "u313",
+    "parentId": "u001",
+    "name": "Khoa Công nghệ Thông tin",
+    "code": "KCN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u314",
+    "parentId": "u313",
+    "name": "Bộ môn Công nghệ Thông tin",
+    "code": "BMCN",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u315",
+    "parentId": "u001",
+    "name": "Ký túc xá",
+    "code": "KTX",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u316",
+    "parentId": "u001",
+    "name": "Đơn vị Nghiên cứu",
+    "code": "DVNC",
+    "type": "research",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u317",
+    "parentId": "u001",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
+    "code": "TTTT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u318",
+    "parentId": "u001",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
+    "code": "TTDV",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
   }
 ]

@@ -44,7 +44,7 @@
   {
     "id": "unit_tccb",
     "name": "Phòng Tổ chức và Phát triển nhân sự",
-    "code": "PTCCB",
+    "code": "PTCNS",
     "type": "department",
     "level": "unit",
     "description": "Quản lý phát triển đội ngũ, trình độ tiến sĩ, GS/PGS và vị trí việc làm",
@@ -64,7 +64,7 @@
   {
     "id": "unit_htqt",
     "name": "Phòng Đối ngoại và Đào tạo quốc tế",
-    "code": "PHTQT",
+    "code": "PDN",
     "type": "department",
     "level": "unit",
     "description": "Quản lý SV quốc tế, trao đổi tín chỉ và hợp tác học thuật",
@@ -84,7 +84,7 @@
   {
     "id": "unit_khtc",
     "name": "Phòng Kế hoạch và Tài chính",
-    "code": "PKHTC",
+    "code": "PKTC",
     "type": "department",
     "level": "unit",
     "description": "Quản lý tài chính, tăng trưởng bền vững và biên độ hoạt động",
@@ -104,7 +104,7 @@
   {
     "id": "unit_vpt",
     "name": "Văn phòng Đại học Cần Thơ",
-    "code": "VPT",
+    "code": "VP",
     "type": "department",
     "level": "unit",
     "description": "Quản lý văn bản, Eoffice, ký số, lịch công tác và điều phối hành chính",
@@ -124,7 +124,7 @@
   {
     "id": "unit_cntt",
     "name": "Trung tâm Chuyển đổi số và Truyền thông",
-    "code": "TTCT",
+    "code": "TTCDS",
     "type": "center",
     "level": "unit",
     "description": "Vận hành nền tảng số, tích hợp dữ liệu, bảo mật và hỗ trợ người dùng",
@@ -145,7 +145,7 @@
   {
     "id": "unit_dbcl",
     "name": "Phòng Quản lý chất lượng",
-    "code": "PDBCL",
+    "code": "PQLCL",
     "type": "department",
     "level": "unit",
     "description": "Quản lý kiểm định, tự đánh giá, khảo sát, cải tiến chất lượng",
@@ -165,7 +165,7 @@
   },
   {
     "id": "unit_khoa_cntt",
-    "name": "Khoa CNTT",
+    "name": "Khoa Công nghệ Thông tin",
     "code": "KCN",
     "type": "faculty",
     "level": "unit",
@@ -187,7 +187,7 @@
   },
   {
     "id": "unit_bo_mon",
-    "name": "Bộ môn CNTT",
+    "name": "Bộ môn Công nghệ Thông tin",
     "code": "BMCN",
     "type": "department",
     "level": "unit",
@@ -207,8 +207,8 @@
   },
   {
     "id": "unit_thu_vien",
-    "name": "Trung tâm Học liệu/Thư viện",
-    "code": "THTV",
+    "name": "Thư viện Đại học Cần Thơ",
+    "code": "TV",
     "type": "center",
     "level": "unit",
     "description": "Cung cấp dịch vụ thư viện, học liệu, tài nguyên số và hỗ trợ kỹ năng thông tin",
@@ -227,7 +227,7 @@
   },
   {
     "id": "unit_ktx",
-    "name": "Trung tâm Hỗ trợ SV/Ký túc xá",
+    "name": "Ký túc xá",
     "code": "KTX",
     "type": "center",
     "level": "unit",
@@ -268,7 +268,7 @@
   },
   {
     "id": "unit_truyen_thong",
-    "name": "Trung tâm Truyền thông/Tuyển sinh",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
     "code": "TTTT",
     "type": "center",
     "level": "unit",
@@ -289,7 +289,7 @@
   },
   {
     "id": "unit_dich_vu",
-    "name": "Trung tâm Dịch vụ/Hỗ trợ đào tạo",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
     "code": "TTDV",
     "type": "center",
     "level": "unit",

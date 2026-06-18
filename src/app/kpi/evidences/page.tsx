@@ -6,11 +6,9 @@ import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import indicatorsData from '@/data/indicators.json';
 import unitsData from '@/data/units.json';
-import plansData from '@/data/plans.json';
 
 interface Evidence {
   id: string;
-  planId: string;
   indicatorId: string;
   indicatorName: string;
   unitId: string;
@@ -39,33 +37,13 @@ export default function EvidencesPage() {
   const [showDetail, setShowDetail] = useState(false);
   const [showReview, setShowReview] = useState(false);
   const [selectedEvidence, setSelectedEvidence] = useState<Evidence | null>(null);
-  const [planFilter, setPlanFilter] = useState('');
   const [indicatorFilter, setIndicatorFilter] = useState('');
   const [loading, setLoading] = useState(true);
-  const [validPlanIds, setValidPlanIds] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const pid = params.get('planId');
-    if (pid) setPlanFilter(pid);
     const iid = params.get('indicatorId');
     if (iid) setIndicatorFilter(iid);
-  }, []);
-
-  useEffect(() => {
-    const yearId = localStorage.getItem('selectedAcademicYear');
-    if (yearId) {
-      fetch(`/api/cycles?academicYearId=${yearId}`)
-        .then(r => r.json())
-        .then(cycles => {
-          const cycleIds = cycles.map((c: any) => c.id);
-          fetch('/api/plans')
-            .then(r => r.json())
-            .then(plans => setValidPlanIds(plans.filter((p: any) => cycleIds.includes(p.cycleId)).map((p: any) => p.id)))
-            .catch(() => {});
-        })
-        .catch(() => {});
-    }
   }, []);
 
   const loadEvidences = useCallback(async () => {
@@ -77,20 +55,12 @@ export default function EvidencesPage() {
 
   useEffect(() => { loadEvidences(); }, [loadEvidences]);
 
-  const planNames: Record<string, string> = {};
-  (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planNames[p.id as string] = p.unitName as string; });
-
-  const cycleFilteredEvidences = validPlanIds.length > 0
-    ? evidences.filter(ev => validPlanIds.includes(ev.planId))
-    : evidences;
-
-  const filtered = cycleFilteredEvidences.filter(ev => {
+  const filtered = evidences.filter(ev => {
     const matchesSearch = ev.indicatorId.toLowerCase().includes(searchTerm.toLowerCase()) ||
       ev.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       ev.fileName.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesPlan = !planFilter || ev.planId === planFilter;
     const matchesIndicator = !indicatorFilter || ev.indicatorId === indicatorFilter;
-    return matchesSearch && matchesPlan && matchesIndicator;
+    return matchesSearch && matchesIndicator;
   });
 
   const handleCreate = async (data: Partial<Evidence>) => {
@@ -113,9 +83,9 @@ export default function EvidencesPage() {
     loadEvidences();
   };
 
-  const validCount = cycleFilteredEvidences.filter(e => e.status === 'valid').length;
-  const pendingCount = cycleFilteredEvidences.filter(e => e.status === 'pending').length;
-  const supplementCount = cycleFilteredEvidences.filter(e => e.status === 'needs_supplement').length;
+  const validCount = evidences.filter(e => e.status === 'valid').length;
+  const pendingCount = evidences.filter(e => e.status === 'pending').length;
+  const supplementCount = evidences.filter(e => e.status === 'needs_supplement').length;
 
   return (
     <div className="space-y-6">
@@ -133,7 +103,7 @@ export default function EvidencesPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><FileText size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{cycleFilteredEvidences.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{evidences.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
@@ -166,7 +136,7 @@ export default function EvidencesPage() {
           </div>
           <table className="table">
             <thead>
-              <tr><th>Mã</th><th>KPI</th><th>Kế hoạch</th><th>Loại</th><th>Tên file/URL</th><th>Đơn vị</th><th>Trạng thái</th><th>Người nộp</th><th>Thao tác</th></tr>
+              <tr><th>Mã</th><th>KPI</th><th>Loại</th><th>Tên file/URL</th><th>Đơn vị</th><th>Trạng thái</th><th>Người nộp</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
               {filtered.map((ev) => {
@@ -178,9 +148,6 @@ export default function EvidencesPage() {
                     <td>
                       <div className="font-medium text-sm">{ev.indicatorId}</div>
                       <div className="text-xs text-text-light">{ev.indicatorName}</div>
-                    </td>
-                    <td className="text-sm">
-                      <a href={`/kpi/plans?detail=${ev.planId}`} className="text-primary hover:underline">{planNames[ev.planId] || ev.planId}</a>
                     </td>
                     <td><span className="badge badge-info text-xs">{ev.type}</span></td>
                     <td className="text-sm max-w-[200px] truncate">{ev.fileName}</td>
@@ -247,7 +214,6 @@ export default function EvidencesPage() {
 }
 
 function EvidenceForm({ onSubmit, onCancel }: { onSubmit: (data: Partial<Evidence>) => void; onCancel: () => void }) {
-  const [planId, setPlanId] = useState('');
   const [indicatorId, setIndicatorId] = useState('');
   const [unitId, setUnitId] = useState('');
   const [type, setType] = useState<'file' | 'url' | 'system_log'>('file');
@@ -265,23 +231,12 @@ function EvidenceForm({ onSubmit, onCancel }: { onSubmit: (data: Partial<Evidenc
       type,
       fileName,
       submittedBy: 'Admin',
-      planId,
     });
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-text-dark mb-1">Kế hoạch *</label>
-          <select value={planId} onChange={(e) => setPlanId(e.target.value)} required
-            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-            <option value="">-- Chọn kế hoạch --</option>
-            {(plansData as Record<string, unknown>[]).map((p: Record<string, unknown>) => (
-              <option key={p.id as string} value={p.id as string}>{p.unitName as string} ({p.id as string})</option>
-            ))}
-          </select>
-        </div>
         <div>
           <label className="block text-sm font-medium text-text-dark mb-1">KPI liên quan *</label>
           <select value={indicatorId} onChange={(e) => setIndicatorId(e.target.value)} required

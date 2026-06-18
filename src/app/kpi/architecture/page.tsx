@@ -99,8 +99,8 @@ const orgTree = {
       ],
     },
     {
-      name: 'Phòng TCCB',
-      code: 'PTCCB',
+      name: 'Phòng Tổ chức và Phát triển nhân sự',
+      code: 'PTCNS',
       level: 'Phòng ban',
       kpiCount: 9,
       evaluator: 'Trưởng phòng',
@@ -109,8 +109,8 @@ const orgTree = {
       children: [],
     },
     {
-      name: 'Trung tâm CNTT',
-      code: 'TTCT',
+      name: 'Trung tâm Chuyển đổi số và Truyền thông',
+      code: 'TTCDS',
       level: 'Trung tâm',
       kpiCount: 10,
       evaluator: 'Giám đốc TT',

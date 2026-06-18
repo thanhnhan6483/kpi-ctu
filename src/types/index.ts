@@ -61,7 +61,7 @@ export interface KPIIndicator {
   id: string;
   code: string;
   name: string;
-  groupId: string;
+  categoryId: string;
   formula: string;
   unit: string;
   direction: 'higher_better' | 'lower_better';
@@ -99,7 +99,6 @@ export interface KPIPlan {
 
 export interface KPIPlanItem {
   id: string;
-  planId: string;
   indicatorId: string;
   targetValue: number;
   weight: number;
@@ -130,7 +129,6 @@ export interface KPIEvidence {
 
 export interface KPIEvaluation {
   id: string;
-  planId: string;
   evaluatorId: string;
   evaluationType: 'self' | 'manager' | 'council';
   score: number;
@@ -188,3 +186,38 @@ export type EvidenceStatus = 'pending' | 'submitted' | 'needs_supplement' | 'val
 export type EvaluationType = 'self' | 'manager' | 'council';
 
 export type GradeLevel = 'xuat_sac' | 'tot' | 'dat' | 'can_cai_thien' | 'khong_dat';
+
+export interface UnitKPIDetail {
+  id: string;
+  name: string;
+  target: number;
+  unit: string;
+  weight: number;
+  indicatorId: string | null;
+}
+
+export interface UnitKPIEntry {
+  id: string;
+  name: string;
+  code: string;
+  type: string;
+  level: string;
+  description: string;
+  kpiCount: number;
+  kpis: UnitKPIDetail[];
+}
+
+export interface IndividualKPIDetail {
+  id: string;
+  name: string;
+  target: number;
+  unit: string;
+  weight: number;
+}
+
+export interface IndividualKPIEntry {
+  id: string;
+  name: string;
+  code: string;
+  kpis: IndividualKPIDetail[];
+}

@@ -27,11 +27,10 @@ const statusConfig: Record<string, { label: string; color: string; icon: typeof 
   needs_revision: { label: 'Cần chỉnh sửa', color: '#ff9800', icon: AlertTriangle },
 };
 
-const typeLabels: Record<string, string> = { plan: 'Kế hoạch', evidence: 'Minh chứng', evaluation: 'Đánh giá' };
+const typeLabels: Record<string, string> = { evidence: 'Minh chứng', evaluation: 'Đánh giá' };
 
-function getObjectLink(type: string, id: string): string {
+function getObjectLink(type: string, _id: string): string {
   switch (type) {
-    case 'plan': return `/kpi/plans?detail=${id}`;
     case 'evidence': return `/kpi/evidences`;
     case 'evaluation': return `/kpi/evaluation`;
     default: return '#';

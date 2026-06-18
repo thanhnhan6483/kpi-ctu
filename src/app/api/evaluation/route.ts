@@ -3,7 +3,6 @@ import { readDb, writeDb, generateId } from '@/lib/db';
 
 interface Evaluation {
   id: string;
-  planId: string;
   unitId: string;
   unitName: string;
   cycleName: string;
@@ -47,7 +46,6 @@ export async function POST(request: NextRequest) {
   const now = new Date().toISOString();
   const newEval: Evaluation = {
     id: `EVL${generateId()}`,
-    planId: body.planId || '',
     unitId: body.unitId || '',
     unitName: body.unitName || '',
     cycleName: body.cycleName || 'Năm học 2025-2026',

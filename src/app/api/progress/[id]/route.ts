@@ -3,7 +3,6 @@ import { readDb, writeDb } from '@/lib/db';
 
 interface ProgressRecord {
   id: string;
-  planId: string;
   indicatorId: string;
   indicatorName: string;
   unitId: string;

@@ -8,7 +8,6 @@ import individualKpisData from '@/data/individual-kpis.json';
 
 interface IndividualEvaluation {
   id: string;
-  planId: string;
   unitId: string;
   unitName: string;
   cycleName: string;

@@ -1,6 +1,57 @@
 [
-  {"id": "EV001", "planId": "PL001", "indicatorId": "DT-01", "indicatorName": "Tỉ lệ tuyển sinh chính quy", "unitId": "u002", "unitName": "Phòng Đào tạo", "type": "file", "fileName": "Danh_sach_tuyen_sinh_2026.xlsx", "status": "valid", "submittedAt": "2026-06-10T08:00:00Z", "submittedBy": "Trần Thị B", "reviewedBy": "Trần Thị B", "reviewNote": "Dữ liệu chính xác", "reviewedAt": "2026-06-10T10:00:00Z"},
-  {"id": "EV002", "planId": "PL002", "indicatorId": "KHCN-01", "indicatorName": "Số công bố/GV", "unitId": "u004", "unitName": "Phòng KHCN", "type": "file", "fileName": "Cong_bo_khoa_hoc_Q1_2026.xlsx", "status": "needs_supplement", "submittedAt": "2026-06-15T08:00:00Z", "submittedBy": "Chuyên viên KHCN", "reviewNote": "Cần bổ sung DOI cho 2 bài báo"},
-  {"id": "EV003", "planId": "PL003", "indicatorId": "CNTT-01", "indicatorName": "Quy trình xử lý online", "unitId": "u009", "unitName": "Trung tâm CNTT", "type": "system_log", "fileName": "Log_he_thong_Q1_2026.json", "status": "valid", "submittedAt": "2026-06-12T08:00:00Z", "submittedBy": "Đặng Phúc H", "reviewedBy": "Đặng Phúc H", "reviewNote": "Log hệ thống hợp lệ", "reviewedAt": "2026-06-12T10:00:00Z"},
-  {"id": "EV004", "planId": "PL001", "indicatorId": "DT-05", "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn", "unitId": "u002", "unitName": "Phòng Đào tạo", "type": "url", "fileName": "https://daotao.ctu.edu.vn/bao-cao-tot-nghiep", "status": "pending", "submittedAt": "2026-06-15T14:00:00Z", "submittedBy": "Trần Thị B"}
+  {
+    "id": "EV001",
+    "indicatorId": "DT-01",
+    "indicatorName": "Tỉ lệ tuyển sinh chính quy",
+    "unitId": "u002",
+    "unitName": "Phòng Đào tạo",
+    "type": "file",
+    "fileName": "Danh_sach_tuyen_sinh_2026.xlsx",
+    "status": "valid",
+    "submittedAt": "2026-06-10T08:00:00Z",
+    "submittedBy": "Trần Thị B",
+    "reviewedBy": "Trần Thị B",
+    "reviewNote": "Dữ liệu chính xác",
+    "reviewedAt": "2026-06-10T10:00:00Z"
+  },
+  {
+    "id": "EV002",
+    "indicatorId": "KHCN-01",
+    "indicatorName": "Số công bố/GV",
+    "unitId": "u004",
+    "unitName": "Phòng KHCN",
+    "type": "file",
+    "fileName": "Cong_bo_khoa_hoc_Q1_2026.xlsx",
+    "status": "needs_supplement",
+    "submittedAt": "2026-06-15T08:00:00Z",
+    "submittedBy": "Chuyên viên KHCN",
+    "reviewNote": "Cần bổ sung DOI cho 2 bài báo"
+  },
+  {
+    "id": "EV003",
+    "indicatorId": "CNTT-01",
+    "indicatorName": "Quy trình xử lý online",
+    "unitId": "u009",
+    "unitName": "Trung tâm CNTT",
+    "type": "system_log",
+    "fileName": "Log_he_thong_Q1_2026.json",
+    "status": "valid",
+    "submittedAt": "2026-06-12T08:00:00Z",
+    "submittedBy": "Đặng Phúc H",
+    "reviewedBy": "Đặng Phúc H",
+    "reviewNote": "Log hệ thống hợp lệ",
+    "reviewedAt": "2026-06-12T10:00:00Z"
+  },
+  {
+    "id": "EV004",
+    "indicatorId": "DT-05",
+    "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn",
+    "unitId": "u002",
+    "unitName": "Phòng Đào tạo",
+    "type": "url",
+    "fileName": "https://daotao.ctu.edu.vn/bao-cao-tot-nghiep",
+    "status": "pending",
+    "submittedAt": "2026-06-15T14:00:00Z",
+    "submittedBy": "Trần Thị B"
+  }
 ]

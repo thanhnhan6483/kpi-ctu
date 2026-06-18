@@ -38,7 +38,7 @@ const menuItems: MenuItem[] = [
       { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
-      { href: '/kpi/plans', label: 'Kế hoạch KPI' },
+
       { href: '/kpi/progress', label: 'Tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
       { href: '/kpi/evaluation', label: 'Đánh giá đơn vị' },
@@ -55,6 +55,7 @@ const menuItems: MenuItem[] = [
       { href: '/admin/users', label: 'Người dùng' },
       { href: '/admin/roles', label: 'Phân quyền' },
       { href: '/admin/organization', label: 'Tổ chức' },
+      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
       { href: '/admin/audit', label: 'Nhật ký' },
       { href: '/admin/notifications', label: 'Thông báo' },
       { href: '/admin/settings', label: 'Cài đặt' },
