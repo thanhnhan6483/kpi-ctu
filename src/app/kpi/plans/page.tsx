@@ -5,7 +5,6 @@ import { Plus, Search, FileText, Clock, CheckCircle, AlertTriangle, Edit, Trash2
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
-import cyclesData from '@/data/cycles.json';
 import indicatorsData from '@/data/indicators.json';
 import unitKpisData from '@/data/unit-kpis.json';
 
@@ -76,6 +75,21 @@ export default function KPIPlansPage() {
   const [evidenceList, setEvidenceList] = useState<any[]>([]);
   const [evalList, setEvalList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [cycles, setCycles] = useState<{ id: string; name: string }[]>([]);
+  const [filteredCycleIds, setFilteredCycleIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    const yearId = localStorage.getItem('selectedAcademicYear');
+    if (yearId) {
+      fetch(`/api/cycles?academicYearId=${yearId}`)
+        .then(r => r.json())
+        .then(data => {
+          setCycles(data);
+          setFilteredCycleIds(data.map((c: any) => c.id));
+        })
+        .catch(() => {});
+    }
+  }, []);
 
   const loadPlans = useCallback(async () => {
     try {
@@ -92,9 +106,13 @@ export default function KPIPlansPage() {
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
+  const cycleFilteredPlans = filteredCycleIds.length > 0
+    ? plans.filter(p => filteredCycleIds.includes(p.cycleId))
+    : plans;
+
   useEffect(() => { loadPlans(); }, [loadPlans]);
 
-  const filteredPlans = plans.filter(plan => {
+  const filteredPlans = cycleFilteredPlans.filter(plan => {
     const matchesStatus = statusFilter === 'all' || plan.status === statusFilter;
     const matchesSearch = plan.unitName.toLowerCase().includes(searchTerm.toLowerCase()) || plan.id.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesStatus && matchesSearch;
@@ -158,25 +176,25 @@ export default function KPIPlansPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><FileText size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng kế hoạch</p><p className="text-xl font-bold">{plans.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng kế hoạch</p><p className="text-xl font-bold">{cycleFilteredPlans.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-green/20 rounded-lg"><CheckCircle size={20} className="text-accent-green" /></div>
-            <div><p className="text-text-light text-sm">Đã duyệt</p><p className="text-xl font-bold">{plans.filter(p => p.status === 'approved').length}</p></div>
+            <div><p className="text-text-light text-sm">Đã duyệt</p><p className="text-xl font-bold">{cycleFilteredPlans.filter(p => p.status === 'approved').length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-yellow/20 rounded-lg"><Clock size={20} className="text-accent-yellow" /></div>
-            <div><p className="text-text-light text-sm">Chờ duyệt</p><p className="text-xl font-bold">{plans.filter(p => p.status === 'submitted').length}</p></div>
+            <div><p className="text-text-light text-sm">Chờ duyệt</p><p className="text-xl font-bold">{cycleFilteredPlans.filter(p => p.status === 'submitted').length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-red/20 rounded-lg"><AlertTriangle size={20} className="text-accent-red" /></div>
-            <div><p className="text-text-light text-sm">Nháp</p><p className="text-xl font-bold">{plans.filter(p => p.status === 'draft').length}</p></div>
+            <div><p className="text-text-light text-sm">Nháp</p><p className="text-xl font-bold">{cycleFilteredPlans.filter(p => p.status === 'draft').length}</p></div>
           </div>
         </div>
       </div>
@@ -261,11 +279,11 @@ export default function KPIPlansPage() {
       </div>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo kế hoạch KPI mới">
-        <PlanForm onSubmit={handleCreate} onCancel={() => setShowCreate(false)} />
+        <PlanForm cycles={cycles} onSubmit={handleCreate} onCancel={() => setShowCreate(false)} />
       </Modal>
 
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelectedPlan(null); }} title="Sửa kế hoạch KPI">
-        {selectedPlan && <PlanForm plan={selectedPlan} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedPlan(null); }} />}
+        {selectedPlan && <PlanForm plan={selectedPlan} cycles={cycles} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedPlan(null); }} />}
       </Modal>
 
       <Modal isOpen={showDetail} onClose={() => { setShowDetail(false); setSelectedPlan(null); }} title="Chi tiết kế hoạch KPI" maxWidth="max-w-4xl">
@@ -275,9 +293,9 @@ export default function KPIPlansPage() {
   );
 }
 
-function PlanForm({ plan, onSubmit, onCancel }: { plan?: KPIPlan; onSubmit: (data: Partial<KPIPlan>) => void; onCancel: () => void }) {
+function PlanForm({ plan, cycles, onSubmit, onCancel }: { plan?: KPIPlan; cycles: { id: string; name: string }[]; onSubmit: (data: Partial<KPIPlan>) => void; onCancel: () => void }) {
   const [unitId, setUnitId] = useState(plan?.unitId || '');
-  const [cycleId, setCycleId] = useState(plan?.cycleId || 'c001');
+  const [cycleId, setCycleId] = useState(plan?.cycleId || cycles[0]?.id || '');
   const [items, setItems] = useState<PlanItem[]>(plan?.items || []);
 
   const selectedUnit = (unitsData as Record<string, unknown>[]).find((u: Record<string, unknown>) => u.id === unitId) as Record<string, unknown> | undefined;
@@ -307,7 +325,7 @@ function PlanForm({ plan, onSubmit, onCancel }: { plan?: KPIPlan; onSubmit: (dat
       unitId,
       unitName: (selectedUnit?.name as string) || '',
       cycleId,
-      cycleName: (cyclesData as Record<string, unknown>[]).find((c: Record<string, unknown>) => c.id === cycleId)?.name as string || '',
+      cycleName: cycles.find((c) => c.id === cycleId)?.name || '',
       items,
     });
   };
@@ -329,8 +347,8 @@ function PlanForm({ plan, onSubmit, onCancel }: { plan?: KPIPlan; onSubmit: (dat
           <label className="block text-sm font-medium text-text-dark mb-1">Chu kỳ KPI</label>
           <select value={cycleId} onChange={(e) => setCycleId(e.target.value)}
             className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-            {(cyclesData as Record<string, unknown>[]).map((c: Record<string, unknown>) => (
-              <option key={c.id as string} value={c.id as string}>{c.name as string}</option>
+            {cycles.map((c) => (
+              <option key={c.id} value={c.id}>{c.name}</option>
             ))}
           </select>
         </div>

@@ -32,6 +32,14 @@ export interface OrganizationalUnit {
   status: 'active' | 'inactive';
 }
 
+export interface AcademicYear {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
+  status: 'active' | 'inactive';
+}
+
 export interface KPICycle {
   id: string;
   academicYearId: string;

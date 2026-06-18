@@ -42,6 +42,7 @@ export default function EvidencesPage() {
   const [planFilter, setPlanFilter] = useState('');
   const [indicatorFilter, setIndicatorFilter] = useState('');
   const [loading, setLoading] = useState(true);
+  const [validPlanIds, setValidPlanIds] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -49,6 +50,22 @@ export default function EvidencesPage() {
     if (pid) setPlanFilter(pid);
     const iid = params.get('indicatorId');
     if (iid) setIndicatorFilter(iid);
+  }, []);
+
+  useEffect(() => {
+    const yearId = localStorage.getItem('selectedAcademicYear');
+    if (yearId) {
+      fetch(`/api/cycles?academicYearId=${yearId}`)
+        .then(r => r.json())
+        .then(cycles => {
+          const cycleIds = cycles.map((c: any) => c.id);
+          fetch('/api/plans')
+            .then(r => r.json())
+            .then(plans => setValidPlanIds(plans.filter((p: any) => cycleIds.includes(p.cycleId)).map((p: any) => p.id)))
+            .catch(() => {});
+        })
+        .catch(() => {});
+    }
   }, []);
 
   const loadEvidences = useCallback(async () => {
@@ -63,7 +80,11 @@ export default function EvidencesPage() {
   const planNames: Record<string, string> = {};
   (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planNames[p.id as string] = p.unitName as string; });
 
-  const filtered = evidences.filter(ev => {
+  const cycleFilteredEvidences = validPlanIds.length > 0
+    ? evidences.filter(ev => validPlanIds.includes(ev.planId))
+    : evidences;
+
+  const filtered = cycleFilteredEvidences.filter(ev => {
     const matchesSearch = ev.indicatorId.toLowerCase().includes(searchTerm.toLowerCase()) ||
       ev.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       ev.fileName.toLowerCase().includes(searchTerm.toLowerCase());
@@ -92,9 +113,9 @@ export default function EvidencesPage() {
     loadEvidences();
   };
 
-  const validCount = evidences.filter(e => e.status === 'valid').length;
-  const pendingCount = evidences.filter(e => e.status === 'pending').length;
-  const supplementCount = evidences.filter(e => e.status === 'needs_supplement').length;
+  const validCount = cycleFilteredEvidences.filter(e => e.status === 'valid').length;
+  const pendingCount = cycleFilteredEvidences.filter(e => e.status === 'pending').length;
+  const supplementCount = cycleFilteredEvidences.filter(e => e.status === 'needs_supplement').length;
 
   return (
     <div className="space-y-6">
@@ -112,7 +133,7 @@ export default function EvidencesPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><FileText size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{evidences.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{cycleFilteredEvidences.length}</p></div>
           </div>
         </div>
         <div className="card p-4">

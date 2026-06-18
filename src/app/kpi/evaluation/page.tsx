@@ -57,6 +57,17 @@ export default function EvaluationPage() {
   const [showLock, setShowLock] = useState(false);
   const [selectedEval, setSelectedEval] = useState<Evaluation | null>(null);
   const [loading, setLoading] = useState(true);
+  const [validCycleNames, setValidCycleNames] = useState<string[]>([]);
+
+  useEffect(() => {
+    const yearId = localStorage.getItem('selectedAcademicYear');
+    if (yearId) {
+      fetch(`/api/cycles?academicYearId=${yearId}`)
+        .then(r => r.json())
+        .then(data => setValidCycleNames(data.map((c: any) => c.name)))
+        .catch(() => {});
+    }
+  }, []);
 
   const loadEvals = useCallback(async () => {
     try {
@@ -72,7 +83,11 @@ export default function EvaluationPage() {
   const planItems: Record<string, any[]> = {};
   (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planItems[p.id as string] = (p as any).items || []; });
 
-  const filtered = evaluations.filter((ev) => {
+  const cycleFilteredEvals = validCycleNames.length > 0
+    ? evaluations.filter(ev => validCycleNames.includes(ev.cycleName))
+    : evaluations;
+
+  const filtered = cycleFilteredEvals.filter((ev) => {
     const matchesSearch = ev.unitName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || ev.status === statusFilter;
     return matchesSearch && matchesStatus;
@@ -110,10 +125,10 @@ export default function EvaluationPage() {
     loadEvals();
   };
 
-  const totalEval = evaluations.length;
-  const lockedCount = evaluations.filter((e) => e.status === 'locked').length;
-  const pendingCount = evaluations.filter((e) => e.status === 'pending' || e.status === 'self_evaluated').length;
-  const scores = evaluations.filter((e) => e.finalScore).map((e) => e.finalScore!);
+  const totalEval = cycleFilteredEvals.length;
+  const lockedCount = cycleFilteredEvals.filter((e) => e.status === 'locked').length;
+  const pendingCount = cycleFilteredEvals.filter((e) => e.status === 'pending' || e.status === 'self_evaluated').length;
+  const scores = cycleFilteredEvals.filter((e) => e.finalScore).map((e) => e.finalScore!);
   const avgScore = scores.length > 0 ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
 
   return (

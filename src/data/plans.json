@@ -7,11 +7,66 @@
     "cycleName": "Năm học 2025-2026",
     "status": "approved",
     "items": [
-      {"id": "PL001-01", "indicatorId": "DT-01", "indicatorName": "Tỉ lệ tuyển sinh chính quy", "targetValue": 90, "actualValue": 92, "unit": "%", "weight": 15, "dueDate": "2026-06-30", "status": "completed", "note": "Vượt chỉ tiêu"},
-      {"id": "PL001-02", "indicatorId": "DT-02", "indicatorName": "Tỉ lệ CTĐT cập nhật đúng hạn", "targetValue": 95, "actualValue": 98, "unit": "%", "weight": 10, "dueDate": "2026-06-30", "status": "completed", "note": ""},
-      {"id": "PL001-03", "indicatorId": "DT-03", "indicatorName": "Tỉ lệ học phần có đề cương chuẩn", "targetValue": 95, "actualValue": 92, "unit": "%", "weight": 10, "dueDate": "2026-06-30", "status": "in_progress", "note": "Cần đẩy mạnh"},
-      {"id": "PL001-04", "indicatorId": "DT-04", "indicatorName": "Tỉ lệ học phần trực tuyến", "targetValue": 10, "actualValue": 12, "unit": "%", "weight": 10, "dueDate": "2026-06-30", "status": "completed", "note": "Vượt"},
-      {"id": "PL001-05", "indicatorId": "DT-05", "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn", "targetValue": 80, "actualValue": 78, "unit": "%", "weight": 15, "dueDate": "2026-06-30", "status": "in_progress", "note": "Đợt 2 đang xử lý"}
+      {
+        "id": "PL001-01",
+        "indicatorId": "DT-01",
+        "indicatorName": "Tỉ lệ tuyển sinh chính quy",
+        "targetValue": 90,
+        "actualValue": 92,
+        "unit": "%",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "completed",
+        "note": "Vượt chỉ tiêu"
+      },
+      {
+        "id": "PL001-02",
+        "indicatorId": "DT-02",
+        "indicatorName": "Tỉ lệ CTĐT cập nhật đúng hạn",
+        "targetValue": 95,
+        "actualValue": 98,
+        "unit": "%",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "completed",
+        "note": ""
+      },
+      {
+        "id": "PL001-03",
+        "indicatorId": "DT-03",
+        "indicatorName": "Tỉ lệ học phần có đề cương chuẩn",
+        "targetValue": 95,
+        "actualValue": 92,
+        "unit": "%",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": "Cần đẩy mạnh"
+      },
+      {
+        "id": "PL001-04",
+        "indicatorId": "DT-04",
+        "indicatorName": "Tỉ lệ học phần trực tuyến",
+        "targetValue": 10,
+        "actualValue": 12,
+        "unit": "%",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "completed",
+        "note": "Vượt"
+      },
+      {
+        "id": "PL001-05",
+        "indicatorId": "DT-05",
+        "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "targetValue": 80,
+        "actualValue": 78,
+        "unit": "%",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": "Đợt 2 đang xử lý"
+      }
     ],
     "submittedAt": "2025-10-15T08:00:00Z",
     "approvedAt": "2025-10-20T14:00:00Z",
@@ -26,9 +81,42 @@
     "cycleName": "Năm học 2025-2026",
     "status": "approved",
     "items": [
-      {"id": "PL002-01", "indicatorId": "KHCN-01", "indicatorName": "Số công bố/GV", "targetValue": 1.6, "actualValue": 1.4, "unit": "số", "weight": 15, "dueDate": "2026-06-30", "status": "in_progress", "note": "2 bài chờ review"},
-      {"id": "PL002-02", "indicatorId": "KHCN-02", "indicatorName": "Số WoS/Scopus/GV", "targetValue": 0.6, "actualValue": 0.5, "unit": "số", "weight": 15, "dueDate": "2026-06-30", "status": "in_progress", "note": ""},
-      {"id": "PL002-03", "indicatorId": "KHCN-03", "indicatorName": "Số đơn SHTT chấp nhận", "targetValue": 14, "actualValue": 10, "unit": "số", "weight": 10, "dueDate": "2026-06-30", "status": "in_progress", "note": "4 đơn đang xử lý"}
+      {
+        "id": "PL002-01",
+        "indicatorId": "KHCN-01",
+        "indicatorName": "Số công bố/GV",
+        "targetValue": 1.6,
+        "actualValue": 1.4,
+        "unit": "số",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": "2 bài chờ review"
+      },
+      {
+        "id": "PL002-02",
+        "indicatorId": "KHCN-02",
+        "indicatorName": "Số WoS/Scopus/GV",
+        "targetValue": 0.6,
+        "actualValue": 0.5,
+        "unit": "số",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": ""
+      },
+      {
+        "id": "PL002-03",
+        "indicatorId": "KHCN-03",
+        "indicatorName": "Số đơn SHTT chấp nhận",
+        "targetValue": 14,
+        "actualValue": 10,
+        "unit": "số",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": "4 đơn đang xử lý"
+      }
     ],
     "submittedAt": "2025-10-20T08:00:00Z",
     "approvedAt": "2025-10-25T14:00:00Z",
@@ -43,9 +131,42 @@
     "cycleName": "Năm học 2025-2026",
     "status": "in_progress",
     "items": [
-      {"id": "PL003-01", "indicatorId": "CNTT-01", "indicatorName": "Quy trình xử lý online", "targetValue": 80, "actualValue": 85, "unit": "%", "weight": 15, "dueDate": "2026-06-30", "status": "completed", "note": "Vượt"},
-      {"id": "PL003-02", "indicatorId": "CNTT-02", "indicatorName": "Hệ thống trọng yếu uptime", "targetValue": 99, "actualValue": 99.5, "unit": "%", "weight": 15, "dueDate": "2026-06-30", "status": "completed", "note": ""},
-      {"id": "PL003-03", "indicatorId": "CNTT-03", "indicatorName": "Sự cố xử lý đúng SLA", "targetValue": 95, "actualValue": 92, "unit": "%", "weight": 10, "dueDate": "2026-06-30", "status": "in_progress", "note": "3 ticket quá hạn"}
+      {
+        "id": "PL003-01",
+        "indicatorId": "CNTT-01",
+        "indicatorName": "Quy trình xử lý online",
+        "targetValue": 80,
+        "actualValue": 85,
+        "unit": "%",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "completed",
+        "note": "Vượt"
+      },
+      {
+        "id": "PL003-02",
+        "indicatorId": "CNTT-02",
+        "indicatorName": "Hệ thống trọng yếu uptime",
+        "targetValue": 99,
+        "actualValue": 99.5,
+        "unit": "%",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "completed",
+        "note": ""
+      },
+      {
+        "id": "PL003-03",
+        "indicatorId": "CNTT-03",
+        "indicatorName": "Sự cố xử lý đúng SLA",
+        "targetValue": 95,
+        "actualValue": 92,
+        "unit": "%",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": "3 ticket quá hạn"
+      }
     ],
     "submittedAt": "2025-10-10T08:00:00Z",
     "approvedAt": "2025-10-12T14:00:00Z",
@@ -60,11 +181,45 @@
     "cycleName": "Năm học 2025-2026",
     "status": "submitted",
     "items": [
-      {"id": "PL004-01", "indicatorId": "KTV-01", "indicatorName": "Tỉ lệ tuyển sinh", "targetValue": 90, "actualValue": 0, "unit": "%", "weight": 10, "dueDate": "2026-06-30", "status": "draft", "note": ""},
-      {"id": "PL004-02", "indicatorId": "KTV-02", "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn", "targetValue": 80, "actualValue": 75, "unit": "%", "weight": 15, "dueDate": "2026-06-30", "status": "in_progress", "note": ""}
+      {
+        "id": "PL004-01",
+        "indicatorId": "KTV-01",
+        "indicatorName": "Tỉ lệ tuyển sinh",
+        "targetValue": 90,
+        "actualValue": 0,
+        "unit": "%",
+        "weight": 10,
+        "dueDate": "2026-06-30",
+        "status": "draft",
+        "note": ""
+      },
+      {
+        "id": "PL004-02",
+        "indicatorId": "KTV-02",
+        "indicatorName": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "targetValue": 80,
+        "actualValue": 75,
+        "unit": "%",
+        "weight": 15,
+        "dueDate": "2026-06-30",
+        "status": "in_progress",
+        "note": ""
+      }
     ],
     "submittedAt": "2025-10-25T08:00:00Z",
     "createdAt": "2025-10-20T08:00:00Z",
     "updatedAt": "2025-10-25T08:00:00Z"
+  },
+  {
+    "id": "PLmqj5kx9xnnuf0ka1aa",
+    "unitId": "u101",
+    "unitName": "Trường Bách khoa",
+    "cycleId": "c001",
+    "cycleName": "Năm học 2025-2026",
+    "status": "submitted",
+    "items": [],
+    "createdAt": "2026-06-18T07:03:02.517Z",
+    "updatedAt": "2026-06-18T07:03:12.394Z",
+    "submittedAt": "2026-06-18T07:03:12.059Z"
   }
 ]

@@ -37,6 +37,7 @@ export default function ProgressPage() {
   const [planFilter, setPlanFilter] = useState('');
   const [indicatorFilter, setIndicatorFilter] = useState('');
   const [loading, setLoading] = useState(true);
+  const [validCycleNames, setValidCycleNames] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -44,6 +45,16 @@ export default function ProgressPage() {
     if (pid) setPlanFilter(pid);
     const iid = params.get('indicatorId');
     if (iid) setIndicatorFilter(iid);
+  }, []);
+
+  useEffect(() => {
+    const yearId = localStorage.getItem('selectedAcademicYear');
+    if (yearId) {
+      fetch(`/api/cycles?academicYearId=${yearId}`)
+        .then(r => r.json())
+        .then(data => setValidCycleNames(data.map((c: any) => c.name)))
+        .catch(() => {});
+    }
   }, []);
 
   const loadRecords = useCallback(async () => {
@@ -58,16 +69,20 @@ export default function ProgressPage() {
   const planNames: Record<string, string> = {};
   (plansData as Record<string, unknown>[]).forEach((p: Record<string, unknown>) => { planNames[p.id as string] = p.unitName as string; });
 
-  const filtered = records.filter((p) => {
+  const cycleFilteredRecords = validCycleNames.length > 0
+    ? records.filter(p => validCycleNames.includes(p.cycleName))
+    : records;
+
+  const filtered = cycleFilteredRecords.filter((p) => {
     const matchesSearch = p.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) || p.indicatorId.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesPlan = !planFilter || p.planId === planFilter;
     const matchesIndicator = !indicatorFilter || p.indicatorId === indicatorFilter;
     return matchesSearch && matchesPlan && matchesIndicator;
   });
 
-  const achievedCount = records.filter((p) => p.progressPercent >= 100).length;
-  const warningCount = records.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
-  const notAchievedCount = records.filter((p) => p.progressPercent < 80).length;
+  const achievedCount = cycleFilteredRecords.filter((p) => p.progressPercent >= 100).length;
+  const warningCount = cycleFilteredRecords.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
+  const notAchievedCount = cycleFilteredRecords.filter((p) => p.progressPercent < 80).length;
 
   const handleCreate = async (data: Partial<ProgressRecord>) => {
     await apiPost('/api/progress', data);
@@ -105,7 +120,7 @@ export default function ProgressPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Clock size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{records.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{cycleFilteredRecords.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
