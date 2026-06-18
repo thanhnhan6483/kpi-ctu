@@ -1,0 +1,167 @@
+[
+  {
+    "id": "plan_unit_pdt_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_pdt",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.225Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_khcn_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_khcn",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_tccb_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_tccb",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_htqt_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_htqt",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_khtc_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_khtc",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_vpt_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_vpt",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_cntt_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_cntt",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_dbcl_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_dbcl",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_khoa_cntt_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_khoa_cntt",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_bo_mon_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_bo_mon",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_thu_vien_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_thu_vien",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_ktx_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_ktx",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_nghien_cuu_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_nghien_cuu",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_truyen_thong_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_truyen_thong",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  },
+  {
+    "id": "plan_unit_dich_vu_c001",
+    "cycleId": "c001",
+    "ownerType": "unit",
+    "ownerId": "unit_dich_vu",
+    "status": "draft",
+    "submittedAt": null,
+    "approvedAt": null,
+    "createdAt": "2026-06-18T10:25:23.226Z",
+    "updatedAt": "2026-06-18T10:25:23.226Z"
+  }
+]

@@ -36,5 +36,15 @@ export async function POST(request: NextRequest) {
   };
   approvals.push(newApproval);
   writeDb('approvals', approvals);
+
+  if (body.objectType === 'plan') {
+    const plans = readDb<{ id: string; status: string }>('plans');
+    const planIndex = plans.findIndex(p => p.id === body.objectId);
+    if (planIndex !== -1) {
+      plans[planIndex].status = 'pending';
+      writeDb('plans', plans);
+    }
+  }
+
   return NextResponse.json(newApproval, { status: 201 });
 }

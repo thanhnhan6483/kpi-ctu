@@ -1,38 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId } from '@/lib/db';
 
-interface Evidence {
+interface EvidenceRecord {
   id: string;
-  indicatorId: string;
-  indicatorName: string;
-  unitId: string;
-  unitName: string;
-  type: 'file' | 'url' | 'system_log';
-  fileName: string;
-  status: 'pending' | 'valid' | 'needs_supplement' | 'invalid';
+  planItemId: string;
+  evidenceType: 'file' | 'url' | 'system_log' | 'survey' | 'email';
+  fileName?: string;
+  fileUrl?: string;
+  externalUrl?: string;
+  status: 'pending' | 'submitted' | 'needs_supplement' | 'valid' | 'invalid' | 'locked';
+  reviewerNote?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
   submittedAt: string;
   submittedBy: string;
-  reviewedBy?: string;
-  reviewNote?: string;
-  reviewedAt?: string;
 }
 
 export async function GET() {
-  return NextResponse.json(readDb<Evidence>('evidences'));
+  return NextResponse.json(readDb<EvidenceRecord>('evidences'));
 }
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const evidences = readDb<Evidence>('evidences');
+  const evidences = readDb<EvidenceRecord>('evidences');
   const now = new Date().toISOString();
-  const newEvidence: Evidence = {
+  const newEvidence: EvidenceRecord = {
     id: `EV${generateId()}`,
-    indicatorId: body.indicatorId,
-    indicatorName: body.indicatorName,
-    unitId: body.unitId,
-    unitName: body.unitName,
-    type: body.type,
+    planItemId: body.planItemId,
+    evidenceType: body.evidenceType,
     fileName: body.fileName,
+    fileUrl: body.fileUrl,
+    externalUrl: body.externalUrl,
     status: 'pending',
     submittedAt: now,
     submittedBy: body.submittedBy,

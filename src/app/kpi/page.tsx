@@ -33,6 +33,15 @@ const demoActual: Record<string, number> = {
   'CV-01': 92, 'CV-02': 98, 'CV-03': 95, 'CV-04': 4.2, 'CV-05': 1, 'CV-06': 100,
 };
 
+const demoTarget: Record<string, number> = {
+  'CTU-KPI-01': 59, 'CTU-KPI-02': 10, 'CTU-KPI-03': 10, 'CTU-KPI-04': 10,
+  'CTU-KPI-05': 90, 'CTU-KPI-06': 80, 'CTU-KPI-07': 14, 'CTU-KPI-08': 90,
+  'CTU-KPI-09': 70, 'CTU-KPI-10': 80, 'CTU-KPI-11': 70, 'CTU-KPI-12': 10,
+  'CTU-KPI-13': 1.6, 'CTU-KPI-14': 0.6, 'CTU-KPI-15': 14, 'CTU-KPI-16': 20,
+  'CTU-KPI-17': 400, 'CTU-KPI-18': 10, 'CTU-KPI-19': 700, 'CTU-KPI-20': 100,
+  'CTU-KPI-21': 15, 'CTU-KPI-22': 80, 'CTU-KPI-23': 100,
+};
+
 const unitNameByCode: Record<string, string> = {};
 units.forEach(u => { unitNameByCode[u.code] = u.name; });
 
@@ -83,7 +92,8 @@ export default function KPIPage() {
 
   const schoolItems = schoolIndicators.map(si => ({
     ...si,
-    target: si.targetValue,
+    target: demoTarget[si.id] ?? 0,
+    weight: si.maxScore,
     actual: demoActual[si.id] ?? 0,
     category: catShortLabel[si.categoryId] || categoryMap[si.categoryId] || si.categoryId,
   }));

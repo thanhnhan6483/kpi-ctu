@@ -1,4 +1,4 @@
-import { KPIIndicator, KPIScore, KPIProgress, KPIEvidence } from '@/types';
+import { KPIIndicator, KPIScore, KPIProgress, KPIEvidence, KPIPlanItem } from '@/types';
 
 export function calcCompletionRate(actual: number, target: number, direction: 'higher_better' | 'lower_better'): number {
   if (direction === 'higher_better') {
@@ -61,14 +61,43 @@ export function calcEvidenceScore(evidences: KPIEvidence[]): number {
 }
 
 export function calcPlanItemScore(
-  indicator: KPIIndicator,
+  targetValue: number,
+  direction: 'higher_better' | 'lower_better',
+  maxScore: number,
+  requiredEvidence: boolean,
   actualValue: number,
-  evidences: KPIEvidence[]
+  evidences: KPIEvidence[] = []
 ): { score: number; completionRate: number; evidenceFactor: number } {
-  const completionRate = calcCompletionRate(actualValue, indicator.targetValue, indicator.direction);
-  const evidenceFactor = indicator.requiredEvidence ? calcEvidenceScore(evidences) : 1;
-  const score = calcIndicatorScore(completionRate, indicator.maxScore) * evidenceFactor;
+  const completionRate = calcCompletionRate(actualValue, targetValue, direction);
+  const evidenceFactor = requiredEvidence ? calcEvidenceScore(evidences) : 1;
+  const score = calcIndicatorScore(completionRate, maxScore) * evidenceFactor;
   return { score, completionRate, evidenceFactor };
+}
+
+export function calcPlanTotalScore(
+  planItems: KPIPlanItem[],
+  scores: KPIScore[]
+): { totalScore: number; grade: string; itemScores: Array<{ planItemId: string; score: number; weight: number }> } {
+  const totalWeight = planItems.reduce((sum, pi) => sum + pi.weight, 0);
+  if (totalWeight === 0 || scores.length === 0) {
+    return { totalScore: 0, grade: getGrade(0).level, itemScores: [] };
+  }
+
+  const itemScores = planItems
+    .map(pi => {
+      const score = scores.find(s => s.planItemId === pi.id);
+      return {
+        planItemId: pi.id,
+        score: score?.finalScore ?? 0,
+        weight: pi.weight,
+      };
+    });
+
+  const weightedSum = itemScores.reduce((sum, item) => sum + item.score * item.weight, 0);
+  const totalScore = weightedSum / totalWeight;
+  const { level } = getGrade(totalScore);
+
+  return { totalScore, grade: level, itemScores };
 }
 
 interface IndividualKPI {

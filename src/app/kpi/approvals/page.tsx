@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { CheckCircle, XCircle, Clock, AlertTriangle, Search, Eye, MessageSquare } from 'lucide-react';
+import { CheckCircle, XCircle, Clock, AlertTriangle, Search, Eye, MessageSquare, ClipboardList } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
-import { apiGet, apiPut } from '@/lib/api';
+import { apiGet, apiPut, apiPost } from '@/lib/api';
 
 interface Approval {
   id: string;
@@ -20,6 +20,14 @@ interface Approval {
   decidedAt?: string;
 }
 
+interface PlanRecord {
+  id: string;
+  name: string;
+  cycleId: string;
+  unitId: string;
+  status: string;
+}
+
 const statusConfig: Record<string, { label: string; color: string; icon: typeof CheckCircle }> = {
   pending: { label: 'Chờ phê duyệt', color: '#ffc107', icon: Clock },
   approved: { label: 'Đã phê duyệt', color: '#4caf50', icon: CheckCircle },
@@ -27,18 +35,20 @@ const statusConfig: Record<string, { label: string; color: string; icon: typeof 
   needs_revision: { label: 'Cần chỉnh sửa', color: '#ff9800', icon: AlertTriangle },
 };
 
-const typeLabels: Record<string, string> = { evidence: 'Minh chứng', evaluation: 'Đánh giá' };
+const typeLabels: Record<string, string> = { evidence: 'Minh chứng', evaluation: 'Đánh giá', plan: 'Kế hoạch' };
 
 function getObjectLink(type: string, _id: string): string {
   switch (type) {
     case 'evidence': return `/kpi/evidences`;
     case 'evaluation': return `/kpi/evaluation`;
+    case 'plan': return `/kpi/plans`;
     default: return '#';
   }
 }
 
 export default function ApprovalsPage() {
   const [approvals, setApprovals] = useState<Approval[]>([]);
+  const [plans, setPlans] = useState<PlanRecord[]>([]);
   const [statusFilter, setStatusFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [showAction, setShowAction] = useState(false);
@@ -46,6 +56,7 @@ export default function ApprovalsPage() {
   const [actionType, setActionType] = useState<'approve' | 'reject' | 'revision'>('approve');
   const [actionNote, setActionNote] = useState('');
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'all' | 'evidence' | 'evaluation' | 'plan'>('all');
 
   const loadApprovals = useCallback(async () => {
     try {
@@ -54,9 +65,36 @@ export default function ApprovalsPage() {
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
-  useEffect(() => { loadApprovals(); }, [loadApprovals]);
+  const loadPlans = useCallback(async () => {
+    try {
+      const data = await apiGet<PlanRecord[]>('/api/plans');
+      setPlans(data);
+    } catch { /* empty */ } finally { setLoading(false); }
+  }, []);
 
-  const filtered = approvals.filter(a => {
+  useEffect(() => { loadApprovals(); loadPlans(); }, [loadApprovals, loadPlans]);
+
+  const submittedPlans = plans.filter(p => p.status === 'submitted');
+  const planApprovals: Approval[] = submittedPlans.map(p => ({
+    id: p.id,
+    objectType: 'plan',
+    objectId: p.id,
+    objectTitle: p.name,
+    unitName: p.unitId,
+    submitter: 'System',
+    status: 'pending',
+    submittedAt: new Date().toISOString(),
+  }));
+
+  const allItems: Approval[] = activeTab === 'plan'
+    ? planApprovals
+    : activeTab === 'evidence'
+    ? approvals.filter(a => a.objectType === 'evidence')
+    : activeTab === 'evaluation'
+    ? approvals.filter(a => a.objectType === 'evaluation')
+    : [...approvals, ...planApprovals];
+
+  const filtered = allItems.filter(a => {
     const matchesStatus = statusFilter === 'all' || a.status === statusFilter;
     const matchesSearch = a.objectTitle.toLowerCase().includes(searchTerm.toLowerCase()) || a.unitName.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesStatus && matchesSearch;
@@ -64,16 +102,25 @@ export default function ApprovalsPage() {
 
   const handleAction = async () => {
     if (!selectedApproval) return;
-    const statusMap = { approve: 'approved', reject: 'rejected', revision: 'needs_revision' };
-    await apiPut(`/api/approvals/${selectedApproval.id}`, {
-      status: statusMap[actionType],
-      note: actionNote,
-      approverName: 'Admin',
-    });
+    if (selectedApproval.objectType === 'plan') {
+      if (actionType === 'approve') {
+        await apiPost(`/api/plans/${selectedApproval.objectId}/approve`, { note: actionNote });
+      } else {
+        await apiPost(`/api/plans/${selectedApproval.objectId}/revision`, { note: actionNote });
+      }
+    } else {
+      const statusMap = { approve: 'approved', reject: 'rejected', revision: 'needs_revision' };
+      await apiPut(`/api/approvals/${selectedApproval.id}`, {
+        status: statusMap[actionType],
+        note: actionNote,
+        approverName: 'Admin',
+      });
+    }
     setShowAction(false);
     setSelectedApproval(null);
     setActionNote('');
     loadApprovals();
+    loadPlans();
   };
 
   const openAction = (approval: Approval, type: 'approve' | 'reject' | 'revision') => {
@@ -92,29 +139,38 @@ export default function ApprovalsPage() {
         </div>
       </div>
 
+      <div className="flex gap-2 mb-2">
+        {(['all', 'evidence', 'evaluation', 'plan'] as const).map((tab) => (
+          <button key={tab} onClick={() => setActiveTab(tab)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === tab ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
+            {tab === 'all' ? 'Tất cả' : typeLabels[tab] || tab}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Clock size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Chờ duyệt</p><p className="text-xl font-bold">{approvals.filter(a => a.status === 'pending').length}</p></div>
+            <div><p className="text-text-light text-sm">Chờ duyệt</p><p className="text-xl font-bold">{allItems.filter(a => a.status === 'pending').length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-green/20 rounded-lg"><CheckCircle size={20} className="text-accent-green" /></div>
-            <div><p className="text-text-light text-sm">Đã duyệt</p><p className="text-xl font-bold">{approvals.filter(a => a.status === 'approved').length}</p></div>
+            <div><p className="text-text-light text-sm">Đã duyệt</p><p className="text-xl font-bold">{allItems.filter(a => a.status === 'approved').length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-red/20 rounded-lg"><XCircle size={20} className="text-accent-red" /></div>
-            <div><p className="text-text-light text-sm">Từ chối</p><p className="text-xl font-bold">{approvals.filter(a => a.status === 'rejected' || a.status === 'needs_revision').length}</p></div>
+            <div><p className="text-text-light text-sm">Từ chối</p><p className="text-xl font-bold">{allItems.filter(a => a.status === 'rejected' || a.status === 'needs_revision').length}</p></div>
           </div>
         </div>
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-yellow/20 rounded-lg"><AlertTriangle size={20} className="text-accent-yellow" /></div>
-            <div><p className="text-text-light text-sm">Tổng</p><p className="text-xl font-bold">{approvals.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng</p><p className="text-xl font-bold">{allItems.length}</p></div>
           </div>
         </div>
       </div>
@@ -147,7 +203,7 @@ export default function ApprovalsPage() {
                 const status = statusConfig[a.status] || statusConfig.pending;
                 const StatusIcon = status.icon;
                 return (
-                  <tr key={a.id}>
+                  <tr key={`${a.objectType}-${a.id}`}>
                     <td><span className="badge badge-info">{a.id}</span></td>
                     <td><span className="badge badge-info text-xs">{typeLabels[a.objectType] || a.objectType}</span></td>
                     <td className="font-medium text-sm max-w-[200px] truncate">

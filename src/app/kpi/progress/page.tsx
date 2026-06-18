@@ -4,29 +4,64 @@ import { useState, useEffect, useCallback } from 'react';
 import { Clock, Edit, CheckCircle, AlertTriangle, Search, Plus, Trash2, TrendingUp, TrendingDown, FileText } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
-import indicatorsData from '@/data/indicators.json';
-import unitsData from '@/data/units.json';
+import unitKpisData from '@/data/unit-kpis.json';
 
 interface ProgressRecord {
   id: string;
-  indicatorId: string;
-  indicatorName: string;
-  unitId: string;
-  unitName: string;
-  targetValue: number;
+  planItemId: string;
   actualValue: number;
-  unit: string;
-  progressPercent: number;
-  lastUpdated: string;
-  updatedBy: string;
+  progressDate: string;
   note: string;
-  cycleName: string;
+  updatedBy: string;
+  level?: string;
+  personId?: string;
+  personName?: string;
+  positionCode?: string;
+}
+
+interface PlanItemRecord {
+  id: string;
+  planId: string;
+  indicatorId: string;
+  targetValue: number;
+  weight: number;
+  dueDate: string;
+}
+
+interface PlanRecord {
+  id: string;
+  name: string;
+  cycleId: string;
+  unitId: string;
+  status: string;
+}
+
+interface UnitKpi {
+  id: string;
+  name: string;
+  code: string;
+  kpis: { id: string; name: string; indicatorId: string | null }[];
+}
+
+function getKpiName(indicatorId: string): string {
+  for (const unit of unitKpisData as UnitKpi[]) {
+    const kpi = unit.kpis.find(k => k.indicatorId === indicatorId);
+    if (kpi) return kpi.name;
+  }
+  return indicatorId;
+}
+
+function getUnitName(unitId: string): string {
+  const unit = (unitKpisData as UnitKpi[]).find(u => u.id === unitId);
+  return unit?.name || unitId;
 }
 
 const groups = ['Tất cả', 'Đào tạo', 'KHCN', 'Đội ngũ', 'Quốc tế', 'CĐS', 'Phục vụ'];
 
 export default function ProgressPage() {
   const [records, setRecords] = useState<ProgressRecord[]>([]);
+  const [planItems, setPlanItems] = useState<PlanItemRecord[]>([]);
+  const [plans, setPlans] = useState<PlanRecord[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [groupFilter, setGroupFilter] = useState('Tất cả');
   const [showCreate, setShowCreate] = useState(false);
@@ -34,7 +69,6 @@ export default function ProgressPage() {
   const [selectedRecord, setSelectedRecord] = useState<ProgressRecord | null>(null);
   const [indicatorFilter, setIndicatorFilter] = useState('');
   const [loading, setLoading] = useState(true);
-  const [validCycleNames, setValidCycleNames] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -42,43 +76,53 @@ export default function ProgressPage() {
     if (iid) setIndicatorFilter(iid);
   }, []);
 
-  useEffect(() => {
-    const yearId = localStorage.getItem('selectedAcademicYear');
-    if (yearId) {
-      fetch(`/api/cycles?academicYearId=${yearId}`)
-        .then(r => r.json())
-        .then(data => setValidCycleNames(data.map((c: any) => c.name)))
-        .catch(() => {});
-    }
-  }, []);
-
-  const loadRecords = useCallback(async () => {
+  const loadData = useCallback(async () => {
     try {
-      const data = await apiGet<ProgressRecord[]>('/api/progress');
-      setRecords(data);
+      const [plansData, planItemsData, progressData] = await Promise.all([
+        apiGet<PlanRecord[]>('/api/plans'),
+        apiGet<PlanItemRecord[]>('/api/plan-items'),
+        apiGet<ProgressRecord[]>('/api/progress'),
+      ]);
+      setPlans(plansData);
+      setPlanItems(planItemsData);
+      setRecords(progressData);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
-  useEffect(() => { loadRecords(); }, [loadRecords]);
+  useEffect(() => { loadData(); }, [loadData]);
 
-  const cycleFilteredRecords = validCycleNames.length > 0
-    ? records.filter(p => validCycleNames.includes(p.cycleName))
-    : records;
+  const planItemMap = new Map(planItems.map(pi => [pi.id, pi]));
+  const planMap = new Map(plans.map(p => [p.id, p]));
 
-  const filtered = cycleFilteredRecords.filter((p) => {
-    const matchesSearch = p.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) || p.indicatorId.toLowerCase().includes(searchTerm.toLowerCase());
+  const enrichedRecords = records.map(r => {
+    const pi = planItemMap.get(r.planItemId);
+    const plan = pi ? planMap.get(pi.planId) : undefined;
+    const targetValue = pi?.targetValue ?? 0;
+    const progressPercent = targetValue > 0 ? Math.round((r.actualValue / targetValue) * 100) : 0;
+    return {
+      ...r,
+      indicatorId: pi?.indicatorId ?? '',
+      indicatorName: pi ? getKpiName(pi.indicatorId) : '',
+      unitName: plan ? getUnitName(plan.unitId) : '',
+      targetValue,
+      progressPercent,
+    };
+  });
+
+  const filtered = enrichedRecords.filter((p) => {
+    const matchesSearch = p.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) || p.planItemId.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesIndicator = !indicatorFilter || p.indicatorId === indicatorFilter;
     return matchesSearch && matchesIndicator;
   });
 
-  const achievedCount = cycleFilteredRecords.filter((p) => p.progressPercent >= 100).length;
-  const warningCount = cycleFilteredRecords.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
-  const notAchievedCount = cycleFilteredRecords.filter((p) => p.progressPercent < 80).length;
+  const achievedCount = enrichedRecords.filter((p) => p.progressPercent >= 100).length;
+  const warningCount = enrichedRecords.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
+  const notAchievedCount = enrichedRecords.filter((p) => p.progressPercent < 80).length;
 
   const handleCreate = async (data: Partial<ProgressRecord>) => {
     await apiPost('/api/progress', data);
     setShowCreate(false);
-    loadRecords();
+    loadData();
   };
 
   const handleUpdate = async (data: Partial<ProgressRecord>) => {
@@ -86,13 +130,13 @@ export default function ProgressPage() {
     await apiPut(`/api/progress/${selectedRecord.id}`, data);
     setShowEdit(false);
     setSelectedRecord(null);
-    loadRecords();
+    loadData();
   };
 
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa bản ghi này?')) return;
     await apiDelete(`/api/progress/${id}`);
-    loadRecords();
+    loadData();
   };
 
   return (
@@ -111,7 +155,7 @@ export default function ProgressPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Clock size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{cycleFilteredRecords.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{enrichedRecords.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
@@ -155,11 +199,11 @@ export default function ProgressPage() {
                 const isWarning = item.progressPercent >= 80 && item.progressPercent < 100;
                 return (
                   <tr key={item.id}>
-                    <td><span className="badge badge-info">{item.indicatorId}</span></td>
+                    <td><span className="badge badge-info">{item.planItemId}</span></td>
                     <td className="font-medium text-sm">{item.indicatorName}</td>
                     <td className="text-sm">{item.unitName}</td>
-                    <td>{item.targetValue}{item.unit}</td>
-                    <td className="font-bold">{item.actualValue}{item.unit}</td>
+                    <td>{item.targetValue}</td>
+                    <td className="font-bold">{item.actualValue}</td>
                     <td>
                       <div className="flex items-center gap-2">
                         <div className="progress-bar w-20">
@@ -171,11 +215,11 @@ export default function ProgressPage() {
                       </div>
                     </td>
                     <td className="text-center">
-                      <a href={`/kpi/evidences?indicatorId=${item.indicatorId}`} className="text-primary hover:underline text-sm">
+                      <a href={`/kpi/evidences?planItemId=${item.planItemId}`} className="text-primary hover:underline text-sm">
                         <FileText size={14} className="inline" />
                       </a>
                     </td>
-                    <td className="text-xs text-text-light">{new Date(item.lastUpdated).toLocaleDateString('vi-VN')}</td>
+                    <td className="text-xs text-text-light">{new Date(item.progressDate).toLocaleDateString('vi-VN')}</td>
                     <td className="text-xs max-w-[150px] truncate">{item.note}</td>
                     <td>
                       <div className="flex gap-1">
@@ -192,45 +236,39 @@ export default function ProgressPage() {
       </div>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Cập nhật tiến độ mới">
-        <ProgressForm onSubmit={handleCreate} onCancel={() => setShowCreate(false)} />
+        <ProgressForm plans={plans} planItems={planItems} onSubmit={handleCreate} onCancel={() => setShowCreate(false)} />
       </Modal>
 
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelectedRecord(null); }} title="Sửa tiến độ">
-        {selectedRecord && <ProgressForm record={selectedRecord} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedRecord(null); }} />}
+        {selectedRecord && <ProgressForm record={selectedRecord} plans={plans} planItems={planItems} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedRecord(null); }} />}
       </Modal>
     </div>
   );
 }
 
-function ProgressForm({ record, onSubmit, onCancel }: { record?: ProgressRecord; onSubmit: (data: Partial<ProgressRecord>) => void; onCancel: () => void }) {
-  const [indicatorId, setIndicatorId] = useState(record?.indicatorId || '');
-  const [unitId, setUnitId] = useState(record?.unitId || '');
+function ProgressForm({ record, plans, planItems, onSubmit, onCancel }: { record?: ProgressRecord; plans: PlanRecord[]; planItems: PlanItemRecord[]; onSubmit: (data: Partial<ProgressRecord>) => void; onCancel: () => void }) {
+  const [selectedPlanId, setSelectedPlanId] = useState(() => {
+    if (record) {
+      const pi = planItems.find(p => p.id === record.planItemId);
+      return pi?.planId || '';
+    }
+    return '';
+  });
+  const [planItemId, setPlanItemId] = useState(record?.planItemId || '');
   const [actualValue, setActualValue] = useState(record?.actualValue || 0);
-  const [targetValue, setTargetValue] = useState(record?.targetValue || 0);
   const [note, setNote] = useState(record?.note || '');
 
-  const selectedIndicator = (indicatorsData as Record<string, unknown>[]).find((i: Record<string, unknown>) => i.id === indicatorId);
-  const selectedUnit = (unitsData as Record<string, unknown>[]).find((u: Record<string, unknown>) => u.id === unitId);
-
-  useEffect(() => {
-    if (indicatorId && !record) {
-      const ind = (indicatorsData as Record<string, unknown>[]).find((i: Record<string, unknown>) => i.id === indicatorId);
-      if (ind) setTargetValue(ind.targetValue as number);
-    }
-  }, [indicatorId, record]);
+  const approvedPlans = plans.filter(p => p.status === 'approved');
+  const filteredPlanItems = planItems.filter(pi => pi.planId === selectedPlanId);
+  const selectedPlanItem = planItems.find(pi => pi.id === planItemId);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit({
-      indicatorId,
-      indicatorName: (selectedIndicator?.name as string) || '',
-      unitId,
-      unitName: (selectedUnit?.name as string) || '',
-      targetValue,
+      planItemId,
       actualValue,
-      unit: (selectedIndicator?.unit as string) || '%',
       note,
-      cycleName: 'Năm học 2025-2026',
+      progressDate: new Date().toISOString(),
       updatedBy: 'Admin',
     });
   };
@@ -239,34 +277,34 @@ function ProgressForm({ record, onSubmit, onCancel }: { record?: ProgressRecord;
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-text-dark mb-1">KPI *</label>
-          <select value={indicatorId} onChange={(e) => setIndicatorId(e.target.value)} required disabled={!!record}
+          <label className="block text-sm font-medium text-text-dark mb-1">Kế hoạch *</label>
+          <select value={selectedPlanId} onChange={(e) => { setSelectedPlanId(e.target.value); setPlanItemId(''); }} required disabled={!!record}
             className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:opacity-50">
-            <option value="">-- Chọn KPI --</option>
-            {(indicatorsData as Record<string, unknown>[]).map((i: Record<string, unknown>) => (
-              <option key={i.id as string} value={i.id as string}>{i.code as string} - {i.name as string}</option>
+            <option value="">-- Chọn Kế hoạch --</option>
+            {approvedPlans.map((p) => (
+              <option key={p.id} value={p.id}>{p.name}</option>
             ))}
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-text-dark mb-1">Đơn vị *</label>
-          <select value={unitId} onChange={(e) => setUnitId(e.target.value)} required disabled={!!record}
+          <label className="block text-sm font-medium text-text-dark mb-1">Chỉ tiêu KPI *</label>
+          <select value={planItemId} onChange={(e) => setPlanItemId(e.target.value)} required disabled={!!record}
             className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:opacity-50">
-            <option value="">-- Chọn đơn vị --</option>
-            {(unitsData as Record<string, unknown>[]).filter((u: Record<string, unknown>) => u.type !== 'university').map((u: Record<string, unknown>) => (
-              <option key={u.id as string} value={u.id as string}>{u.name as string}</option>
+            <option value="">-- Chọn chỉ tiêu --</option>
+            {filteredPlanItems.map((pi) => (
+              <option key={pi.id} value={pi.id}>{getKpiName(pi.indicatorId)}</option>
             ))}
           </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-text-dark mb-1">Chỉ tiêu *</label>
-          <input type="number" value={targetValue} onChange={(e) => setTargetValue(Number(e.target.value))} required step="any"
-            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
         </div>
         <div>
           <label className="block text-sm font-medium text-text-dark mb-1">Thực tế *</label>
           <input type="number" value={actualValue} onChange={(e) => setActualValue(Number(e.target.value))} required step="any"
             className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-text-dark mb-1">Chỉ tiêu (từ KH)</label>
+          <input type="number" value={selectedPlanItem?.targetValue ?? 0} disabled
+            className="w-full px-3 py-2 rounded-lg border border-border text-sm bg-gray-50 focus:outline-none" />
         </div>
       </div>
       <div>
@@ -274,11 +312,11 @@ function ProgressForm({ record, onSubmit, onCancel }: { record?: ProgressRecord;
         <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2}
           className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
       </div>
-      {targetValue > 0 && (
+      {selectedPlanItem && selectedPlanItem.targetValue > 0 && (
         <div className="p-3 bg-bg-cream rounded-lg border border-border">
           <span className="text-sm text-text-light">Tỉ lệ hoàn thành: </span>
-          <span className={`font-bold ${actualValue / targetValue * 100 >= 100 ? 'text-accent-green' : 'text-accent-red'}`}>
-            {(actualValue / targetValue * 100).toFixed(1)}%
+          <span className={`font-bold ${actualValue / selectedPlanItem.targetValue * 100 >= 100 ? 'text-accent-green' : 'text-accent-red'}`}>
+            {(actualValue / selectedPlanItem.targetValue * 100).toFixed(1)}%
           </span>
         </div>
       )}
