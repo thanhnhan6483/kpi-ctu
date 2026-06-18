@@ -213,6 +213,7 @@ export interface IndividualKPIDetail {
   target: number;
   unit: string;
   weight: number;
+  unitKpiId?: string | null;
 }
 
 export interface IndividualKPIEntry {

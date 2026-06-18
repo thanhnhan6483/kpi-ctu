@@ -36,6 +36,12 @@ const demoActual: Record<string, number> = {
 const unitNameByCode: Record<string, string> = {};
 units.forEach(u => { unitNameByCode[u.code] = u.name; });
 
+const unitKpiById: Record<string, { id: string; name: string; unitCode: string; unitName: string }> = {};
+unitKPIsData.forEach(u => {
+  const uname = unitNameByCode[u.code] || u.name;
+  u.kpis.forEach(k => { unitKpiById[k.id] = { id: k.id, name: k.name, unitCode: u.code, unitName: uname }; });
+});
+
 const unitGroups = ['Tất cả', ...unitKPIsData.map(u => u.code)];
 const individualGroups = ['Tất cả', 'GV', 'GVQL', 'LD', 'BM', 'NCV', 'CV', 'CVDT',
   'CVDBCL', 'CVKHCN', 'CVHTQT', 'CVTCCB', 'CVKHTC', 'CVCNTT', 'CVTT',
@@ -270,7 +276,7 @@ export default function KPIPage() {
         </div>
         <table className="table">
           <thead>
-            <tr><th>Mã KPI</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Thao tác</th></tr>
+            <tr><th>Mã KPI</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Liên kết ĐV</th><th>Thao tác</th></tr>
           </thead>
           <tbody>
             {filtered.map((kpi) => {
@@ -285,6 +291,14 @@ export default function KPIPage() {
                   <td><span style={{ color: status.color }} className="font-medium">{completionRate.toFixed(1)}%</span></td>
                   <td>{kpi.weight}%</td>
                   <td><span className="badge" style={{ backgroundColor: `${status.color}20`, color: status.color }}>{status.label}</span></td>
+                  <td>
+                    {kpi.unitKpiId && unitKpiById[kpi.unitKpiId] ? (
+                      <a href="#unit" onClick={() => { setActiveTab('unit'); setSelectedUnit(unitKpiById[kpi.unitKpiId].unitCode); setSearchTerm(kpi.unitKpiId); }}
+                        className="text-xs text-primary underline flex items-center gap-1">
+                        <ArrowRight size={10} />{kpi.unitKpiId}
+                      </a>
+                    ) : <span className="text-xs text-text-light">-</span>}
+                  </td>
                   <td>
                     <a href={`/kpi/progress?indicatorId=${kpi.id}`} className="text-primary text-xs hover:underline">Tiến độ</a>
                     <a href={`/kpi/evidences?indicatorId=${kpi.id}`} className="text-primary text-xs hover:underline ml-2">MC</a>
@@ -381,8 +395,8 @@ export default function KPIPage() {
           <div className="text-xs space-y-1">
             <p className="text-accent-green font-medium">✓ Cấp Trường → Đơn vị</p>
             <p className="text-text-light ml-3">Mỗi chỉ tiêu Trường có thể dẫn xuất ra KPI của nhiều đơn vị (nhấn "N đơn vị" để xem)</p>
-            <p className="text-accent-yellow font-medium mt-1">⟶ Cấp đơn vị → Cá nhân</p>
-            <p className="text-text-light ml-3">Vị trí cá nhân có KPI riêng theo vai trò; đóng góp vào KPI đơn vị qua tiến độ thực tế</p>
+            <p className="text-accent-green font-medium mt-1">✓ Cấp đơn vị → Cá nhân</p>
+            <p className="text-text-light ml-3">Mỗi KPI vị trí có thể được liên kết với KPI đơn vị tương ứng (nhấn mã KPI ĐV để xem)</p>
           </div>
         </div>
       </div>

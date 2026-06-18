@@ -164,7 +164,7 @@ export default function KPIDataPage() {
         {tab === 'groups' && <GroupForm item={groups.find(g => g.id === editId) || null} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'indicators' && <IndicatorForm item={indicators.find(i => i.id === editId) || null} groups={groups} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'unit' && <UnitForm item={unitKpis.find(u => u.id === editId) || null} groups={groups} indicators={indicators} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'individual' && <IndividualForm item={indKpis.find(p => p.id === editId) || null} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        {tab === 'individual' && <IndividualForm item={indKpis.find(p => p.id === editId) || null} unitKpis={unitKpis} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
       </Modal>
     </div>
   );
@@ -276,10 +276,11 @@ function UnitForm({ item, groups, indicators, onSubmit, onCancel }: { item: Unit
   );
 }
 
-function IndividualForm({ item, onSubmit, onCancel }: { item: IndividualKPIEntry | null; onSubmit: (data: any) => void; onCancel: () => void }) {
+function IndividualForm({ item, unitKpis, onSubmit, onCancel }: { item: IndividualKPIEntry | null; unitKpis: UnitKPIEntry[]; onSubmit: (data: any) => void; onCancel: () => void }) {
   const [name, setName] = useState(item?.name || '');
   const [code, setCode] = useState(item?.code || '');
   const [kpis, setKpis] = useState<IndividualKPIDetail[]>(item?.kpis || []);
+  const allUnitKpis = unitKpis.flatMap(u => u.kpis.map(k => ({ ...k, unitCode: u.code, unitName: u.name })));
   const addKpi = () => setKpis([...kpis, { id: `KPI-${Date.now()}`, name: '', target: 0, unit: '%', weight: 5 }]);
   const removeKpi = (i: number) => setKpis(kpis.filter((_, idx) => idx !== i));
   const updateKpi = (i: number, field: string, value: any) => setKpis(kpis.map((k, idx) => idx === i ? { ...k, [field]: value } : k));
@@ -299,6 +300,10 @@ function IndividualForm({ item, onSubmit, onCancel }: { item: IndividualKPIEntry
             <input type="number" placeholder="Target" value={k.target} onChange={e => updateKpi(i, 'target', Number(e.target.value))} className="w-16 px-2 py-1 border rounded text-xs" />
             <input type="text" placeholder="Đvt" value={k.unit} onChange={e => updateKpi(i, 'unit', e.target.value)} className="w-14 px-2 py-1 border rounded text-xs" />
             <input type="number" placeholder="W" value={k.weight} onChange={e => updateKpi(i, 'weight', Number(e.target.value))} className="w-14 px-2 py-1 border rounded text-xs" />
+            <select value={k.unitKpiId || ''} onChange={e => updateKpi(i, 'unitKpiId', e.target.value || null)} className="w-28 px-2 py-1 border rounded text-xs">
+              <option value="">-- KPI ĐV --</option>
+              {allUnitKpis.map(uk => <option key={uk.id} value={uk.id}>{uk.id} ({uk.unitCode})</option>)}
+            </select>
             <button type="button" onClick={() => removeKpi(i)} className="p-1 text-accent-red"><Trash2 size={12} /></button>
           </div>
         ))}

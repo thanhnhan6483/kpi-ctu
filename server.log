@@ -1,0 +1,12 @@
+
+> kpi-ctu@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 11488, using available port 3001 instead.
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://172.16.1.109:3001
+✓ Ready in 699ms
+⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+
+[?25h
