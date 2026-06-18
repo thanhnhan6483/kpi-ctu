@@ -1,0 +1,27 @@
+[
+  {
+    "id": "r001",
+    "name": "admin",
+    "description": "Quản trị hệ thống"
+  },
+  {
+    "id": "r002",
+    "name": "board",
+    "description": "Ban Giám hiệu"
+  },
+  {
+    "id": "r003",
+    "name": "council",
+    "description": "Hội đồng đánh giá KPI"
+  },
+  {
+    "id": "r004",
+    "name": "unit_manager",
+    "description": "Trưởng đơn vị"
+  },
+  {
+    "id": "r005",
+    "name": "staff",
+    "description": "Nhân viên/Giảng viên"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {"id": "n001", "userId": "u004", "title": "Cần cập nhật KPI đơn vị", "content": "Kế hoạch KPI Khoa CNTT kỳ 2025-2026 chưa được cập nhật tiến độ. Vui lòng cập nhật trước 30/06/2026.", "readStatus": false, "createdAt": "2026-06-15T08:00:00Z", "type": "reminder"},
+  {"id": "n002", "userId": "u002", "title": "Minh chứng KPI cần bổ sung", "content": "Minh chứng cho KPI GV-04 (Công bố khoa học) cần bổ sung DOI bài báo. Hạn: 20/06/2026.", "readStatus": false, "createdAt": "2026-06-14T10:30:00Z", "type": "warning"},
+  {"id": "n003", "userId": "u003", "title": "Kế hoạch KPI đã được phê duyệt", "content": "Kế hoạch KPI Phòng Đào tạo đã được Ban Giám hiệu phê duyệt ngày 10/06/2026.", "readStatus": true, "createdAt": "2026-06-10T14:00:00Z", "type": "info"},
+  {"id": "n004", "userId": "u005", "title": "Nhắc hạn cập nhật tiến độ", "content": "Bộ môn Khoa học máy tính cần cập nhật tiến độ KPI BM-05 trước 25/06/2026.", "readStatus": false, "createdAt": "2026-06-13T09:00:00Z", "type": "reminder"},
+  {"id": "n005", "userId": "u007", "title": "Yêu cầu duyệt minh chứng", "content": "Có 3 minh chứng mới cần phê duyệt cho KPI KHTC-04. Vui lòng xem xét.", "readStatus": false, "createdAt": "2026-06-12T11:00:00Z", "type": "approval"},
+  {"id": "n006", "userId": "u013", "title": "Cảnh báo KPI dưới ngưỡng", "content": "CTU-KPI-19 (SV quốc tế) đang đạt 650/700 (92.9%). Cần đẩy mạnh tuyển sinh đợt 2.", "readStatus": false, "createdAt": "2026-06-11T08:30:00Z", "type": "warning"},
+  {"id": "n007", "userId": "u006", "title": "Đánh giá KPI cá nhân sắp hết hạn", "content": "Tự đánh giá KPI cá nhân kỳ 2025-2026 hết hạn 30/06/2026. Vui lòng hoàn thành.", "readStatus": false, "createdAt": "2026-06-10T07:00:00Z", "type": "reminder"},
+  {"id": "n008", "userId": "u004", "title": "Điểm KPI đơn vị đã khóa", "content": "Điểm KPI Khoa CNTT kỳ 2024-2025 đã được hội đồng khóa. Điểm trung bình: 82.", "readStatus": true, "createdAt": "2026-06-01T16:00:00Z", "type": "info"},
+  {"id": "n009", "userId": "u009", "title": "Cập nhật lịch họp KPI", "content": "Họp Ban Giám hiệu đánh giá KPI quý 2/2026 lúc 14:00 ngày 20/06/2026.", "readStatus": false, "createdAt": "2026-06-09T10:00:00Z", "type": "info"},
+  {"id": "n010", "userId": "u012", "title": "Báo cáo KPI tháng 5 sẵn sàng", "content": "Báo cáo tổng hợp KPI tháng 5/2026 đã có trên hệ thống. Vui lòng xem và phản hồi.", "readStatus": true, "createdAt": "2026-06-05T09:00:00Z", "type": "info"}
+]

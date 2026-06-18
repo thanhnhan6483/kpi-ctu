@@ -1,0 +1,17 @@
+[
+  {"id": "log001", "userId": "u001", "action": "login", "objectType": "auth", "objectId": "u001", "ipAddress": "192.168.1.100", "createdAt": "2026-06-15T07:30:00Z", "detail": "Đăng nhập thành công"},
+  {"id": "log002", "userId": "u001", "action": "create", "objectType": "kpi_cycle", "objectId": "c002", "ipAddress": "192.168.1.100", "createdAt": "2026-06-15T08:00:00Z", "detail": "Tạo chu kỳ KPI mới 2026-2027"},
+  {"id": "log003", "userId": "u003", "action": "update", "objectType": "kpi_plan", "objectId": "PL001", "ipAddress": "192.168.1.101", "createdAt": "2026-06-14T14:30:00Z", "detail": "Cập nhật kế hoạch KPI Phòng Đào tạo"},
+  {"id": "log004", "userId": "u003", "action": "submit", "objectType": "kpi_plan", "objectId": "PL001", "ipAddress": "192.168.1.101", "createdAt": "2026-06-14T15:00:00Z", "detail": "Gửi phê duyệt kế hoạch KPI"},
+  {"id": "log005", "userId": "u013", "action": "approve", "objectType": "kpi_plan", "objectId": "PL001", "ipAddress": "192.168.1.102", "createdAt": "2026-06-10T14:00:00Z", "detail": "Phê duyệt kế hoạch KPI Phòng Đào tạo"},
+  {"id": "log006", "userId": "u002", "action": "upload", "objectType": "kpi_evidence", "objectId": "EV001", "ipAddress": "192.168.1.103", "createdAt": "2026-06-12T10:00:00Z", "detail": "Tải lên minh chứng Danh_sach_GV_tien_si_2026.pdf"},
+  {"id": "log007", "userId": "u003", "action": "verify", "objectType": "kpi_evidence", "objectId": "EV001", "ipAddress": "192.168.1.101", "createdAt": "2026-06-12T11:00:00Z", "detail": "Xác nhận minh chứng hợp lệ"},
+  {"id": "log008", "userId": "u002", "action": "update", "objectType": "kpi_progress", "objectId": "PR001", "ipAddress": "192.168.1.103", "createdAt": "2026-06-13T09:30:00Z", "detail": "Cập nhật tiến độ KPI GV-01: 105%"},
+  {"id": "log009", "userId": "u002", "action": "self_evaluate", "objectType": "kpi_evaluation", "objectId": "EV003", "ipAddress": "192.168.1.103", "createdAt": "2026-06-14T16:00:00Z", "detail": "Tự đánh giá KPI cá nhân: 82 điểm"},
+  {"id": "log010", "userId": "u004", "action": "evaluate", "objectType": "kpi_evaluation", "objectId": "EV001", "ipAddress": "192.168.1.104", "createdAt": "2026-06-15T10:00:00Z", "detail": "Đánh giá cấp trên KPI Phòng Đào tạo: 85 điểm"},
+  {"id": "log011", "userId": "u012", "action": "council_review", "objectType": "kpi_evaluation", "objectId": "EV004", "ipAddress": "192.168.1.105", "createdAt": "2026-06-10T09:00:00Z", "detail": "Hội đồng rà soát Trung tâm CNTT: 91 điểm"},
+  {"id": "log012", "userId": "u012", "action": "lock", "objectType": "kpi_evaluation", "objectId": "EV004", "ipAddress": "192.168.1.105", "createdAt": "2026-06-10T16:00:00Z", "detail": "Khóa kết quả đánh giá Trung tâm CNTT"},
+  {"id": "log013", "userId": "u001", "action": "export", "objectType": "report", "objectId": "RPT001", "ipAddress": "192.168.1.100", "createdAt": "2026-06-09T11:00:00Z", "detail": "Xuất báo cáo tổng hợp KPI Q1/2026"},
+  {"id": "log014", "userId": "u001", "action": "update", "objectType": "user", "objectId": "u010", "ipAddress": "192.168.1.100", "createdAt": "2026-06-08T14:00:00Z", "detail": "Tạo tài khoản người dùng mới Ngô Thị K"},
+  {"id": "log015", "userId": "u001", "action": "update", "objectType": "settings", "objectId": "system", "ipAddress": "192.168.1.100", "createdAt": "2026-06-07T10:00:00Z", "detail": "Cập nhật cấu hình hệ thống: cap rate 120%"}
+]
