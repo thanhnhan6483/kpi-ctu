@@ -16,6 +16,8 @@ import {
   Clock,
   Award,
   Search,
+  Calendar,
+  RefreshCw,
   ChevronDown,
   ChevronRight,
 } from 'lucide-react';
@@ -37,6 +39,8 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI' },
+      { href: '/kpi/academic-years', label: 'Năm học' },
+      { href: '/kpi/cycles', label: 'Chu kỳ KPI' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
 
