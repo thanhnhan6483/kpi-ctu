@@ -26,7 +26,7 @@ const roles = [
     ],
     pages: [
       { href: '/', label: 'Dashboard tổng quan' },
-      { href: '/kpi', label: 'Danh mục KPI cấp Trường' },
+      { href: '/kpi', label: 'Chỉ tiêu KPI cấp Trường' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI đơn vị' },
       { href: '/kpi/evaluation', label: 'Đánh giá KPI đơn vị' },
       { href: '/kpi/approvals', label: 'Phê duyệt' },
@@ -85,7 +85,7 @@ const roles = [
       'Xem báo cáo đơn vị',
     ],
     pages: [
-      { href: '/kpi', label: 'Danh mục KPI' },
+      { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI' },
       { href: '/kpi/progress', label: 'Tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
@@ -120,7 +120,7 @@ const roles = [
       'Đối soát dữ liệu với hệ thống nguồn',
     ],
     pages: [
-      { href: '/kpi', label: 'Danh mục KPI' },
+      { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI' },
       { href: '/kpi/progress', label: 'Tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
@@ -151,7 +151,7 @@ const roles = [
       'Bổ sung minh chứng khi có yêu cầu',
     ],
     pages: [
-      { href: '/kpi', label: 'Danh mục KPI cá nhân' },
+      { href: '/kpi', label: 'Chỉ tiêu KPI cá nhân' },
       { href: '/kpi/progress', label: 'Cập nhật tiến độ' },
       { href: '/kpi/evidences', label: 'Nộp minh chứng' },
       { href: '/kpi/evaluation/individual', label: 'Tự đánh giá KPI' },

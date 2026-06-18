@@ -15,7 +15,7 @@ const roleLabels: Record<string, string> = {
 };
 
 const moduleLabels: Record<string, string> = {
-  kpi_definition: 'Danh mục KPI',
+  kpi_definition: 'Chỉ tiêu KPI',
   kpi_plan: 'Kế hoạch KPI',
   kpi_progress: 'Tiến độ KPI',
   kpi_evidence: 'Minh chứng',

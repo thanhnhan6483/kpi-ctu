@@ -35,7 +35,7 @@ const menuItems: MenuItem[] = [
     label: 'Quản lý KPI',
     icon: BarChart2,
     children: [
-      { href: '/kpi', label: 'Danh mục KPI' },
+      { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI' },

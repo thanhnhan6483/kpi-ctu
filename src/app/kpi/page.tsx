@@ -290,7 +290,7 @@ export default function KPIPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục KPI</h1>
+          <h1 className="text-2xl font-heading font-bold text-text-dark">Chỉ tiêu KPI</h1>
           <p className="text-text-light mt-1">Hệ thống KPI Đại học Cần Thơ - 3 cấp quản trị</p>
         </div>
       </div>
