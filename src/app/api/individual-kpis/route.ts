@@ -2,8 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId } from '@/lib/db';
 import type { IndividualKPIEntry } from '@/types';
 
-export async function GET() {
-  return NextResponse.json(readDb<IndividualKPIEntry>('individual-kpis'));
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const academicYearId = searchParams.get('academicYearId');
+  let items = readDb<IndividualKPIEntry>('individual-kpis');
+  if (academicYearId) items = items.filter(i => i.academicYearId === academicYearId);
+  return NextResponse.json(items);
 }
 
 export async function POST(request: NextRequest) {
@@ -11,6 +15,7 @@ export async function POST(request: NextRequest) {
   const items = readDb<IndividualKPIEntry>('individual-kpis');
   const newItem: IndividualKPIEntry = {
     id: `pos_${generateId()}`,
+    academicYearId: body.academicYearId,
     name: body.name,
     code: body.code,
     kpis: body.kpis || [],

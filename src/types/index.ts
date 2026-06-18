@@ -51,6 +51,7 @@ export interface KPICycle {
 
 export interface KPIGroup {
   id: string;
+  academicYearId?: string;
   name: string;
   code: string;
   defaultWeight: number;
@@ -59,6 +60,7 @@ export interface KPIGroup {
 
 export interface KPIIndicator {
   id: string;
+  academicYearId?: string;
   code: string;
   name: string;
   categoryId: string;
@@ -198,6 +200,7 @@ export interface UnitKPIDetail {
 
 export interface UnitKPIEntry {
   id: string;
+  academicYearId?: string;
   name: string;
   code: string;
   type: string;
@@ -218,6 +221,7 @@ export interface IndividualKPIDetail {
 
 export interface IndividualKPIEntry {
   id: string;
+  academicYearId?: string;
   name: string;
   code: string;
   kpis: IndividualKPIDetail[];

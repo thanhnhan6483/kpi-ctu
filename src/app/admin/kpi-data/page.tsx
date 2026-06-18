@@ -1,14 +1,17 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Layers, Target, Building, Users, Plus, Edit, Trash2 } from 'lucide-react';
+import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
-import type { KPIGroup, KPIIndicator, UnitKPIEntry, UnitKPIDetail, IndividualKPIEntry, IndividualKPIDetail } from '@/types';
+import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear } from '@/types';
 
 type TabKey = 'groups' | 'indicators' | 'unit' | 'individual';
 
 export default function KPIDataPage() {
+  const [years, setYears] = useState<AcademicYear[]>([]);
+  const [selectedYearId, setSelectedYearId] = useState('');
+
   const [tab, setTab] = useState<TabKey>('groups');
   const [groups, setGroups] = useState<KPIGroup[]>([]);
   const [indicators, setIndicators] = useState<KPIIndicator[]>([]);
@@ -17,32 +20,62 @@ export default function KPIDataPage() {
 
   const [showModal, setShowModal] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
+  const [showCloneModal, setShowCloneModal] = useState(false);
+  const [cloneFromYear, setCloneFromYear] = useState('');
+  const [cloning, setCloning] = useState(false);
 
-  const load = useCallback(async () => {
+  const loadYears = useCallback(async () => {
+    const y = await apiGet<AcademicYear[]>('/api/academic-years');
+    setYears(y);
+    if (!selectedYearId) {
+      const active = y.find(ay => ay.status === 'active');
+      if (active) setSelectedYearId(active.id);
+    }
+  }, [selectedYearId]);
+
+  const loadData = useCallback(async (yearId: string) => {
+    if (!yearId) return;
+    const q = `?academicYearId=${yearId}`;
     const [g, i, u, p] = await Promise.all([
-      apiGet<KPIGroup[]>('/api/kpi-groups'),
-      apiGet<KPIIndicator[]>('/api/indicators'),
-      apiGet<UnitKPIEntry[]>('/api/unit-kpis'),
-      apiGet<IndividualKPIEntry[]>('/api/individual-kpis'),
+      apiGet<KPIGroup[]>(`/api/kpi-groups${q}`),
+      apiGet<KPIIndicator[]>(`/api/indicators${q}`),
+      apiGet<UnitKPIEntry[]>(`/api/unit-kpis${q}`),
+      apiGet<IndividualKPIEntry[]>(`/api/individual-kpis${q}`),
     ]);
     setGroups(g); setIndicators(i); setUnitKpis(u); setIndKpis(p);
   }, []);
 
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => { loadYears(); }, [loadYears]);
+
+  useEffect(() => {
+    if (selectedYearId) loadData(selectedYearId);
+  }, [selectedYearId, loadData]);
+
+  const hasData = groups.length > 0 || indicators.length > 0 || unitKpis.length > 0 || indKpis.length > 0;
 
   const handleSave = async (data: any) => {
+    const payload = { ...data, academicYearId: selectedYearId };
     if (editId) {
-      await apiPut(`/api/${tab === 'groups' ? 'kpi-groups' : tab === 'indicators' ? 'indicators' : tab === 'unit' ? 'unit-kpis' : 'individual-kpis'}/${editId}`, data);
+      await apiPut(`/api/${tab === 'groups' ? 'kpi-groups' : tab === 'indicators' ? 'indicators' : tab === 'unit' ? 'unit-kpis' : 'individual-kpis'}/${editId}`, payload);
     } else {
-      await apiPost(`/api/${tab === 'groups' ? 'kpi-groups' : tab === 'indicators' ? 'indicators' : tab === 'unit' ? 'unit-kpis' : 'individual-kpis'}`, data);
+      await apiPost(`/api/${tab === 'groups' ? 'kpi-groups' : tab === 'indicators' ? 'indicators' : tab === 'unit' ? 'unit-kpis' : 'individual-kpis'}`, payload);
     }
-    setShowModal(false); setEditId(null); load();
+    setShowModal(false); setEditId(null); loadData(selectedYearId);
   };
 
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa mục này?')) return;
     await apiDelete(`/api/${tab === 'groups' ? 'kpi-groups' : tab === 'indicators' ? 'indicators' : tab === 'unit' ? 'unit-kpis' : 'individual-kpis'}/${id}`);
-    load();
+    loadData(selectedYearId);
+  };
+
+  const handleClone = async () => {
+    if (!cloneFromYear || !selectedYearId) return;
+    setCloning(true);
+    await apiPost(`/api/kpi-data/clone?fromYear=${cloneFromYear}&toYear=${selectedYearId}`, {});
+    setShowCloneModal(false);
+    setCloning(false);
+    loadData(selectedYearId);
   };
 
   const tabs = [
@@ -63,6 +96,36 @@ export default function KPIDataPage() {
         </div>
       </div>
 
+      {/* Year selector */}
+      <div className="flex items-center gap-3 flex-wrap">
+        <span className="text-sm font-medium text-text-dark">Năm học:</span>
+        {years.map(ay => (
+          <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+            className={`px-3 py-1.5 rounded text-sm transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
+            {ay.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Clone prompt when no data */}
+      {!hasData && selectedYearId && (
+        <div className="card bg-accent-yellow/5 border border-accent-yellow/30">
+          <div className="p-4 flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-text-dark">Chưa có bộ chỉ tiêu cho năm học này</p>
+              <p className="text-xs text-text-light mt-0.5">Sao chép từ năm học trước để bắt đầu</p>
+            </div>
+            <button onClick={() => {
+              const prev = years.filter(y => y.id !== selectedYearId).pop();
+              setCloneFromYear(prev?.id || '');
+              setShowCloneModal(true);
+            }} className="btn-primary text-xs flex items-center gap-1">
+              <Copy size={14} /> Sao chép từ năm khác
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="flex gap-2 border-b border-border">
         {tabs.map(t => {
           const Icon = t.icon;
@@ -79,9 +142,11 @@ export default function KPIDataPage() {
       <div className="card">
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">{tabs.find(t => t.id === tab)?.label}</h3>
-          <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
-            <Plus size={14} /> Thêm
-          </button>
+          {selectedYearId && (
+            <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
+              <Plus size={14} /> Thêm
+            </button>
+          )}
         </div>
         <div className="p-0">
           {tab === 'groups' && (
@@ -165,6 +230,26 @@ export default function KPIDataPage() {
         {tab === 'indicators' && <IndicatorForm item={indicators.find(i => i.id === editId) || null} groups={groups} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'unit' && <UnitForm item={unitKpis.find(u => u.id === editId) || null} groups={groups} indicators={indicators} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'individual' && <IndividualForm item={indKpis.find(p => p.id === editId) || null} unitKpis={unitKpis} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+      </Modal>
+
+      {/* Clone modal */}
+      <Modal isOpen={showCloneModal} onClose={() => setShowCloneModal(false)} title="Sao chép bộ chỉ tiêu">
+        <div className="space-y-4">
+          <p className="text-sm text-text-light">Chọn năm học nguồn để sao chép bộ chỉ tiêu sang năm <strong>{years.find(y => y.id === selectedYearId)?.name}</strong>:</p>
+          <select value={cloneFromYear} onChange={e => setCloneFromYear(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+            <option value="">-- Chọn năm học --</option>
+            {years.filter(y => y.id !== selectedYearId).map(y => (
+              <option key={y.id} value={y.id}>{y.name}</option>
+            ))}
+          </select>
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <button type="button" onClick={() => setShowCloneModal(false)} className="btn-secondary">Hủy</button>
+            <button type="button" onClick={handleClone} disabled={!cloneFromYear || cloning} className="btn-primary flex items-center gap-1">
+              <Copy size={14} /> {cloning ? 'Đang sao chép...' : 'Sao chép'}
+            </button>
+          </div>
+        </div>
       </Modal>
     </div>
   );

@@ -2,8 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId } from '@/lib/db';
 import type { KPIIndicator } from '@/types';
 
-export async function GET() {
-  return NextResponse.json(readDb<KPIIndicator>('indicators'));
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const academicYearId = searchParams.get('academicYearId');
+  let items = readDb<KPIIndicator>('indicators');
+  if (academicYearId) items = items.filter(i => i.academicYearId === academicYearId);
+  return NextResponse.json(items);
 }
 
 export async function POST(request: NextRequest) {
@@ -11,6 +15,7 @@ export async function POST(request: NextRequest) {
   const items = readDb<KPIIndicator>('indicators');
   const newItem: KPIIndicator = {
     id: `CTU-KPI-${generateId()}`,
+    academicYearId: body.academicYearId,
     code: body.code,
     name: body.name,
     categoryId: body.categoryId,
