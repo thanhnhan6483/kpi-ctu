@@ -9,39 +9,7 @@ import individualKPIsData from '@/data/individual-kpis.json';
 import units from '@/data/units.json';
 import kpiGroups from '@/data/kpi-groups.json';
 import academicYears from '@/data/academic-years.json';
-
-const demoActual: Record<string, number> = {
-  'CTU-KPI-01': 52, 'CTU-KPI-02': 12, 'CTU-KPI-03': 8, 'CTU-KPI-04': 11,
-  'CTU-KPI-05': 92, 'CTU-KPI-06': 75, 'CTU-KPI-07': 12, 'CTU-KPI-08': 88,
-  'CTU-KPI-09': 72, 'CTU-KPI-10': 85, 'CTU-KPI-11': 68, 'CTU-KPI-12': 11,
-  'CTU-KPI-13': 1.4, 'CTU-KPI-14': 0.5, 'CTU-KPI-15': 10, 'CTU-KPI-16': 18,
-  'CTU-KPI-17': 380, 'CTU-KPI-18': 12, 'CTU-KPI-19': 650, 'CTU-KPI-20': 95,
-  'CTU-KPI-21': 12, 'CTU-KPI-22': 85, 'CTU-KPI-23': 95,
-  'DT-01': 92, 'DT-02': 98, 'DT-03': 92, 'DT-04': 12, 'DT-05': 78,
-  'DT-06': 96, 'DT-07': 88, 'DT-08': 4.2, 'DT-09': 100, 'DT-10': 92,
-  'KHCN-01': 1.4, 'KHCN-02': 0.5, 'KHCN-03': 10, 'KHCN-04': 18,
-  'KHCN-05': 380, 'KHCN-06': 88, 'KHCN-07': 11, 'KHCN-08': 85,
-  'KHCN-09': 8, 'KHCN-10': 92,
-  'TCCB-01': 52, 'TCCB-02': 12, 'TCCB-03': 92, 'TCCB-04': 98,
-  'TCCB-05': 100, 'TCCB-06': 75, 'TCCB-07': 88, 'TCCB-08': 95, 'TCCB-09': 3.8,
-  'CNTT-01': 85, 'CNTT-02': 99.5, 'CNTT-03': 92, 'CNTT-04': 88,
-  'CNTT-05': 65, 'CNTT-06': 100, 'CNTT-07': 100, 'CNTT-08': 4.1,
-  'CNTT-09': 85, 'CNTT-10': 3,
-  'GV-01': 105, 'GV-02': 85, 'GV-03': 92, 'GV-04': 1, 'GV-05': 2,
-  'GV-06': 2, 'GV-07': 1,
-  'NCV-01': 2, 'NCV-02': 1, 'NCV-03': 2, 'NCV-04': 90,
-  'NCV-05': 1, 'NCV-06': 88, 'NCV-07': 1,
-  'CV-01': 92, 'CV-02': 98, 'CV-03': 95, 'CV-04': 4.2, 'CV-05': 1, 'CV-06': 100,
-};
-
-const demoTarget: Record<string, number> = {
-  'CTU-KPI-01': 59, 'CTU-KPI-02': 10, 'CTU-KPI-03': 10, 'CTU-KPI-04': 10,
-  'CTU-KPI-05': 90, 'CTU-KPI-06': 80, 'CTU-KPI-07': 14, 'CTU-KPI-08': 90,
-  'CTU-KPI-09': 70, 'CTU-KPI-10': 80, 'CTU-KPI-11': 70, 'CTU-KPI-12': 10,
-  'CTU-KPI-13': 1.6, 'CTU-KPI-14': 0.6, 'CTU-KPI-15': 14, 'CTU-KPI-16': 20,
-  'CTU-KPI-17': 400, 'CTU-KPI-18': 10, 'CTU-KPI-19': 700, 'CTU-KPI-20': 100,
-  'CTU-KPI-21': 15, 'CTU-KPI-22': 80, 'CTU-KPI-23': 100,
-};
+import progressData from '@/data/progress.json';
 
 const unitNameByCode: Record<string, string> = {};
 units.forEach(u => { unitNameByCode[u.code] = u.name; });
@@ -51,8 +19,6 @@ unitKPIsData.forEach(u => {
   const uname = unitNameByCode[u.code] || u.name;
   u.  kpis.forEach(k => { unitKpiById[k.id] = { id: k.id, name: k.name, unitCode: u.code, unitName: uname }; });
 });
-
-const activeYear = academicYears.find(y => y.status === 'active');
 
 const unitGroups = ['Tất cả', ...unitKPIsData.map(u => u.code)];
 const individualGroups = ['Tất cả', 'GV', 'GVQL', 'LD', 'BM', 'NCV', 'CV', 'CVDT',
@@ -86,6 +52,7 @@ const posCodeMap: Record<string, string> = {
 type TabLevel = 'school' | 'unit' | 'individual';
 
 export default function KPIPage() {
+  const [selectedYearId, setSelectedYearId] = useState('ay002');
   const [activeTab, setActiveTab] = useState<TabLevel>('school');
   const [selectedUnit, setSelectedUnit] = useState(unitKPIsData[0]?.code ?? 'PDT');
   const [selectedPosition, setSelectedPosition] = useState('GV');
@@ -93,11 +60,27 @@ export default function KPIPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedIndicator, setExpandedIndicator] = useState<string | null>(null);
 
-  const schoolItems = schoolIndicators.map(si => ({
+  const activeYear = academicYears.find(y => y.id === selectedYearId)!;
+
+  const schoolLookup: Record<string, number> = {};
+  (progressData as Array<{ level: string; indicatorId: string; actualValue: number }>)
+    .filter(p => p.level === 'school')
+    .forEach(p => { schoolLookup[p.indicatorId] = p.actualValue; });
+
+  const unitLookup: Record<string, number> = {};
+  (progressData as Array<{ level: string; indicatorName: string; actualValue: number }>)
+    .filter(p => p.level === 'unit')
+    .forEach(p => { unitLookup[p.indicatorName] = p.actualValue; });
+
+  const yearSchoolIndicators = schoolIndicators.filter(si => si.academicYearId === selectedYearId);
+  const yearUnitKPIs = unitKPIsData.filter(u => u.academicYearId === selectedYearId);
+  const yearIndKPIs = individualKPIsData.filter(p => p.academicYearId === selectedYearId);
+
+  const schoolItems = yearSchoolIndicators.map(si => ({
     ...si,
-    target: demoTarget[si.id] ?? 0,
-    weight: si.maxScore,
-    actual: demoActual[si.id] ?? 0,
+    target: si.targetValue ?? 0,
+    weight: si.weight ?? si.maxScore,
+    actual: schoolLookup[si.id] ?? 0,
     category: catShortLabel[si.categoryId] || categoryMap[si.categoryId] || si.categoryId,
   }));
 
@@ -105,31 +88,31 @@ export default function KPIPage() {
   schoolItems.forEach(si => { schoolByIndicatorId[si.id] = si; });
 
   const unitKpisForSchool: Record<string, { unitCode: string; unitName: string; kpi: any }[]> = {};
-  unitKPIsData.forEach(u => {
+  yearUnitKPIs.forEach(u => {
     const name = unitNameByCode[u.code] || u.name;
     u.kpis.forEach(k => {
       const indId = (k as any).indicatorId;
       if (indId) {
-        if (!unitKpisForSchool[indId]) unitKpisForSchool[indId] = [];
-        unitKpisForSchool[indId].push({ unitCode: u.code, unitName: name, kpi: { ...k, actual: demoActual[k.id] ?? 0 } });
+        unitKpisForSchool[indId] = unitKpisForSchool[indId] || [];
+        unitKpisForSchool[indId].push({ unitCode: u.code, unitName: name, kpi: { ...k, actual: unitLookup[k.name] ?? 0 } });
       }
     });
   });
 
   const unitKpisByCode: Record<string, { id: string; name: string; kpis: any[] }> = {};
-  unitKPIsData.forEach(u => {
+  yearUnitKPIs.forEach(u => {
     unitKpisByCode[u.code] = {
       id: u.id, name: unitNameByCode[u.code] || u.name,
-      kpis: u.kpis.map(k => ({ ...k, actual: demoActual[k.id] ?? 0, indicatorId: (k as any).indicatorId })),
+      kpis: u.kpis.map(k => ({ ...k, actual: unitLookup[k.name] ?? 0, indicatorId: (k as any).indicatorId })),
     };
   });
 
   const posByCode: Record<string, { id: string; name: string; kpis: any[] }> = {};
-  individualKPIsData.forEach(p => {
+  yearIndKPIs.forEach(p => {
     const code = posCodeMap[p.id] || p.code;
     posByCode[code] = {
       id: p.id, name: p.name,
-      kpis: p.kpis.map(k => ({ ...k, actual: demoActual[k.id] ?? 0 })),
+      kpis: p.kpis.map(k => ({ ...k, actual: 0 })),
     };
   });
 
@@ -335,13 +318,20 @@ export default function KPIPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Chỉ tiêu KPI</h1>
           <p className="text-text-light mt-1">Hệ thống KPI Đại học Cần Thơ - 3 cấp quản trị</p>
-          <div className="flex items-center gap-2 mt-2">
-            <span className="text-xs font-medium text-text-light">Năm học:</span>
-            <span className="px-3 py-1 rounded text-sm bg-primary text-white font-medium">{activeYear?.name || '2025-2026'}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium text-text-light">Năm học:</span>
+          <div className="flex bg-white border border-border rounded-lg overflow-hidden">
+            {academicYears.map(ay => (
+              <button key={ay.id} onClick={() => { setSelectedYearId(ay.id); setSearchTerm(''); setSelectedCategory('Tất cả'); }}
+                className={`px-4 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                {ay.name}
+              </button>
+            ))}
           </div>
         </div>
       </div>
