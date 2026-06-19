@@ -28,6 +28,11 @@ const groupConfig: Record<string, { label: string; short: string; icon: any; col
   grp_phuc_vu: { label: 'Phục vụ Cộng đồng', short: 'Phục vụ', icon: Heart, color: '#e91e63' },
 };
 
+const groupConfigByName: Record<string, { label: string; short: string; icon: any; color: string }> = {};
+kpiGroupsData
+  .filter(g => g.academicYearId === 'ay002')
+  .forEach(g => { groupConfigByName[g.name] = groupConfig[g.id]; });
+
 const gradeColors: Record<string, string> = {
   'Xuất sắc': '#4caf50', 'Tốt': '#2196f3', 'Đạt': '#ff9800',
   'Cần cải thiện': '#ffc107', 'Không đạt': '#f44336',
@@ -98,7 +103,7 @@ export default function DashboardPage() {
     const items = indicatorRates.filter(i => i.categoryId === g.id);
     const gw = items.reduce((s, i) => s + i.weight, 0);
     const rate = gw > 0 ? items.reduce((s, i) => s + Math.min(i.rawRate, 120) * i.weight, 0) / gw : 0;
-    const cfg = groupConfig[g.id] || { label: g.name, short: g.name, icon: BarChart2, color: '#666' };
+    const cfg = groupConfig[g.id] || groupConfigByName[g.name] || { label: g.name, short: g.name, icon: BarChart2, color: '#666' };
     return { ...g, ...cfg, items, groupWeight: gw, rate: Math.round(rate) };
   });
 
