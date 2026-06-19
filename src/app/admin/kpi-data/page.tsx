@@ -100,7 +100,9 @@ export default function KPIDataPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý bộ chỉ tiêu KPI</h1>
+          <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý bộ chỉ tiêu KPI
+            {selectedYearId && <span className="text-lg font-normal text-text-light ml-2">— {years.find(y => y.id === selectedYearId)?.name || ''}</span>}
+          </h1>
           <p className="text-text-light mt-1">Thêm, sửa, xóa dữ liệu chỉ tiêu KPI các cấp</p>
         </div>
         <button onClick={handleCloneClick} className="btn-primary flex items-center gap-1 text-xs">
