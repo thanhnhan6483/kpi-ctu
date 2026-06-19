@@ -152,11 +152,20 @@ export default function KPIDataPage() {
       <div className="card">
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">{tabs.find(t => t.id === tab)?.label}</h3>
-          {selectedYearId && (
-            <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
-              <Plus size={14} /> Thêm
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {tab === 'indicators' && (
+              <select value={filterGroupId || ''} onChange={e => setFilterGroupId(e.target.value || null)}
+                className="px-2 py-1 rounded border border-white/20 bg-white/10 text-white text-xs focus:outline-none">
+                <option value="">Tất cả lĩnh vực</option>
+                {groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
+              </select>
+            )}
+            {selectedYearId && (
+              <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
+                <Plus size={14} /> Thêm
+              </button>
+            )}
+          </div>
         </div>
         <div className="p-0">
           {tab === 'groups' && (
@@ -188,13 +197,6 @@ export default function KPIDataPage() {
           )}
           {tab === 'indicators' && (
             <>
-              {filterGroupId && (
-                <div className="flex items-center gap-2 px-4 py-2 bg-primary/5 border-b border-border">
-                  <span className="text-xs text-text-light">Đang lọc:</span>
-                  <span className="badge badge-primary text-xs">{groups.find(g => g.id === filterGroupId)?.name || filterGroupId}</span>
-                  <button onClick={() => setFilterGroupId(null)} className="ml-1 text-text-light hover:text-accent-red text-xs">✕</button>
-                </div>
-              )}
               <table className="table">
                 <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Thao tác</th></tr></thead>
                 <tbody>
