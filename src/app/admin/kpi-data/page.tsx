@@ -155,7 +155,7 @@ export default function KPIDataPage() {
           <div className="flex items-center gap-2">
             {tab === 'indicators' && (
               <select value={filterGroupId || ''} onChange={e => setFilterGroupId(e.target.value || null)}
-                className="px-2 py-1 rounded border border-white/20 bg-white/10 text-white text-xs focus:outline-none">
+                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
                 <option value="">Tất cả lĩnh vực</option>
                 {groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
               </select>
