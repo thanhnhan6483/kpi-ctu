@@ -8,6 +8,7 @@ import unitKPIsData from '@/data/unit-kpis.json';
 import individualKPIsData from '@/data/individual-kpis.json';
 import units from '@/data/units.json';
 import kpiGroups from '@/data/kpi-groups.json';
+import academicYears from '@/data/academic-years.json';
 
 const demoActual: Record<string, number> = {
   'CTU-KPI-01': 52, 'CTU-KPI-02': 12, 'CTU-KPI-03': 8, 'CTU-KPI-04': 11,
@@ -48,8 +49,10 @@ units.forEach(u => { unitNameByCode[u.code] = u.name; });
 const unitKpiById: Record<string, { id: string; name: string; unitCode: string; unitName: string }> = {};
 unitKPIsData.forEach(u => {
   const uname = unitNameByCode[u.code] || u.name;
-  u.kpis.forEach(k => { unitKpiById[k.id] = { id: k.id, name: k.name, unitCode: u.code, unitName: uname }; });
+  u.  kpis.forEach(k => { unitKpiById[k.id] = { id: k.id, name: k.name, unitCode: u.code, unitName: uname }; });
 });
+
+const activeYear = academicYears.find(y => y.status === 'active');
 
 const unitGroups = ['Tất cả', ...unitKPIsData.map(u => u.code)];
 const individualGroups = ['Tất cả', 'GV', 'GVQL', 'LD', 'BM', 'NCV', 'CV', 'CVDT',
@@ -336,6 +339,10 @@ export default function KPIPage() {
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Chỉ tiêu KPI</h1>
           <p className="text-text-light mt-1">Hệ thống KPI Đại học Cần Thơ - 3 cấp quản trị</p>
+          <div className="flex items-center gap-2 mt-2">
+            <span className="text-xs font-medium text-text-light">Năm học:</span>
+            <span className="px-3 py-1 rounded text-sm bg-primary text-white font-medium">{activeYear?.name || '2025-2026'}</span>
+          </div>
         </div>
       </div>
 
