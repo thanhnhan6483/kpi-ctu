@@ -58,7 +58,8 @@
         "name": "Tỉ lệ cảnh báo học vụ được xử lý",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_khcn",
@@ -119,7 +120,8 @@
         "name": "Tỉ lệ dữ liệu công bố được chuẩn hóa",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_tccb",
@@ -175,7 +177,8 @@
         "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_htqt",
@@ -231,7 +234,8 @@
         "name": "Tỉ lệ dữ liệu HTQT được cập nhật đầy đủ",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_khtc",
@@ -287,7 +291,8 @@
         "name": "Tỉ lệ sai sót chứng từ phải trả lại",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_vpt",
@@ -343,7 +348,8 @@
         "name": "Tỉ lệ nhiệm vụ quá hạn",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_cntt",
@@ -404,7 +410,8 @@
         "name": "Số sáng kiến chuyển đổi số được triển khai",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_dbcl",
@@ -465,7 +472,8 @@
         "name": "Số đợt tập huấn đảm bảo chất lượng",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_khoa_cntt",
@@ -531,7 +539,8 @@
         "name": "Tỉ lệ hồ sơ xử lý trên môi trường mạng",
         "indicatorId": "CTU-KPI-22"
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_bo_mon",
@@ -587,7 +596,8 @@
         "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_thu_vien",
@@ -643,7 +653,8 @@
         "name": "Tỉ lệ sự cố dịch vụ xử lý đúng hạn",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_ktx",
@@ -699,7 +710,8 @@
         "name": "Tỉ lệ sự cố tái diễn",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_nghien_cuu",
@@ -760,7 +772,8 @@
         "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_truyen_thong",
@@ -821,7 +834,8 @@
         "name": "Tỉ lệ dữ liệu doanh nghiệp/cựu SV cập nhật",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "unit_dich_vu",
@@ -877,6 +891,7 @@
         "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
         "indicatorId": null
       }
-    ]
+    ],
+    "academicYearId": "ay002"
   }
 ]

@@ -8,7 +8,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-02",
@@ -19,7 +20,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-03",
@@ -30,7 +32,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-04",
@@ -41,7 +44,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-05",
@@ -52,7 +56,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-06",
@@ -63,7 +68,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-07",
@@ -74,7 +80,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-08",
@@ -85,7 +92,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-09",
@@ -96,7 +104,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-10",
@@ -107,7 +116,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-11",
@@ -118,7 +128,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-12",
@@ -129,7 +140,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-13",
@@ -140,7 +152,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-14",
@@ -151,7 +164,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-15",
@@ -162,7 +176,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-16",
@@ -173,7 +188,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-17",
@@ -184,7 +200,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-18",
@@ -195,7 +212,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-19",
@@ -206,7 +224,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-20",
@@ -217,7 +236,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-21",
@@ -228,7 +248,8 @@
     "unit": "số lượng",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-22",
@@ -239,7 +260,8 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   },
   {
     "id": "CTU-KPI-23",
@@ -250,6 +272,7 @@
     "unit": "%",
     "direction": "higher_better",
     "requiredEvidence": true,
-    "maxScore": 10
+    "maxScore": 10,
+    "academicYearId": "ay002"
   }
 ]

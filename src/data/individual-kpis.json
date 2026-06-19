@@ -8,14 +8,59 @@
     "weightStructure": "Giảng dạy 40%, NCKH 30%, phục vụ 10%, CĐS 10%, bồi dưỡng 10%",
     "kpiCount": 7,
     "kpis": [
-      {"id": "GV-01", "name": "Hoàn thành khối lượng giảng dạy", "target": 100, "unit": "%", "weight": 20},
-      {"id": "GV-02", "name": "Chất lượng giảng dạy theo phản hồi người học", "target": 80, "unit": "%", "weight": 15},
-      {"id": "GV-03", "name": "Cập nhật đề cương, học liệu và LMS đúng hạn", "target": 95, "unit": "%", "weight": 10},
-      {"id": "GV-04", "name": "Công bố khoa học cá nhân", "target": 2, "unit": "bài", "weight": 20, "unitKpiId": "KHCN-01"},
-      {"id": "GV-05", "name": "Tham gia đề tài/NCKH SV/hướng dẫn luận văn", "target": 3, "unit": "đề tài", "weight": 15, "unitKpiId": "KHCN-05"},
-      {"id": "GV-06", "name": "Tham gia phát triển CTĐT/ĐBCL", "target": 2, "unit": "nhiệm vụ", "weight": 10},
-      {"id": "GV-07", "name": "Bồi dưỡng chuyên môn và chuyển đổi số giảng dạy", "target": 1, "unit": "khóa", "weight": 10}
-    ]
+      {
+        "id": "GV-01",
+        "name": "Hoàn thành khối lượng giảng dạy",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "GV-02",
+        "name": "Chất lượng giảng dạy theo phản hồi người học",
+        "target": 80,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "GV-03",
+        "name": "Cập nhật đề cương, học liệu và LMS đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "GV-04",
+        "name": "Công bố khoa học cá nhân",
+        "target": 2,
+        "unit": "bài",
+        "weight": 20,
+        "unitKpiId": "KHCN-01"
+      },
+      {
+        "id": "GV-05",
+        "name": "Tham gia đề tài/NCKH SV/hướng dẫn luận văn",
+        "target": 3,
+        "unit": "đề tài",
+        "weight": 15,
+        "unitKpiId": "KHCN-05"
+      },
+      {
+        "id": "GV-06",
+        "name": "Tham gia phát triển CTĐT/ĐBCL",
+        "target": 2,
+        "unit": "nhiệm vụ",
+        "weight": 10
+      },
+      {
+        "id": "GV-07",
+        "name": "Bồi dưỡng chuyên môn và chuyển đổi số giảng dạy",
+        "target": 1,
+        "unit": "khóa",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_gvql",
@@ -26,14 +71,57 @@
     "weightStructure": "Quản lý 30%, giảng dạy 25%, NCKH 20%, chất lượng 15%, CĐS 10%",
     "kpiCount": 7,
     "kpis": [
-      {"id": "GVQL-01", "name": "Mức hoàn thành KPI mảng phụ trách", "target": 100, "unit": "%", "weight": 20},
-      {"id": "GVQL-02", "name": "Nhiệm vụ quản lý hoàn thành đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "GVQL-03", "name": "Chất lượng điều hành và phản hồi", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "GVQL-04", "name": "Hoàn thành nhiệm vụ giảng dạy cá nhân", "target": 100, "unit": "%", "weight": 15},
-      {"id": "GVQL-05", "name": "Kết quả NCKH cá nhân", "target": 1, "unit": "bài", "weight": 15},
-      {"id": "GVQL-06", "name": "Cải tiến quy trình và CĐS trong đơn vị", "target": 1, "unit": "sáng kiến", "weight": 15},
-      {"id": "GVQL-07", "name": "Kiểm soát minh chứng KPI của đơn vị", "target": 100, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "GVQL-01",
+        "name": "Mức hoàn thành KPI mảng phụ trách",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "GVQL-02",
+        "name": "Nhiệm vụ quản lý hoàn thành đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "GVQL-03",
+        "name": "Chất lượng điều hành và phản hồi",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "GVQL-04",
+        "name": "Hoàn thành nhiệm vụ giảng dạy cá nhân",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "GVQL-05",
+        "name": "Kết quả NCKH cá nhân",
+        "target": 1,
+        "unit": "bài",
+        "weight": 15
+      },
+      {
+        "id": "GVQL-06",
+        "name": "Cải tiến quy trình và CĐS trong đơn vị",
+        "target": 1,
+        "unit": "sáng kiến",
+        "weight": 15
+      },
+      {
+        "id": "GVQL-07",
+        "name": "Kiểm soát minh chứng KPI của đơn vị",
+        "target": 100,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_ld",
@@ -44,14 +132,57 @@
     "weightStructure": "Kết quả đơn vị 35%, điều hành 20%, nhân sự 15%, phối hợp 10%, dữ liệu 10%, cải tiến 10%",
     "kpiCount": 7,
     "kpis": [
-      {"id": "LD-01", "name": "Mức hoàn thành KPI của đơn vị", "target": 100, "unit": "%", "weight": 25},
-      {"id": "LD-02", "name": "Hoàn thành kế hoạch năm của đơn vị", "target": 95, "unit": "%", "weight": 15},
-      {"id": "LD-03", "name": "Nhiệm vụ BGH/cấp trên giao đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "LD-04", "name": "Chất lượng quản trị nhân sự đơn vị", "target": 95, "unit": "%", "weight": 10},
-      {"id": "LD-05", "name": "Mức hài lòng người dùng/đơn vị liên quan", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "LD-06", "name": "Quản trị dữ liệu, minh chứng và báo cáo", "target": 100, "unit": "%", "weight": 15},
-      {"id": "LD-07", "name": "Cải tiến quy trình, quản trị rủi ro", "target": 1, "unit": "cải tiến", "weight": 10}
-    ]
+      {
+        "id": "LD-01",
+        "name": "Mức hoàn thành KPI của đơn vị",
+        "target": 100,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "LD-02",
+        "name": "Hoàn thành kế hoạch năm của đơn vị",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "LD-03",
+        "name": "Nhiệm vụ BGH/cấp trên giao đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "LD-04",
+        "name": "Chất lượng quản trị nhân sự đơn vị",
+        "target": 95,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "LD-05",
+        "name": "Mức hài lòng người dùng/đơn vị liên quan",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "LD-06",
+        "name": "Quản trị dữ liệu, minh chứng và báo cáo",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "LD-07",
+        "name": "Cải tiến quy trình, quản trị rủi ro",
+        "target": 1,
+        "unit": "cải tiến",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_bm",
@@ -62,14 +193,57 @@
     "weightStructure": "Điều hành 30%, giảng dạy 25%, NCKH 20%, ĐBCL 15%, hỗ trợ 10%",
     "kpiCount": 7,
     "kpis": [
-      {"id": "BMQL-01", "name": "Phân công giảng dạy đúng hạn", "target": 100, "unit": "%", "weight": 15},
-      {"id": "BMQL-02", "name": "Cập nhật đề cương và học liệu bộ môn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "BMQL-03", "name": "Sinh hoạt chuyên môn định kỳ", "target": 90, "unit": "%", "weight": 10},
-      {"id": "BMQL-04", "name": "Quản lý ngân hàng câu hỏi/rubric", "target": 70, "unit": "%", "weight": 10},
-      {"id": "BMQL-05", "name": "Theo dõi chất lượng giảng dạy", "target": 90, "unit": "%", "weight": 15},
-      {"id": "BMQL-06", "name": "Kết quả NCKH của bộ môn", "target": 5, "unit": "bài", "weight": 20},
-      {"id": "BMQL-07", "name": "Hỗ trợ SV NCKH/đồ án/khóa luận", "target": 10, "unit": "SV", "weight": 15}
-    ]
+      {
+        "id": "BMQL-01",
+        "name": "Phân công giảng dạy đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "BMQL-02",
+        "name": "Cập nhật đề cương và học liệu bộ môn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "BMQL-03",
+        "name": "Sinh hoạt chuyên môn định kỳ",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "BMQL-04",
+        "name": "Quản lý ngân hàng câu hỏi/rubric",
+        "target": 70,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "BMQL-05",
+        "name": "Theo dõi chất lượng giảng dạy",
+        "target": 90,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "BMQL-06",
+        "name": "Kết quả NCKH của bộ môn",
+        "target": 5,
+        "unit": "bài",
+        "weight": 20
+      },
+      {
+        "id": "BMQL-07",
+        "name": "Hỗ trợ SV NCKH/đồ án/khóa luận",
+        "target": 10,
+        "unit": "SV",
+        "weight": 15
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_ncv",
@@ -80,14 +254,60 @@
     "weightStructure": "Đề tài 30%, công bố 30%, chuyển giao 20%, dữ liệu 10%, hợp tác 10%",
     "kpiCount": 7,
     "kpis": [
-      {"id": "NCV-01", "name": "Công bố khoa học", "target": 3, "unit": "bài", "weight": 25, "unitKpiId": "NC-01"},
-      {"id": "NCV-02", "name": "Công bố WoS/Scopus", "target": 2, "unit": "bài", "weight": 15, "unitKpiId": "NC-02"},
-      {"id": "NCV-03", "name": "Tham gia/chủ nhiệm đề tài, dự án", "target": 2, "unit": "đề tài", "weight": 20},
-      {"id": "NCV-04", "name": "Tiến độ thực hiện đề tài", "target": 95, "unit": "%", "weight": 10},
-      {"id": "NCV-05", "name": "Sản phẩm/SHTT/chuyển giao", "target": 2, "unit": "sản phẩm", "weight": 15, "unitKpiId": "NC-06"},
-      {"id": "NCV-06", "name": "Quản lý dữ liệu nghiên cứu/PTN", "target": 90, "unit": "%", "weight": 10},
-      {"id": "NCV-07", "name": "Hợp tác và bồi dưỡng năng lực nghiên cứu", "target": 1, "unit": "hoạt động", "weight": 5}
-    ]
+      {
+        "id": "NCV-01",
+        "name": "Công bố khoa học",
+        "target": 3,
+        "unit": "bài",
+        "weight": 25,
+        "unitKpiId": "NC-01"
+      },
+      {
+        "id": "NCV-02",
+        "name": "Công bố WoS/Scopus",
+        "target": 2,
+        "unit": "bài",
+        "weight": 15,
+        "unitKpiId": "NC-02"
+      },
+      {
+        "id": "NCV-03",
+        "name": "Tham gia/chủ nhiệm đề tài, dự án",
+        "target": 2,
+        "unit": "đề tài",
+        "weight": 20
+      },
+      {
+        "id": "NCV-04",
+        "name": "Tiến độ thực hiện đề tài",
+        "target": 95,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "NCV-05",
+        "name": "Sản phẩm/SHTT/chuyển giao",
+        "target": 2,
+        "unit": "sản phẩm",
+        "weight": 15,
+        "unitKpiId": "NC-06"
+      },
+      {
+        "id": "NCV-06",
+        "name": "Quản lý dữ liệu nghiên cứu/PTN",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "NCV-07",
+        "name": "Hợp tác và bồi dưỡng năng lực nghiên cứu",
+        "target": 1,
+        "unit": "hoạt động",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cv",
@@ -98,13 +318,50 @@
     "weightStructure": "Xử lý công việc 35%, tiến độ 25%, dữ liệu 15%, phục vụ 15%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CV-01", "name": "Hồ sơ nghiệp vụ xử lý đúng hạn", "target": 95, "unit": "%", "weight": 30},
-      {"id": "CV-02", "name": "Chất lượng hồ sơ tham mưu", "target": 95, "unit": "%", "weight": 20},
-      {"id": "CV-03", "name": "Dữ liệu nghiệp vụ cập nhật đầy đủ", "target": 98, "unit": "%", "weight": 15},
-      {"id": "CV-04", "name": "Mức hài lòng người dùng", "target": 4, "unit": "điểm", "weight": 15},
-      {"id": "CV-05", "name": "Sáng kiến cải tiến quy trình", "target": 1, "unit": "sáng kiến", "weight": 10},
-      {"id": "CV-06", "name": "Tuân thủ báo cáo định kỳ", "target": 100, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "CV-01",
+        "name": "Hồ sơ nghiệp vụ xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 30
+      },
+      {
+        "id": "CV-02",
+        "name": "Chất lượng hồ sơ tham mưu",
+        "target": 95,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CV-03",
+        "name": "Dữ liệu nghiệp vụ cập nhật đầy đủ",
+        "target": 98,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CV-04",
+        "name": "Mức hài lòng người dùng",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 15
+      },
+      {
+        "id": "CV-05",
+        "name": "Sáng kiến cải tiến quy trình",
+        "target": 1,
+        "unit": "sáng kiến",
+        "weight": 10
+      },
+      {
+        "id": "CV-06",
+        "name": "Tuân thủ báo cáo định kỳ",
+        "target": 100,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvdt",
@@ -115,13 +372,52 @@
     "weightStructure": "Hồ sơ học vụ 35%, dữ liệu đào tạo 25%, phục vụ người học 20%, số hóa 10%, báo cáo 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVDT-01", "name": "Hồ sơ học vụ đúng hạn", "target": 95, "unit": "%", "weight": 25, "unitKpiId": "DT-06"},
-      {"id": "CVDT-02", "name": "Dữ liệu học phần/SV chính xác", "target": 98, "unit": "%", "weight": 20, "unitKpiId": "DT-07"},
-      {"id": "CVDT-03", "name": "Lịch học/lịch thi cập nhật đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "CVDT-04", "name": "Hỗ trợ tốt nghiệp/xét học vụ đúng quy trình", "target": 100, "unit": "%", "weight": 20},
-      {"id": "CVDT-05", "name": "Hài lòng người học về hỗ trợ học vụ", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "CVDT-06", "name": "Số hóa hồ sơ đào tạo", "target": 90, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "CVDT-01",
+        "name": "Hồ sơ học vụ đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25,
+        "unitKpiId": "DT-06"
+      },
+      {
+        "id": "CVDT-02",
+        "name": "Dữ liệu học phần/SV chính xác",
+        "target": 98,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "DT-07"
+      },
+      {
+        "id": "CVDT-03",
+        "name": "Lịch học/lịch thi cập nhật đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVDT-04",
+        "name": "Hỗ trợ tốt nghiệp/xét học vụ đúng quy trình",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVDT-05",
+        "name": "Hài lòng người học về hỗ trợ học vụ",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "CVDT-06",
+        "name": "Số hóa hồ sơ đào tạo",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvdbcl",
@@ -132,13 +428,50 @@
     "weightStructure": "Khảo sát/kiểm định 35%, minh chứng 25%, dữ liệu 15%, hỗ trợ đơn vị 15%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVDBCL-01", "name": "Khảo sát triển khai đúng kế hoạch", "target": 95, "unit": "%", "weight": 20},
-      {"id": "CVDBCL-02", "name": "Minh chứng kiểm định số hóa đầy đủ", "target": 90, "unit": "%", "weight": 20},
-      {"id": "CVDBCL-03", "name": "Báo cáo tự đánh giá đúng hạn", "target": 100, "unit": "%", "weight": 20},
-      {"id": "CVDBCL-04", "name": "Dữ liệu khảo sát hợp lệ", "target": 60, "unit": "%", "weight": 15},
-      {"id": "CVDBCL-05", "name": "Hỗ trợ đơn vị cải tiến chất lượng", "target": 90, "unit": "%", "weight": 15},
-      {"id": "CVDBCL-06", "name": "Tập huấn, hướng dẫn ĐBCL", "target": 4, "unit": "buổi", "weight": 10}
-    ]
+      {
+        "id": "CVDBCL-01",
+        "name": "Khảo sát triển khai đúng kế hoạch",
+        "target": 95,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVDBCL-02",
+        "name": "Minh chứng kiểm định số hóa đầy đủ",
+        "target": 90,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVDBCL-03",
+        "name": "Báo cáo tự đánh giá đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVDBCL-04",
+        "name": "Dữ liệu khảo sát hợp lệ",
+        "target": 60,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVDBCL-05",
+        "name": "Hỗ trợ đơn vị cải tiến chất lượng",
+        "target": 90,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVDBCL-06",
+        "name": "Tập huấn, hướng dẫn ĐBCL",
+        "target": 4,
+        "unit": "buổi",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvkhcn",
@@ -149,13 +482,52 @@
     "weightStructure": "Đề tài 25%, công bố/SHTT 25%, dữ liệu 20%, hồ sơ 20%, phục vụ 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVKHCN-01", "name": "Hồ sơ đề tài xử lý đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "CVKHCN-02", "name": "Dữ liệu công bố được chuẩn hóa", "target": 95, "unit": "%", "weight": 20, "unitKpiId": "KHCN-10"},
-      {"id": "CVKHCN-03", "name": "Hỗ trợ hồ sơ SHTT/chuyển giao", "target": 95, "unit": "%", "weight": 15},
-      {"id": "CVKHCN-04", "name": "Theo dõi nghiệm thu đề tài đúng hạn", "target": 90, "unit": "%", "weight": 20, "unitKpiId": "KHCN-06"},
-      {"id": "CVKHCN-05", "name": "Báo cáo KHCN đúng hạn", "target": 100, "unit": "%", "weight": 10},
-      {"id": "CVKHCN-06", "name": "Mức hài lòng nhà khoa học", "target": 4, "unit": "điểm", "weight": 10}
-    ]
+      {
+        "id": "CVKHCN-01",
+        "name": "Hồ sơ đề tài xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "CVKHCN-02",
+        "name": "Dữ liệu công bố được chuẩn hóa",
+        "target": 95,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "KHCN-10"
+      },
+      {
+        "id": "CVKHCN-03",
+        "name": "Hỗ trợ hồ sơ SHTT/chuyển giao",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVKHCN-04",
+        "name": "Theo dõi nghiệm thu đề tài đúng hạn",
+        "target": 90,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "KHCN-06"
+      },
+      {
+        "id": "CVKHCN-05",
+        "name": "Báo cáo KHCN đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "CVKHCN-06",
+        "name": "Mức hài lòng nhà khoa học",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvhtqt",
@@ -166,13 +538,51 @@
     "weightStructure": "Hồ sơ HTQT 30%, SV/trao đổi 25%, đối tác 20%, dữ liệu 15%, phục vụ 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVHTQT-01", "name": "Hồ sơ HTQT xử lý đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "CVHTQT-02", "name": "Dữ liệu đối tác/SV quốc tế cập nhật", "target": 95, "unit": "%", "weight": 15, "unitKpiId": "HTQT-09"},
-      {"id": "CVHTQT-03", "name": "Hỗ trợ SV/đoàn trao đổi đúng quy trình", "target": 100, "unit": "%", "weight": 20},
-      {"id": "CVHTQT-04", "name": "Theo dõi MOU/MOA có hoạt động", "target": 90, "unit": "%", "weight": 15},
-      {"id": "CVHTQT-05", "name": "Tổ chức tiếp đoàn/sự kiện quốc tế", "target": 10, "unit": "sự kiện", "weight": 15},
-      {"id": "CVHTQT-06", "name": "Mức hài lòng đối tác/người học", "target": 4, "unit": "điểm", "weight": 10}
-    ]
+      {
+        "id": "CVHTQT-01",
+        "name": "Hồ sơ HTQT xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "CVHTQT-02",
+        "name": "Dữ liệu đối tác/SV quốc tế cập nhật",
+        "target": 95,
+        "unit": "%",
+        "weight": 15,
+        "unitKpiId": "HTQT-09"
+      },
+      {
+        "id": "CVHTQT-03",
+        "name": "Hỗ trợ SV/đoàn trao đổi đúng quy trình",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVHTQT-04",
+        "name": "Theo dõi MOU/MOA có hoạt động",
+        "target": 90,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVHTQT-05",
+        "name": "Tổ chức tiếp đoàn/sự kiện quốc tế",
+        "target": 10,
+        "unit": "sự kiện",
+        "weight": 15
+      },
+      {
+        "id": "CVHTQT-06",
+        "name": "Mức hài lòng đối tác/người học",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvtccb",
@@ -183,13 +593,51 @@
     "weightStructure": "Hồ sơ nhân sự 30%, dữ liệu HRM 25%, quy trình 20%, phục vụ 15%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVTCCB-01", "name": "Hồ sơ nhân sự xử lý đúng hạn", "target": 95, "unit": "%", "weight": 25, "unitKpiId": "TCCB-03"},
-      {"id": "CVTCCB-02", "name": "Dữ liệu nhân sự chính xác, đầy đủ", "target": 98, "unit": "%", "weight": 25},
-      {"id": "CVTCCB-03", "name": "Hồ sơ đánh giá VC-NLĐ đúng hạn", "target": 100, "unit": "%", "weight": 15},
-      {"id": "CVTCCB-04", "name": "Theo dõi bồi dưỡng, phát triển năng lực", "target": 90, "unit": "%", "weight": 15},
-      {"id": "CVTCCB-05", "name": "Mức hài lòng đơn vị về dịch vụ nhân sự", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "CVTCCB-06", "name": "Số hóa hồ sơ nhân sự", "target": 95, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "CVTCCB-01",
+        "name": "Hồ sơ nhân sự xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25,
+        "unitKpiId": "TCCB-03"
+      },
+      {
+        "id": "CVTCCB-02",
+        "name": "Dữ liệu nhân sự chính xác, đầy đủ",
+        "target": 98,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "CVTCCB-03",
+        "name": "Hồ sơ đánh giá VC-NLĐ đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVTCCB-04",
+        "name": "Theo dõi bồi dưỡng, phát triển năng lực",
+        "target": 90,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVTCCB-05",
+        "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "CVTCCB-06",
+        "name": "Số hóa hồ sơ nhân sự",
+        "target": 95,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvkhtc",
@@ -200,13 +648,52 @@
     "weightStructure": "Hồ sơ tài chính 35%, dữ liệu/báo cáo 25%, tuân thủ 20%, phục vụ 10%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVKHTC-01", "name": "Hồ sơ thanh toán xử lý đúng hạn", "target": 95, "unit": "%", "weight": 30, "unitKpiId": "KHTC-04"},
-      {"id": "CVKHTC-02", "name": "Tỉ lệ chứng từ phải trả lại", "target": 5, "unit": "%", "weight": 15},
-      {"id": "CVKHTC-03", "name": "Báo cáo tài chính/kế hoạch đúng hạn", "target": 100, "unit": "%", "weight": 20},
-      {"id": "CVKHTC-04", "name": "Dữ liệu tài chính phục vụ KPI chính xác", "target": 98, "unit": "%", "weight": 15, "unitKpiId": "KHTC-07"},
-      {"id": "CVKHTC-05", "name": "Mức hài lòng đơn vị", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "CVKHTC-06", "name": "Số hóa chứng từ/hồ sơ tài chính", "target": 90, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "CVKHTC-01",
+        "name": "Hồ sơ thanh toán xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 30,
+        "unitKpiId": "KHTC-04"
+      },
+      {
+        "id": "CVKHTC-02",
+        "name": "Tỉ lệ chứng từ phải trả lại",
+        "target": 5,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVKHTC-03",
+        "name": "Báo cáo tài chính/kế hoạch đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVKHTC-04",
+        "name": "Dữ liệu tài chính phục vụ KPI chính xác",
+        "target": 98,
+        "unit": "%",
+        "weight": 15,
+        "unitKpiId": "KHTC-07"
+      },
+      {
+        "id": "CVKHTC-05",
+        "name": "Mức hài lòng đơn vị",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "CVKHTC-06",
+        "name": "Số hóa chứng từ/hồ sơ tài chính",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvcntt",
@@ -217,13 +704,52 @@
     "weightStructure": "Hạ tầng/hệ thống 30%, hỗ trợ 20%, an toàn thông tin 20%, dữ liệu 20%, tài liệu/cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVCNTT-01", "name": "Ticket CNTT xử lý đúng SLA", "target": 95, "unit": "%", "weight": 20},
-      {"id": "CVCNTT-02", "name": "Uptime hệ thống phụ trách", "target": 99, "unit": "%", "weight": 20},
-      {"id": "CVCNTT-03", "name": "Sao lưu dữ liệu thành công", "target": 100, "unit": "%", "weight": 15, "unitKpiId": "CNTT-06"},
-      {"id": "CVCNTT-04", "name": "Lỗ hổng nghiêm trọng được xử lý", "target": 100, "unit": "%", "weight": 15},
-      {"id": "CVCNTT-05", "name": "Tích hợp/chuẩn hóa dữ liệu", "target": 90, "unit": "%", "weight": 20, "unitKpiId": "CNTT-05"},
-      {"id": "CVCNTT-06", "name": "Tài liệu kỹ thuật cập nhật", "target": 90, "unit": "%", "weight": 10}
-    ]
+      {
+        "id": "CVCNTT-01",
+        "name": "Ticket CNTT xử lý đúng SLA",
+        "target": 95,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVCNTT-02",
+        "name": "Uptime hệ thống phụ trách",
+        "target": 99,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "CVCNTT-03",
+        "name": "Sao lưu dữ liệu thành công",
+        "target": 100,
+        "unit": "%",
+        "weight": 15,
+        "unitKpiId": "CNTT-06"
+      },
+      {
+        "id": "CVCNTT-04",
+        "name": "Lỗ hổng nghiêm trọng được xử lý",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVCNTT-05",
+        "name": "Tích hợp/chuẩn hóa dữ liệu",
+        "target": 90,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "CNTT-05"
+      },
+      {
+        "id": "CVCNTT-06",
+        "name": "Tài liệu kỹ thuật cập nhật",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cvtt",
@@ -234,13 +760,52 @@
     "weightStructure": "CRM/tuyển sinh 30%, truyền thông 20%, doanh nghiệp/việc làm 25%, dữ liệu 15%, hài lòng 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "CVTT-01", "name": "Lead tuyển sinh xử lý đúng hạn", "target": 95, "unit": "%", "weight": 20, "unitKpiId": "TTTD-02"},
-      {"id": "CVTT-02", "name": "Tỉ lệ chuyển đổi tư vấn sang đăng ký", "target": 30, "unit": "%", "weight": 20, "unitKpiId": "TTTD-03"},
-      {"id": "CVTT-03", "name": "Nội dung truyền thông đúng kế hoạch", "target": 95, "unit": "%", "weight": 15},
-      {"id": "CVTT-04", "name": "Cơ hội thực tập/việc làm kết nối", "target": 50, "unit": "cơ hội", "weight": 20},
-      {"id": "CVTT-05", "name": "Dữ liệu doanh nghiệp/cựu SV cập nhật", "target": 80, "unit": "%", "weight": 15},
-      {"id": "CVTT-06", "name": "Hài lòng thí sinh/doanh nghiệp", "target": 4, "unit": "điểm", "weight": 10}
-    ]
+      {
+        "id": "CVTT-01",
+        "name": "Lead tuyển sinh xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "TTTD-02"
+      },
+      {
+        "id": "CVTT-02",
+        "name": "Tỉ lệ chuyển đổi tư vấn sang đăng ký",
+        "target": 30,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "TTTD-03"
+      },
+      {
+        "id": "CVTT-03",
+        "name": "Nội dung truyền thông đúng kế hoạch",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVTT-04",
+        "name": "Cơ hội thực tập/việc làm kết nối",
+        "target": 50,
+        "unit": "cơ hội",
+        "weight": 20
+      },
+      {
+        "id": "CVTT-05",
+        "name": "Dữ liệu doanh nghiệp/cựu SV cập nhật",
+        "target": 80,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CVTT-06",
+        "name": "Hài lòng thí sinh/doanh nghiệp",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_tv",
@@ -251,13 +816,50 @@
     "weightStructure": "Dịch vụ 30%, tài nguyên 25%, số hóa 20%, hài lòng 15%, tập huấn/cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "TV-01", "name": "Yêu cầu mượn/trả/hỗ trợ đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "TV-02", "name": "Tài nguyên học liệu số cập nhật", "target": 90, "unit": "%", "weight": 20},
-      {"id": "TV-03", "name": "Biên mục tài liệu đúng chuẩn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "TV-04", "name": "Hài lòng người dùng thư viện", "target": 4, "unit": "điểm", "weight": 20},
-      {"id": "TV-05", "name": "Hướng dẫn kỹ năng thông tin", "target": 10, "unit": "buổi", "weight": 10},
-      {"id": "TV-06", "name": "Sáng kiến cải tiến dịch vụ thư viện", "target": 1, "unit": "sáng kiến", "weight": 10}
-    ]
+      {
+        "id": "TV-01",
+        "name": "Yêu cầu mượn/trả/hỗ trợ đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "TV-02",
+        "name": "Tài nguyên học liệu số cập nhật",
+        "target": 90,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "TV-03",
+        "name": "Biên mục tài liệu đúng chuẩn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "TV-04",
+        "name": "Hài lòng người dùng thư viện",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 20
+      },
+      {
+        "id": "TV-05",
+        "name": "Hướng dẫn kỹ năng thông tin",
+        "target": 10,
+        "unit": "buổi",
+        "weight": 10
+      },
+      {
+        "id": "TV-06",
+        "name": "Sáng kiến cải tiến dịch vụ thư viện",
+        "target": 1,
+        "unit": "sáng kiến",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_ktx",
@@ -268,13 +870,50 @@
     "weightStructure": "Phục vụ SV 30%, an toàn 25%, hồ sơ số 15%, bảo trì/phản ánh 20%, hài lòng 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "KTX-01", "name": "Yêu cầu SV xử lý đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "KTX-02", "name": "Hồ sơ nội trú cập nhật đầy đủ", "target": 100, "unit": "%", "weight": 15},
-      {"id": "KTX-03", "name": "Phản ánh an ninh, an toàn xử lý kịp thời", "target": 100, "unit": "%", "weight": 20},
-      {"id": "KTX-04", "name": "Bảo trì cơ sở vật chất đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "KTX-05", "name": "Hài lòng SV nội trú", "target": 4, "unit": "điểm", "weight": 15},
-      {"id": "KTX-06", "name": "Hoạt động hỗ trợ đời sống SV", "target": 10, "unit": "hoạt động", "weight": 10}
-    ]
+      {
+        "id": "KTX-01",
+        "name": "Yêu cầu SV xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "KTX-02",
+        "name": "Hồ sơ nội trú cập nhật đầy đủ",
+        "target": 100,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "KTX-03",
+        "name": "Phản ánh an ninh, an toàn xử lý kịp thời",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "KTX-04",
+        "name": "Bảo trì cơ sở vật chất đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "KTX-05",
+        "name": "Hài lòng SV nội trú",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 15
+      },
+      {
+        "id": "KTX-06",
+        "name": "Hoạt động hỗ trợ đời sống SV",
+        "target": 10,
+        "unit": "hoạt động",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_hc",
@@ -285,13 +924,52 @@
     "weightStructure": "Văn bản 30%, lưu trữ 20%, đúng hạn 20%, số hóa 20%, phục vụ 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "HC-01", "name": "Văn bản xử lý đúng hạn", "target": 95, "unit": "%", "weight": 25, "unitKpiId": "VPT-02"},
-      {"id": "HC-02", "name": "Văn bản nội bộ ký số đúng quy định", "target": 100, "unit": "%", "weight": 20, "unitKpiId": "VPT-01"},
-      {"id": "HC-03", "name": "Hồ sơ lưu trữ điện tử đầy đủ", "target": 90, "unit": "%", "weight": 20},
-      {"id": "HC-04", "name": "Lịch họp/thông báo cập nhật đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "HC-05", "name": "Hài lòng người dùng dịch vụ hành chính", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "HC-06", "name": "Không sai sót nghiêm trọng về văn thư", "target": 0, "unit": "vi phạm", "weight": 10}
-    ]
+      {
+        "id": "HC-01",
+        "name": "Văn bản xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25,
+        "unitKpiId": "VPT-02"
+      },
+      {
+        "id": "HC-02",
+        "name": "Văn bản nội bộ ký số đúng quy định",
+        "target": 100,
+        "unit": "%",
+        "weight": 20,
+        "unitKpiId": "VPT-01"
+      },
+      {
+        "id": "HC-03",
+        "name": "Hồ sơ lưu trữ điện tử đầy đủ",
+        "target": 90,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "HC-04",
+        "name": "Lịch họp/thông báo cập nhật đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "HC-05",
+        "name": "Hài lòng người dùng dịch vụ hành chính",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "HC-06",
+        "name": "Không sai sót nghiêm trọng về văn thư",
+        "target": 0,
+        "unit": "vi phạm",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_ktptn",
@@ -302,13 +980,50 @@
     "weightStructure": "An toàn 25%, vận hành thiết bị 25%, hỗ trợ đào tạo/NCKH 20%, hồ sơ 15%, cải tiến 15%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "KTPTN-01", "name": "Thiết bị/phòng thí nghiệm vận hành đạt chuẩn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "KTPTN-02", "name": "Hỗ trợ buổi thực hành/nghiên cứu đúng kế hoạch", "target": 95, "unit": "%", "weight": 20},
-      {"id": "KTPTN-03", "name": "Hồ sơ an toàn PTN đầy đủ", "target": 100, "unit": "%", "weight": 20},
-      {"id": "KTPTN-04", "name": "Bảo trì/hiệu chuẩn đúng hạn", "target": 95, "unit": "%", "weight": 20},
-      {"id": "KTPTN-05", "name": "Sự cố thiết bị xử lý đúng hạn", "target": 95, "unit": "%", "weight": 10},
-      {"id": "KTPTN-06", "name": "Cải tiến quy trình kỹ thuật/an toàn", "target": 1, "unit": "cải tiến", "weight": 5}
-    ]
+      {
+        "id": "KTPTN-01",
+        "name": "Thiết bị/phòng thí nghiệm vận hành đạt chuẩn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "KTPTN-02",
+        "name": "Hỗ trợ buổi thực hành/nghiên cứu đúng kế hoạch",
+        "target": 95,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "KTPTN-03",
+        "name": "Hồ sơ an toàn PTN đầy đủ",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "KTPTN-04",
+        "name": "Bảo trì/hiệu chuẩn đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "KTPTN-05",
+        "name": "Sự cố thiết bị xử lý đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "KTPTN-06",
+        "name": "Cải tiến quy trình kỹ thuật/an toàn",
+        "target": 1,
+        "unit": "cải tiến",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_pv",
@@ -319,13 +1034,50 @@
     "weightStructure": "Chất lượng phục vụ 35%, đúng hạn 25%, an toàn/tuân thủ 20%, hài lòng 10%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "PV-01", "name": "Yêu cầu phục vụ/cơ sở vật chất đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "PV-02", "name": "Khu vực/phạm vi phụ trách đạt chuẩn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "PV-03", "name": "Tuân thủ an toàn, bảo vệ, PCCC", "target": 0, "unit": "vi phạm", "weight": 20},
-      {"id": "PV-04", "name": "Hài lòng người dùng dịch vụ phục vụ", "target": 4, "unit": "điểm", "weight": 10},
-      {"id": "PV-05", "name": "Báo cáo sự cố kịp thời", "target": 100, "unit": "%", "weight": 10},
-      {"id": "PV-06", "name": "Sáng kiến cải tiến môi trường làm việc", "target": 1, "unit": "sáng kiến", "weight": 10}
-    ]
+      {
+        "id": "PV-01",
+        "name": "Yêu cầu phục vụ/cơ sở vật chất đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "PV-02",
+        "name": "Khu vực/phạm vi phụ trách đạt chuẩn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "PV-03",
+        "name": "Tuân thủ an toàn, bảo vệ, PCCC",
+        "target": 0,
+        "unit": "vi phạm",
+        "weight": 20
+      },
+      {
+        "id": "PV-04",
+        "name": "Hài lòng người dùng dịch vụ phục vụ",
+        "target": 4,
+        "unit": "điểm",
+        "weight": 10
+      },
+      {
+        "id": "PV-05",
+        "name": "Báo cáo sự cố kịp thời",
+        "target": 100,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "PV-06",
+        "name": "Sáng kiến cải tiến môi trường làm việc",
+        "target": 1,
+        "unit": "sáng kiến",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_kpistaff",
@@ -336,13 +1088,50 @@
     "weightStructure": "Dữ liệu/minh chứng 35%, hỗ trợ đơn vị 25%, báo cáo 20%, kiểm soát chất lượng 10%, cải tiến 10%",
     "kpiCount": 6,
     "kpis": [
-      {"id": "KPISTAFF-01", "name": "Tỉ lệ KPI cá nhân/đơn vị được cập nhật đúng hạn", "target": 95, "unit": "%", "weight": 25},
-      {"id": "KPISTAFF-02", "name": "Tỉ lệ minh chứng hợp lệ", "target": 95, "unit": "%", "weight": 25},
-      {"id": "KPISTAFF-03", "name": "Báo cáo KPI đơn vị đúng hạn", "target": 100, "unit": "%", "weight": 20},
-      {"id": "KPISTAFF-04", "name": "Hỗ trợ người dùng KPI trong đơn vị", "target": 95, "unit": "%", "weight": 15},
-      {"id": "KPISTAFF-05", "name": "Đối soát dữ liệu KPI với hệ thống nguồn", "target": 90, "unit": "%", "weight": 10},
-      {"id": "KPISTAFF-06", "name": "Đề xuất cải tiến vận hành KPI", "target": 1, "unit": "cải tiến", "weight": 5}
-    ]
+      {
+        "id": "KPISTAFF-01",
+        "name": "Tỉ lệ KPI cá nhân/đơn vị được cập nhật đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "KPISTAFF-02",
+        "name": "Tỉ lệ minh chứng hợp lệ",
+        "target": 95,
+        "unit": "%",
+        "weight": 25
+      },
+      {
+        "id": "KPISTAFF-03",
+        "name": "Báo cáo KPI đơn vị đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 20
+      },
+      {
+        "id": "KPISTAFF-04",
+        "name": "Hỗ trợ người dùng KPI trong đơn vị",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "KPISTAFF-05",
+        "name": "Đối soát dữ liệu KPI với hệ thống nguồn",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "KPISTAFF-06",
+        "name": "Đề xuất cải tiến vận hành KPI",
+        "target": 1,
+        "unit": "cải tiến",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
   },
   {
     "id": "position_cn",
@@ -353,14 +1142,63 @@
     "weightStructure": "KPI bắt buộc chung",
     "kpiCount": 8,
     "kpis": [
-      {"id": "CN-01", "name": "Hoàn thành nhiệm vụ đúng hạn", "target": 95, "unit": "%", "weight": 15},
-      {"id": "CN-02", "name": "Tuân thủ kỷ luật và quy định nội bộ", "target": 0, "unit": "vi phạm", "weight": 10},
-      {"id": "CN-03", "name": "Cập nhật minh chứng KPI đúng hạn", "target": 100, "unit": "%", "weight": 10},
-      {"id": "CN-04", "name": "Sử dụng hệ thống số theo quy định", "target": 90, "unit": "%", "weight": 10},
-      {"id": "CN-05", "name": "Tham gia họp, tập huấn bắt buộc", "target": 90, "unit": "%", "weight": 10},
-      {"id": "CN-06", "name": "Phối hợp công việc liên đơn vị", "target": 90, "unit": "%", "weight": 10},
-      {"id": "CN-07", "name": "Bảo mật dữ liệu và an toàn thông tin", "target": 0, "unit": "vi phạm", "weight": 10},
-      {"id": "CN-08", "name": "Sáng kiến/cải tiến công việc", "target": 1, "unit": "sáng kiến", "weight": 10}
-    ]
+      {
+        "id": "CN-01",
+        "name": "Hoàn thành nhiệm vụ đúng hạn",
+        "target": 95,
+        "unit": "%",
+        "weight": 15
+      },
+      {
+        "id": "CN-02",
+        "name": "Tuân thủ kỷ luật và quy định nội bộ",
+        "target": 0,
+        "unit": "vi phạm",
+        "weight": 10
+      },
+      {
+        "id": "CN-03",
+        "name": "Cập nhật minh chứng KPI đúng hạn",
+        "target": 100,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "CN-04",
+        "name": "Sử dụng hệ thống số theo quy định",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "CN-05",
+        "name": "Tham gia họp, tập huấn bắt buộc",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "CN-06",
+        "name": "Phối hợp công việc liên đơn vị",
+        "target": 90,
+        "unit": "%",
+        "weight": 10
+      },
+      {
+        "id": "CN-07",
+        "name": "Bảo mật dữ liệu và an toàn thông tin",
+        "target": 0,
+        "unit": "vi phạm",
+        "weight": 10
+      },
+      {
+        "id": "CN-08",
+        "name": "Sáng kiến/cải tiến công việc",
+        "target": 1,
+        "unit": "sáng kiến",
+        "weight": 10
+      }
+    ],
+    "academicYearId": "ay002"
   }
 ]
