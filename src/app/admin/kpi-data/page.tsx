@@ -23,6 +23,7 @@ export default function KPIDataPage() {
   const [showCloneModal, setShowCloneModal] = useState(false);
   const [cloneFromYear, setCloneFromYear] = useState('');
   const [cloning, setCloning] = useState(false);
+  const [filterGroupId, setFilterGroupId] = useState<string | null>(null);
 
   const loadYears = useCallback(async () => {
     const y = await apiGet<AcademicYear[]>('/api/academic-years');
@@ -139,7 +140,7 @@ export default function KPIDataPage() {
         {tabs.map(t => {
           const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); }}
+            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setFilterGroupId(null); }}
               className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${tab === t.id ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'}`}>
               <Icon size={16} /> {t.label}
               <span className="badge badge-info ml-1">{t.count}</span>
@@ -160,40 +161,58 @@ export default function KPIDataPage() {
         <div className="p-0">
           {tab === 'groups' && (
             <table className="table">
-              <thead><tr><th>ID</th><th>Tên Lĩnh vực</th><th>Mã</th><th>Trọng số mặc định</th><th>Cấp</th><th>Thao tác</th></tr></thead>
+              <thead><tr><th>ID</th><th>Tên Lĩnh vực</th><th>Mã</th><th>Số chỉ tiêu</th><th>Trọng số</th><th>Cấp</th><th>Thao tác</th></tr></thead>
               <tbody>
-                {groups.map(g => (
-                  <tr key={g.id}>
-                    <td><span className="badge badge-info">{g.id}</span></td>
-                    <td className="font-medium">{g.name}</td>
-                    <td>{g.code}</td>
-                    <td>{g.defaultWeight}%</td>
-                    <td>{g.targetLevel === 'school' ? 'Trường' : g.targetLevel === 'unit' ? 'Đơn vị' : 'Cá nhân'}</td>
-                    <td><Actions id={g.id} onEdit={() => { setEditId(g.id); setShowModal(true); }} onDelete={() => handleDelete(g.id)} /></td>
-                  </tr>
-                ))}
-                {groups.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {groups.map(g => {
+                  const count = indicators.filter(i => i.categoryId === g.id).length;
+                  return (
+                    <tr key={g.id}>
+                      <td><span className="badge badge-info">{g.id}</span></td>
+                      <td className="font-medium">{g.name}</td>
+                      <td>{g.code}</td>
+                      <td>
+                        <button onClick={() => { setFilterGroupId(g.id); setTab('indicators'); setEditId(null); setShowModal(false); }}
+                          className="text-primary hover:underline font-medium">
+                          {count}
+                        </button>
+                      </td>
+                      <td>{g.defaultWeight}%</td>
+                      <td>{g.targetLevel === 'school' ? 'Trường' : g.targetLevel === 'unit' ? 'Đơn vị' : 'Cá nhân'}</td>
+                      <td><Actions id={g.id} onEdit={() => { setEditId(g.id); setShowModal(true); }} onDelete={() => handleDelete(g.id)} /></td>
+                    </tr>
+                  );
+                })}
+                {groups.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
           {tab === 'indicators' && (
-            <table className="table">
-              <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {indicators.map(ind => (
-                  <tr key={ind.id}>
-                    <td><span className="badge badge-info">{ind.id}</span></td>
-                    <td className="font-medium">{ind.name}</td>
-                    <td>{groups.find(g => g.id === ind.categoryId)?.name || ind.categoryId}</td>
-                    <td>{ind.unit}</td>
-                    <td>{ind.targetValue}</td>
-                    <td>{ind.weight}%</td>
-                    <td><Actions id={ind.id} onEdit={() => { setEditId(ind.id); setShowModal(true); }} onDelete={() => handleDelete(ind.id)} /></td>
-                  </tr>
-                ))}
-                {indicators.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
+            <>
+              {filterGroupId && (
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/5 border-b border-border">
+                  <span className="text-xs text-text-light">Đang lọc:</span>
+                  <span className="badge badge-primary text-xs">{groups.find(g => g.id === filterGroupId)?.name || filterGroupId}</span>
+                  <button onClick={() => setFilterGroupId(null)} className="ml-1 text-text-light hover:text-accent-red text-xs">✕</button>
+                </div>
+              )}
+              <table className="table">
+                <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Thao tác</th></tr></thead>
+                <tbody>
+                  {(filterGroupId ? indicators.filter(ind => ind.categoryId === filterGroupId) : indicators).map(ind => (
+                    <tr key={ind.id}>
+                      <td><span className="badge badge-info">{ind.id}</span></td>
+                      <td className="font-medium">{ind.name}</td>
+                      <td>{groups.find(g => g.id === ind.categoryId)?.name || ind.categoryId}</td>
+                      <td>{ind.unit}</td>
+                      <td>{ind.targetValue}</td>
+                      <td>{ind.weight}%</td>
+                      <td><Actions id={ind.id} onEdit={() => { setEditId(ind.id); setShowModal(true); }} onDelete={() => handleDelete(ind.id)} /></td>
+                    </tr>
+                  ))}
+                  {(filterGroupId ? indicators.filter(ind => ind.categoryId === filterGroupId) : indicators).length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                </tbody>
+              </table>
+            </>
           )}
           {tab === 'unit' && (
             <table className="table">
