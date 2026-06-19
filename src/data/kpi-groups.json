@@ -54,5 +54,117 @@
     "defaultWeight": 5,
     "targetLevel": "school",
     "academicYearId": "ay002"
+  },
+  {
+    "id": "grp_mqk7ulvzzgwyow1bf7c",
+    "name": "Đào tạo và đảm bảo chất lượng giáo dục",
+    "code": "DT",
+    "defaultWeight": 30,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvz6dsbu9r7lse",
+    "name": "KHCN, đổi mới sáng tạo và sở hữu trí tuệ",
+    "code": "KHCN",
+    "defaultWeight": 20,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvz4mts1m4wvv",
+    "name": "Đội ngũ, nhân lực và phát triển giảng viên",
+    "code": "DN",
+    "defaultWeight": 15,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvzqy33qp72ge",
+    "name": "Hợp tác quốc tế và trao đổi học thuật",
+    "code": "QT",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvzbxk4uw6teg8",
+    "name": "Quản trị đại học, tài chính và phát triển bền vững",
+    "code": "QT",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvzp75dqs1kz0k",
+    "name": "Chuyển đổi số và quản trị số",
+    "code": "CDS",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7ulvza1ms4ebfeor",
+    "name": "Phục vụ cộng đồng và gắn kết địa phương/doanh nghiệp",
+    "code": "PV",
+    "defaultWeight": 5,
+    "targetLevel": "school",
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "grp_mqk7uqy2us7s9d4qi9",
+    "name": "Đào tạo và đảm bảo chất lượng giáo dục",
+    "code": "DT",
+    "defaultWeight": 30,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy28xed7664oun",
+    "name": "KHCN, đổi mới sáng tạo và sở hữu trí tuệ",
+    "code": "KHCN",
+    "defaultWeight": 20,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy2msdfm9t6ger",
+    "name": "Đội ngũ, nhân lực và phát triển giảng viên",
+    "code": "DN",
+    "defaultWeight": 15,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy20zr40xa324g",
+    "name": "Hợp tác quốc tế và trao đổi học thuật",
+    "code": "QT",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy2502qa1r6qom",
+    "name": "Quản trị đại học, tài chính và phát triển bền vững",
+    "code": "QT",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy2qr4y5zeavid",
+    "name": "Chuyển đổi số và quản trị số",
+    "code": "CDS",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "grp_mqk7uqy2q9vgub2yllb",
+    "name": "Phục vụ cộng đồng và gắn kết địa phương/doanh nghiệp",
+    "code": "PV",
+    "defaultWeight": 5,
+    "targetLevel": "school",
+    "academicYearId": "ay003"
   }
 ]
