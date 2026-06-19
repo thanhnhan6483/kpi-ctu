@@ -1,13 +1,12 @@
 [
-  { "id": "p001", "name": "Quản trị viên", "code": null, "academicYearId": null },
-  { "id": "p002", "name": "Trưởng/Phó đơn vị", "code": "LD", "academicYearId": "ay002" },
-  { "id": "p003", "name": "Giảng viên", "code": "GV", "academicYearId": "ay002" },
-  { "id": "p004", "name": "Trưởng/Phó bộ môn", "code": "BM", "academicYearId": "ay002" },
-  { "id": "p005", "name": "Nghiên cứu viên", "code": "NCV", "academicYearId": "ay002" },
-  { "id": "p006", "name": "Chuyên viên phòng ban", "code": "CV", "academicYearId": "ay002" },
-  { "id": "p007", "name": "Chuyên viên đào tạo/học vụ", "code": "CVDT", "academicYearId": "ay002" },
-  { "id": "p008", "name": "Chuyên viên ĐBCL/khảo thí", "code": "CVDBCL", "academicYearId": "ay002" },
-  { "id": "p009", "name": "Chuyên viên KHCN", "code": "CVKHCN", "academicYearId": "ay002" },
-  { "id": "p010", "name": "Hội đồng KPI", "code": null, "academicYearId": null },
-  { "id": "p011", "name": "Ban Giám hiệu", "code": "GV", "academicYearId": "ay002" }
+  { "id": "pos001", "name": "Giáo sư", "code": "GS", "level": "Cao nhất", "category": "Giảng viên", "status": "active" },
+  { "id": "pos002", "name": "Phó Giáo sư", "code": "PGS", "level": "Cao", "category": "Giảng viên", "status": "active" },
+  { "id": "pos003", "name": "Giảng viên chính", "code": "GVC", "level": "Trung bình", "category": "Giảng viên", "status": "active" },
+  { "id": "pos004", "name": "Giảng viên", "code": "GV", "level": "Cơ bản", "category": "Giảng viên", "status": "active" },
+  { "id": "pos005", "name": "Trưởng khoa", "code": "TK", "level": "Quản lý", "category": "Quản lý đơn vị", "status": "active" },
+  { "id": "pos006", "name": "Phó Trưởng khoa", "code": "PTK", "level": "Quản lý", "category": "Quản lý đơn vị", "status": "active" },
+  { "id": "pos007", "name": "Trưởng bộ môn", "code": "TBM", "level": "Quản lý", "category": "Quản lý bộ môn", "status": "active" },
+  { "id": "pos008", "name": "Viên chức", "code": "VC", "level": "Cơ bản", "category": "Viên chức", "status": "active" },
+  { "id": "pos009", "name": "Chuyên viên", "code": "CV", "level": "Cơ bản", "category": "Viên chức", "status": "active" },
+  { "id": "pos010", "name": "Nghiên cứu viên", "code": "NCV", "level": "Chuyên môn", "category": "Nghiên cứu", "status": "active" }
 ]

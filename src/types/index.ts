@@ -47,7 +47,15 @@ export interface KPICycle {
   name: string;
   startDate: string;
   endDate: string;
-  status: 'draft' | 'active' | 'locked';
+  status: 'draft' | 'active' | 'paused' | 'locked';
+  registrationDeadline?: string;
+  approvalDeadline?: string;
+  progressDeadline?: string;
+  selfEvalDeadline?: string;
+  managerEvalDeadline?: string;
+  councilReviewDeadline?: string;
+  complaintDeadline?: string;
+  lockDeadline?: string;
 }
 
 export interface KPIGroup {
@@ -249,4 +257,61 @@ export interface IndividualKPIEntry {
   name: string;
   code: string;
   kpis: IndividualKPIDetail[];
+}
+
+export interface Position {
+  id: string;
+  name: string;
+  code: string;
+  level: string;
+  category: string;
+  status: 'active' | 'inactive';
+}
+
+export interface JobPosition {
+  id: string;
+  name: string;
+  code: string;
+  description: string;
+  kpiGroupId: string;
+  approvalLevel: string;
+  status: 'active' | 'inactive';
+}
+
+export interface StrategicObjective {
+  id: string;
+  academicYearId: string;
+  name: string;
+  description: string;
+  field: string;
+  leadUnitId: string;
+  supportUnitIds: string[];
+  indicatorIds: string[];
+  status: 'draft' | 'submitted' | 'approved' | 'locked';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface KPICascadeAssignment {
+  id: string;
+  cycleId: string;
+  fromLevel: 'school' | 'unit' | 'department';
+  fromUnitId: string;
+  toLevel: 'unit' | 'department' | 'individual';
+  toUnitId: string;
+  toUserId?: string;
+  indicatorId: string;
+  indicatorName: string;
+  targetValue: number;
+  unit: string;
+  weight: number;
+  dueDate: string;
+  evidenceRequired: boolean;
+  note: string;
+  status: 'draft' | 'assigned' | 'accepted' | 'rejected' | 'in_progress';
+  assignerId: string;
+  assignedAt?: string;
+  acceptedAt?: string;
+  createdAt: string;
+  updatedAt: string;
 }

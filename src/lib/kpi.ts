@@ -153,3 +153,36 @@ export function calcIndividualTotalScore(
 
   return { totalScore: Math.round(totalScore * 10) / 10, kpiScores };
 }
+
+export function applyExemptionCoefficient(score: number, coefficient: number): number {
+  return Math.round(score * coefficient * 10) / 10;
+}
+
+export function calcRollUpScores(
+  individualScores: { id: string; name: string; score: number; weight: number }[],
+  departmentWeight: number = 100
+): { totalScore: number; breakdown: Array<{ id: string; name: string; score: number; weight: number; contribution: number }> } {
+  const totalWeight = individualScores.reduce((sum, i) => sum + i.weight, 0);
+  if (totalWeight === 0) return { totalScore: 0, breakdown: [] };
+
+  const breakdown = individualScores.map(item => ({
+    ...item,
+    contribution: Math.round((item.score * item.weight / totalWeight) * 10) / 10,
+  }));
+
+  const totalScore = Math.round(breakdown.reduce((sum, b) => sum + b.contribution, 0) * 10) / 10;
+  return { totalScore, breakdown };
+}
+
+export function calcUnitRollUp(departmentScores: { unitId: string; unitName: string; score: number; weight: number }[]): { totalScore: number; breakdown: Array<{ unitId: string; unitName: string; score: number; weight: number; contribution: number }> } {
+  const totalWeight = departmentScores.reduce((sum, d) => sum + d.weight, 0);
+  if (totalWeight === 0) return { totalScore: 0, breakdown: [] };
+
+  const breakdown = departmentScores.map(item => ({
+    ...item,
+    contribution: Math.round((item.score * item.weight / totalWeight) * 10) / 10,
+  }));
+
+  const totalScore = Math.round(breakdown.reduce((sum, b) => sum + b.contribution, 0) * 10) / 10;
+  return { totalScore, breakdown };
+}

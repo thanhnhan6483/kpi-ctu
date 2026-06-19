@@ -2,11 +2,12 @@ import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import type { User } from "@/types"
 import { readDb } from "@/lib/db"
+import authConfig from "./auth.config"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  ...authConfig,
   providers: [
     Credentials({
-      name: "credentials",
       credentials: {
         username: { label: "Tên đăng nhập", type: "text" },
         password: { label: "Mật khẩu", type: "password" },
@@ -57,11 +58,5 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return session
     },
-  },
-  pages: {
-    signIn: "/login",
-  },
-  session: {
-    strategy: "jwt",
   },
 })

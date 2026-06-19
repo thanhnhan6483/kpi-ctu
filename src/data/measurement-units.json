@@ -1,0 +1,12 @@
+[
+  { "id": "mu001", "name": "%", "description": "Phần trăm", "status": "active" },
+  { "id": "mu002", "name": "bài", "description": "Số lượng bài báo, công bố", "status": "active" },
+  { "id": "mu003", "name": "đề tài", "description": "Số lượng đề tài nghiên cứu", "status": "active" },
+  { "id": "mu004", "name": "hồ sơ", "description": "Số lượng hồ sơ, tài liệu", "status": "active" },
+  { "id": "mu005", "name": "giờ", "description": "Số giờ giảng dạy, nghiên cứu", "status": "active" },
+  { "id": "mu006", "name": "điểm/5", "description": "Thang điểm 5", "status": "active" },
+  { "id": "mu007", "name": "VNĐ", "description": "Đơn vị tiền Việt Nam", "status": "active" },
+  { "id": "mu008", "name": "số lượng", "description": "Đếm số lượng", "status": "active" },
+  { "id": "mu009", "name": "sinh viên", "description": "Số lượng sinh viên", "status": "active" },
+  { "id": "mu010", "name": "đợt", "description": "Số đợt tuyển sinh, đào tạo", "status": "active" }
+]

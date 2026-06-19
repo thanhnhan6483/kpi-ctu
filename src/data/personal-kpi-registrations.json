@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pkpimqkrc3egv1unn9hins",
+    "cycleId": "c001",
+    "userId": "u002",
+    "positionCode": "GV",
+    "items": [
+      {
+        "id": "",
+        "indicatorId": "",
+        "indicatorName": "",
+        "targetValue": 0,
+        "unit": "",
+        "weight": 0,
+        "actionPlan": "",
+        "evidencePlan": "",
+        "dueDate": ""
+      }
+    ],
+    "status": "draft",
+    "createdAt": "2026-06-19T09:59:48.280Z",
+    "updatedAt": "2026-06-19T09:59:52.069Z"
+  }
+]

@@ -1,7 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { FileText, Download, Filter, Calendar, BarChart2, PieChart, TrendingUp, Users, Award, AlertTriangle, Building, Clock } from 'lucide-react';
+import { FileText, Download, Filter, Calendar, BarChart2, PieChart, TrendingUp, Users, Award, AlertTriangle, Building, Clock, User, FileWarning } from 'lucide-react';
+import progressData from '@/data/progress.json';
+import evidencesData from '@/data/evidences.json';
+import planItemsData from '@/data/plan-items.json';
+import unitsData from '@/data/units.json';
+import usersData from '@/data/users.json';
 
 const reportTypes = [
   { id: 'summary', name: 'Báo cáo tổng hợp KPI', description: 'Tổng điểm, mức xếp loại, KPI đạt/chưa đạt', icon: FileText, priority: 'high' },
@@ -41,6 +46,31 @@ const gradeColors: Record<string, string> = {
   'Cần cải thiện': '#ffc107',
   'Không đạt': '#f44336',
 };
+
+const unitMap: Record<string, string> = {};
+(unitsData as { id: string; name: string }[]).forEach(u => { unitMap[u.id] = u.name; });
+
+function getEvidenceStats() {
+  const evidences = evidencesData as any[];
+  const planItems = planItemsData as any[];
+  const totalPlanItems = planItems.length;
+  const itemsWithEvidence = new Set(evidences.map((e: any) => e.planItemId)).size;
+  const itemsWithoutEvidence = totalPlanItems - itemsWithEvidence;
+  const pendingReview = evidences.filter((e: any) => e.status === 'submitted' || e.status === 'pending').length;
+  return { totalPlanItems, itemsWithEvidence, itemsWithoutEvidence, pendingReview };
+}
+
+function getDeadlineWarnings() {
+  const today = new Date().toISOString().split('T')[0];
+  const planItems = planItemsData as any[];
+  const overdue = planItems.filter((p: any) => p.dueDate && p.dueDate < today);
+  const upcoming = planItems.filter((p: any) => {
+    if (!p.dueDate) return false;
+    const days = Math.ceil((new Date(p.dueDate).getTime() - new Date(today).getTime()) / (1000 * 60 * 60 * 24));
+    return days >= 0 && days <= 14;
+  });
+  return { overdue: overdue.length, upcoming: upcoming.length };
+}
 
 export default function ReportsPage() {
   const [selectedType, setSelectedType] = useState('summary');
@@ -128,7 +158,15 @@ export default function ReportsPage() {
                 <FileText size={16} />
                 Xem kết quả
               </a>
-
+              <a href="/api/reports/export?type=unit&format=csv" className="px-4 py-2 bg-accent-green text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download>
+                <Download size={16} /> Xuất CSV Đơn vị
+              </a>
+              <a href="/api/reports/export?type=individual&format=csv" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download>
+                <Download size={16} /> Xuất CSV Cá nhân
+              </a>
+              <a href="/api/reports/export?type=reward&format=csv" className="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download>
+                <Download size={16} /> Xuất CSV Thi đua
+              </a>
             </div>
           </div>
         </div>
@@ -269,6 +307,36 @@ export default function ReportsPage() {
               <span className="font-bold">0</span>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-6">
+        <div className="card p-4">
+          <h4 className="font-heading font-bold text-sm mb-3 flex items-center gap-2"><User size={14} /> Báo cáo KPI cá nhân</h4>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between"><span className="text-text-light">Tổng người dùng</span><span className="font-bold">{(usersData as any[]).length}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Đang hoạt động</span><span className="font-bold text-green-600">{(usersData as any[]).filter((u: any) => u.status === 'active').length}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Tổng KPI cá nhân</span><span className="font-bold">{(planItemsData as any[]).length}</span></div>
+          </div>
+          <a href="/kpi/my-kpi-registration" className="mt-3 block text-center text-primary text-xs hover:underline">Xem phiếu KPI cá nhân →</a>
+        </div>
+        <div className="card p-4">
+          <h4 className="font-heading font-bold text-sm mb-3 flex items-center gap-2"><FileWarning size={14} /> Thiếu minh chứng</h4>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between"><span className="text-text-light">Tổng mục tiêu</span><span className="font-bold">{getEvidenceStats().totalPlanItems}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Có minh chứng</span><span className="font-bold text-green-600">{getEvidenceStats().itemsWithEvidence}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Thiếu minh chứng</span><span className="font-bold text-red-600">{getEvidenceStats().itemsWithoutEvidence}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Chờ duyệt MC</span><span className="font-bold text-yellow-600">{getEvidenceStats().pendingReview}</span></div>
+          </div>
+          <a href="/kpi/evidences" className="mt-3 block text-center text-primary text-xs hover:underline">Quản lý minh chứng →</a>
+        </div>
+        <div className="card p-4">
+          <h4 className="font-heading font-bold text-sm mb-3 flex items-center gap-2"><Clock size={14} /> Deadline & Tiến độ</h4>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between"><span className="text-text-light">Quá hạn</span><span className="font-bold text-red-600">{getDeadlineWarnings().overdue}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Sắp đến hạn (≤14 ngày)</span><span className="font-bold text-yellow-600">{getDeadlineWarnings().upcoming}</span></div>
+            <div className="flex justify-between"><span className="text-text-light">Đơn vị tham gia</span><span className="font-bold">{(unitsData as any[]).filter((u: any) => u.status === 'active').length}</span></div>
+          </div>
+          <a href="/kpi/warnings" className="mt-3 block text-center text-primary text-xs hover:underline">Xem cảnh báo →</a>
         </div>
       </div>
     </div>

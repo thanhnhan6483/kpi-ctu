@@ -458,6 +458,42 @@ export default function DashboardPage() {
           </table>
         </div>
       </div>
+      <div className="card">
+        <div className="card-header">
+          <h3 className="text-white flex items-center gap-2"><Building size={16} /> Heatmap so sánh đơn vị theo lĩnh vực</h3>
+        </div>
+        <div className="p-4 overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2 px-3 font-medium">Đơn vị</th>
+                {groupStats.map(g => (
+                  <th key={g.id} className="text-center py-2 px-3 font-medium text-xs">{g.short}</th>
+                ))}
+                <th className="text-center py-2 px-3 font-medium">TB</th>
+              </tr>
+            </thead>
+            <tbody>
+              {unitPerformance.slice(0, 8).map((unit, idx) => (
+                <tr key={idx} className="border-b">
+                  <td className="py-2 px-3 font-medium text-xs">{unit.name}</td>
+                  {groupStats.map(g => {
+                    const unitItems = (unitKPIsData as any[]).find((u: any) => u.name === unit.name);
+                    const groupKpis = unitItems?.kpis?.filter((k: any) => {
+                      const ind = (indicatorsData as any[]).find((i: any) => i.id === k.indicatorId);
+                      return ind?.categoryId === g.id;
+                    }) || [];
+                    const avg = groupKpis.length > 0 ? Math.round(groupKpis.reduce((s: number, k: any) => s + Math.min(((k.target || 1) > 0 ? ((progressLookup[k.name] ?? 0) / k.target) * 100 : 0), 120), 0) / groupKpis.length) : 0;
+                    const bg = avg >= 100 ? 'bg-green-100 text-green-700' : avg >= 80 ? 'bg-yellow-100 text-yellow-700' : avg > 0 ? 'bg-red-100 text-red-600' : 'bg-gray-50 text-gray-400';
+                    return <td key={g.id} className={`text-center py-2 px-3 text-xs font-medium ${bg}`}>{groupKpis.length > 0 ? `${avg}%` : '-'}</td>;
+                  })}
+                  <td className={`text-center py-2 px-3 text-xs font-bold ${unit.score >= 80 ? 'text-green-600' : unit.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>{unit.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }

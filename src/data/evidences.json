@@ -95,5 +95,41 @@
     "reviewerNote": "Dữ liệu chính xác",
     "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
     "reviewedAt": "2025-05-05T12:25:52Z"
+  },
+  {
+    "id": "EVmqkowakd",
+    "planItemId": "pi_DT-04_c001",
+    "evidenceType": "system_log",
+    "fileName": "Bao_cao_NCKH.docx",
+    "status": "valid",
+    "submittedAt": "2025-07-21T8:29:18Z",
+    "submittedBy": "Đặng Phúc H",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2025-08-15T15:13:39Z"
+  },
+  {
+    "id": "EVmqkowake",
+    "planItemId": "pi_DT-02_c002",
+    "evidenceType": "system_log",
+    "fileName": "Lich_trinh_DT.xlsx",
+    "status": "valid",
+    "submittedAt": "2024-03-05T17:24:40Z",
+    "submittedBy": "Hoàng Thị F",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2024-07-11T8:8:11Z"
+  },
+  {
+    "id": "EVmqkowakf",
+    "planItemId": "pi_TCCB-02_c004",
+    "evidenceType": "system_log",
+    "fileName": "Bien_ban_hop.docx",
+    "status": "valid",
+    "submittedAt": "2026-06-22T15:23:55Z",
+    "submittedBy": "Phạm Minh E",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2026-08-05T13:29:47Z"
   }
 ]
