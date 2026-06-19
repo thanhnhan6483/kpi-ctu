@@ -258,21 +258,32 @@ export default function KPIDataPage() {
                                 <tr className="border-b border-border">
                                   <th className="text-left py-1 pr-2 font-medium">Mã</th>
                                   <th className="text-left py-1 pr-2 font-medium">Tên KPI</th>
+                                  <th className="text-left py-1 pr-2 font-medium">CT Trường</th>
                                   <th className="text-left py-1 pr-2 font-medium">Chỉ tiêu</th>
                                   <th className="text-left py-1 pr-2 font-medium">ĐVT</th>
                                   <th className="text-left py-1 pr-2 font-medium">Trọng số</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {u.kpis.map(k => (
-                                  <tr key={k.id} className="border-b border-border/50">
-                                    <td className="py-1 pr-2 text-text-light">{k.id}</td>
-                                    <td className="py-1 pr-2 font-medium">{k.name}</td>
-                                    <td className="py-1 pr-2">{k.target}</td>
-                                    <td className="py-1 pr-2">{k.unit}</td>
-                                    <td className="py-1 pr-2">{k.weight}%</td>
-                                  </tr>
-                                ))}
+                                {u.kpis.map(k => {
+                                  const linkedInd = indicators.find(ind => ind.id === k.indicatorId);
+                                  return (
+                                    <tr key={k.id} className="border-b border-border/50">
+                                      <td className="py-1 pr-2 text-text-light">{k.id}</td>
+                                      <td className="py-1 pr-2 font-medium">{k.name}</td>
+                                      <td className="py-1 pr-2">
+                                        {linkedInd ? (
+                                          <span className="text-primary text-[10px]">{linkedInd.code}</span>
+                                        ) : (
+                                          <span className="text-text-light text-[10px]">—</span>
+                                        )}
+                                      </td>
+                                      <td className="py-1 pr-2">{k.target}</td>
+                                      <td className="py-1 pr-2">{k.unit}</td>
+                                      <td className="py-1 pr-2">{k.weight}%</td>
+                                    </tr>
+                                  );
+                                })}
                               </tbody>
                             </table>
                           </div>
