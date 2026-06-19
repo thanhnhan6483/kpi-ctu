@@ -319,12 +319,12 @@ export default function RolesGuidePage() {
             <thead>
               <tr>
                 <th>Chức năng</th>
-                <th className="text-center">BGH</th>
-                <th className="text-center">Hội đồng</th>
-                <th className="text-center">Trưởng ĐV</th>
-                <th className="text-center">CB KPI</th>
-                <th className="text-center">Giảng viên/VC</th>
-                <th className="text-center">Admin</th>
+                <th className="text-center">Ban Giám hiệu</th>
+                <th className="text-center">Hội đồng KPI</th>
+                <th className="text-center">Trưởng đơn vị</th>
+                <th className="text-center">Cán bộ KPI</th>
+                <th className="text-center">Nhân viên/Giảng viên</th>
+                <th className="text-center">Quản trị</th>
               </tr>
             </thead>
             <tbody>

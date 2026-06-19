@@ -1,11 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isLoginPage = pathname === '/login';
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
 
   return (
     <>

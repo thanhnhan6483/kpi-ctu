@@ -110,7 +110,7 @@ export default function RolesPage() {
                 <th>Phạm vi</th>
                 {roles.map((role) => (
                   <th key={role} className="text-center text-xs">
-                    {roleLabels[role]?.split(' ')[0]}
+                    {roleLabels[role]}
                   </th>
                 ))}
               </tr>
@@ -175,7 +175,7 @@ export default function RolesPage() {
                         <div className="flex gap-1">
                           {(perm.roles as string[]).map((role: string) => (
                             <span key={role} className="badge badge-info text-[10px] py-0 px-1">
-                              {roleLabels[role]?.split(' ')[0]}
+                              {roleLabels[role]}
                             </span>
                           ))}
                         </div>

@@ -4,6 +4,7 @@ import { readDb, writeDb, generateId } from '@/lib/db';
 interface User {
   id: string;
   username: string;
+  password: string;
   fullName: string;
   email: string;
   employeeCode: string;
@@ -13,8 +14,14 @@ interface User {
   createdAt: string;
 }
 
+function stripPassword(user: User): Omit<User, 'password'> {
+  const { password: _, ...rest } = user;
+  return rest;
+}
+
 export async function GET() {
-  return NextResponse.json(readDb<User>('users'));
+  const users = readDb<User>('users');
+  return NextResponse.json(users.map(stripPassword));
 }
 
 export async function POST(request: NextRequest) {
@@ -23,6 +30,7 @@ export async function POST(request: NextRequest) {
   const newUser: User = {
     id: `u${generateId()}`,
     username: body.username,
+    password: body.password || 'ctu@2024',
     fullName: body.fullName,
     email: body.email,
     employeeCode: body.employeeCode,
@@ -33,5 +41,5 @@ export async function POST(request: NextRequest) {
   };
   users.push(newUser);
   writeDb('users', users);
-  return NextResponse.json(newUser, { status: 201 });
+  return NextResponse.json(stripPassword(newUser), { status: 201 });
 }

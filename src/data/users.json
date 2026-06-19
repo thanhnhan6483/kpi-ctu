@@ -2,6 +2,7 @@
   {
     "id": "u001",
     "username": "admin",
+    "password": "ctu@2024",
     "fullName": "Quản trị viên",
     "email": "admin@ctu.edu.vn",
     "employeeCode": "NV001",
@@ -19,7 +20,8 @@
     "unitId": "u014",
     "positionId": "p003",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u003",
@@ -30,7 +32,8 @@
     "unitId": "u302",
     "positionId": "p002",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u004",
@@ -41,7 +44,8 @@
     "unitId": "u102",
     "positionId": "p002",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u005",
@@ -52,7 +56,8 @@
     "unitId": "u014",
     "positionId": "p004",
     "status": "active",
-    "createdAt": "2024-06-01T00:00:00Z"
+    "createdAt": "2024-06-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u006",
@@ -63,7 +68,8 @@
     "unitId": "u116",
     "positionId": "p005",
     "status": "active",
-    "createdAt": "2024-03-01T00:00:00Z"
+    "createdAt": "2024-03-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u007",
@@ -74,7 +80,8 @@
     "unitId": "u305",
     "positionId": "p006",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u008",
@@ -85,7 +92,8 @@
     "unitId": "u203",
     "positionId": "p006",
     "status": "active",
-    "createdAt": "2024-02-01T00:00:00Z"
+    "createdAt": "2024-02-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u009",
@@ -96,7 +104,8 @@
     "unitId": "u312",
     "positionId": "p007",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u010",
@@ -107,7 +116,8 @@
     "unitId": "u201",
     "positionId": "p008",
     "status": "active",
-    "createdAt": "2024-04-01T00:00:00Z"
+    "createdAt": "2024-04-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u011",
@@ -118,7 +128,8 @@
     "unitId": "u215",
     "positionId": "p009",
     "status": "active",
-    "createdAt": "2024-05-01T00:00:00Z"
+    "createdAt": "2024-05-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u012",
@@ -129,7 +140,8 @@
     "unitId": "u001",
     "positionId": "p010",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   },
   {
     "id": "u013",
@@ -140,6 +152,7 @@
     "unitId": "u001",
     "positionId": "p011",
     "status": "active",
-    "createdAt": "2024-01-01T00:00:00Z"
+    "createdAt": "2024-01-01T00:00:00Z",
+    "password": "ctu@2024"
   }
 ]

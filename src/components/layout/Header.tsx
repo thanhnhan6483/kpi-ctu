@@ -1,10 +1,28 @@
 'use client';
 
-import { Bell, Search, User, ChevronDown, Menu } from 'lucide-react';
-import { useState } from 'react';
+import { Bell, Search, User, ChevronDown, Menu, LogOut, Settings as SettingsIcon } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { useSession, signOut } from 'next-auth/react';
+import Link from 'next/link';
 
 export default function Header({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
+  const { data: session } = useSession();
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const user = session?.user;
+  const displayName = user?.name || 'Admin';
+  const displayRole = user?.username === 'admin' ? 'Quản trị viên' : 'Người dùng';
 
   return (
     <header className="h-16 bg-primary flex items-center justify-between px-4 sm:px-6 shadow-sm">
@@ -28,7 +46,7 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar?: () => vo
           <span className="absolute top-1 right-1 w-2 h-2 bg-accent-red rounded-full"></span>
         </button>
 
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setShowDropdown(!showDropdown)}
             className="flex items-center gap-2 px-3 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20"
@@ -37,24 +55,26 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar?: () => vo
               <User size={16} />
             </div>
             <div className="text-left">
-              <div className="text-sm font-medium text-white">Admin</div>
-              <div className="text-xs text-white/70">Quản trị viên</div>
+              <div className="text-sm font-medium text-white">{displayName}</div>
+              <div className="text-xs text-white/70">{displayRole}</div>
             </div>
             <ChevronDown size={14} />
           </button>
 
           {showDropdown && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-border py-2 z-50">
-              <a href="/profile" className="block px-4 py-2 text-sm text-text-dark hover:bg-bg-cream">
-                Hồ sơ cá nhân
-              </a>
-              <a href="/settings" className="block px-4 py-2 text-sm text-text-dark hover:bg-bg-cream">
+              <Link href="/admin/settings" className="flex items-center gap-2 px-4 py-2 text-sm text-text-dark hover:bg-bg-cream">
+                <SettingsIcon size={16} />
                 Cài đặt
-              </a>
+              </Link>
               <hr className="my-2 border-border" />
-              <a href="/logout" className="block px-4 py-2 text-sm text-accent-red hover:bg-bg-cream">
+              <button
+                onClick={() => signOut({ callbackUrl: '/login' })}
+                className="flex items-center gap-2 px-4 py-2 text-sm text-accent-red hover:bg-bg-cream w-full text-left"
+              >
+                <LogOut size={16} />
                 Đăng xuất
-              </a>
+              </button>
             </div>
           )}
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { K2D, Barlow } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout";
+import AuthProvider from "@/providers/AuthProvider";
 
 const k2d = K2D({
   subsets: ["latin"],
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={`${k2d.variable} ${barlow.variable} antialiased`}>
-        <div className="flex min-h-screen">
-          <ClientLayout>{children}</ClientLayout>
-        </div>
+        <AuthProvider>
+          <div className="flex min-h-screen">
+            <ClientLayout>{children}</ClientLayout>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

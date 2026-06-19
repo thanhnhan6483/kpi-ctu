@@ -4,6 +4,7 @@ import { readDb, writeDb } from '@/lib/db';
 interface User {
   id: string;
   username: string;
+  password: string;
   fullName: string;
   email: string;
   employeeCode: string;
@@ -13,12 +14,18 @@ interface User {
   createdAt: string;
 }
 
+function stripPassword(user: User): Omit<User, 'password'> {
+  const { password: _pw, ...rest } = user;
+  void _pw;
+  return rest;
+}
+
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const users = readDb<User>('users');
   const user = users.find(u => u.id === id);
   if (!user) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  return NextResponse.json(user);
+  return NextResponse.json(stripPassword(user));
 }
 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -29,7 +36,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
   if (index === -1) return NextResponse.json({ error: 'Not found' }, { status: 404 });
   users[index] = { ...users[index], ...body };
   writeDb('users', users);
-  return NextResponse.json(users[index]);
+  return NextResponse.json(stripPassword(users[index]));
 }
 
 export async function DELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
