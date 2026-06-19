@@ -5,6 +5,13 @@ import { Clock, Edit, CheckCircle, AlertTriangle, Search, Plus, Trash2, Trending
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
+import academicYears from '@/data/academic-years.json';
+
+interface CycleRecord {
+  id: string;
+  academicYearId: string;
+  name: string;
+}
 
 interface ProgressRecord {
   id: string;
@@ -59,6 +66,8 @@ function getUnitName(unitId: string): string {
 const groups = ['Tất cả', 'Đào tạo', 'KHCN', 'Đội ngũ', 'Quốc tế', 'CĐS', 'Phục vụ'];
 
 export default function ProgressPage() {
+  const [selectedYearId, setSelectedYearId] = useState('ay002');
+  const [cycles, setCycles] = useState<CycleRecord[]>([]);
   const [records, setRecords] = useState<ProgressRecord[]>([]);
   const [planItems, setPlanItems] = useState<PlanItemRecord[]>([]);
   const [plans, setPlans] = useState<PlanRecord[]>([]);
@@ -74,6 +83,10 @@ export default function ProgressPage() {
     const params = new URLSearchParams(window.location.search);
     const iid = params.get('indicatorId');
     if (iid) setIndicatorFilter(iid);
+    fetch('/api/cycles')
+      .then(r => r.json())
+      .then(data => setCycles(data))
+      .catch(() => {});
   }, []);
 
   const loadData = useCallback(async () => {
@@ -91,6 +104,7 @@ export default function ProgressPage() {
 
   useEffect(() => { loadData(); }, [loadData]);
 
+  const cycleYearMap = new Map(cycles.map(c => [c.id, c.academicYearId]));
   const planItemMap = new Map(planItems.map(pi => [pi.id, pi]));
   const planMap = new Map(plans.map(p => [p.id, p]));
 
@@ -106,18 +120,24 @@ export default function ProgressPage() {
       unitName: plan ? getUnitName(plan.unitId) : '',
       targetValue,
       progressPercent,
+      cycleId: plan?.cycleId ?? '',
     };
   });
 
-  const filtered = enrichedRecords.filter((p) => {
+  const yearFilteredRecords = enrichedRecords.filter(r => {
+    const yearId = cycleYearMap.get(r.cycleId);
+    return !yearId || yearId === selectedYearId;
+  });
+
+  const filtered = yearFilteredRecords.filter((p) => {
     const matchesSearch = p.indicatorName.toLowerCase().includes(searchTerm.toLowerCase()) || p.planItemId.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesIndicator = !indicatorFilter || p.indicatorId === indicatorFilter;
     return matchesSearch && matchesIndicator;
   });
 
-  const achievedCount = enrichedRecords.filter((p) => p.progressPercent >= 100).length;
-  const warningCount = enrichedRecords.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
-  const notAchievedCount = enrichedRecords.filter((p) => p.progressPercent < 80).length;
+  const achievedCount = yearFilteredRecords.filter((p) => p.progressPercent >= 100).length;
+  const warningCount = yearFilteredRecords.filter((p) => p.progressPercent >= 80 && p.progressPercent < 100).length;
+  const notAchievedCount = yearFilteredRecords.filter((p) => p.progressPercent < 80).length;
 
   const handleCreate = async (data: Partial<ProgressRecord>) => {
     await apiPost('/api/progress', data);
@@ -141,21 +161,31 @@ export default function ProgressPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cập nhật tiến độ KPI</h1>
           <p className="text-text-light mt-1">Theo dõi và cập nhật kết quả thực hiện</p>
         </div>
-        <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
-          <Plus size={16} /> Cập nhật mới
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
+            {academicYears.map(ay => (
+              <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                {ay.name}
+              </button>
+            ))}
+          </div>
+          <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
+            <Plus size={16} /> Cập nhật mới
+          </button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Clock size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{enrichedRecords.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng KPI</p><p className="text-xl font-bold">{yearFilteredRecords.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
@@ -178,8 +208,8 @@ export default function ProgressPage() {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div className="relative flex-1">
+      <div className="flex flex-wrap gap-4">
+        <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input type="text" placeholder="Tìm kiếm KPI..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
@@ -189,7 +219,7 @@ export default function ProgressPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Tiến độ thực hiện KPI</h3></div>
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Mã KPI</th><th>Tên KPI</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tiến độ</th><th>MC</th><th>Cập nhật</th><th>Ghi chú</th><th>Thao tác</th></tr>
             </thead>
@@ -231,7 +261,7 @@ export default function ProgressPage() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 
@@ -275,7 +305,7 @@ function ProgressForm({ record, plans, planItems, onSubmit, onCancel }: { record
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-text-dark mb-1">Kế hoạch *</label>
           <select value={selectedPlanId} onChange={(e) => { setSelectedPlanId(e.target.value); setPlanItemId(''); }} required disabled={!!record}

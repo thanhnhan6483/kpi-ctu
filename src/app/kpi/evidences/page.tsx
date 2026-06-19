@@ -5,6 +5,13 @@ import { Upload, FileText, CheckCircle, AlertTriangle, Clock, Search, Plus, Tras
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
+import academicYears from '@/data/academic-years.json';
+
+interface CycleRecord {
+  id: string;
+  academicYearId: string;
+  name: string;
+}
 
 interface Evidence {
   id: string;
@@ -59,6 +66,8 @@ const statusConfig: Record<string, { label: string; color: string; icon: typeof 
 };
 
 export default function EvidencesPage() {
+  const [selectedYearId, setSelectedYearId] = useState('ay002');
+  const [cycles, setCycles] = useState<CycleRecord[]>([]);
   const [evidences, setEvidences] = useState<Evidence[]>([]);
   const [planItems, setPlanItems] = useState<PlanItemRecord[]>([]);
   const [plans, setPlans] = useState<PlanRecord[]>([]);
@@ -70,6 +79,13 @@ export default function EvidencesPage() {
   const [filterPlanId, setFilterPlanId] = useState('');
   const [filterPlanItemId, setFilterPlanItemId] = useState('');
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/cycles')
+      .then(r => r.json())
+      .then(data => setCycles(data))
+      .catch(() => {});
+  }, []);
 
   const loadData = useCallback(async () => {
     try {
@@ -86,15 +102,23 @@ export default function EvidencesPage() {
 
   useEffect(() => { loadData(); }, [loadData]);
 
+  const cycleYearMap = new Map(cycles.map(c => [c.id, c.academicYearId]));
   const planItemMap = new Map(planItems.map(pi => [pi.id, pi]));
   const planMap = new Map(plans.map(p => [p.id, p]));
 
   const filteredPlanItems = filterPlanId ? planItems.filter(pi => pi.planId === filterPlanId) : planItems;
   const filteredEvidences = evidences.filter(ev => {
     if (filterPlanItemId && ev.planItemId !== filterPlanItemId) return false;
+    const pi = planItemMap.get(ev.planItemId);
     if (filterPlanId) {
-      const pi = planItemMap.get(ev.planItemId);
       if (!pi || pi.planId !== filterPlanId) return false;
+    }
+    if (pi) {
+      const plan = planMap.get(pi.planId);
+      if (plan) {
+        const yearId = cycleYearMap.get(plan.cycleId);
+        if (yearId && yearId !== selectedYearId) return false;
+      }
     }
     const matchesSearch = ev.fileName.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesSearch;
@@ -120,27 +144,37 @@ export default function EvidencesPage() {
     loadData();
   };
 
-  const validCount = evidences.filter(e => e.status === 'valid').length;
-  const pendingCount = evidences.filter(e => e.status === 'pending').length;
-  const supplementCount = evidences.filter(e => e.status === 'needs_supplement').length;
+  const validCount = filteredEvidences.filter(e => e.status === 'valid').length;
+  const pendingCount = filteredEvidences.filter(e => e.status === 'pending').length;
+  const supplementCount = filteredEvidences.filter(e => e.status === 'needs_supplement').length;
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý minh chứng</h1>
           <p className="text-text-light mt-1">Tải lên và quản lý minh chứng KPI</p>
         </div>
-        <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
-          <Plus size={16} /> Tải lên minh chứng
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
+            {academicYears.map(ay => (
+              <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                {ay.name}
+              </button>
+            ))}
+          </div>
+          <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
+            <Plus size={16} /> Tải lên minh chứng
+          </button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><FileText size={20} className="text-primary" /></div>
-            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{evidences.length}</p></div>
+            <div><p className="text-text-light text-sm">Tổng minh chứng</p><p className="text-xl font-bold">{filteredEvidences.length}</p></div>
           </div>
         </div>
         <div className="card p-4">
@@ -166,7 +200,7 @@ export default function EvidencesPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Danh sách minh chứng</h3></div>
         <div className="p-4">
-          <div className="flex gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
               <input type="text" placeholder="Tìm kiếm minh chứng..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
@@ -185,7 +219,7 @@ export default function EvidencesPage() {
               ))}
             </select>
           </div>
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Chỉ tiêu KPI</th><th>Loại</th><th>Tên file</th><th>Trạng thái</th><th>Người nộp</th><th>Thao tác</th></tr>
             </thead>
@@ -220,7 +254,7 @@ export default function EvidencesPage() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 
@@ -235,7 +269,7 @@ export default function EvidencesPage() {
       <Modal isOpen={showDetail} onClose={() => { setShowDetail(false); setSelectedEvidence(null); }} title="Chi tiết minh chứng">
         {selectedEvidence && (
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div><span className="text-xs text-text-light">ID</span><div className="font-medium">{selectedEvidence.id}</div></div>
               <div><span className="text-xs text-text-light">KPI</span><div className="font-medium">{selectedEvidence.planItemId}</div></div>
               <div><span className="text-xs text-text-light">Loại</span><div className="font-medium">{selectedEvidence.evidenceType}</div></div>
@@ -281,7 +315,7 @@ function EvidenceForm({ plans, planItems, onSubmit, onCancel }: { plans: PlanRec
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-text-dark mb-1">Kế hoạch *</label>
           <select value={selectedPlanId} onChange={(e) => { setSelectedPlanId(e.target.value); setPlanItemId(''); }} required

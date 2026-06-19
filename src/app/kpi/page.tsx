@@ -136,7 +136,7 @@ export default function KPIPage() {
           );
         })}
       </div>
-      <table className="table">
+      <div className="overflow-x-auto"><table className="table">
         <thead>
           <tr><th>Mã KPI</th><th>Tên KPI</th><th>Lĩnh vực</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Phân rã đơn vị</th><th>Thao tác</th></tr>
         </thead>
@@ -176,7 +176,7 @@ export default function KPIPage() {
                     <td colSpan={10} className="p-0">
                       <div className="bg-bg-cream px-6 py-3 border-t border-border">
                         <p className="text-xs font-medium text-text-dark mb-2">KPI đơn vị dẫn xuất từ chỉ tiêu này:</p>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {derived.map((d, i) => (
                             <div key={i} className="flex items-center gap-2 text-xs bg-white p-2 rounded border border-border">
                               <span className="badge badge-info shrink-0">{d.kpi.id}</span>
@@ -194,7 +194,7 @@ export default function KPIPage() {
             );
           })}
         </tbody>
-      </table>
+      </table></div>
     </>
     );
   };
@@ -217,7 +217,7 @@ export default function KPIPage() {
             </button>
           ))}
         </div>
-        <table className="table">
+        <div className="overflow-x-auto"><table className="table">
           <thead>
             <tr><th>Mã KPI</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Dẫn xuất từ</th><th>Thao tác</th></tr>
           </thead>
@@ -249,7 +249,7 @@ export default function KPIPage() {
               );
             })}
           </tbody>
-        </table>
+        </table></div>
       </>
     );
   };
@@ -270,7 +270,7 @@ export default function KPIPage() {
               className={`px-3 py-1 rounded text-sm ${selectedPosition === code ? 'bg-primary text-white' : 'bg-white border border-border'}`}>{p.name}</button>
           ))}
         </div>
-        <table className="table">
+        <div className="overflow-x-auto"><table className="table">
           <thead>
             <tr><th>Mã KPI</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Thực tế</th><th>Tỷ lệ</th><th>Trọng số</th><th>Trạng thái</th><th>Liên kết ĐV</th><th>Thao tác</th></tr>
           </thead>
@@ -303,7 +303,7 @@ export default function KPIPage() {
               );
             })}
           </tbody>
-        </table>
+        </table></div>
       </>
     );
   };
@@ -325,7 +325,7 @@ export default function KPIPage() {
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-text-light">Năm học:</span>
-          <div className="flex bg-white border border-border rounded-lg overflow-hidden">
+          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
             {academicYears.map(ay => (
               <button key={ay.id} onClick={() => { setSelectedYearId(ay.id); setSearchTerm(''); setSelectedCategory('Tất cả'); }}
                 className={`px-4 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
@@ -378,7 +378,7 @@ export default function KPIPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="card p-4">
           <h4 className="font-heading font-bold text-sm mb-2">Công thức tính điểm</h4>
           <div className="text-xs text-text-light space-y-1">

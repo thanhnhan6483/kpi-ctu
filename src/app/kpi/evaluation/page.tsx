@@ -5,6 +5,13 @@ import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit } from 'lucide
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
+import academicYears from '@/data/academic-years.json';
+
+interface CycleRecord {
+  id: string;
+  academicYearId: string;
+  name: string;
+}
 
 interface Evaluation {
   id: string;
@@ -77,6 +84,8 @@ const gradeConfig: Record<string, { color: string; bg: string }> = {
 };
 
 export default function EvaluationPage() {
+  const [selectedYearId, setSelectedYearId] = useState('ay002');
+  const [cycles, setCycles] = useState<CycleRecord[]>([]);
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [plans, setPlans] = useState<PlanRecord[]>([]);
   const [planItems, setPlanItems] = useState<PlanItemRecord[]>([]);
@@ -103,8 +112,16 @@ export default function EvaluationPage() {
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
+  useEffect(() => {
+    fetch('/api/cycles')
+      .then(r => r.json())
+      .then(data => setCycles(data))
+      .catch(() => {});
+  }, []);
+
   useEffect(() => { loadData(); }, [loadData]);
 
+  const cycleYearMap = new Map(cycles.map(c => [c.id, c.academicYearId]));
   const planMap = new Map(plans.map(p => [p.id, p]));
   const planItemMap = new Map(planItems.map(pi => [pi.id, pi]));
 
@@ -117,7 +134,12 @@ export default function EvaluationPage() {
     };
   });
 
-  const filtered = enrichedEvals.filter((ev) => {
+  const yearFilteredEvals = enrichedEvals.filter(ev => {
+    const yearId = cycleYearMap.get(ev.cycleId);
+    return !yearId || yearId === selectedYearId;
+  });
+
+  const filtered = yearFilteredEvals.filter((ev) => {
     const matchesSearch = ev.unitName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || ev.status === statusFilter;
     return matchesSearch && matchesStatus;
@@ -172,21 +194,31 @@ export default function EvaluationPage() {
     loadData();
   };
 
-  const totalEval = evaluations.length;
-  const lockedCount = evaluations.filter((e) => e.status === 'locked').length;
-  const pendingCount = evaluations.filter((e) => e.status === 'pending' || e.status === 'self_evaluated').length;
+  const totalEval = yearFilteredEvals.length;
+  const lockedCount = yearFilteredEvals.filter((e) => e.status === 'locked').length;
+  const pendingCount = yearFilteredEvals.filter((e) => e.status === 'pending' || e.status === 'self_evaluated').length;
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Đánh giá KPI Đơn vị</h1>
           <p className="text-text-light mt-1">Tự đánh giá → Cấp trên → Hội đồng → Khóa</p>
         </div>
-        <a href="/kpi/evaluation/individual" className="btn-secondary text-sm">Đánh giá cá nhân →</a>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
+            {academicYears.map(ay => (
+              <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                {ay.name}
+              </button>
+            ))}
+          </div>
+          <a href="/kpi/evaluation/individual" className="btn-secondary text-sm">Đánh giá cá nhân →</a>
+        </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Award size={20} className="text-primary" /></div>
@@ -213,13 +245,13 @@ export default function EvaluationPage() {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div className="relative flex-1">
+      <div className="flex flex-wrap gap-4">
+        <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input type="text" placeholder="Tìm kiếm..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {['all', 'pending', 'self_evaluated', 'manager_review', 'evaluated', 'locked'].map((status) => (
             <button key={status} onClick={() => setStatusFilter(status)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === status ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
@@ -232,7 +264,7 @@ export default function EvaluationPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Kết quả đánh giá</h3></div>
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Mã</th><th>Đơn vị</th><th>Chu kỳ</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
@@ -262,7 +294,7 @@ export default function EvaluationPage() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 
@@ -272,7 +304,7 @@ export default function EvaluationPage() {
             <div className="flex items-center justify-between">
               <span className="text-xs text-text-light">{getUnitName(planMap.get(selectedEval.planId)?.ownerId ?? '')} • {planMap.get(selectedEval.planId)?.cycleId ?? ''}</span>
             </div>
-            <table className="table">
+            <div className="overflow-x-auto"><table className="table">
               <thead>
                 <tr><th>Chỉ tiêu</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Tổng</th></tr>
               </thead>
@@ -300,7 +332,7 @@ export default function EvaluationPage() {
                   );
                 })}
               </tbody>
-            </table>
+            </table></div>
             <div className="flex justify-end gap-2 pt-4 border-t">
               <button onClick={() => { setShowScoreModal(false); setSelectedEval(null); }} className="btn-secondary">Hủy</button>
               <button onClick={handleSaveScores} className="btn-primary">Lưu điểm số</button>

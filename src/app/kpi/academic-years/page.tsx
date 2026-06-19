@@ -56,7 +56,7 @@ export default function AcademicYearsPage() {
 
       <div className="card">
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>ID</th><th>Tên năm học</th><th>Bắt đầu</th><th>Kết thúc</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
@@ -86,7 +86,7 @@ export default function AcademicYearsPage() {
                 <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có năm học nào</td></tr>
               )}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 

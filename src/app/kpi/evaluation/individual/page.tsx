@@ -148,7 +148,7 @@ export default function IndividualEvaluationPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><User size={20} className="text-primary" /></div>
@@ -183,7 +183,7 @@ export default function IndividualEvaluationPage() {
 
       <div className="card p-4">
         <h4 className="font-heading font-bold text-sm mb-3">Phân bố xếp loại</h4>
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           {[
             { label: 'Xuất sắc', count: gradeStats.xuat_sac, color: '#4caf50' },
             { label: 'Tốt', count: gradeStats.tot, color: '#2196f3' },
@@ -199,13 +199,13 @@ export default function IndividualEvaluationPage() {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div className="relative flex-1">
+      <div className="flex flex-wrap gap-4">
+        <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input type="text" placeholder="Tìm kiếm theo tên, vị trí, đơn vị..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {['all', 'pending', 'self_evaluated', 'manager_review', 'evaluated', 'locked'].map((status) => (
             <button key={status} onClick={() => setStatusFilter(status)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === status ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
@@ -218,7 +218,7 @@ export default function IndividualEvaluationPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Kết quả đánh giá cá nhân</h3></div>
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Họ tên</th><th>Vị trí</th><th>Đơn vị</th><th>Tự ĐG</th><th>Trưởng đơn vị</th><th>Hội đồng</th><th>Điểm cuối</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
@@ -272,14 +272,14 @@ export default function IndividualEvaluationPage() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 
       <div className="card">
         <div className="card-header"><h3 className="text-white">Bảng xếp loại KPI cá nhân</h3></div>
         <div className="p-4">
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
             {Object.entries(gradeConfig).map(([grade, config]) => (
               <div key={grade} className="p-4 rounded-lg text-center" style={{ backgroundColor: config.bg }}>
                 <div className="font-heading font-bold text-lg" style={{ color: config.color }}>{grade}</div>
@@ -299,7 +299,7 @@ export default function IndividualEvaluationPage() {
       <Modal isOpen={showDetail} onClose={() => { setShowDetail(false); setSelectedEval(null); }} title="Chi tiết đánh giá cá nhân" maxWidth="max-w-4xl">
         {selectedEval && (
           <div className="space-y-4">
-            <div className="grid grid-cols-4 gap-4 p-4 bg-bg-cream rounded-lg border border-border">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-bg-cream rounded-lg border border-border">
               <div><span className="text-xs text-text-light">Họ tên</span><div className="font-medium">{selectedEval.personName}</div></div>
               <div><span className="text-xs text-text-light">Vị trí</span><div className="font-medium">{selectedEval.positionCode} - {getPositionName(selectedEval.positionCode || '')}</div></div>
               <div><span className="text-xs text-text-light">Đơn vị</span><div className="font-medium">{selectedEval.unitName}</div></div>
@@ -308,7 +308,7 @@ export default function IndividualEvaluationPage() {
             <div>
               <h4 className="font-heading font-bold text-sm mb-2">KPI theo vị trí: {getPositionName(selectedEval.positionCode || '')}</h4>
               <div className="max-h-[200px] overflow-y-auto border border-border rounded-lg">
-                <table className="table text-xs">
+                <div className="overflow-x-auto"><table className="table text-xs">
                   <thead><tr><th>Mã KPI</th><th>Tên KPI</th><th>Chỉ tiêu</th><th>Trọng số</th></tr></thead>
                   <tbody>
                     {getIndividualKpis(selectedEval.positionCode || '').map((kpi: Record<string, unknown>, idx: number) => (
@@ -320,10 +320,10 @@ export default function IndividualEvaluationPage() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </table></div>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-bg-cream rounded-lg border border-border">
                 <div className="flex items-center gap-2 mb-2"><Star size={16} className="text-primary" /><span className="font-medium text-sm">Tự đánh giá</span></div>
                 <div className="text-2xl font-bold text-primary mb-2">{selectedEval.selfScore ?? '-'}</div>
@@ -371,7 +371,7 @@ export default function IndividualEvaluationPage() {
           <div className="p-4 bg-bg-cream rounded-lg border border-border">
             <div className="font-medium text-sm mb-2">Xác nhận khóa kết quả</div>
             <div className="text-xs text-text-light">Sau khi khóa, kết quả đánh giá không thể chỉnh sửa.</div>
-            <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
+            <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
               <div><span className="text-text-light">Tự ĐG:</span> <span className="font-bold">{selectedEval?.selfScore ?? '-'}</span></div>
               <div><span className="text-text-light">Cấp trên:</span> <span className="font-bold">{selectedEval?.managerScore ?? '-'}</span></div>
               <div><span className="text-text-light">Hội đồng:</span> <span className="font-bold">{selectedEval?.councilScore ?? '-'}</span></div>

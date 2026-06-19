@@ -5,6 +5,7 @@ import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Eye, Send, X
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
+import academicYears from '@/data/academic-years.json';
 
 interface PlanRecord {
   id: string;
@@ -53,6 +54,7 @@ const statusFilters = [
 ];
 
 export default function PlansPage() {
+  const [selectedYearId, setSelectedYearId] = useState('ay002');
   const [plans, setPlans] = useState<PlanRecord[]>([]);
   const [cycles, setCycles] = useState<CycleRecord[]>([]);
   const [unitMap, setUnitMap] = useState<Record<string, string>>({});
@@ -67,14 +69,11 @@ export default function PlansPage() {
   const [actionNote, setActionNote] = useState('');
 
   useEffect(() => {
-    const yearId = localStorage.getItem('selectedAcademicYear');
-    if (yearId) {
-      fetch(`/api/cycles?academicYearId=${yearId}`)
-        .then(r => r.json())
-        .then(data => setCycles(data))
-        .catch(() => {});
-    }
-  }, []);
+    fetch(`/api/cycles?academicYearId=${selectedYearId}`)
+      .then(r => r.json())
+      .then(data => setCycles(data))
+      .catch(() => {});
+  }, [selectedYearId]);
 
   useEffect(() => {
     fetch('/api/unit-kpis')
@@ -171,17 +170,27 @@ export default function PlansPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Kế hoạch KPI</h1>
           <p className="text-text-light mt-1">Quản lý kế hoạch thực hiện KPI các đơn vị</p>
         </div>
-        <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
-          <Plus size={16} /> Tạo kế hoạch
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
+            {academicYears.map(ay => (
+              <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                {ay.name}
+              </button>
+            ))}
+          </div>
+          <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
+            <Plus size={16} /> Tạo kế hoạch
+          </button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><FileText size={20} className="text-primary" /></div>
@@ -208,13 +217,13 @@ export default function PlansPage() {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div className="relative flex-1">
+      <div className="flex flex-wrap gap-4">
+        <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input type="text" placeholder="Tìm kiếm..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {statusFilters.map((s) => (
             <button key={s.value} onClick={() => setStatusFilter(s.value)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === s.value ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
@@ -227,7 +236,7 @@ export default function PlansPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Danh sách kế hoạch</h3></div>
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Đơn vị</th><th>Chu kỳ</th><th>Trạng thái</th><th>Ngày tạo</th><th>Ngày gửi duyệt</th><th>Thao tác</th></tr>
             </thead>
@@ -273,7 +282,7 @@ export default function PlansPage() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 

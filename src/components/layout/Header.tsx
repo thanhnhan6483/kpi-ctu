@@ -1,20 +1,23 @@
 'use client';
 
-import { Bell, Search, User, ChevronDown } from 'lucide-react';
+import { Bell, Search, User, ChevronDown, Menu } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Header() {
+export default function Header({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <header className="h-16 bg-primary flex items-center justify-between px-6 shadow-sm">
-      <div className="flex items-center gap-4">
+    <header className="h-16 bg-primary flex items-center justify-between px-4 sm:px-6 shadow-sm">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <button onClick={onToggleSidebar} className="p-2 text-white hover:bg-white/10 rounded-lg lg:hidden" aria-label="Mở menu">
+          <Menu size={20} />
+        </button>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input
             type="text"
             placeholder="Tìm kiếm KPI, đơn vị..."
-            className="pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm w-80 focus:outline-none focus:border-primary"
+            className="pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm w-full sm:w-80 focus:outline-none focus:border-primary"
           />
         </div>
       </div>

@@ -84,7 +84,7 @@ export default function CyclesPage() {
               </button>
             ))}
           </div>
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>ID</th><th>Tên chu kỳ</th><th>Bắt đầu</th><th>Kết thúc</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
@@ -112,7 +112,7 @@ export default function CyclesPage() {
                 <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có chu kỳ nào cho năm học này</td></tr>
               )}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 

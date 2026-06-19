@@ -164,7 +164,7 @@ export default function ApprovalsContent() {
           <h1 className="text-2xl font-heading font-bold text-text-dark">Phê duyệt KPI</h1>
           <p className="text-text-light mt-1">Duyệt kế hoạch, minh chứng và đánh giá</p>
         </div>
-        <div className="flex bg-white border border-border rounded-lg overflow-hidden">
+        <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
           {academicYears.map(ay => (
             <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
               className={`px-3 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
@@ -174,7 +174,7 @@ export default function ApprovalsContent() {
         </div>
       </div>
 
-      <div className="flex gap-2 mb-2">
+      <div className="flex flex-wrap gap-2 mb-2">
         {(['all', 'evidence', 'evaluation', 'plan'] as const).map((tab) => (
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === tab ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
@@ -183,7 +183,7 @@ export default function ApprovalsContent() {
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary-light rounded-lg"><Clock size={20} className="text-primary" /></div>
@@ -210,13 +210,13 @@ export default function ApprovalsContent() {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div className="relative flex-1">
+      <div className="flex flex-wrap gap-4">
+        <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
           <input type="text" placeholder="Tìm kiếm..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {['all', 'pending', 'approved', 'rejected', 'needs_revision'].map((status) => (
             <button key={status} onClick={() => setStatusFilter(status)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === status ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
@@ -229,7 +229,7 @@ export default function ApprovalsContent() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Danh sách phê duyệt</h3></div>
         <div className="p-0">
-          <table className="table">
+          <div className="overflow-x-auto"><table className="table">
             <thead>
               <tr><th>Mã</th><th>Loại</th><th>Nội dung</th><th>Đơn vị</th><th>Người gửi</th><th>Ngày gửi</th><th>Trạng thái</th><th>Ghi chú</th><th>Thao tác</th></tr>
             </thead>
@@ -268,7 +268,7 @@ export default function ApprovalsContent() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
 

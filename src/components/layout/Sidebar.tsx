@@ -68,7 +68,7 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(['/kpi', '/admin']);
 
@@ -81,8 +81,10 @@ export default function Sidebar() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
   return (
-    <aside className="w-64 bg-white border-r border-border min-h-screen">
-      <div className="p-4 border-b border-border">
+    <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-border min-h-screen transform transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 ${
+      isOpen ? 'translate-x-0' : '-translate-x-full'
+    }`}>
+      <div className="p-4 border-b border-border flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <img src="/logo-ctu.png" alt="ĐH Cần Thơ" className="w-10 h-10 object-contain" />
           <div>
@@ -90,6 +92,9 @@ export default function Sidebar() {
             <div className="text-xs text-text-light">Đại học Cần Thơ</div>
           </div>
         </Link>
+        <button onClick={onClose} className="p-1 text-text-light hover:text-text-dark lg:hidden" aria-label="Đóng menu">
+          ✕
+        </button>
       </div>
 
       <nav className="p-2">
