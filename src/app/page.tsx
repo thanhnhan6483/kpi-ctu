@@ -47,14 +47,7 @@ const recentActivities = [
   { id: 6, action: 'Khóa kết quả', kpi: 'Đánh giá TT CNTT', user: 'Hội đồng KPI', time: '3 ngày trước', type: 'lock' },
 ];
 
-const unitPerformance = [
-  { name: 'Trung tâm CNTT', score: 91, grade: 'Xuất sắc', kpiCount: 10, achieved: 9 },
-  { name: 'Phòng Đào tạo', score: 84, grade: 'Tốt', kpiCount: 10, achieved: 8 },
-  { name: 'Phòng ĐBCL', score: 87, grade: 'Tốt', kpiCount: 10, achieved: 8 },
-  { name: 'Phòng KHCN', score: 79, grade: 'Đạt', kpiCount: 10, achieved: 7 },
-  { name: 'Phòng TCCB', score: 75, grade: 'Đạt', kpiCount: 9, achieved: 5 },
-  { name: 'Khoa CNTT', score: 78, grade: 'Đạt', kpiCount: 11, achieved: 6 },
-];
+
 
 function AnimatedNumber({ value }: { value: number }) {
   const [display, setDisplay] = useState(0);
@@ -124,6 +117,30 @@ export default function DashboardPage() {
     update: '#2196f3', evidence: '#4caf50', approve: '#4caf50',
     revision: '#ff9800', plan: '#9c27b0', lock: '#607d8b',
   };
+
+  const unitProgressAll = (progressData as Array<{ level: string; indicatorName: string; actualValue: number }>)
+    .filter(p => p.level === 'unit');
+
+  const unitPerformance = yearUnitKPIs.map(unit => {
+    const kpis = unit.kpis || [];
+    const kpiRates = kpis.map(k => {
+      const rec = unitProgressAll.find(p => p.indicatorName === k.name);
+      const actual = rec ? rec.actualValue : 0;
+      const target = k.target || 1;
+      const rate = target > 0 ? Math.min((actual / target) * 100, 120) : 0;
+      return { ...k, actual, rate };
+    });
+    const achieved = kpiRates.filter(k => k.rate >= 100).length;
+    const totalWeight = kpis.reduce((s, k) => s + (k.weight || 1), 0);
+    const weightedScore = kpiRates.reduce((s, k) => s + k.rate * (k.weight || 1), 0);
+    const score = totalWeight > 0 ? Math.round(weightedScore / totalWeight) : 0;
+    let grade = 'Không đạt';
+    if (score >= 90) grade = 'Xuất sắc';
+    else if (score >= 75) grade = 'Tốt';
+    else if (score >= 60) grade = 'Đạt';
+    else if (score >= 40) grade = 'Cần cải thiện';
+    return { name: unit.name, score, grade, kpiCount: kpis.length, achieved };
+  }).sort((a, b) => b.score - a.score);
 
   const completionStatus = (rate: number) => {
     if (rate >= 100) return { label: 'Đạt', color: 'text-accent-green', badge: 'badge-success' };
