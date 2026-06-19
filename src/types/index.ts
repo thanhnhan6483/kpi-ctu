@@ -190,6 +190,29 @@ export type EvaluationType = 'self' | 'manager' | 'council';
 
 export type GradeLevel = 'xuat_sac' | 'tot' | 'dat' | 'can_cai_thien' | 'khong_dat';
 
+export interface IndividualPlan {
+  id: string;
+  userId: string;
+  cycleId: string;
+  positionId: string;
+  positionName: string;
+  status: 'draft' | 'submitted' | 'approved' | 'in_progress';
+  submittedAt?: string;
+  approvedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+  items: IndividualPlanItem[];
+}
+
+export interface IndividualPlanItem {
+  kpiId: string;
+  kpiName: string;
+  target: number;
+  unit: string;
+  weight: number;
+  note: string;
+}
+
 export interface UnitKPIDetail {
   id: string;
   name: string;

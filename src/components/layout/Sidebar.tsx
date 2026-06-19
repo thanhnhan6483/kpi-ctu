@@ -39,6 +39,7 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/kpi', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI' },
+      { href: '/kpi/my-kpi', label: 'KPI của tôi' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
 

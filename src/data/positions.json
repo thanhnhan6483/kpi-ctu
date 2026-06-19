@@ -1,0 +1,13 @@
+[
+  { "id": "p001", "name": "Quản trị viên", "code": null, "academicYearId": null },
+  { "id": "p002", "name": "Trưởng/Phó đơn vị", "code": "LD", "academicYearId": "ay002" },
+  { "id": "p003", "name": "Giảng viên", "code": "GV", "academicYearId": "ay002" },
+  { "id": "p004", "name": "Trưởng/Phó bộ môn", "code": "BM", "academicYearId": "ay002" },
+  { "id": "p005", "name": "Nghiên cứu viên", "code": "NCV", "academicYearId": "ay002" },
+  { "id": "p006", "name": "Chuyên viên phòng ban", "code": "CV", "academicYearId": "ay002" },
+  { "id": "p007", "name": "Chuyên viên đào tạo/học vụ", "code": "CVDT", "academicYearId": "ay002" },
+  { "id": "p008", "name": "Chuyên viên ĐBCL/khảo thí", "code": "CVDBCL", "academicYearId": "ay002" },
+  { "id": "p009", "name": "Chuyên viên KHCN", "code": "CVKHCN", "academicYearId": "ay002" },
+  { "id": "p010", "name": "Hội đồng KPI", "code": null, "academicYearId": null },
+  { "id": "p011", "name": "Ban Giám hiệu", "code": "GV", "academicYearId": "ay002" }
+]
