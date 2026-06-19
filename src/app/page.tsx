@@ -16,30 +16,7 @@ import indicatorsData from '@/data/indicators.json';
 import kpiGroupsData from '@/data/kpi-groups.json';
 import unitKPIsData from '@/data/unit-kpis.json';
 import academicYears from '@/data/academic-years.json';
-
-const demoActual: Record<string, number> = {
-  'CTU-KPI-01': 52, 'CTU-KPI-02': 12, 'CTU-KPI-03': 8, 'CTU-KPI-04': 11,
-  'CTU-KPI-05': 92, 'CTU-KPI-06': 75, 'CTU-KPI-07': 12, 'CTU-KPI-08': 88,
-  'CTU-KPI-09': 72, 'CTU-KPI-10': 85, 'CTU-KPI-11': 68, 'CTU-KPI-12': 11,
-  'CTU-KPI-13': 1.4, 'CTU-KPI-14': 0.5, 'CTU-KPI-15': 10, 'CTU-KPI-16': 18,
-  'CTU-KPI-17': 380, 'CTU-KPI-18': 12, 'CTU-KPI-19': 650, 'CTU-KPI-20': 95,
-  'CTU-KPI-21': 12, 'CTU-KPI-22': 85, 'CTU-KPI-23': 95,
-  'DT-01': 92, 'DT-02': 98, 'DT-03': 92, 'DT-04': 12, 'DT-05': 78,
-  'DT-06': 96, 'DT-07': 88, 'DT-08': 4.2, 'DT-09': 100, 'DT-10': 92,
-  'KHCN-01': 1.4, 'KHCN-02': 0.5, 'KHCN-03': 10, 'KHCN-04': 18,
-  'KHCN-05': 380, 'KHCN-06': 88, 'KHCN-07': 11, 'KHCN-08': 85,
-  'KHCN-09': 8, 'KHCN-10': 92,
-  'TCCB-01': 52, 'TCCB-02': 12, 'TCCB-03': 92, 'TCCB-04': 98,
-  'TCCB-05': 100, 'TCCB-06': 75, 'TCCB-07': 88, 'TCCB-08': 95, 'TCCB-09': 3.8,
-  'CNTT-01': 85, 'CNTT-02': 99.5, 'CNTT-03': 92, 'CNTT-04': 88,
-  'CNTT-05': 65, 'CNTT-06': 100, 'CNTT-07': 100, 'CNTT-08': 4.1,
-  'CNTT-09': 85, 'CNTT-10': 3,
-  'GV-01': 105, 'GV-02': 85, 'GV-03': 92, 'GV-04': 1, 'GV-05': 2,
-  'GV-06': 2, 'GV-07': 1,
-  'NCV-01': 2, 'NCV-02': 1, 'NCV-03': 2, 'NCV-04': 90,
-  'NCV-05': 1, 'NCV-06': 88, 'NCV-07': 1,
-  'CV-01': 92, 'CV-02': 98, 'CV-03': 95, 'CV-04': 4.2, 'CV-05': 1, 'CV-06': 100,
-};
+import progressData from '@/data/progress.json';
 
 const groupConfig: Record<string, { label: string; short: string; icon: any; color: string }> = {
   grp_dao_tao: { label: 'Đào tạo & ĐBCLGD', short: 'Đào tạo', icon: BookOpen, color: '#00afef' },
@@ -96,8 +73,13 @@ export default function DashboardPage() {
   const yearGroups = kpiGroupsData.filter(g => g.academicYearId === selectedYearId);
   const yearUnitKPIs = unitKPIsData.filter(u => u.academicYearId === selectedYearId);
 
+  const progressLookup: Record<string, number> = {};
+  (progressData as Array<{ level: string; indicatorId: string; actualValue: number }>)
+    .filter(p => p.level === 'school')
+    .forEach(p => { progressLookup[p.indicatorId] = p.actualValue; });
+
   const indicatorRates = yearIndicators.map(ind => {
-    const actual = demoActual[ind.code] ?? 0;
+    const actual = progressLookup[ind.id] ?? 0;
     const target = ind.targetValue ?? 0;
     const rawRate = target > 0 ? calcCompletionRate(actual, target, ind.direction as 'higher_better' | 'lower_better') : 0;
     return { ...ind, actual, rawRate: Math.round(rawRate), displayRate: Math.min(Math.round(rawRate), 120) };

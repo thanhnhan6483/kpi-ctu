@@ -4,22 +4,22 @@
     "cycleId": "c001",
     "ownerType": "unit",
     "ownerId": "unit_pdt",
-    "status": "draft",
-    "submittedAt": null,
+    "status": "submitted",
+    "submittedAt": "2026-06-19T01:01:54.149Z",
     "approvedAt": null,
     "createdAt": "2026-06-18T10:25:23.225Z",
-    "updatedAt": "2026-06-18T10:25:23.226Z"
+    "updatedAt": "2026-06-19T01:01:54.149Z"
   },
   {
     "id": "plan_unit_khcn_c001",
     "cycleId": "c001",
     "ownerType": "unit",
     "ownerId": "unit_khcn",
-    "status": "draft",
-    "submittedAt": null,
+    "status": "submitted",
+    "submittedAt": "2026-06-19T01:02:38.816Z",
     "approvedAt": null,
     "createdAt": "2026-06-18T10:25:23.226Z",
-    "updatedAt": "2026-06-18T10:25:23.226Z"
+    "updatedAt": "2026-06-19T01:02:38.816Z"
   },
   {
     "id": "plan_unit_tccb_c001",
