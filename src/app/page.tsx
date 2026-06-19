@@ -269,7 +269,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 card">
           <div className="card-header flex items-center justify-between">
-            <h3 className="text-white">Ma trận sức khỏe KPI cấp Trường</h3>
+            <h3 className="text-white">Bảng theo dõi KPI</h3>
             <span className="text-white/80 text-sm">{indicatorRates.length} chỉ tiêu</span>
           </div>
           <div className="p-4">
@@ -288,7 +288,7 @@ export default function DashboardPage() {
                   <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5">
                     {g.items.map(ind => (
                       <a key={ind.id} href={`/kpi/progress?indicatorId=${ind.code}`}
-                        className={`${healthColor(ind.rawRate)}/85 rounded-lg p-2 text-white hover:brightness-110 transition-all`}>
+                        className={`${healthColor(ind.rawRate)} rounded-lg p-2 text-white hover:brightness-110 transition-all`}>
                         <div className="text-[10px] font-bold opacity-80">{ind.code}</div>
                         <div className="text-sm font-bold">{Math.min(ind.rawRate, 999)}%</div>
                       </a>
