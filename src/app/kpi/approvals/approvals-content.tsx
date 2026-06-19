@@ -5,6 +5,7 @@ import { CheckCircle, XCircle, Clock, AlertTriangle, Search, Eye, MessageSquare,
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
 import academicYears from '@/data/academic-years.json';
+import allUnitKpis from '@/data/unit-kpis.json';
 
 interface Approval {
   id: string;
@@ -23,9 +24,9 @@ interface Approval {
 
 interface PlanRecord {
   id: string;
-  name: string;
   cycleId: string;
-  unitId: string;
+  ownerType: string;
+  ownerId: string;
   status: string;
 }
 
@@ -90,6 +91,9 @@ export default function ApprovalsContent() {
 
   useEffect(() => { loadApprovals(); loadPlans(); }, [loadApprovals, loadPlans]);
 
+  const unitNameById = new Map(
+    (allUnitKpis as { id: string; name: string }[]).map(u => [u.id, u.name])
+  );
   const cycleYearMap = new Map(cycles.map(c => [c.id, c.academicYearId]));
   const yearPlans = plans.filter(p => {
     const yearId = cycleYearMap.get(p.cycleId);
@@ -100,9 +104,9 @@ export default function ApprovalsContent() {
     id: p.id,
     objectType: 'plan',
     objectId: p.id,
-    objectTitle: p.name,
-    unitName: p.unitId,
-    submitter: 'System',
+    objectTitle: `Kế hoạch ${unitNameById.get(p.ownerId) || p.ownerId}`,
+    unitName: unitNameById.get(p.ownerId) || p.ownerId,
+    submitter: unitNameById.get(p.ownerId) || p.ownerId,
     status: 'pending',
     submittedAt: new Date().toISOString(),
   }));
@@ -117,7 +121,9 @@ export default function ApprovalsContent() {
 
   const filtered = allItems.filter(a => {
     const matchesStatus = statusFilter === 'all' || a.status === statusFilter;
-    const matchesSearch = a.objectTitle.toLowerCase().includes(searchTerm.toLowerCase()) || a.unitName.toLowerCase().includes(searchTerm.toLowerCase());
+    const title = a.objectTitle || '';
+    const unit = a.unitName || '';
+    const matchesSearch = title.toLowerCase().includes(searchTerm.toLowerCase()) || unit.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesStatus && matchesSearch;
   });
 
