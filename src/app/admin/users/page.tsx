@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, Edit, Trash2, User, Eye } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, User, Eye, Shield } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
+import rolesData from '@/data/roles.json';
 
 interface UserData {
   id: string;
@@ -18,8 +19,17 @@ interface UserData {
   createdAt: string;
 }
 
+interface UserRole {
+  userId: string;
+  roleId: string;
+}
+
+const roleLabels: Record<string, string> = {};
+(rolesData as { id: string; description: string }[]).forEach(r => { roleLabels[r.id] = r.description; });
+
 export default function UsersPage() {
   const [users, setUsers] = useState<UserData[]>([]);
+  const [userRoles, setUserRoles] = useState<UserRole[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -29,8 +39,12 @@ export default function UsersPage() {
 
   const loadUsers = useCallback(async () => {
     try {
-      const data = await apiGet<UserData[]>('/api/users');
-      setUsers(data);
+      const [usersData, rolesData] = await Promise.all([
+        apiGet<UserData[]>('/api/users'),
+        apiGet<UserRole[]>('/api/user-roles'),
+      ]);
+      setUsers(usersData);
+      setUserRoles(rolesData);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
@@ -41,21 +55,29 @@ export default function UsersPage() {
     return unit ? (unit.name as string) : unitId;
   };
 
+  const getUserRoles = (userId: string) => userRoles.filter(r => r.userId === userId);
+
   const filteredUsers = users.filter(user =>
     user.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleCreate = async (data: Partial<UserData>) => {
-    await apiPost('/api/users', data);
+  const handleCreate = async (data: Partial<UserData> & { roleIds: string[] }) => {
+    const { roleIds, ...userData } = data;
+    const newUser = await apiPost<UserData>('/api/users', userData);
+    if (roleIds.length > 0) {
+      await apiPut('/api/user-roles', { userId: newUser.id, roleIds });
+    }
     setShowCreate(false);
     loadUsers();
   };
 
-  const handleUpdate = async (data: Partial<UserData>) => {
+  const handleUpdate = async (data: Partial<UserData> & { roleIds: string[] }) => {
     if (!selectedUser) return;
-    await apiPut(`/api/users/${selectedUser.id}`, data);
+    const { roleIds, ...userData } = data;
+    await apiPut(`/api/users/${selectedUser.id}`, userData);
+    await apiPut('/api/user-roles', { userId: selectedUser.id, roleIds });
     setShowEdit(false);
     setSelectedUser(null);
     loadUsers();
@@ -121,7 +143,7 @@ export default function UsersPage() {
           </div>
           <table className="table">
             <thead>
-              <tr><th>Tên đăng nhập</th><th>Họ tên</th><th>Email</th><th>Mã NV</th><th>Đơn vị</th><th>Trạng thái</th><th>Thao tác</th></tr>
+              <tr><th>Tên đăng nhập</th><th>Họ tên</th><th>Email</th><th>Mã NV</th><th>Đơn vị</th><th>Vai trò</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
               {filteredUsers.map((user) => (
@@ -131,6 +153,16 @@ export default function UsersPage() {
                   <td className="text-sm">{user.email}</td>
                   <td className="text-sm">{user.employeeCode}</td>
                   <td className="text-sm">{getUnitName(user.unitId)}</td>
+                  <td>
+                    <div className="flex flex-wrap gap-1">
+                      {getUserRoles(user.id).map(r => (
+                        <span key={r.roleId} className="badge badge-info text-[10px] px-1.5 py-0.5 whitespace-nowrap">
+                          {roleLabels[r.roleId] || r.roleId}
+                        </span>
+                      ))}
+                      {getUserRoles(user.id).length === 0 && <span className="text-xs text-text-light">-</span>}
+                    </div>
+                  </td>
                   <td>
                     <button onClick={() => handleToggleStatus(user)}
                       className={`badge cursor-pointer ${user.status === 'active' ? 'badge-success' : 'badge-danger'}`}>
@@ -156,7 +188,7 @@ export default function UsersPage() {
       </Modal>
 
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelectedUser(null); }} title="Sửa người dùng">
-        {selectedUser && <UserForm user={selectedUser} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedUser(null); }} />}
+        {selectedUser && <UserForm user={selectedUser} userRoleIds={userRoles.filter(r => r.userId === selectedUser.id).map(r => r.roleId)} onSubmit={handleUpdate} onCancel={() => { setShowEdit(false); setSelectedUser(null); }} />}
       </Modal>
 
       <Modal isOpen={showDetail} onClose={() => { setShowDetail(false); setSelectedUser(null); }} title="Chi tiết người dùng">
@@ -174,6 +206,16 @@ export default function UsersPage() {
                   {selectedUser.status === 'active' ? 'Hoạt động' : 'Ngừng'}
                 </span>
               </div></div>
+              <div><span className="text-xs text-text-light">Vai trò</span><div>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {getUserRoles(selectedUser.id).map(r => (
+                    <span key={r.roleId} className="badge badge-info text-xs">
+                      {roleLabels[r.roleId] || r.roleId}
+                    </span>
+                  ))}
+                  {getUserRoles(selectedUser.id).length === 0 && <span className="text-xs text-text-light">Chưa có vai trò</span>}
+                </div>
+              </div></div>
               <div><span className="text-xs text-text-light">Ngày tạo</span><div className="font-medium">{new Date(selectedUser.createdAt).toLocaleDateString('vi-VN')}</div></div>
             </div>
           </div>
@@ -183,7 +225,7 @@ export default function UsersPage() {
   );
 }
 
-function UserForm({ user, onSubmit, onCancel }: { user?: UserData; onSubmit: (data: Partial<UserData>) => void; onCancel: () => void }) {
+function UserForm({ user, userRoleIds = [], onSubmit, onCancel }: { user?: UserData; userRoleIds?: string[]; onSubmit: (data: Partial<UserData> & { roleIds: string[] }) => void; onCancel: () => void }) {
   const [form, setForm] = useState({
     username: user?.username || '',
     fullName: user?.fullName || '',
@@ -192,10 +234,17 @@ function UserForm({ user, onSubmit, onCancel }: { user?: UserData; onSubmit: (da
     unitId: user?.unitId || '',
     positionId: user?.positionId || '',
   });
+  const [selectedRoleIds, setSelectedRoleIds] = useState<string[]>(userRoleIds);
+
+  const toggleRole = (roleId: string) => {
+    setSelectedRoleIds(prev =>
+      prev.includes(roleId) ? prev.filter(id => id !== roleId) : [...prev, roleId]
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(form);
+    onSubmit({ ...form, roleIds: selectedRoleIds });
   };
 
   return (
@@ -244,6 +293,19 @@ function UserForm({ user, onSubmit, onCancel }: { user?: UserData; onSubmit: (da
             <option value="p006">Chuyên viên</option>
             <option value="p007">Nhân viên</option>
           </select>
+        </div>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-text-dark mb-2">Vai trò</label>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {(rolesData as { id: string; description: string }[]).map(role => (
+            <label key={role.id} className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer text-sm transition-colors ${selectedRoleIds.includes(role.id) ? 'border-primary bg-primary-light' : 'border-border hover:bg-bg-cream'}`}>
+              <input type="checkbox" checked={selectedRoleIds.includes(role.id)} onChange={() => toggleRole(role.id)}
+                className="accent-primary" />
+              <Shield size={14} className="text-primary shrink-0" />
+              <span>{role.description}</span>
+            </label>
+          ))}
         </div>
       </div>
       <div className="flex justify-end gap-2 pt-4 border-t">

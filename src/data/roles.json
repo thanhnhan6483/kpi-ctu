@@ -23,5 +23,10 @@
     "id": "r005",
     "name": "staff",
     "description": "Nhân viên/Giảng viên"
+  },
+  {
+    "id": "r006",
+    "name": "kpi_staff",
+    "description": "Cán bộ phụ trách KPI"
   }
 ]
