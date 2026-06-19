@@ -78,7 +78,7 @@ export default function IndividualEvaluationPage() {
 
   const loadEvals = useCallback(async () => {
     try {
-      const data = await apiGet<IndividualEvaluation[]>('/api/evaluation?level=individual');
+      const data = await apiGet<IndividualEvaluation[]>('/api/evaluation/individual');
       setEvaluations(data);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
@@ -109,7 +109,7 @@ export default function IndividualEvaluationPage() {
 
   const handleSelfEval = async (score: number, comment: string) => {
     if (!selectedEval) return;
-    await apiPut(`/api/evaluation/${selectedEval.id}`, { selfScore: score, selfComment: comment });
+    await apiPut(`/api/evaluation/individual/${selectedEval.id}`, { selfScore: score, selfComment: comment });
     setShowSelfEval(false);
     setSelectedEval(null);
     loadEvals();
@@ -117,7 +117,7 @@ export default function IndividualEvaluationPage() {
 
   const handleManagerEval = async (score: number, comment: string) => {
     if (!selectedEval) return;
-    await apiPut(`/api/evaluation/${selectedEval.id}`, { managerScore: score, managerComment: comment });
+    await apiPut(`/api/evaluation/individual/${selectedEval.id}`, { managerScore: score, managerComment: comment });
     setShowManagerEval(false);
     setSelectedEval(null);
     loadEvals();
@@ -125,7 +125,7 @@ export default function IndividualEvaluationPage() {
 
   const handleCouncilEval = async (score: number, comment: string) => {
     if (!selectedEval) return;
-    await apiPut(`/api/evaluation/${selectedEval.id}`, { councilScore: score, councilComment: comment });
+    await apiPut(`/api/evaluation/individual/${selectedEval.id}`, { councilScore: score, councilComment: comment });
     setShowCouncilEval(false);
     setSelectedEval(null);
     loadEvals();
@@ -133,7 +133,7 @@ export default function IndividualEvaluationPage() {
 
   const handleLock = async () => {
     if (!selectedEval) return;
-    await apiPut(`/api/evaluation/${selectedEval.id}`, { status: 'locked' });
+    await apiPut(`/api/evaluation/individual/${selectedEval.id}`, { status: 'locked' });
     setShowLock(false);
     setSelectedEval(null);
     loadEvals();
