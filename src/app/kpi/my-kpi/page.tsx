@@ -1,17 +1,16 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
-  Save, Send, FileText, CheckCircle, Clock, AlertTriangle,
-  Edit, Trash2, Plus, User
+  Save, Send, FileText, CheckCircle, AlertTriangle,
+  Plus, User
 } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut } from '@/lib/api';
 import individualKpisData from '@/data/individual-kpis.json';
 import academicYears from '@/data/academic-years.json';
-import positionsData from '@/data/positions.json';
 import type { IndividualPlan, IndividualPlanItem } from '@/types';
 
 interface PositionKPI {
@@ -45,17 +44,12 @@ export default function MyKPIPage() {
   const [cycles, setCycles] = useState<{ id: string; name: string; academicYearId: string; status: string }[]>([]);
   const [selectedCycleId, setSelectedCycleId] = useState('');
   const [myPlan, setMyPlan] = useState<IndividualPlan | null>(null);
-  const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<IndividualPlanItem[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const [selectedPositionId, setSelectedPositionId] = useState('');
   const [selectedCycleForCreate, setSelectedCycleForCreate] = useState('');
   const [saving, setSaving] = useState(false);
   const [showSubmit, setShowSubmit] = useState(false);
-
-  const userPosition = (positionsData as { id: string; name: string; code: string | null }[]).find(
-    p => p.id === session?.user?.positionId
-  );
 
   const availablePositions = (individualKpisData as PositionTemplate[]).filter(
     p => p.academicYearId === selectedYearId
@@ -74,31 +68,19 @@ export default function MyKPIPage() {
       .catch(() => {});
   }, [selectedYearId]);
 
-  const loadMyPlan = useCallback(async () => {
+  useEffect(() => {
     if (!session?.user?.id) return;
-    try {
-      const plans = await apiGet<IndividualPlan[]>(
-        `/api/individual-plans?userId=${session.user.id}&cycleId=${selectedCycleId || ''}`
-      );
-      const active = plans.sort(
+    apiGet<IndividualPlan[]>(
+      `/api/individual-plans?userId=${session.user.id}&cycleId=${selectedCycleId || ''}`
+    ).then(plans => {
+      const sorted = plans.sort(
         (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-      )[0];
+      );
+      const active = sorted[0];
       setMyPlan(active || null);
-      if (active) {
-        setItems(active.items);
-      } else {
-        setItems([]);
-      }
-    } catch { /* empty */ } finally { setLoading(false); }
+      setItems(active ? active.items : []);
+    }).catch(() => {});
   }, [session, selectedCycleId]);
-
-  useEffect(() => { loadMyPlan(); }, [loadMyPlan]);
-
-  const getTemplateForPosition = (code: string): PositionTemplate | undefined => {
-    return (individualKpisData as PositionTemplate[]).find(
-      p => p.code === code && p.academicYearId === selectedYearId
-    );
-  };
 
   const handleCreatePlan = async () => {
     if (!session?.user?.id || !selectedCycleForCreate || !selectedPositionId) return;
@@ -159,12 +141,6 @@ export default function MyKPIPage() {
   if (authStatus === 'loading') {
     return <div className="flex items-center justify-center h-64"><p className="text-text-light">Đang tải...</p></div>;
   }
-
-  const template = myPlan
-    ? (individualKpisData as PositionTemplate[]).find(p => p.id === myPlan.positionId)
-    : userPosition?.code
-      ? getTemplateForPosition(userPosition.code)
-      : null;
 
   const activeCycles = cycles.filter(c => c.status === 'active' || c.status === 'open');
   const totalWeight = items.reduce((s, i) => s + i.weight, 0);
