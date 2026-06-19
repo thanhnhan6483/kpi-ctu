@@ -69,6 +69,12 @@ export default function KPIDataPage() {
     loadData(selectedYearId);
   };
 
+  const handleCloneClick = () => {
+    const prev = years.filter(y => y.id !== selectedYearId).pop();
+    setCloneFromYear(prev?.id || '');
+    setShowCloneModal(true);
+  };
+
   const handleClone = async () => {
     if (!cloneFromYear || !selectedYearId) return;
     setCloning(true);
@@ -94,6 +100,9 @@ export default function KPIDataPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý bộ chỉ tiêu KPI</h1>
           <p className="text-text-light mt-1">Thêm, sửa, xóa dữ liệu chỉ tiêu KPI các cấp</p>
         </div>
+        <button onClick={handleCloneClick} className="btn-primary flex items-center gap-1 text-xs">
+          <Copy size={14} /> Sao chép
+        </button>
       </div>
 
       {/* Year selector */}
