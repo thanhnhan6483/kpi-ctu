@@ -103,6 +103,7 @@ function TreeNode({ node, level = 0 }: { node: UnitNode; level?: number }) {
 
 export default function OrganizationPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState<'tree' | 'list'>('tree');
   const tree = buildTree(unitsData as unknown as Record<string, unknown>[]);
 
   const totalUnits = unitsData.length;
@@ -165,22 +166,40 @@ export default function OrganizationPage() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h3 className="text-white">Cây tổ chức Đại học Cần Thơ</h3>
-        </div>
-        <div className="p-2 max-h-[600px] overflow-y-auto">
-          {tree.map((node) => (
-            <TreeNode key={node.id} node={node} />
-          ))}
-        </div>
+      <div className="flex gap-2 border-b border-border">
+        <button
+          onClick={() => setActiveTab('tree')}
+          className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${
+            activeTab === 'tree' ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'
+          }`}
+        >
+          <Building size={16} />
+          Cây tổ chức
+        </button>
+        <button
+          onClick={() => setActiveTab('list')}
+          className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${
+            activeTab === 'list' ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'
+          }`}
+        >
+          <Building size={16} />
+          Danh sách đơn vị
+        </button>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h3 className="text-white">Danh sách đơn vị</h3>
+      {activeTab === 'tree' && (
+        <div className="card">
+          <div className="p-2 max-h-[600px] overflow-y-auto">
+            {tree.map((node) => (
+              <TreeNode key={node.id} node={node} />
+            ))}
+          </div>
         </div>
-        <div className="p-0">
+      )}
+
+      {activeTab === 'list' && (
+        <div className="card">
+          <div className="p-0">
           <table className="table">
             <thead>
               <tr>
@@ -231,6 +250,7 @@ export default function OrganizationPage() {
           </table>
         </div>
       </div>
+      )}
     </div>
   );
 }
