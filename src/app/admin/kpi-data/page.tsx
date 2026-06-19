@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy } from 'lucide-react';
+import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy, ChevronDown, ChevronRight } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear } from '@/types';
@@ -24,6 +24,8 @@ export default function KPIDataPage() {
   const [cloneFromYear, setCloneFromYear] = useState('');
   const [cloning, setCloning] = useState(false);
   const [filterGroupId, setFilterGroupId] = useState<string | null>(null);
+  const [expandedUnits, setExpandedUnits] = useState<Set<string>>(new Set());
+  const [expandedInds, setExpandedInds] = useState<Set<string>>(new Set());
 
   const loadYears = useCallback(async () => {
     const y = await apiGet<AcademicYear[]>('/api/academic-years');
@@ -218,36 +220,136 @@ export default function KPIDataPage() {
           )}
           {tab === 'unit' && (
             <table className="table">
-              <thead><tr><th>ID</th><th>Đơn vị</th><th>Mã</th><th>Số KPI</th><th>Loại</th><th>Thao tác</th></tr></thead>
+              <thead><tr><th></th><th>ID</th><th>Đơn vị</th><th>Mã</th><th>Số KPI</th><th>Loại</th><th>Thao tác</th></tr></thead>
               <tbody>
-                {unitKpis.map(u => (
-                  <tr key={u.id}>
-                    <td><span className="badge badge-info">{u.id}</span></td>
-                    <td className="font-medium">{u.name}</td>
-                    <td>{u.code}</td>
-                    <td>{u.kpis.length}</td>
-                    <td>{u.type}</td>
-                    <td><Actions id={u.id} onEdit={() => { setEditId(u.id); setShowModal(true); }} onDelete={() => handleDelete(u.id)} /></td>
-                  </tr>
-                ))}
-                {unitKpis.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {unitKpis.flatMap(u => {
+                  const expanded = expandedUnits.has(u.id);
+                  const rows: React.ReactNode[] = [
+                    <tr key={u.id}>
+                      <td>
+                        {u.kpis.length > 0 && (
+                          <button onClick={() => {
+                            const next = new Set(expandedUnits);
+                            expanded ? next.delete(u.id) : next.add(u.id);
+                            setExpandedUnits(next);
+                          }} className="p-1 text-text-light hover:text-text-dark">
+                            {expanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                          </button>
+                        )}
+                      </td>
+                      <td><span className="badge badge-info">{u.id}</span></td>
+                      <td className="font-medium">{u.name}</td>
+                      <td>{u.code}</td>
+                      <td>{u.kpis.length}</td>
+                      <td>{u.type}</td>
+                      <td><Actions id={u.id} onEdit={() => { setEditId(u.id); setShowModal(true); }} onDelete={() => handleDelete(u.id)} /></td>
+                    </tr>
+                  ];
+                  if (expanded) {
+                    rows.push(
+                      <tr key={`${u.id}-sub`} className="bg-bg-cream/50">
+                        <td colSpan={7} className="p-0">
+                          <div className="px-6 py-3">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-xs font-medium text-text-light">KPI: {u.kpis.length}</span>
+                            </div>
+                            <table className="w-full text-xs">
+                              <thead>
+                                <tr className="border-b border-border">
+                                  <th className="text-left py-1 pr-2 font-medium">Mã</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Tên KPI</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Chỉ tiêu</th>
+                                  <th className="text-left py-1 pr-2 font-medium">ĐVT</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Trọng số</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {u.kpis.map(k => (
+                                  <tr key={k.id} className="border-b border-border/50">
+                                    <td className="py-1 pr-2 text-text-light">{k.id}</td>
+                                    <td className="py-1 pr-2 font-medium">{k.name}</td>
+                                    <td className="py-1 pr-2">{k.target}</td>
+                                    <td className="py-1 pr-2">{k.unit}</td>
+                                    <td className="py-1 pr-2">{k.weight}%</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  }
+                  return rows;
+                })}
+                {unitKpis.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
           {tab === 'individual' && (
             <table className="table">
-              <thead><tr><th>ID</th><th>Vị trí</th><th>Mã</th><th>Số KPI</th><th>Thao tác</th></tr></thead>
+              <thead><tr><th></th><th>ID</th><th>Vị trí</th><th>Mã</th><th>Số KPI</th><th>Thao tác</th></tr></thead>
               <tbody>
-                {indKpis.map(p => (
-                  <tr key={p.id}>
-                    <td><span className="badge badge-info">{p.id}</span></td>
-                    <td className="font-medium">{p.name}</td>
-                    <td>{p.code}</td>
-                    <td>{p.kpis.length}</td>
-                    <td><Actions id={p.id} onEdit={() => { setEditId(p.id); setShowModal(true); }} onDelete={() => handleDelete(p.id)} /></td>
-                  </tr>
-                ))}
-                {indKpis.length === 0 && <tr><td colSpan={5} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {indKpis.flatMap(p => {
+                  const expanded = expandedInds.has(p.id);
+                  const rows: React.ReactNode[] = [
+                    <tr key={p.id}>
+                      <td>
+                        {p.kpis.length > 0 && (
+                          <button onClick={() => {
+                            const next = new Set(expandedInds);
+                            expanded ? next.delete(p.id) : next.add(p.id);
+                            setExpandedInds(next);
+                          }} className="p-1 text-text-light hover:text-text-dark">
+                            {expanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                          </button>
+                        )}
+                      </td>
+                      <td><span className="badge badge-info">{p.id}</span></td>
+                      <td className="font-medium">{p.name}</td>
+                      <td>{p.code}</td>
+                      <td>{p.kpis.length}</td>
+                      <td><Actions id={p.id} onEdit={() => { setEditId(p.id); setShowModal(true); }} onDelete={() => handleDelete(p.id)} /></td>
+                    </tr>
+                  ];
+                  if (expanded) {
+                    rows.push(
+                      <tr key={`${p.id}-sub`} className="bg-bg-cream/50">
+                        <td colSpan={6} className="p-0">
+                          <div className="px-6 py-3">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-xs font-medium text-text-light">KPI: {p.kpis.length}</span>
+                            </div>
+                            <table className="w-full text-xs">
+                              <thead>
+                                <tr className="border-b border-border">
+                                  <th className="text-left py-1 pr-2 font-medium">Mã</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Tên KPI</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Chỉ tiêu</th>
+                                  <th className="text-left py-1 pr-2 font-medium">ĐVT</th>
+                                  <th className="text-left py-1 pr-2 font-medium">Trọng số</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {p.kpis.map(k => (
+                                  <tr key={k.id} className="border-b border-border/50">
+                                    <td className="py-1 pr-2 text-text-light">{k.id}</td>
+                                    <td className="py-1 pr-2 font-medium">{k.name}</td>
+                                    <td className="py-1 pr-2">{k.target}</td>
+                                    <td className="py-1 pr-2">{k.unit}</td>
+                                    <td className="py-1 pr-2">{k.weight}%</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  }
+                  return rows;
+                })}
+                {indKpis.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
