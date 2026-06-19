@@ -149,36 +149,23 @@ export default function KPIDataPage() {
         })}
       </div>
 
-      {tab === 'indicators' && (
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm font-medium text-text-dark">Lĩnh vực:</span>
-          <button onClick={() => setFilterGroupId(null)}
-            className={`px-3 py-1.5 rounded text-sm transition-colors ${!filterGroupId ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
-            Tất cả
-          </button>
-          {groups.map(g => (
-            <button key={g.id} onClick={() => setFilterGroupId(g.id)}
-              className={`px-3 py-1.5 rounded text-sm transition-colors ${filterGroupId === g.id ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
-              {g.id === 'grp_dao_tao' ? 'Đào tạo & ĐBCL' :
-               g.id === 'grp_khcn' ? 'KHCN & Đổi mới ST' :
-               g.id === 'grp_doi_ngu' ? 'Đội ngũ & PT' :
-               g.id === 'grp_quoc_te' ? 'Hợp tác Quốc tế' :
-               g.id === 'grp_quan_tri' ? 'Quản trị & TC' :
-               g.id === 'grp_chuyen_so' ? 'Chuyển đổi Số' :
-               g.id === 'grp_phuc_vu' ? 'Phục vụ CĐ' : g.name}
-            </button>
-          ))}
-        </div>
-      )}
-
       <div className="card">
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">{tabs.find(t => t.id === tab)?.label}</h3>
-          {selectedYearId && (
-            <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
-              <Plus size={14} /> Thêm
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {tab === 'indicators' && (
+              <select value={filterGroupId || ''} onChange={e => setFilterGroupId(e.target.value || null)}
+                className="px-2 py-1 rounded border border-white/20 bg-white/10 text-white text-xs focus:outline-none">
+                <option value="">Tất cả lĩnh vực</option>
+                {groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
+              </select>
+            )}
+            {selectedYearId && (
+              <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
+                <Plus size={14} /> Thêm
+              </button>
+            )}
+          </div>
         </div>
         <div className="p-0">
           {tab === 'groups' && (
