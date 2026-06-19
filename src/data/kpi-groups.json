@@ -3,7 +3,7 @@
     "id": "grp_dao_tao",
     "name": "Đào tạo và đảm bảo chất lượng giáo dục",
     "code": "DT",
-    "defaultWeight": 35,
+    "defaultWeight": 30,
     "targetLevel": "school",
     "academicYearId": "ay002"
   },
@@ -11,7 +11,7 @@
     "id": "grp_khcn",
     "name": "KHCN, đổi mới sáng tạo và sở hữu trí tuệ",
     "code": "KHCN",
-    "defaultWeight": 30,
+    "defaultWeight": 20,
     "targetLevel": "school",
     "academicYearId": "ay002"
   },
@@ -19,7 +19,7 @@
     "id": "grp_doi_ngu",
     "name": "Đội ngũ, nhân lực và phát triển giảng viên",
     "code": "DN",
-    "defaultWeight": 10,
+    "defaultWeight": 15,
     "targetLevel": "school",
     "academicYearId": "ay002"
   },
@@ -27,7 +27,7 @@
     "id": "grp_quoc_te",
     "name": "Hợp tác quốc tế và trao đổi học thuật",
     "code": "QT",
-    "defaultWeight": 8,
+    "defaultWeight": 10,
     "targetLevel": "school",
     "academicYearId": "ay002"
   },
@@ -43,7 +43,7 @@
     "id": "grp_chuyen_so",
     "name": "Chuyển đổi số và quản trị số",
     "code": "CDS",
-    "defaultWeight": 7,
+    "defaultWeight": 10,
     "targetLevel": "school",
     "academicYearId": "ay002"
   },
@@ -51,7 +51,7 @@
     "id": "grp_phuc_vu",
     "name": "Phục vụ cộng đồng và gắn kết địa phương/doanh nghiệp",
     "code": "PV",
-    "defaultWeight": 10,
+    "defaultWeight": 5,
     "targetLevel": "school",
     "academicYearId": "ay002"
   }
