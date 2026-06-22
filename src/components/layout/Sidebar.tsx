@@ -78,6 +78,8 @@ const menuItems: MenuItem[] = [
       { href: '/kpi/progress', label: 'Cập nhật tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
       { href: '/kpi/personal-dashboard', label: 'Dashboard cá nhân' },
+      { href: '/kpi/unit-dashboard', label: 'Dashboard đơn vị' },
+      { href: '/kpi/executive-dashboard', label: 'Dashboard BGH' },
       { href: '/kpi/warnings', label: 'Cảnh báo & Deadline' },
     ],
   },
@@ -167,7 +169,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories')) return ['/setup'];
     if (pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi')) return ['/deploy'];
-    if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
+    if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
     if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
