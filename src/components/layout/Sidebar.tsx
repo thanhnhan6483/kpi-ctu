@@ -48,10 +48,10 @@ const menuItems: MenuItem[] = [
     label: '② Mục tiêu & KPI',
     icon: Target,
     children: [
-      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
-      { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
-      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
       { href: '/admin/bsc', label: 'Bản đồ BSC' },
+      { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
+      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
+      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
       { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
       { href: '/admin/import', label: 'Import dữ liệu' },
     ],
