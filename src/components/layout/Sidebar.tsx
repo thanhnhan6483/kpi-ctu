@@ -67,6 +67,7 @@ const menuItems: MenuItem[] = [
       { href: '/kpi/department-plans', label: 'Kế hoạch KPI bộ môn' },
       { href: '/kpi/my-kpi-registration', label: 'Đăng ký KPI cá nhân' },
       { href: '/kpi/my-kpi', label: 'KPI của tôi' },
+      { href: '/kpi/plan-versions', label: 'Phiên bản kế hoạch' },
     ],
   },
 
@@ -115,6 +116,8 @@ const menuItems: MenuItem[] = [
       { href: '/kpi/evaluation', label: 'Đánh giá đơn vị' },
       { href: '/kpi/evaluation/individual', label: 'Đánh giá cá nhân' },
       { href: '/kpi/council-review', label: 'Hội đồng rà soát' },
+      { href: '/kpi/council-review/normalization', label: 'Chuẩn hóa điểm' },
+      { href: '/kpi/evaluation/dialogue', label: 'Đối thoại đánh giá' },
       { href: '/kpi/scoring', label: 'Tính điểm & Xếp loại' },
       { href: '/kpi/approvals', label: 'Phê duyệt' },
       { href: '/admin/complaints', label: 'Khiếu nại / Giải trình' },
@@ -128,6 +131,7 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/reports', label: 'Báo cáo & Thống kê' },
       { href: '/kpi/trends', label: 'Xu hướng & Dự báo' },
+      { href: '/kpi/archive', label: 'Lưu trữ hồ sơ KPI' },
       { href: '/admin/scheduled-reports', label: 'Báo cáo định kỳ' },
     ],
   },
@@ -142,9 +146,11 @@ const menuItems: MenuItem[] = [
       { href: '/admin/notifications', label: 'Thông báo' },
       { href: '/admin/notification-templates', label: 'Mẫu thông báo' },
       { href: '/admin/audit', label: 'Nhật ký hệ thống' },
-      { href: '/admin/backup', label: 'Sao lưu dữ liệu' },
+      { href: '/admin/backup', label: 'Sao lưu & Phục hồi' },
+      { href: '/admin/unlock-requests', label: 'Yêu cầu mở khóa' },
       { href: '/admin/security', label: 'Bảo mật' },
       { href: '/admin/api-configs', label: 'Kết nối tích hợp' },
+      { href: '/admin/sync-logs', label: 'Lịch sử đồng bộ' },
       { href: '/admin/data-reconciliation', label: 'Đối soát dữ liệu' },
       { href: '/admin/approval-workflows', label: 'Quy trình phê duyệt' },
       { href: '/admin/settings', label: 'Cài đặt' },
@@ -168,12 +174,12 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories')) return ['/setup'];
     if (pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
-    if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi')) return ['/deploy'];
+    if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
-    if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
-    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
+    if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/kpi/archive') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
+    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/unlock') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/sync-logs') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
     if (pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/kpi/architecture') || pathname.startsWith('/kpi/roles-guide')) return ['/kpi/architecture'];
     return ['/'];
   });
