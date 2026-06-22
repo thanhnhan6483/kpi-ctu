@@ -7,28 +7,14 @@ import {
   BarChart2,
   Target,
   GitBranch,
-  FileText,
-  ClipboardList,
-  CheckCircle,
-  Bell,
   Settings,
-  Users,
-  Building,
-  Clock,
   Award,
   ChevronDown,
   ChevronRight,
-  Compass,
   TrendingUp,
-  AlertTriangle,
-  BookOpen,
-  Calendar,
   Briefcase,
-  MapPin,
-  List,
   Shield,
-  History,
-  FileWarning,
+  LifeBuoy,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -42,56 +28,63 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { href: '/', label: 'Tổng quan', icon: Home },
-  { href: '/kpi/personal-dashboard', label: 'Dashboard cá nhân', icon: BarChart2 },
 
   {
-    href: '/kpi',
-    label: 'Định nghĩa KPI',
-    icon: Target,
+    href: '/setup',
+    label: '① Thiết lập',
+    icon: Settings,
     children: [
-      { href: '/kpi', label: 'Chỉ tiêu KPI' },
-      { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
-      { href: '/kpi/cascade', label: 'Phân rã MBO Cascade' },
-      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
+      { href: '/kpi/academic-years', label: 'Năm học' },
+      { href: '/kpi/cycles', label: 'Chu kỳ KPI' },
+      { href: '/admin/organization', label: 'Cơ cấu tổ chức' },
+      { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
+      { href: '/admin/job-positions', label: 'Vị trí việc làm' },
+      { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
+      { href: '/admin/exemptions', label: 'Hệ số miễn giảm' },
+      { href: '/admin/thresholds', label: 'Ngưỡng cảnh báo' },
+      { href: '/admin/sla-configs', label: 'SLA xử lý' },
+      { href: '/admin/formulas', label: 'Công thức tính' },
+      { href: '/admin/rubrics', label: 'Rubric định tính' },
+      { href: '/admin/data-sources', label: 'Nguồn dữ liệu' },
     ],
   },
 
   {
-    href: '/kpi/plans',
-    label: 'Kế hoạch & Thực thi',
-    icon: ClipboardList,
+    href: '/define',
+    label: '② Mục tiêu & KPI',
+    icon: Target,
     children: [
+      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
+      { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
+      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
+      { href: '/admin/bsc', label: 'Bản đồ BSC' },
+      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
+      { href: '/admin/import', label: 'Import dữ liệu' },
+    ],
+  },
+
+  {
+    href: '/deploy',
+    label: '③ Phân giao & Kế hoạch',
+    icon: GitBranch,
+    children: [
+      { href: '/kpi/cascade', label: 'Phân rã MBO Cascade' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI đơn vị' },
       { href: '/kpi/department-plans', label: 'Kế hoạch KPI bộ môn' },
       { href: '/kpi/my-kpi-registration', label: 'Đăng ký KPI cá nhân' },
       { href: '/kpi/my-kpi', label: 'KPI của tôi' },
+    ],
+  },
+
+  {
+    href: '/execute',
+    label: '④ Thực thi & Theo dõi',
+    icon: TrendingUp,
+    children: [
       { href: '/kpi/progress', label: 'Cập nhật tiến độ' },
       { href: '/kpi/evidences', label: 'Minh chứng' },
-    ],
-  },
-
-  {
-    href: '/kpi/evaluation',
-    label: 'Đánh giá & Phê duyệt',
-    icon: Award,
-    children: [
-      { href: '/kpi/evaluation', label: 'Đánh giá đơn vị' },
-      { href: '/kpi/evaluation/individual', label: 'Đánh giá cá nhân' },
-      { href: '/kpi/council-review', label: 'Hội đồng rà soát' },
-      { href: '/kpi/scoring', label: 'Tính điểm & Xếp loại' },
-      { href: '/kpi/approvals', label: 'Phê duyệt' },
-    ],
-  },
-
-  {
-    href: '/kpi/warnings',
-    label: 'Cảnh báo & Báo cáo',
-    icon: AlertTriangle,
-    children: [
+      { href: '/kpi/personal-dashboard', label: 'Dashboard cá nhân' },
       { href: '/kpi/warnings', label: 'Cảnh báo & Deadline' },
-      { href: '/admin/complaints', label: 'Khiếu nại / Giải trình' },
-      { href: '/kpi/trends', label: 'Xu hướng & Dự báo' },
-      { href: '/reports', label: 'Báo cáo & Thống kê' },
     ],
   },
 
@@ -119,26 +112,27 @@ const menuItems: MenuItem[] = [
   },
 
   {
-    href: '/kpi/academic-years',
-    label: 'Thiết lập',
-    icon: Settings,
+    href: '/kpi/evaluation',
+    label: '⑤ Đánh giá & Phê duyệt',
+    icon: Award,
     children: [
-      { href: '/kpi/academic-years', label: 'Năm học' },
-      { href: '/kpi/cycles', label: 'Chu kỳ KPI' },
-      { href: '/admin/organization', label: 'Cơ cấu tổ chức' },
-      { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
-      { href: '/admin/job-positions', label: 'Vị trí việc làm' },
-      { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
-      { href: '/admin/kpi-fields', label: 'Lĩnh vực KPI' },
-      { href: '/admin/data-sources', label: 'Nguồn dữ liệu' },
-      { href: '/admin/formulas', label: 'Công thức tính' },
-      { href: '/admin/thresholds', label: 'Ngưỡng cảnh báo' },
-      { href: '/admin/report-templates', label: 'Biểu mẫu báo cáo' },
-      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
-      { href: '/admin/rubrics', label: 'Rubric định tính' },
-      { href: '/admin/exemptions', label: 'Hệ số miễn giảm' },
-      { href: '/admin/import', label: 'Import dữ liệu' },
-      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
+      { href: '/kpi/evaluation', label: 'Đánh giá đơn vị' },
+      { href: '/kpi/evaluation/individual', label: 'Đánh giá cá nhân' },
+      { href: '/kpi/council-review', label: 'Hội đồng rà soát' },
+      { href: '/kpi/scoring', label: 'Tính điểm & Xếp loại' },
+      { href: '/kpi/approvals', label: 'Phê duyệt' },
+      { href: '/admin/complaints', label: 'Khiếu nại / Giải trình' },
+    ],
+  },
+
+  {
+    href: '/reporting',
+    label: '⑥ Báo cáo & Kết thúc',
+    icon: BarChart2,
+    children: [
+      { href: '/reports', label: 'Báo cáo & Thống kê' },
+      { href: '/kpi/trends', label: 'Xu hướng & Dự báo' },
+      { href: '/admin/scheduled-reports', label: 'Báo cáo định kỳ' },
     ],
   },
 
@@ -154,22 +148,19 @@ const menuItems: MenuItem[] = [
       { href: '/admin/audit', label: 'Nhật ký hệ thống' },
       { href: '/admin/backup', label: 'Sao lưu dữ liệu' },
       { href: '/admin/security', label: 'Bảo mật' },
-      { href: '/admin/sla-configs', label: 'SLA xử lý' },
       { href: '/admin/api-configs', label: 'Kết nối tích hợp' },
-      { href: '/admin/scheduled-reports', label: 'Báo cáo định kỳ' },
-      { href: '/admin/bsc', label: 'Bản đồ BSC' },
-      { href: '/admin/approval-workflows', label: 'Quy trình phê duyệt' },
       { href: '/admin/data-reconciliation', label: 'Đối soát dữ liệu' },
-      { href: '/admin/support-tickets', label: 'Yêu cầu hỗ trợ' },
+      { href: '/admin/approval-workflows', label: 'Quy trình phê duyệt' },
       { href: '/admin/settings', label: 'Cài đặt' },
     ],
   },
 
   {
     href: '/kpi/architecture',
-    label: 'Hướng dẫn',
-    icon: BookOpen,
+    label: 'Hỗ trợ',
+    icon: LifeBuoy,
     children: [
+      { href: '/admin/support-tickets', label: 'Yêu cầu hỗ trợ' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
     ],
@@ -179,15 +170,16 @@ const menuItems: MenuItem[] = [
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
-    if (pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/kpi-templates') || pathname === '/kpi') return ['/kpi'];
-    if (pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences')) return ['/kpi/plans'];
-    if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/approvals')) return ['/kpi/evaluation'];
-    if (pathname.startsWith('/kpi/warnings') || pathname.startsWith('/admin/complaints') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/reports')) return ['/kpi/warnings'];
+    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/exemptions') || pathname.startsWith('/admin/thresholds') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/formulas') || pathname.startsWith('/admin/rubrics') || pathname.startsWith('/admin/data-sources')) return ['/setup'];
+    if (pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
+    if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi')) return ['/deploy'];
+    if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
-    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-fields') || pathname.startsWith('/admin/data-sources') || pathname.startsWith('/admin/formulas') || pathname.startsWith('/admin/thresholds') || pathname.startsWith('/admin/report-templates') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/rubrics') || pathname.startsWith('/admin/kpi-data')) return ['/kpi/academic-years'];
-    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/notification-templates') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/scheduled-reports') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
-    if (pathname.startsWith('/kpi/architecture') || pathname.startsWith('/kpi/roles-guide')) return ['/kpi/architecture'];
-    return ['/kpi'];
+    if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
+    if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
+    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
+    if (pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/kpi/architecture') || pathname.startsWith('/kpi/roles-guide')) return ['/kpi/architecture'];
+    return ['/'];
   });
 
   const toggleGroup = (href: string) => {
@@ -199,6 +191,24 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
   const isChildActive = (children: { href: string }[]) => children.some(c => pathname === c.href || pathname.startsWith(c.href + '/'));
+
+  const renderChildren = (children: { href: string; label: string; badge?: string }[]) => (
+    <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-primary-light pl-3">
+      {children.map((child) => (
+        <Link
+          key={child.href}
+          href={child.href}
+          className={`block px-3 py-1.5 rounded-lg text-sm transition-colors ${
+            pathname === child.href
+              ? 'bg-primary text-white font-medium'
+              : 'text-text-light hover:bg-bg-cream hover:text-text-dark'
+          }`}
+        >
+          {child.label}
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-border min-h-screen transform transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 ${
@@ -240,23 +250,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
                   <span className="text-sm flex-1 text-left">{item.label}</span>
                   {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                 </button>
-                {isExpanded && (
-                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-primary-light pl-3">
-                    {item.children!.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className={`block px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                          pathname === child.href
-                            ? 'bg-primary text-white font-medium'
-                            : 'text-text-light hover:bg-bg-cream hover:text-text-dark'
-                        }`}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {isExpanded && renderChildren(item.children!)}
               </div>
             );
           }

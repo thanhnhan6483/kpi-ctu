@@ -12,5 +12,9 @@
     "userId": "u003",
     "roleId": "r004",
     "scopeUnitId": "u002"
+  },
+  {
+    "userId": "u004",
+    "roleId": "r004"
   }
 ]
