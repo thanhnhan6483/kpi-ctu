@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Plus, Search, Edit, Trash2, Target, Send, CheckCircle, Lock, Compass, XCircle, History } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
@@ -108,7 +108,17 @@ export default function StrategicObjectivesPage() {
           <label className="block text-sm font-medium mb-1">Đơn vị chủ trì *</label>
           <select value={form.leadUnitId} onChange={e => setForm({ ...form, leadUnitId: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm" required>
             <option value="">-- Chọn đơn vị --</option>
-            {(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
+            {(function renderTree(parentId: string | null, depth: number): React.ReactNode[] {
+              const prefix = '\u00A0\u00A0'.repeat(depth);
+              return (unitsData as { id: string; name: string; parentId: string | null; type: string }[])
+                .filter(u => u.parentId === parentId)
+                .flatMap(u => [
+                  <option key={u.id} value={u.id} className={depth > 0 ? 'pl-' + (depth * 2) : ''}>
+                    {depth > 0 ? '\u00A0\u00A0'.repeat(depth) + '\u2514\u2500 ' : ''}{u.name}
+                  </option>,
+                  ...renderTree(u.id, depth + 1),
+                ]);
+            })(null, 0)}
           </select>
         </div>
         <div className="flex justify-end gap-2 pt-2">
