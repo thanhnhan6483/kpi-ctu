@@ -5,7 +5,15 @@
     "name": "Năm học 2025-2026",
     "startDate": "2025-09-01",
     "endDate": "2026-08-31",
-    "status": "active"
+    "status": "active",
+    "registrationDeadline": "",
+    "approvalDeadline": "",
+    "progressDeadline": "",
+    "selfEvalDeadline": "",
+    "managerEvalDeadline": "",
+    "councilReviewDeadline": "",
+    "complaintDeadline": "",
+    "lockDeadline": ""
   },
   {
     "id": "c002",

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Plus, Edit, Trash2, Ruler, FileText, Award, Save,
   Layers, Database, ListChecks, Calculator, AlertTriangle,
-  FileBarChart, Users, ClipboardCheck } from 'lucide-react';
+  FileBarChart, ClipboardCheck } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 
@@ -17,10 +17,9 @@ interface KPIStatus { id: string; name: string; code: string; description: strin
 interface KPIFormula { id: string; name: string; code: string; description: string; expression: string; type: string; status: string; }
 interface WarningThreshold { id: string; name: string; code: string; description: string; thresholdType: string; operator: string; value: number; color: string; isSystem: boolean; status: string; }
 interface ReportTemplate { id: string; name: string; code: string; description: string; category: string; config: { format: string }; isSystem: boolean; status: string; }
-interface TargetGroup { id: string; name: string; code: string; description: string; level: string; status: string; }
 interface Rubric { id: string; name: string; code: string; description: string; status: string; }
 
-type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'target-groups' | 'rubrics';
+type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'rubrics';
 
 // ── Helpers ────────────────────────────────────────────
 const sourceTypeLabels: Record<string, string> = { api: 'API', manual: 'Nhập tay', integrated: 'Tích hợp' };
@@ -29,7 +28,6 @@ const catLabels: Record<string, string> = { plan: 'Kế hoạch', evaluation: '�
 const ttLabels: Record<string, string> = { deadline_days: 'Ngày hết hạn', completion_percent: '% hoàn thành', evidence_count: 'SL minh chứng', score_gap: 'Chênh lệch điểm' };
 const opLabels: Record<string, string> = { lt: '<', lte: '≤', gt: '>', gte: '≥', eq: '=' };
 const fmtLabels: Record<string, string> = { excel: 'Excel', pdf: 'PDF', csv: 'CSV', word: 'Word' };
-const levelLabels: Record<string, string> = { school: 'Trường', unit: 'Đơn vị', department: 'Phòng/Ban', individual: 'Cá nhân' };
 const formulaTypeLabels: Record<string, string> = { quantitative: 'Định lượng', qualitative: 'Định tính', rubric: 'Rubric' };
 
 export default function SharedCategoriesPage() {
@@ -43,7 +41,6 @@ export default function SharedCategoriesPage() {
   const [formulas, setFormulas] = useState<KPIFormula[]>([]);
   const [wThresholds, setWThresholds] = useState<WarningThreshold[]>([]);
   const [reportTmpls, setReportTmpls] = useState<ReportTemplate[]>([]);
-  const [targetGroups, setTargetGroups] = useState<TargetGroup[]>([]);
   const [rubrics, setRubrics] = useState<Rubric[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editItem, setEditItem] = useState<any>(null);
@@ -62,7 +59,6 @@ export default function SharedCategoriesPage() {
         case 'formulas': setFormulas(await apiGet<KPIFormula[]>('/api/formulas')); break;
         case 'warning-thresholds': setWThresholds(await apiGet<WarningThreshold[]>('/api/warning-thresholds')); break;
         case 'report-templates': setReportTmpls(await apiGet<ReportTemplate[]>('/api/report-templates')); break;
-        case 'target-groups': setTargetGroups(await apiGet<TargetGroup[]>('/api/target-groups')); break;
         case 'rubrics': setRubrics(await apiGet<Rubric[]>('/api/rubrics')); break;
       }
     } catch { /* empty */ } finally { setLoading(false); }
@@ -74,7 +70,7 @@ export default function SharedCategoriesPage() {
     units: 'measurement-units', 'evidence-types': 'evidence-types', 'grading-levels': 'grading-levels',
     'kpi-fields': 'kpi-fields', 'data-sources': 'data-sources', 'kpi-statuses': 'kpi-statuses',
     formulas: 'formulas', 'warning-thresholds': 'warning-thresholds', 'report-templates': 'report-templates',
-    'target-groups': 'target-groups', rubrics: 'rubrics',
+    rubrics: 'rubrics',
   };
 
   const handleSave = async (data: any) => {
@@ -103,7 +99,6 @@ export default function SharedCategoriesPage() {
     { key: 'formulas' as Tab, label: 'Công thức tính', icon: Calculator },
     { key: 'warning-thresholds' as Tab, label: 'Ngưỡng cảnh báo', icon: AlertTriangle },
     { key: 'report-templates' as Tab, label: 'Biểu mẫu báo cáo', icon: FileBarChart },
-    { key: 'target-groups' as Tab, label: 'Nhóm đối tượng', icon: Users },
     { key: 'rubrics' as Tab, label: 'Rubric định tính', icon: ClipboardCheck },
   ];
 
@@ -149,10 +144,6 @@ export default function SharedCategoriesPage() {
         <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên biểu mẫu</th><th>Danh mục</th><th>Định dạng</th><th>Mô tả</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
           <tbody>{(data as ReportTemplate[]).map((r, i) => (<tr key={r.id}><td>{i + 1}</td><td className="font-mono text-xs">{r.code}</td><td className="font-medium">{r.name}</td><td className="text-sm">{r.category}</td><td><span className="badge badge-info">{fmtLabels[r.config?.format] || r.config?.format || '—'}</span></td><td className="text-sm text-text-light">{r.description}</td><td><StatusBadge status={r.status} /></td><td><Actions item={r} /></td></tr>))}</tbody></table>
       );
-      case 'target-groups': return (
-        <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên nhóm</th><th>Cấp độ</th><th>Mô tả</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-          <tbody>{(data as TargetGroup[]).map((g, i) => (<tr key={g.id}><td>{i + 1}</td><td className="font-mono text-xs">{g.code}</td><td className="font-medium">{g.name}</td><td><span className="badge badge-info">{levelLabels[g.level] || g.level}</span></td><td className="text-sm text-text-light">{g.description}</td><td><StatusBadge status={g.status} /></td><td><Actions item={g} /></td></tr>))}</tbody></table>
-      );
       case 'rubrics': return (
         <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên rubric</th><th>Mô tả</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
           <tbody>{(data as Rubric[]).map((r, i) => (<tr key={r.id}><td>{i + 1}</td><td className="font-mono text-xs">{r.code}</td><td className="font-medium">{r.name}</td><td className="text-sm text-text-light">{r.description}</td><td><StatusBadge status={r.status} /></td><td><Actions item={r} /></td></tr>))}</tbody></table>
@@ -184,7 +175,6 @@ export default function SharedCategoriesPage() {
       case 'formulas': return formulas;
       case 'warning-thresholds': return wThresholds;
       case 'report-templates': return reportTmpls;
-      case 'target-groups': return targetGroups;
       case 'rubrics': return rubrics;
     }
   }
@@ -225,7 +215,6 @@ export default function SharedCategoriesPage() {
         {tab === 'formulas' && <FormulaForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'warning-thresholds' && <WarningThresholdForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'report-templates' && <ReportTemplateForm initial={editItem} onSubmit={handleSave} />}
-        {tab === 'target-groups' && <TargetGroupForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'rubrics' && <RubricForm initial={editItem} onSubmit={handleSave} />}
       </Modal>
     </div>
@@ -365,18 +354,6 @@ function ReportTemplateForm({ initial, onSubmit }: { initial?: ReportTemplate; o
       <Select label="Định dạng" value={f.config.format} onChange={v => setF({ ...f, config: { ...f.config, format: v } })} options={[{ value: 'excel', label: 'Excel' }, { value: 'pdf', label: 'PDF' }, { value: 'csv', label: 'CSV' }, { value: 'word', label: 'Word' }]} />
     </div>
     <Input label="Danh mục" value={f.category} onChange={e => setF({ ...f, category: e.target.value })} />
-    <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
-  </FormLayout>;
-}
-
-function TargetGroupForm({ initial, onSubmit }: { initial?: TargetGroup; onSubmit: (d: any) => void }) {
-  const [f, setF] = useState(initial || { name: '', code: '', description: '', level: 'unit', positionIds: [], kpiTemplateId: '', status: 'active' });
-  return <FormLayout onSubmit={() => onSubmit(f)}>
-    <Input label="Tên nhóm đối tượng" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required />
-    <div className="grid grid-cols-2 gap-4">
-      <Input label="Mã" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required />
-      <Select label="Cấp độ" value={f.level} onChange={v => setF({ ...f, level: v })} options={[{ value: 'school', label: 'Trường' }, { value: 'unit', label: 'Đơn vị' }, { value: 'department', label: 'Phòng/Ban' }, { value: 'individual', label: 'Cá nhân' }]} />
-    </div>
     <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
   </FormLayout>;
 }
