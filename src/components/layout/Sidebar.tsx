@@ -89,6 +89,8 @@ const menuItems: MenuItem[] = [
     icon: AlertTriangle,
     children: [
       { href: '/kpi/warnings', label: 'Cảnh báo & Deadline' },
+      { href: '/admin/complaints', label: 'Khiếu nại / Giải trình' },
+      { href: '/kpi/trends', label: 'Xu hướng & Dự báo' },
       { href: '/reports', label: 'Báo cáo & Thống kê' },
     ],
   },
@@ -104,6 +106,13 @@ const menuItems: MenuItem[] = [
       { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
       { href: '/admin/job-positions', label: 'Vị trí việc làm' },
       { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
+      { href: '/admin/kpi-fields', label: 'Lĩnh vực KPI' },
+      { href: '/admin/data-sources', label: 'Nguồn dữ liệu' },
+      { href: '/admin/formulas', label: 'Công thức tính' },
+      { href: '/admin/thresholds', label: 'Ngưỡng cảnh báo' },
+      { href: '/admin/report-templates', label: 'Biểu mẫu báo cáo' },
+      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
+      { href: '/admin/rubrics', label: 'Rubric định tính' },
       { href: '/admin/exemptions', label: 'Hệ số miễn giảm' },
       { href: '/admin/import', label: 'Import dữ liệu' },
       { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
@@ -122,6 +131,11 @@ const menuItems: MenuItem[] = [
       { href: '/admin/audit', label: 'Nhật ký hệ thống' },
       { href: '/admin/backup', label: 'Sao lưu dữ liệu' },
       { href: '/admin/security', label: 'Bảo mật' },
+      { href: '/admin/sla-configs', label: 'SLA xử lý' },
+      { href: '/admin/api-configs', label: 'Kết nối tích hợp' },
+      { href: '/admin/scheduled-reports', label: 'Báo cáo định kỳ' },
+      { href: '/admin/bsc', label: 'Bản đồ BSC' },
+      { href: '/admin/support-tickets', label: 'Yêu cầu hỗ trợ' },
       { href: '/admin/settings', label: 'Cài đặt' },
     ],
   },
@@ -143,9 +157,9 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     if (pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/kpi-templates') || pathname === '/kpi') return ['/kpi'];
     if (pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences')) return ['/kpi/plans'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/approvals')) return ['/kpi/evaluation'];
-    if (pathname.startsWith('/kpi/warnings') || pathname.startsWith('/reports')) return ['/kpi/warnings'];
-    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-data')) return ['/kpi/academic-years'];
-    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
+    if (pathname.startsWith('/kpi/warnings') || pathname.startsWith('/admin/complaints') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/reports')) return ['/kpi/warnings'];
+    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-fields') || pathname.startsWith('/admin/data-sources') || pathname.startsWith('/admin/formulas') || pathname.startsWith('/admin/thresholds') || pathname.startsWith('/admin/report-templates') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/rubrics') || pathname.startsWith('/admin/kpi-data')) return ['/kpi/academic-years'];
+    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/notification-templates') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/scheduled-reports') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
     if (pathname.startsWith('/kpi/architecture') || pathname.startsWith('/kpi/roles-guide')) return ['/kpi/architecture'];
     return ['/kpi'];
   });
