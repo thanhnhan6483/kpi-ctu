@@ -555,6 +555,48 @@ export interface StrategicObjective {
   updatedAt: string;
 }
 
+// Master catalog types (independent of academic year)
+export interface SchoolKPICatalog {
+  id: string;
+  code: string;
+  name: string;
+  categoryId: string;
+  formula: string;
+  unit: string;
+  direction: 'higher_better' | 'lower_better';
+  requiredEvidence: boolean;
+  maxScore: number;
+  status: 'active' | 'inactive';
+}
+
+export interface KPIGroupCatalog {
+  id: string;
+  code: string;
+  name: string;
+  defaultWeight: number;
+  targetLevel: 'school' | 'unit' | 'individual';
+  status: 'active' | 'inactive';
+}
+
+export interface UnitKPICatalog {
+  id: string;
+  code: string;
+  name: string;
+  unit: string;
+  linkedCatalogId: string | null;
+  status: 'active' | 'inactive';
+}
+
+export interface IndividualKPICatalog {
+  id: string;
+  code: string;
+  name: string;
+  positionCode: string;
+  unit: string;
+  linkedCatalogId: string | null;
+  status: 'active' | 'inactive';
+}
+
 export interface KPICascadeAssignment {
   id: string;
   cycleId: string;

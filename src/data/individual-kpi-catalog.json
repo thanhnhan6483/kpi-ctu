@@ -1,0 +1,1199 @@
+[
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "BM",
+    "id": "BMQL-01",
+    "code": "BMQL-01",
+    "name": "Phân công giảng dạy đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "BM",
+    "id": "BMQL-02",
+    "code": "BMQL-02",
+    "name": "Cập nhật đề cương và học liệu bộ môn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "BM",
+    "id": "BMQL-03",
+    "code": "BMQL-03",
+    "name": "Sinh hoạt chuyên môn định kỳ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "BM",
+    "id": "BMQL-04",
+    "code": "BMQL-04",
+    "name": "Quản lý ngân hàng câu hỏi/rubric"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "BM",
+    "id": "BMQL-05",
+    "code": "BMQL-05",
+    "name": "Theo dõi chất lượng giảng dạy"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "bài",
+    "positionCode": "BM",
+    "id": "BMQL-06",
+    "code": "BMQL-06",
+    "name": "Kết quả NCKH của bộ môn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "SV",
+    "positionCode": "BM",
+    "id": "BMQL-07",
+    "code": "BMQL-07",
+    "name": "Hỗ trợ SV NCKH/đồ án/khóa luận"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CN",
+    "id": "CN-01",
+    "code": "CN-01",
+    "name": "Hoàn thành nhiệm vụ đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "vi phạm",
+    "positionCode": "CN",
+    "id": "CN-02",
+    "code": "CN-02",
+    "name": "Tuân thủ kỷ luật và quy định nội bộ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CN",
+    "id": "CN-03",
+    "code": "CN-03",
+    "name": "Cập nhật minh chứng KPI đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CN",
+    "id": "CN-04",
+    "code": "CN-04",
+    "name": "Sử dụng hệ thống số theo quy định"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CN",
+    "id": "CN-05",
+    "code": "CN-05",
+    "name": "Tham gia họp, tập huấn bắt buộc"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CN",
+    "id": "CN-06",
+    "code": "CN-06",
+    "name": "Phối hợp công việc liên đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "vi phạm",
+    "positionCode": "CN",
+    "id": "CN-07",
+    "code": "CN-07",
+    "name": "Bảo mật dữ liệu và an toàn thông tin"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sáng kiến",
+    "positionCode": "CN",
+    "id": "CN-08",
+    "code": "CN-08",
+    "name": "Sáng kiến/cải tiến công việc"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CV",
+    "id": "CV-01",
+    "code": "CV-01",
+    "name": "Hồ sơ nghiệp vụ xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CV",
+    "id": "CV-02",
+    "code": "CV-02",
+    "name": "Chất lượng hồ sơ tham mưu"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CV",
+    "id": "CV-03",
+    "code": "CV-03",
+    "name": "Dữ liệu nghiệp vụ cập nhật đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CV",
+    "id": "CV-04",
+    "code": "CV-04",
+    "name": "Mức hài lòng người dùng"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sáng kiến",
+    "positionCode": "CV",
+    "id": "CV-05",
+    "code": "CV-05",
+    "name": "Sáng kiến cải tiến quy trình"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CV",
+    "id": "CV-06",
+    "code": "CV-06",
+    "name": "Tuân thủ báo cáo định kỳ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-01",
+    "code": "CVCNTT-01",
+    "name": "Ticket CNTT xử lý đúng SLA"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-02",
+    "code": "CVCNTT-02",
+    "name": "Uptime hệ thống phụ trách"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "CNTT-06",
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-03",
+    "code": "CVCNTT-03",
+    "name": "Sao lưu dữ liệu thành công"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-04",
+    "code": "CVCNTT-04",
+    "name": "Lỗ hổng nghiêm trọng được xử lý"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "CNTT-05",
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-05",
+    "code": "CVCNTT-05",
+    "name": "Tích hợp/chuẩn hóa dữ liệu"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVCNTT",
+    "id": "CVCNTT-06",
+    "code": "CVCNTT-06",
+    "name": "Tài liệu kỹ thuật cập nhật"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-01",
+    "code": "CVDBCL-01",
+    "name": "Khảo sát triển khai đúng kế hoạch"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-02",
+    "code": "CVDBCL-02",
+    "name": "Minh chứng kiểm định số hóa đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-03",
+    "code": "CVDBCL-03",
+    "name": "Báo cáo tự đánh giá đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-04",
+    "code": "CVDBCL-04",
+    "name": "Dữ liệu khảo sát hợp lệ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-05",
+    "code": "CVDBCL-05",
+    "name": "Hỗ trợ đơn vị cải tiến chất lượng"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "buổi",
+    "positionCode": "CVDBCL",
+    "id": "CVDBCL-06",
+    "code": "CVDBCL-06",
+    "name": "Tập huấn, hướng dẫn ĐBCL"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "DT-06",
+    "unit": "%",
+    "positionCode": "CVDT",
+    "id": "CVDT-01",
+    "code": "CVDT-01",
+    "name": "Hồ sơ học vụ đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "DT-07",
+    "unit": "%",
+    "positionCode": "CVDT",
+    "id": "CVDT-02",
+    "code": "CVDT-02",
+    "name": "Dữ liệu học phần/SV chính xác"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDT",
+    "id": "CVDT-03",
+    "code": "CVDT-03",
+    "name": "Lịch học/lịch thi cập nhật đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDT",
+    "id": "CVDT-04",
+    "code": "CVDT-04",
+    "name": "Hỗ trợ tốt nghiệp/xét học vụ đúng quy trình"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVDT",
+    "id": "CVDT-05",
+    "code": "CVDT-05",
+    "name": "Hài lòng người học về hỗ trợ học vụ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVDT",
+    "id": "CVDT-06",
+    "code": "CVDT-06",
+    "name": "Số hóa hồ sơ đào tạo"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-01",
+    "code": "CVHTQT-01",
+    "name": "Hồ sơ HTQT xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "HTQT-09",
+    "unit": "%",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-02",
+    "code": "CVHTQT-02",
+    "name": "Dữ liệu đối tác/SV quốc tế cập nhật"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-03",
+    "code": "CVHTQT-03",
+    "name": "Hỗ trợ SV/đoàn trao đổi đúng quy trình"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-04",
+    "code": "CVHTQT-04",
+    "name": "Theo dõi MOU/MOA có hoạt động"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sự kiện",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-05",
+    "code": "CVHTQT-05",
+    "name": "Tổ chức tiếp đoàn/sự kiện quốc tế"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVHTQT",
+    "id": "CVHTQT-06",
+    "code": "CVHTQT-06",
+    "name": "Mức hài lòng đối tác/người học"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-01",
+    "code": "CVKHCN-01",
+    "name": "Hồ sơ đề tài xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHCN-10",
+    "unit": "%",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-02",
+    "code": "CVKHCN-02",
+    "name": "Dữ liệu công bố được chuẩn hóa"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-03",
+    "code": "CVKHCN-03",
+    "name": "Hỗ trợ hồ sơ SHTT/chuyển giao"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHCN-06",
+    "unit": "%",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-04",
+    "code": "CVKHCN-04",
+    "name": "Theo dõi nghiệm thu đề tài đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-05",
+    "code": "CVKHCN-05",
+    "name": "Báo cáo KHCN đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVKHCN",
+    "id": "CVKHCN-06",
+    "code": "CVKHCN-06",
+    "name": "Mức hài lòng nhà khoa học"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHTC-04",
+    "unit": "%",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-01",
+    "code": "CVKHTC-01",
+    "name": "Hồ sơ thanh toán xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-02",
+    "code": "CVKHTC-02",
+    "name": "Tỉ lệ chứng từ phải trả lại"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-03",
+    "code": "CVKHTC-03",
+    "name": "Báo cáo tài chính/kế hoạch đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHTC-07",
+    "unit": "%",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-04",
+    "code": "CVKHTC-04",
+    "name": "Dữ liệu tài chính phục vụ KPI chính xác"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-05",
+    "code": "CVKHTC-05",
+    "name": "Mức hài lòng đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVKHTC",
+    "id": "CVKHTC-06",
+    "code": "CVKHTC-06",
+    "name": "Số hóa chứng từ/hồ sơ tài chính"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "TCCB-03",
+    "unit": "%",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-01",
+    "code": "CVTCCB-01",
+    "name": "Hồ sơ nhân sự xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-02",
+    "code": "CVTCCB-02",
+    "name": "Dữ liệu nhân sự chính xác, đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-03",
+    "code": "CVTCCB-03",
+    "name": "Hồ sơ đánh giá VC-NLĐ đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-04",
+    "code": "CVTCCB-04",
+    "name": "Theo dõi bồi dưỡng, phát triển năng lực"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-05",
+    "code": "CVTCCB-05",
+    "name": "Mức hài lòng đơn vị về dịch vụ nhân sự"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTCCB",
+    "id": "CVTCCB-06",
+    "code": "CVTCCB-06",
+    "name": "Số hóa hồ sơ nhân sự"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "TTTD-02",
+    "unit": "%",
+    "positionCode": "CVTT",
+    "id": "CVTT-01",
+    "code": "CVTT-01",
+    "name": "Lead tuyển sinh xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "TTTD-03",
+    "unit": "%",
+    "positionCode": "CVTT",
+    "id": "CVTT-02",
+    "code": "CVTT-02",
+    "name": "Tỉ lệ chuyển đổi tư vấn sang đăng ký"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTT",
+    "id": "CVTT-03",
+    "code": "CVTT-03",
+    "name": "Nội dung truyền thông đúng kế hoạch"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "cơ hội",
+    "positionCode": "CVTT",
+    "id": "CVTT-04",
+    "code": "CVTT-04",
+    "name": "Cơ hội thực tập/việc làm kết nối"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "CVTT",
+    "id": "CVTT-05",
+    "code": "CVTT-05",
+    "name": "Dữ liệu doanh nghiệp/cựu SV cập nhật"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "CVTT",
+    "id": "CVTT-06",
+    "code": "CVTT-06",
+    "name": "Hài lòng thí sinh/doanh nghiệp"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GV",
+    "id": "GV-01",
+    "code": "GV-01",
+    "name": "Hoàn thành khối lượng giảng dạy"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GV",
+    "id": "GV-02",
+    "code": "GV-02",
+    "name": "Chất lượng giảng dạy theo phản hồi người học"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GV",
+    "id": "GV-03",
+    "code": "GV-03",
+    "name": "Cập nhật đề cương, học liệu và LMS đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHCN-01",
+    "unit": "bài",
+    "positionCode": "GV",
+    "id": "GV-04",
+    "code": "GV-04",
+    "name": "Công bố khoa học cá nhân"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "KHCN-05",
+    "unit": "đề tài",
+    "positionCode": "GV",
+    "id": "GV-05",
+    "code": "GV-05",
+    "name": "Tham gia đề tài/NCKH SV/hướng dẫn luận văn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "nhiệm vụ",
+    "positionCode": "GV",
+    "id": "GV-06",
+    "code": "GV-06",
+    "name": "Tham gia phát triển CTĐT/ĐBCL"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "khóa",
+    "positionCode": "GV",
+    "id": "GV-07",
+    "code": "GV-07",
+    "name": "Bồi dưỡng chuyên môn và chuyển đổi số giảng dạy"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GVQL",
+    "id": "GVQL-01",
+    "code": "GVQL-01",
+    "name": "Mức hoàn thành KPI mảng phụ trách"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GVQL",
+    "id": "GVQL-02",
+    "code": "GVQL-02",
+    "name": "Nhiệm vụ quản lý hoàn thành đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "GVQL",
+    "id": "GVQL-03",
+    "code": "GVQL-03",
+    "name": "Chất lượng điều hành và phản hồi"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GVQL",
+    "id": "GVQL-04",
+    "code": "GVQL-04",
+    "name": "Hoàn thành nhiệm vụ giảng dạy cá nhân"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "bài",
+    "positionCode": "GVQL",
+    "id": "GVQL-05",
+    "code": "GVQL-05",
+    "name": "Kết quả NCKH cá nhân"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sáng kiến",
+    "positionCode": "GVQL",
+    "id": "GVQL-06",
+    "code": "GVQL-06",
+    "name": "Cải tiến quy trình và CĐS trong đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "GVQL",
+    "id": "GVQL-07",
+    "code": "GVQL-07",
+    "name": "Kiểm soát minh chứng KPI của đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "VPT-02",
+    "unit": "%",
+    "positionCode": "HC",
+    "id": "HC-01",
+    "code": "HC-01",
+    "name": "Văn bản xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "VPT-01",
+    "unit": "%",
+    "positionCode": "HC",
+    "id": "HC-02",
+    "code": "HC-02",
+    "name": "Văn bản nội bộ ký số đúng quy định"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "HC",
+    "id": "HC-03",
+    "code": "HC-03",
+    "name": "Hồ sơ lưu trữ điện tử đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "HC",
+    "id": "HC-04",
+    "code": "HC-04",
+    "name": "Lịch họp/thông báo cập nhật đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "HC",
+    "id": "HC-05",
+    "code": "HC-05",
+    "name": "Hài lòng người dùng dịch vụ hành chính"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "vi phạm",
+    "positionCode": "HC",
+    "id": "HC-06",
+    "code": "HC-06",
+    "name": "Không sai sót nghiêm trọng về văn thư"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-01",
+    "code": "KPISTAFF-01",
+    "name": "Tỉ lệ KPI cá nhân/đơn vị được cập nhật đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-02",
+    "code": "KPISTAFF-02",
+    "name": "Tỉ lệ minh chứng hợp lệ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-03",
+    "code": "KPISTAFF-03",
+    "name": "Báo cáo KPI đơn vị đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-04",
+    "code": "KPISTAFF-04",
+    "name": "Hỗ trợ người dùng KPI trong đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-05",
+    "code": "KPISTAFF-05",
+    "name": "Đối soát dữ liệu KPI với hệ thống nguồn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "cải tiến",
+    "positionCode": "KPISTAFF",
+    "id": "KPISTAFF-06",
+    "code": "KPISTAFF-06",
+    "name": "Đề xuất cải tiến vận hành KPI"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-01",
+    "code": "KTPTN-01",
+    "name": "Thiết bị/phòng thí nghiệm vận hành đạt chuẩn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-02",
+    "code": "KTPTN-02",
+    "name": "Hỗ trợ buổi thực hành/nghiên cứu đúng kế hoạch"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-03",
+    "code": "KTPTN-03",
+    "name": "Hồ sơ an toàn PTN đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-04",
+    "code": "KTPTN-04",
+    "name": "Bảo trì/hiệu chuẩn đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-05",
+    "code": "KTPTN-05",
+    "name": "Sự cố thiết bị xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "cải tiến",
+    "positionCode": "KTPTN",
+    "id": "KTPTN-06",
+    "code": "KTPTN-06",
+    "name": "Cải tiến quy trình kỹ thuật/an toàn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTX",
+    "id": "KTX-01",
+    "code": "KTX-01",
+    "name": "Yêu cầu SV xử lý đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTX",
+    "id": "KTX-02",
+    "code": "KTX-02",
+    "name": "Hồ sơ nội trú cập nhật đầy đủ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTX",
+    "id": "KTX-03",
+    "code": "KTX-03",
+    "name": "Phản ánh an ninh, an toàn xử lý kịp thời"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "KTX",
+    "id": "KTX-04",
+    "code": "KTX-04",
+    "name": "Bảo trì cơ sở vật chất đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "KTX",
+    "id": "KTX-05",
+    "code": "KTX-05",
+    "name": "Hài lòng SV nội trú"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "hoạt động",
+    "positionCode": "KTX",
+    "id": "KTX-06",
+    "code": "KTX-06",
+    "name": "Hoạt động hỗ trợ đời sống SV"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "LD",
+    "id": "LD-01",
+    "code": "LD-01",
+    "name": "Mức hoàn thành KPI của đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "LD",
+    "id": "LD-02",
+    "code": "LD-02",
+    "name": "Hoàn thành kế hoạch năm của đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "LD",
+    "id": "LD-03",
+    "code": "LD-03",
+    "name": "Nhiệm vụ BGH/cấp trên giao đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "LD",
+    "id": "LD-04",
+    "code": "LD-04",
+    "name": "Chất lượng quản trị nhân sự đơn vị"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "LD",
+    "id": "LD-05",
+    "code": "LD-05",
+    "name": "Mức hài lòng người dùng/đơn vị liên quan"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "LD",
+    "id": "LD-06",
+    "code": "LD-06",
+    "name": "Quản trị dữ liệu, minh chứng và báo cáo"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "cải tiến",
+    "positionCode": "LD",
+    "id": "LD-07",
+    "code": "LD-07",
+    "name": "Cải tiến quy trình, quản trị rủi ro"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "NC-01",
+    "unit": "bài",
+    "positionCode": "NCV",
+    "id": "NCV-01",
+    "code": "NCV-01",
+    "name": "Công bố khoa học"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "NC-02",
+    "unit": "bài",
+    "positionCode": "NCV",
+    "id": "NCV-02",
+    "code": "NCV-02",
+    "name": "Công bố WoS/Scopus"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "đề tài",
+    "positionCode": "NCV",
+    "id": "NCV-03",
+    "code": "NCV-03",
+    "name": "Tham gia/chủ nhiệm đề tài, dự án"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "NCV",
+    "id": "NCV-04",
+    "code": "NCV-04",
+    "name": "Tiến độ thực hiện đề tài"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": "NC-06",
+    "unit": "sản phẩm",
+    "positionCode": "NCV",
+    "id": "NCV-05",
+    "code": "NCV-05",
+    "name": "Sản phẩm/SHTT/chuyển giao"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "NCV",
+    "id": "NCV-06",
+    "code": "NCV-06",
+    "name": "Quản lý dữ liệu nghiên cứu/PTN"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "hoạt động",
+    "positionCode": "NCV",
+    "id": "NCV-07",
+    "code": "NCV-07",
+    "name": "Hợp tác và bồi dưỡng năng lực nghiên cứu"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "PV",
+    "id": "PV-01",
+    "code": "PV-01",
+    "name": "Yêu cầu phục vụ/cơ sở vật chất đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "PV",
+    "id": "PV-02",
+    "code": "PV-02",
+    "name": "Khu vực/phạm vi phụ trách đạt chuẩn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "vi phạm",
+    "positionCode": "PV",
+    "id": "PV-03",
+    "code": "PV-03",
+    "name": "Tuân thủ an toàn, bảo vệ, PCCC"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "PV",
+    "id": "PV-04",
+    "code": "PV-04",
+    "name": "Hài lòng người dùng dịch vụ phục vụ"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "PV",
+    "id": "PV-05",
+    "code": "PV-05",
+    "name": "Báo cáo sự cố kịp thời"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sáng kiến",
+    "positionCode": "PV",
+    "id": "PV-06",
+    "code": "PV-06",
+    "name": "Sáng kiến cải tiến môi trường làm việc"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "TV",
+    "id": "TV-01",
+    "code": "TV-01",
+    "name": "Yêu cầu mượn/trả/hỗ trợ đúng hạn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "TV",
+    "id": "TV-02",
+    "code": "TV-02",
+    "name": "Tài nguyên học liệu số cập nhật"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "%",
+    "positionCode": "TV",
+    "id": "TV-03",
+    "code": "TV-03",
+    "name": "Biên mục tài liệu đúng chuẩn"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "điểm",
+    "positionCode": "TV",
+    "id": "TV-04",
+    "code": "TV-04",
+    "name": "Hài lòng người dùng thư viện"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "buổi",
+    "positionCode": "TV",
+    "id": "TV-05",
+    "code": "TV-05",
+    "name": "Hướng dẫn kỹ năng thông tin"
+  },
+  {
+    "status": "active",
+    "linkedCatalogId": null,
+    "unit": "sáng kiến",
+    "positionCode": "TV",
+    "id": "TV-06",
+    "code": "TV-06",
+    "name": "Sáng kiến cải tiến dịch vụ thư viện"
+  }
+]
