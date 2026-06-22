@@ -40,12 +40,6 @@ const menuItems: MenuItem[] = [
       { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
       { href: '/admin/job-positions', label: 'Vị trí việc làm' },
       { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
-      { href: '/admin/exemptions', label: 'Hệ số miễn giảm' },
-      { href: '/admin/thresholds', label: 'Ngưỡng cảnh báo' },
-      { href: '/admin/sla-configs', label: 'SLA xử lý' },
-      { href: '/admin/formulas', label: 'Công thức tính' },
-      { href: '/admin/rubrics', label: 'Rubric định tính' },
-      { href: '/admin/data-sources', label: 'Nguồn dữ liệu' },
     ],
   },
 
@@ -170,7 +164,7 @@ const menuItems: MenuItem[] = [
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
-    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/exemptions') || pathname.startsWith('/admin/thresholds') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/formulas') || pathname.startsWith('/admin/rubrics') || pathname.startsWith('/admin/data-sources')) return ['/setup'];
+    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories')) return ['/setup'];
     if (pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];

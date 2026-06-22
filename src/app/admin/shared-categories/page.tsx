@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Plus, Edit, Trash2, Ruler, FileText, Award, Save,
   Layers, Database, ListChecks, Calculator, AlertTriangle,
-  FileBarChart, ClipboardCheck } from 'lucide-react';
+  FileBarChart, ClipboardCheck, Percent, Clock } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 
@@ -18,8 +18,10 @@ interface KPIFormula { id: string; name: string; code: string; description: stri
 interface WarningThreshold { id: string; name: string; code: string; description: string; thresholdType: string; operator: string; value: number; color: string; isSystem: boolean; status: string; }
 interface ReportTemplate { id: string; name: string; code: string; description: string; category: string; config: { format: string }; isSystem: boolean; status: string; }
 interface Rubric { id: string; name: string; code: string; description: string; status: string; }
+interface ExemptionCoefficient { id: string; name: string; code: string; coefficient: number; description: string; applicablePositions: string[]; status: string; }
+interface SlaConfig { id: string; code: string; name: string; processName: string; responseHours: number; resolveHours: number; description: string; status: string; }
 
-type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'rubrics';
+type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'rubrics' | 'exemptions' | 'sla-configs';
 
 // ── Helpers ────────────────────────────────────────────
 const sourceTypeLabels: Record<string, string> = { api: 'API', manual: 'Nhập tay', integrated: 'Tích hợp' };
@@ -29,6 +31,7 @@ const ttLabels: Record<string, string> = { deadline_days: 'Ngày hết hạn', c
 const opLabels: Record<string, string> = { lt: '<', lte: '≤', gt: '>', gte: '≥', eq: '=' };
 const fmtLabels: Record<string, string> = { excel: 'Excel', pdf: 'PDF', csv: 'CSV', word: 'Word' };
 const formulaTypeLabels: Record<string, string> = { quantitative: 'Định lượng', qualitative: 'Định tính', rubric: 'Rubric' };
+const positionLabels: Record<string, string> = { GV: 'Giảng viên', GVQL: 'Giảng viên QL', BM: 'Trưởng bộ môn', LD: 'Lãnh đạo', NCV: 'Nghiên cứu viên', CV: 'Viên chức', CVDT: 'CV Chuyển đổi số' };
 
 export default function SharedCategoriesPage() {
   const [tab, setTab] = useState<Tab>('units');
@@ -42,6 +45,8 @@ export default function SharedCategoriesPage() {
   const [wThresholds, setWThresholds] = useState<WarningThreshold[]>([]);
   const [reportTmpls, setReportTmpls] = useState<ReportTemplate[]>([]);
   const [rubrics, setRubrics] = useState<Rubric[]>([]);
+  const [exemptions, setExemptions] = useState<ExemptionCoefficient[]>([]);
+  const [slaConfigs, setSlaConfigs] = useState<SlaConfig[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editItem, setEditItem] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -60,6 +65,8 @@ export default function SharedCategoriesPage() {
         case 'warning-thresholds': setWThresholds(await apiGet<WarningThreshold[]>('/api/warning-thresholds')); break;
         case 'report-templates': setReportTmpls(await apiGet<ReportTemplate[]>('/api/report-templates')); break;
         case 'rubrics': setRubrics(await apiGet<Rubric[]>('/api/rubrics')); break;
+        case 'exemptions': setExemptions(await apiGet<ExemptionCoefficient[]>('/api/exemption-coefficients')); break;
+        case 'sla-configs': setSlaConfigs(await apiGet<SlaConfig[]>('/api/sla-configs')); break;
       }
     } catch { /* empty */ } finally { setLoading(false); }
   }, [tab]);
@@ -71,6 +78,7 @@ export default function SharedCategoriesPage() {
     'kpi-fields': 'kpi-fields', 'data-sources': 'data-sources', 'kpi-statuses': 'kpi-statuses',
     formulas: 'formulas', 'warning-thresholds': 'warning-thresholds', 'report-templates': 'report-templates',
     rubrics: 'rubrics',
+    exemptions: 'exemption-coefficients', 'sla-configs': 'sla-configs',
   };
 
   const handleSave = async (data: any) => {
@@ -100,6 +108,8 @@ export default function SharedCategoriesPage() {
     { key: 'warning-thresholds' as Tab, label: 'Ngưỡng cảnh báo', icon: AlertTriangle },
     { key: 'report-templates' as Tab, label: 'Biểu mẫu báo cáo', icon: FileBarChart },
     { key: 'rubrics' as Tab, label: 'Rubric định tính', icon: ClipboardCheck },
+    { key: 'exemptions' as Tab, label: 'Hệ số miễn giảm', icon: Percent },
+    { key: 'sla-configs' as Tab, label: 'SLA xử lý', icon: Clock },
   ];
 
   function renderTable() {
@@ -148,6 +158,14 @@ export default function SharedCategoriesPage() {
         <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên rubric</th><th>Mô tả</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
           <tbody>{(data as Rubric[]).map((r, i) => (<tr key={r.id}><td>{i + 1}</td><td className="font-mono text-xs">{r.code}</td><td className="font-medium">{r.name}</td><td className="text-sm text-text-light">{r.description}</td><td><StatusBadge status={r.status} /></td><td><Actions item={r} /></td></tr>))}</tbody></table>
       );
+      case 'exemptions': return (
+        <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên hệ số</th><th>Hệ số</th><th>Vị trí áp dụng</th><th>Mô tả</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+          <tbody>{(data as ExemptionCoefficient[]).map((e, i) => (<tr key={e.id}><td>{i + 1}</td><td className="font-mono text-xs">{e.code}</td><td className="font-medium">{e.name}</td><td><span className={`badge ${e.coefficient < 1 ? 'badge-warning' : 'badge-success'}`}>{(e.coefficient * 100).toFixed(0)}%</span></td><td className="text-xs">{e.applicablePositions.map(p => positionLabels[p] || p).join(', ')}</td><td className="text-sm text-text-light max-w-[200px] truncate">{e.description}</td><td><StatusBadge status={e.status} /></td><td><Actions item={e} /></td></tr>))}</tbody></table>
+      );
+      case 'sla-configs': return (
+        <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên SLA</th><th>Quy trình</th><th>Phản hồi (giờ)</th><th>Xử lý (giờ)</th><th>Mô tả</th><th>Thao tác</th></tr></thead>
+          <tbody>{(data as SlaConfig[]).map((s, i) => (<tr key={s.id}><td>{i + 1}</td><td className="font-mono text-xs">{s.code}</td><td className="font-medium">{s.name}</td><td className="text-sm">{s.processName}</td><td><span className="badge badge-info">{s.responseHours}h</span></td><td><span className="badge badge-warning">{s.resolveHours}h</span></td><td className="text-sm text-text-light">{s.description}</td><td><Actions item={s} /></td></tr>))}</tbody></table>
+      );
     }
   }
 
@@ -176,6 +194,8 @@ export default function SharedCategoriesPage() {
       case 'warning-thresholds': return wThresholds;
       case 'report-templates': return reportTmpls;
       case 'rubrics': return rubrics;
+      case 'exemptions': return exemptions;
+      case 'sla-configs': return slaConfigs;
     }
   }
 
@@ -216,6 +236,8 @@ export default function SharedCategoriesPage() {
         {tab === 'warning-thresholds' && <WarningThresholdForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'report-templates' && <ReportTemplateForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'rubrics' && <RubricForm initial={editItem} onSubmit={handleSave} />}
+        {tab === 'exemptions' && <ExemptionForm initial={editItem} onSubmit={handleSave} />}
+        {tab === 'sla-configs' && <SlaConfigForm initial={editItem} onSubmit={handleSave} />}
       </Modal>
     </div>
   );
@@ -363,6 +385,35 @@ function RubricForm({ initial, onSubmit }: { initial?: Rubric; onSubmit: (d: any
   return <FormLayout onSubmit={() => onSubmit(f)}>
     <Input label="Tên rubric" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required />
     <Input label="Mã" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required />
+    <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
+  </FormLayout>;
+}
+
+function ExemptionForm({ initial, onSubmit }: { initial?: ExemptionCoefficient; onSubmit: (d: any) => void }) {
+  const [f, setF] = useState(initial || { name: '', code: '', coefficient: 1.0, description: '', applicablePositions: [] as string[], status: 'active' });
+  return <FormLayout onSubmit={() => onSubmit(f)}>
+    <Input label="Tên hệ số" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required />
+    <div className="grid grid-cols-2 gap-4">
+      <Input label="Mã" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required />
+      <Input label="Hệ số (0-1)" type="number" value={f.coefficient} onChange={e => setF({ ...f, coefficient: Number(e.target.value) })} required />
+    </div>
+    <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
+    <div><label className="block text-sm font-medium mb-1">Vị trí áp dụng</label><div className="flex flex-wrap gap-2">{Object.entries(positionLabels).map(([code, label]) => (<label key={code} className="flex items-center gap-1 text-sm"><input type="checkbox" checked={f.applicablePositions.includes(code)} onChange={e => { const positions = e.target.checked ? [...f.applicablePositions, code] : f.applicablePositions.filter(p => p !== code); setF({ ...f, applicablePositions: positions }); }} className="rounded" />{label}</label>))}</div></div>
+  </FormLayout>;
+}
+
+function SlaConfigForm({ initial, onSubmit }: { initial?: SlaConfig; onSubmit: (d: any) => void }) {
+  const [f, setF] = useState(initial || { code: '', name: '', processName: '', responseHours: 4, resolveHours: 24, description: '', status: 'active' });
+  return <FormLayout onSubmit={() => onSubmit(f)}>
+    <div className="grid grid-cols-2 gap-4">
+      <Input label="Mã SLA" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required />
+      <Input label="Tên SLA" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required />
+    </div>
+    <Input label="Quy trình" value={f.processName} onChange={e => setF({ ...f, processName: e.target.value })} required />
+    <div className="grid grid-cols-2 gap-4">
+      <Input label="Phản hồi (giờ)" type="number" value={f.responseHours} onChange={e => setF({ ...f, responseHours: Number(e.target.value) })} />
+      <Input label="Xử lý (giờ)" type="number" value={f.resolveHours} onChange={e => setF({ ...f, resolveHours: Number(e.target.value) })} />
+    </div>
     <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
   </FormLayout>;
 }
