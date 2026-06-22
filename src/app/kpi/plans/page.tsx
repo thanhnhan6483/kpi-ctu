@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Eye, Send, XCircle, MessageSquare, Edit, History } from 'lucide-react';
+import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Eye, Send, XCircle, MessageSquare, Edit, History, PenLine } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
 import academicYears from '@/data/academic-years.json';
+import usersData from '@/data/users.json';
 
 interface PlanRecord {
   id: string;
@@ -43,6 +44,7 @@ const statusConfig: Record<string, { label: string; color: string }> = {
   submitted: { label: 'Chờ duyệt', color: '#eab308' },
   needs_revision: { label: 'Cần chỉnh sửa', color: '#f97316' },
   approved: { label: 'Đã duyệt', color: '#22c55e' },
+  committed: { label: 'Đã cam kết', color: '#8b5cf6' },
   in_progress: { label: 'Đang thực hiện', color: '#3b82f6' },
 };
 
@@ -51,6 +53,7 @@ const statusFilters = [
   { value: 'draft', label: 'Bản nháp' },
   { value: 'submitted', label: 'Chờ duyệt' },
   { value: 'approved', label: 'Đã duyệt' },
+  { value: 'committed', label: 'Đã cam kết' },
 ];
 
 export default function PlansPage() {
@@ -70,6 +73,10 @@ export default function PlansPage() {
   const [showVersions, setShowVersions] = useState(false);
   const [versions, setVersions] = useState<any[]>([]);
   const [versionsLoading, setVersionsLoading] = useState(false);
+  const [showCommit, setShowCommit] = useState(false);
+  const [commitPlan, setCommitPlan] = useState<PlanRecord | null>(null);
+  const [commitChecked, setCommitChecked] = useState(false);
+  const [commitDate, setCommitDate] = useState(new Date().toISOString().split('T')[0]);
 
   useEffect(() => {
     fetch(`/api/cycles?academicYearId=${selectedYearId}`)
@@ -181,6 +188,30 @@ export default function PlansPage() {
 
   const getCycleName = (cycleId: string) => cycles.find(c => c.id === cycleId)?.name || '';
 
+  const openCommit = (plan: PlanRecord) => {
+    setCommitPlan(plan);
+    setCommitChecked(false);
+    setCommitDate(new Date().toISOString().split('T')[0]);
+    setShowCommit(true);
+  };
+
+  const handleCommit = async () => {
+    if (!commitPlan || !commitChecked) return;
+    await apiPut(`/api/plans/${commitPlan.id}`, { status: 'committed', committedAt: new Date(commitDate).toISOString() });
+    await apiPost('/api/audit-logs', {
+      userId: 'current-user',
+      action: 'commit',
+      objectType: 'kpi_plan',
+      objectId: commitPlan.id,
+      detail: `Ký cam kết kế hoạch KPI đơn vị ${unitMap[commitPlan.ownerId] || commitPlan.ownerId} - ngày ${commitDate}`,
+      ipAddress: '127.0.0.1',
+      createdAt: new Date().toISOString(),
+    });
+    setShowCommit(false);
+    setCommitPlan(null);
+    loadPlans();
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
@@ -280,8 +311,20 @@ export default function PlansPage() {
                             <button onClick={() => openAction(plan, 'reject')} className="p-1 text-accent-red hover:bg-accent-red/10 rounded" title="Từ chối"><XCircle size={14} /></button>
                           </>
                         )}
-                        {(plan.status === 'approved' || plan.status === 'in_progress') && (
+                        {plan.status === 'approved' && (
+                          <>
+                            <button className="p-1 text-primary hover:bg-primary-light rounded" title="Xem"><Eye size={14} /></button>
+                            <button onClick={() => openCommit(plan)} className="p-1 text-purple-600 hover:bg-purple-50 rounded" title="Ký cam kết"><PenLine size={14} /></button>
+                          </>
+                        )}
+                        {plan.status === 'in_progress' && (
                           <button className="p-1 text-primary hover:bg-primary-light rounded" title="Xem"><Eye size={14} /></button>
+                        )}
+                        {plan.status === 'committed' && (
+                          <>
+                            <button className="p-1 text-primary hover:bg-primary-light rounded" title="Xem"><Eye size={14} /></button>
+                            <span className="badge text-xs" style={{ backgroundColor: '#8b5cf620', color: '#8b5cf6' }}>Đã cam kết</span>
+                          </>
                         )}
                         <button onClick={() => openVersions(plan.id)} className="p-1 text-gray-500 hover:bg-gray-100 rounded" title="Lịch sử phiên bản"><History size={14} /></button>
                         {plan.status === 'needs_revision' && (
@@ -369,6 +412,30 @@ export default function PlansPage() {
             <button onClick={handleAction}
               className={actionType === 'approve' ? 'btn-primary' : actionType === 'reject' ? 'btn-danger' : 'btn-secondary'}>
               {actionType === 'approve' ? 'Phê duyệt' : actionType === 'reject' ? 'Từ chối' : 'Gửi yêu cầu'}
+            </button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal isOpen={showCommit} onClose={() => { setShowCommit(false); setCommitPlan(null); }} title="Ký cam kết điện tử">
+        <div className="space-y-4">
+          <div className="p-4 bg-bg-cream rounded-lg border border-border">
+            <div className="font-medium text-sm">Đơn vị: {commitPlan ? unitMap[commitPlan.ownerId] || commitPlan.ownerId : '-'}</div>
+            <div className="text-xs text-text-light mt-1">Chu kỳ: {commitPlan ? getCycleName(commitPlan.cycleId) : '-'}</div>
+          </div>
+          <label className="flex items-start gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-bg-cream">
+            <input type="checkbox" checked={commitChecked} onChange={e => setCommitChecked(e.target.checked)} className="mt-0.5 rounded" />
+            <span className="text-sm">Tôi cam kết thực hiện các KPI đã được phê duyệt theo đúng kế hoạch của đơn vị</span>
+          </label>
+          <div>
+            <label className="block text-sm font-medium mb-1">Ngày ký cam kết</label>
+            <input type="date" value={commitDate} onChange={e => setCommitDate(e.target.value)}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <button onClick={() => { setShowCommit(false); setCommitPlan(null); }} className="btn-secondary">Hủy</button>
+            <button onClick={handleCommit} disabled={!commitChecked} className="btn-primary flex items-center gap-2">
+              <PenLine size={14} /> Xác nhận cam kết
             </button>
           </div>
         </div>

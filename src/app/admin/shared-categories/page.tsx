@@ -20,8 +20,9 @@ interface ReportTemplate { id: string; name: string; code: string; description: 
 interface Rubric { id: string; name: string; code: string; description: string; status: string; }
 interface ExemptionCoefficient { id: string; name: string; code: string; coefficient: number; description: string; applicablePositions: string[]; status: string; }
 interface SlaConfig { id: string; code: string; name: string; processName: string; responseHours: number; resolveHours: number; description: string; status: string; }
+interface KPIGroupInterface { id: string; name: string; code: string; defaultWeight: number; targetLevel: string; academicYearId?: string; }
 
-type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'rubrics' | 'exemptions' | 'sla-configs';
+type Tab = 'units' | 'evidence-types' | 'grading-levels' | 'kpi-fields' | 'kpi-groups' | 'data-sources' | 'kpi-statuses' | 'formulas' | 'warning-thresholds' | 'report-templates' | 'rubrics' | 'exemptions' | 'sla-configs';
 
 // ── Helpers ────────────────────────────────────────────
 const sourceTypeLabels: Record<string, string> = { api: 'API', manual: 'Nhập tay', integrated: 'Tích hợp' };
@@ -47,6 +48,7 @@ export default function SharedCategoriesPage() {
   const [rubrics, setRubrics] = useState<Rubric[]>([]);
   const [exemptions, setExemptions] = useState<ExemptionCoefficient[]>([]);
   const [slaConfigs, setSlaConfigs] = useState<SlaConfig[]>([]);
+  const [kpiGroups, setKpiGroups] = useState<KPIGroupInterface[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editItem, setEditItem] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -66,6 +68,7 @@ export default function SharedCategoriesPage() {
         case 'report-templates': setReportTmpls(await apiGet<ReportTemplate[]>('/api/report-templates')); break;
         case 'rubrics': setRubrics(await apiGet<Rubric[]>('/api/rubrics')); break;
         case 'exemptions': setExemptions(await apiGet<ExemptionCoefficient[]>('/api/exemption-coefficients')); break;
+        case 'kpi-groups': setKpiGroups(await apiGet<KPIGroupInterface[]>('/api/kpi-groups')); break;
         case 'sla-configs': setSlaConfigs(await apiGet<SlaConfig[]>('/api/sla-configs')); break;
       }
     } catch { /* empty */ } finally { setLoading(false); }
@@ -78,7 +81,7 @@ export default function SharedCategoriesPage() {
     'kpi-fields': 'kpi-fields', 'data-sources': 'data-sources', 'kpi-statuses': 'kpi-statuses',
     formulas: 'formulas', 'warning-thresholds': 'warning-thresholds', 'report-templates': 'report-templates',
     rubrics: 'rubrics',
-    exemptions: 'exemption-coefficients', 'sla-configs': 'sla-configs',
+    exemptions: 'exemption-coefficients', 'kpi-groups': 'kpi-groups', 'sla-configs': 'sla-configs',
   };
 
   const handleSave = async (data: any) => {
@@ -102,6 +105,7 @@ export default function SharedCategoriesPage() {
     { key: 'evidence-types' as Tab, label: 'Loại minh chứng', icon: FileText },
     { key: 'grading-levels' as Tab, label: 'Mức xếp loại', icon: Award },
     { key: 'kpi-fields' as Tab, label: 'Lĩnh vực KPI', icon: Layers },
+    { key: 'kpi-groups' as Tab, label: 'Nhóm KPI', icon: Layers },
     { key: 'data-sources' as Tab, label: 'Nguồn dữ liệu', icon: Database },
     { key: 'kpi-statuses' as Tab, label: 'Trạng thái KPI', icon: ListChecks },
     { key: 'formulas' as Tab, label: 'Công thức tính', icon: Calculator },
@@ -164,7 +168,11 @@ export default function SharedCategoriesPage() {
       );
       case 'sla-configs': return (
         <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Tên SLA</th><th>Quy trình</th><th>Phản hồi (giờ)</th><th>Xử lý (giờ)</th><th>Mô tả</th><th>Thao tác</th></tr></thead>
-          <tbody>{(data as SlaConfig[]).map((s, i) => (<tr key={s.id}><td>{i + 1}</td><td className="font-mono text-xs">{s.code}</td><td className="font-medium">{s.name}</td><td className="text-sm">{s.processName}</td><td><span className="badge badge-info">{s.responseHours}h</span></td><td><span className="badge badge-warning">{s.resolveHours}h</span></td><td className="text-sm text-text-light">{s.description}</td><td><Actions item={s} /></td></tr>))}</tbody></table>
+          <tbody>{(data as SlaConfig[]).map((s, i) => (<tr key={s.id}><td>{i + 1}</td><td className="font-mono text-xs">{s.code}</td><td className="font-medium">{s.name}</td><td className="text-sm">{s.processName}</td><td><span className="badge badge-info">{s.responseHours}h</span></td><td><span className="badge badge-warning">{s.resolveHours}h</span></td><td className="text-sm text-text-light">{s.description}</td>            <td><Actions item={s} /></td></tr>))}</tbody></table>
+      );
+      case 'kpi-groups': return (
+        <table className="table"><thead><tr><th>STT</th><th>Mã nhóm</th><th>Tên nhóm</th><th>Trọng số (%)</th><th>Cấp áp dụng</th><th>Năm học</th><th>Thao tác</th></tr></thead>
+          <tbody>{(data as KPIGroupInterface[]).map((g, i) => (<tr key={g.id}><td>{i + 1}</td><td className="font-mono text-xs">{g.code}</td><td className="font-medium">{g.name}</td><td>{g.defaultWeight}</td><td><span className="badge badge-info">{g.targetLevel === 'school' ? 'Trường' : g.targetLevel === 'unit' ? 'Đơn vị' : 'Cá nhân'}</span></td><td className="text-sm text-text-light">{g.academicYearId || '—'}</td><td><Actions item={g} /></td></tr>))}</tbody></table>
       );
     }
   }
@@ -195,6 +203,7 @@ export default function SharedCategoriesPage() {
       case 'report-templates': return reportTmpls;
       case 'rubrics': return rubrics;
       case 'exemptions': return exemptions;
+      case 'kpi-groups': return kpiGroups;
       case 'sla-configs': return slaConfigs;
     }
   }
@@ -237,6 +246,7 @@ export default function SharedCategoriesPage() {
         {tab === 'report-templates' && <ReportTemplateForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'rubrics' && <RubricForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'exemptions' && <ExemptionForm initial={editItem} onSubmit={handleSave} />}
+        {tab === 'kpi-groups' && <KPIGroupForm initial={editItem} onSubmit={handleSave} />}
         {tab === 'sla-configs' && <SlaConfigForm initial={editItem} onSubmit={handleSave} />}
       </Modal>
     </div>
@@ -249,8 +259,8 @@ function FormLayout({ children, onSubmit }: { children: React.ReactNode; onSubmi
   return <form onSubmit={e => { e.preventDefault(); onSubmit(); }} className="space-y-4">{children}<div className="flex justify-end gap-2 pt-2"><button type="button" onClick={() => onSubmit()} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream">Hủy</button><button type="submit" className="btn-primary text-xs">Lưu</button></div></form>;
 }
 
-function Input({ label, value, onChange, required, type = 'text' }: { label: string; value: string | number; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; required?: boolean; type?: string }) {
-  return <div><label className="block text-sm font-medium mb-1">{label}{required && ' *'}</label><input type={type} value={value} onChange={onChange} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required={required} /></div>;
+function Input({ label, value, onChange, required, type = 'text', placeholder }: { label: string; value: string | number; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; required?: boolean; type?: string; placeholder?: string }) {
+  return <div><label className="block text-sm font-medium mb-1">{label}{required && ' *'}</label><input type={type} value={value} onChange={onChange} placeholder={placeholder} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required={required} /></div>;
 }
 
 function Select({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: { value: string; label: string }[] }) {
@@ -415,5 +425,20 @@ function SlaConfigForm({ initial, onSubmit }: { initial?: SlaConfig; onSubmit: (
       <Input label="Xử lý (giờ)" type="number" value={f.resolveHours} onChange={e => setF({ ...f, resolveHours: Number(e.target.value) })} />
     </div>
     <Input label="Mô tả" value={f.description} onChange={e => setF({ ...f, description: e.target.value })} />
+  </FormLayout>;
+}
+
+function KPIGroupForm({ initial, onSubmit }: { initial?: KPIGroupInterface; onSubmit: (d: any) => void }) {
+  const [f, setF] = useState(initial || { name: '', code: '', defaultWeight: 10, targetLevel: 'school', academicYearId: '' });
+  return <FormLayout onSubmit={() => onSubmit(f)}>
+    <Input label="Tên nhóm KPI" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required />
+    <div className="grid grid-cols-2 gap-4">
+      <Input label="Mã nhóm" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required />
+      <Input label="Trọng số (%)" type="number" value={f.defaultWeight} onChange={e => setF({ ...f, defaultWeight: Number(e.target.value) })} required />
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      <Select label="Cấp áp dụng" value={f.targetLevel} onChange={v => setF({ ...f, targetLevel: v })} options={[{ value: 'school', label: 'Trường' }, { value: 'unit', label: 'Đơn vị' }, { value: 'individual', label: 'Cá nhân' }]} />
+      <Input label="Năm học" value={f.academicYearId || ''} onChange={e => setF({ ...f, academicYearId: e.target.value })} placeholder="ay002" />
+    </div>
   </FormLayout>;
 }

@@ -42,6 +42,7 @@ const WIDGET_STORAGE_KEY = 'dashboard_widgets';
 
 const defaultWidgets = {
   showStats: true, showRecent: true, showRanking: true, showProgress: true, showWarnings: true,
+  showHeatmap: false, showTrends: false,
 };
 
 export default function PersonalDashboardPage() {
@@ -262,12 +263,27 @@ export default function PersonalDashboardPage() {
           <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-sm" onClick={e => e.stopPropagation()}>
             <h2 className="text-lg font-heading font-bold text-text-dark mb-4">Tùy chỉnh Dashboard</h2>
             <div className="space-y-3">
-              {Object.entries(widgets).map(([key, val]) => (
-                <label key={key} className="flex items-center justify-between p-3 bg-bg-cream rounded-lg cursor-pointer">
-                  <span className="text-sm font-medium">{({ showStats: 'Thống kê tổng quan', showRecent: 'KPI gần đây & Xếp loại', showRanking: 'Xếp loại đơn vị', showProgress: 'Tiến độ thực hiện', showWarnings: 'Cảnh báo & Nhắc nhở' } as Record<string, string>)[key]}</span>
-                  <input type="checkbox" checked={val as boolean} onChange={() => toggleWidget(key as keyof typeof defaultWidgets)} className="rounded" />
-                </label>
-              ))}
+              {Object.entries(widgets).map(([key, val]) => {
+                const labels: Record<string, { label: string; desc: string }> = {
+                  showStats: { label: 'Thống kê tổng quan', desc: 'Số KPI, điểm TB, quá hạn, sắp hạn' },
+                  showRecent: { label: 'KPI gần đây & Xếp loại', desc: 'Danh sách KPI và bảng xếp hạng đơn vị' },
+                  showRanking: { label: 'Xếp loại đơn vị', desc: 'Bảng xếp hạng điểm số các đơn vị' },
+                  showProgress: { label: 'Tiến độ thực hiện', desc: 'Tỷ lệ hoàn thành và trạng thái KPI' },
+                  showWarnings: { label: 'Cảnh báo & Nhắc nhở', desc: 'KPI quá hạn, sắp hạn, chờ duyệt' },
+                  showHeatmap: { label: 'Heatmap KPI', desc: 'Ma trận mật độ hoàn thành theo thời gian' },
+                  showTrends: { label: 'Xu hướng KPI', desc: 'Biểu đồ xu hướng điểm số qua các kỳ' },
+                };
+                const info = labels[key] || { label: key, desc: '' };
+                return (
+                  <label key={key} className="flex items-center justify-between p-3 bg-bg-cream rounded-lg cursor-pointer group">
+                    <div className="flex-1">
+                      <span className="text-sm font-medium">{info.label}</span>
+                      <p className="text-xs text-text-light mt-0.5">{info.desc}</p>
+                    </div>
+                    <input type="checkbox" checked={val as boolean} onChange={() => toggleWidget(key as keyof typeof defaultWidgets)} className="rounded ml-2" />
+                  </label>
+                );
+              })}
             </div>
             <button onClick={() => setShowCustomize(false)} className="mt-4 w-full py-2.5 bg-primary text-white rounded-lg font-medium text-sm hover:bg-primary-dark">Đóng</button>
           </div>

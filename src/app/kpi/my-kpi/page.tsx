@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
   Save, Send, FileText, CheckCircle, AlertTriangle,
-  Plus, User
+  Plus, User, PenLine
 } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut } from '@/lib/api';
@@ -51,6 +51,9 @@ export default function MyKPIPage() {
   const [selectedCycleForCreate, setSelectedCycleForCreate] = useState('');
   const [saving, setSaving] = useState(false);
   const [showSubmit, setShowSubmit] = useState(false);
+  const [showCommit, setShowCommit] = useState(false);
+  const [commitChecked, setCommitChecked] = useState(false);
+  const [commitDate, setCommitDate] = useState(new Date().toISOString().split('T')[0]);
 
   const availablePositions = (individualKpisData as PositionTemplate[]).filter(
     p => p.academicYearId === selectedYearId
@@ -132,6 +135,28 @@ export default function MyKPIPage() {
       });
       setMyPlan(updated);
       setShowSubmit(false);
+    } catch { /* empty */ } finally { setSaving(false); }
+  };
+
+  const handleCommit = async () => {
+    if (!myPlan || !commitChecked) return;
+    setSaving(true);
+    try {
+      const updated = await apiPut<IndividualPlan>(`/api/individual-plans/${myPlan.id}`, {
+        status: 'committed',
+        committedAt: new Date(commitDate).toISOString(),
+      });
+      await apiPost('/api/audit-logs', {
+        userId: session?.user?.id || 'unknown',
+        action: 'commit',
+        objectType: 'kpi_individual_plan',
+        objectId: myPlan.id,
+        detail: `Ký cam kết KPI cá nhân - ${myPlan.positionName} - ngày ${commitDate}`,
+        ipAddress: '127.0.0.1',
+        createdAt: new Date().toISOString(),
+      });
+      setMyPlan(updated);
+      setShowCommit(false);
     } catch { /* empty */ } finally { setSaving(false); }
   };
 
@@ -235,15 +260,9 @@ export default function MyKPIPage() {
                 </div>
               )}
               {myPlan.status === 'approved' && (
-                <button onClick={async () => {
-                  if (!confirm('Cam kết thực hiện KPI?')) return;
-                  setSaving(true);
-                  await apiPut(`/api/individual-plans/${myPlan.id}`, { status: 'committed' });
-                  setSaving(false);
-                  window.location.reload();
-                }} disabled={saving}
+                <button onClick={() => { setCommitChecked(false); setCommitDate(new Date().toISOString().split('T')[0]); setShowCommit(true); }}
                   className="bg-accent-green hover:opacity-90 text-white px-3 py-1 rounded text-xs font-medium transition-colors flex items-center gap-1">
-                  <CheckCircle size={14} /> {saving ? 'Đang xử lý...' : 'Cam kết thực hiện'}
+                  <CheckCircle size={14} /> Cam kết thực hiện
                 </button>
               )}
               {myPlan.status === 'committed' && (
@@ -359,6 +378,30 @@ export default function MyKPIPage() {
             <button onClick={() => setShowSubmit(false)} className="btn-secondary">Hủy</button>
             <button onClick={handleSubmit} disabled={saving || totalWeight !== 100} className="btn-primary">
               {saving ? 'Đang gửi...' : 'Gửi duyệt'}
+            </button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal isOpen={showCommit} onClose={() => { setShowCommit(false); }} title="Ký cam kết điện tử">
+        <div className="space-y-4">
+          <div className="p-4 bg-bg-cream rounded-lg border border-border">
+            <div className="font-medium text-sm">Vị trí: {myPlan?.positionName}</div>
+            <div className="text-xs text-text-light mt-1">Chu kỳ: {cycles.find(c => c.id === myPlan?.cycleId)?.name || '-'}</div>
+          </div>
+          <label className="flex items-start gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-bg-cream">
+            <input type="checkbox" checked={commitChecked} onChange={e => setCommitChecked(e.target.checked)} className="mt-0.5 rounded" />
+            <span className="text-sm">Tôi cam kết thực hiện các KPI đã được phê duyệt</span>
+          </label>
+          <div>
+            <label className="block text-sm font-medium mb-1">Ngày ký cam kết</label>
+            <input type="date" value={commitDate} onChange={e => setCommitDate(e.target.value)}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <button onClick={() => setShowCommit(false)} className="btn-secondary">Hủy</button>
+            <button onClick={handleCommit} disabled={saving || !commitChecked} className="btn-primary flex items-center gap-2">
+              <PenLine size={14} /> Xác nhận cam kết
             </button>
           </div>
         </div>

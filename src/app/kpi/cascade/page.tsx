@@ -331,6 +331,13 @@ export default function CascadeAssignmentsPage() {
       </div>
 
       <div className="card">
+        <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Tỷ lệ đóng góp (VI.6)</h3></div>
+        <div className="p-4">
+          <ContributionRatioTable indicatorsData={indicatorsData as { id: string; name: string; targetValue: number; unit: string }[]} unitsData={unitsData as { id: string; name: string }[]} />
+        </div>
+      </div>
+
+      <div className="card">
         <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Phân bổ gợi ý</h3></div>
         <div className="p-4">
           <SuggestedDistribution cycleId={selectedCycleId} items={cycleFiltered} unitsData={unitsData as { id: string; name: string }[]} onApply={() => load()} />
@@ -343,6 +350,146 @@ export default function CascadeAssignmentsPage() {
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa phân bổ KPI">
         {selected && <Form onSubmit={handleUpdate} initial={selected} />}
       </Modal>
+    </div>
+  );
+}
+
+function ContributionRatioTable({ indicatorsData, unitsData }: {
+  indicatorsData: { id: string; name: string; targetValue: number; unit: string }[];
+  unitsData: { id: string; name: string }[];
+}) {
+  const [distributions, setDistributions] = useState<Record<string, Record<string, number>>>({});
+  const [showAdd, setShowAdd] = useState(false);
+  const [addIndicator, setAddIndicator] = useState('');
+  const [addUnit, setAddUnit] = useState('');
+  const [addRatio, setAddRatio] = useState(0);
+
+  const schoolIndicators = indicatorsData.filter(i => i.id.startsWith('CTU'));
+
+  const getTotalUnitTarget = (indicatorId: string) => {
+    const dists = distributions[indicatorId] || {};
+    return Object.values(dists).reduce((s, v) => s + v, 0);
+  };
+
+  const getSchoolTarget = (indicatorId: string) => {
+    return indicatorsData.find(i => i.id === indicatorId)?.targetValue || 0;
+  };
+
+  const addDistribution = () => {
+    if (!addIndicator || !addUnit) return;
+    setDistributions(prev => ({
+      ...prev,
+      [addIndicator]: { ...(prev[addIndicator] || {}), [addUnit]: addRatio },
+    }));
+    setAddIndicator('');
+    setAddUnit('');
+    setAddRatio(0);
+    setShowAdd(false);
+  };
+
+  const removeDistribution = (indicatorId: string, unitId: string) => {
+    setDistributions(prev => {
+      const updated = { ...prev };
+      if (updated[indicatorId]) {
+        const newDists = { ...updated[indicatorId] };
+        delete newDists[unitId];
+        updated[indicatorId] = newDists;
+      }
+      return updated;
+    });
+  };
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-text-light">
+        Bảng phân bổ chỉ tiêu KPI cấp Trường xuống các đơn vị. Nhập tỷ lệ đóng góp (%) cho từng đơn vị theo từng chỉ tiêu.
+      </p>
+      <div className="overflow-x-auto">
+        <table className="table text-sm">
+          <thead>
+            <tr>
+              <th>KPI Trường</th>
+              <th>Chỉ tiêu trường</th>
+              <th>Tổng các đơn vị</th>
+              <th>Tỷ lệ phân bổ</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schoolIndicators.length === 0 ? (
+              <tr><td colSpan={5} className="text-center py-6 text-text-light">Chưa có KPI cấp Trường</td></tr>
+            ) : schoolIndicators.map(ind => {
+              const totalUnit = getTotalUnitTarget(ind.id);
+              const schoolTarget = getSchoolTarget(ind.id);
+              const ratio = schoolTarget > 0 ? Math.round((totalUnit / schoolTarget) * 100) : 0;
+              const dists = distributions[ind.id] || {};
+              return (
+                <tr key={ind.id}>
+                  <td className="font-medium">{ind.name}</td>
+                  <td>{schoolTarget} {ind.unit}</td>
+                  <td className={`font-bold ${totalUnit >= schoolTarget ? 'text-accent-green' : 'text-accent-red'}`}>
+                    {totalUnit} {ind.unit}
+                  </td>
+                  <td>
+                    <span className={`badge ${ratio >= 100 ? 'badge-success' : 'badge-warning'}`}>{ratio}%</span>
+                  </td>
+                  <td>
+                    <button onClick={() => { setAddIndicator(ind.id); setAddUnit(''); setAddRatio(0); setShowAdd(true); }} className="p-1 text-primary hover:bg-primary-light rounded" title="Thêm phân bổ"><Plus size={14} /></button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {schoolIndicators.length > 0 && (
+        <div className="mt-4 space-y-2">
+          <p className="text-xs font-medium text-text-light">Chi tiết phân bổ theo đơn vị:</p>
+          {schoolIndicators.map(ind => {
+            const dists = distributions[ind.id] || {};
+            const entries = Object.entries(dists);
+            if (entries.length === 0) return null;
+            return (
+              <div key={ind.id} className="p-3 bg-bg-cream rounded-lg border border-border">
+                <div className="text-xs font-medium mb-2">{ind.name}</div>
+                <div className="flex flex-wrap gap-2">
+                  {entries.map(([unitId, val]) => (
+                    <div key={unitId} className="flex items-center gap-1 px-2 py-1 bg-white rounded border border-border text-xs">
+                      <span className="font-medium">{unitsData.find(u => u.id === unitId)?.name || unitId}</span>
+                      <span className="text-primary font-bold">{val}%</span>
+                      <button onClick={() => removeDistribution(ind.id, unitId)} className="p-0.5 text-red-500 hover:bg-red-50 rounded"><Trash2 size={10} /></button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {showAdd && (
+        <div className="p-4 bg-bg-cream rounded-lg border border-border">
+          <h4 className="text-sm font-medium mb-3">Thêm tỷ lệ phân bổ</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label className="block text-xs font-medium mb-1">Đơn vị</label>
+              <select value={addUnit} onChange={e => setAddUnit(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm">
+                <option value="">-- Chọn --</option>
+                {(unitsData as { id: string; name: string; type?: string }[]).filter(u => u.type === 'faculty' || u.type === 'department' || u.type === 'school').map(u => (
+                  <option key={u.id} value={u.id}>{u.name}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-medium mb-1">Tỷ lệ (%)</label>
+              <input type="number" value={addRatio} onChange={e => setAddRatio(Number(e.target.value))} className="w-full px-3 py-2 border border-border rounded-lg text-sm" min={0} max={100} />
+            </div>
+            <div className="flex items-end gap-2">
+              <button onClick={addDistribution} className="px-4 py-2 bg-primary text-white rounded-lg text-sm">Thêm</button>
+              <button onClick={() => setShowAdd(false)} className="px-4 py-2 border border-border rounded-lg text-sm">Hủy</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
