@@ -125,42 +125,6 @@ export default function BscPage() {
       {/* ===== TAB: TỔNG QUAN ===== */}
       {tab === 'overview' && (
         <>
-          {/* Guide section */}
-          <div className="card border border-blue-200 bg-blue-50/50">
-            <button
-              onClick={() => setGuideOpen(!guideOpen)}
-              className="w-full flex items-center justify-between p-4 text-left"
-            >
-              <span className="flex items-center gap-2 text-sm font-semibold text-blue-800">
-                <Info size={16} /> Hướng dẫn: Phối cảnh (Perspective) là gì?
-              </span>
-              <span className="text-blue-600 text-xs">{guideOpen ? 'Thu gọn' : 'Mở rộng'}</span>
-            </button>
-            {guideOpen && (
-              <div className="px-4 pb-4 space-y-3 text-sm text-blue-900/80">
-                <p>
-                  <strong>BSC (Balanced Scorecard / Thẻ điểm cân bằng)</strong> là phương pháp quản lý chiến
-                  lược, giúp dịch tầm nhìn thành các mục tiêu đo lường được. Trong hệ thống này, nhà trường
-                  tự định nghĩa các <strong>phối cảnh (perspective)</strong> — khung phân loại mục tiêu chiến
-                  lược — theo nhu cầu quản lý riêng.
-                </p>
-                <p className="font-medium">Cấu trúc chuỗi liên kết:</p>
-                <div className="flex items-center gap-2 flex-wrap text-xs">
-                  <span className="px-2 py-1 rounded bg-blue-100 text-blue-700 font-mono">Phối cảnh</span>
-                  <span className="text-blue-400">&rarr;</span>
-                  <span className="px-2 py-1 rounded bg-green-100 text-green-700 font-mono">Mục tiêu chiến lược</span>
-                  <span className="text-blue-400">&rarr;</span>
-                  <span className="px-2 py-1 rounded bg-purple-100 text-purple-700 font-mono">Chỉ tiêu KPI</span>
-                </div>
-                <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Phối cảnh</strong>: khung phân loại do nhà trường tự tạo (mặc định 4 góc nhìn BSC chuẩn). Có thể thêm/sửa/xóa tại tab <em>Quản lý phối cảnh</em>.</li>
-                  <li><strong>Mục tiêu chiến lược</strong>: các mục tiêu cụ thể gắn với mỗi phối cảnh, quản lý tại trang <em>Mục tiêu chiến lược</em>.</li>
-                  <li><strong>Chỉ tiêu KPI</strong>: thước đo định lượng cho mỗi mục tiêu, quản lý tại trang <em>Bộ chỉ tiêu KPI</em>.</li>
-                </ul>
-              </div>
-            )}
-          </div>
-
           {/* Loading */}
           {loading && (
             <div className="text-center py-10 text-text-light text-sm">Đang tải dữ liệu...</div>
@@ -265,6 +229,42 @@ export default function BscPage() {
                     </table>
                   </div>
                 </div>
+              </div>
+
+              {/* Guide section */}
+              <div className="card border border-blue-200 bg-blue-50/50">
+                <button
+                  onClick={() => setGuideOpen(!guideOpen)}
+                  className="w-full flex items-center justify-between p-4 text-left"
+                >
+                  <span className="flex items-center gap-2 text-sm font-semibold text-blue-800">
+                    <Info size={16} /> Hướng dẫn: Phối cảnh (Perspective) là gì?
+                  </span>
+                  <span className="text-blue-600 text-xs">{guideOpen ? 'Thu gọn' : 'Mở rộng'}</span>
+                </button>
+                {guideOpen && (
+                  <div className="px-4 pb-4 space-y-3 text-sm text-blue-900/80">
+                    <p>
+                      <strong>BSC (Balanced Scorecard / Thẻ điểm cân bằng)</strong> là phương pháp quản lý chiến
+                      lược, giúp dịch tầm nhìn thành các mục tiêu đo lường được. Trong hệ thống này, nhà trường
+                      tự định nghĩa các <strong>phối cảnh (perspective)</strong> — khung phân loại mục tiêu chiến
+                      lược — theo nhu cầu quản lý riêng.
+                    </p>
+                    <p className="font-medium">Cấu trúc chuỗi liên kết:</p>
+                    <div className="flex items-center gap-2 flex-wrap text-xs">
+                      <span className="px-2 py-1 rounded bg-blue-100 text-blue-700 font-mono">Phối cảnh</span>
+                      <span className="text-blue-400">&rarr;</span>
+                      <span className="px-2 py-1 rounded bg-green-100 text-green-700 font-mono">Mục tiêu chiến lược</span>
+                      <span className="text-blue-400">&rarr;</span>
+                      <span className="px-2 py-1 rounded bg-purple-100 text-purple-700 font-mono">Chỉ tiêu KPI</span>
+                    </div>
+                    <ul className="list-disc list-inside space-y-1">
+                      <li><strong>Phối cảnh</strong>: khung phân loại do nhà trường tự tạo (mặc định 4 góc nhìn BSC chuẩn). Có thể thêm/sửa/xóa tại tab <em>Quản lý phối cảnh</em>.</li>
+                      <li><strong>Mục tiêu chiến lược</strong>: các mục tiêu cụ thể gắn với mỗi phối cảnh, quản lý tại trang <em>Mục tiêu chiến lược</em>.</li>
+                      <li><strong>Chỉ tiêu KPI</strong>: thước đo định lượng cho mỗi mục tiêu, quản lý tại trang <em>Bộ chỉ tiêu KPI</em>.</li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </>
           )}
