@@ -6,14 +6,8 @@
     "description": "Đạt kiểm định chất lượng theo chuẩn AUN-QA, nâng tỷ lệ sinh viên hài lòng trên 85%",
     "field": "Đào tạo & Đảm bảo chất lượng",
     "leadUnitId": "u014",
-    "supportUnitIds": [
-      "u015",
-      "u016"
-    ],
-    "indicatorIds": [
-      "CTU-KPI-01",
-      "CTU-KPI-02"
-    ],
+    "supportUnitIds": ["u015", "u016"],
+    "indicatorIds": ["CTU-KPI-01", "CTU-KPI-02"],
     "status": "approved",
     "createdAt": "2024-08-01T00:00:00Z",
     "updatedAt": "2024-08-15T00:00:00Z"
@@ -25,13 +19,8 @@
     "description": "Tăng số lượng công bố quốc tế, đề tài NCKH, sản phẩm SHTT",
     "field": "KHCN & Đổi mới sáng tạo",
     "leadUnitId": "u017",
-    "supportUnitIds": [
-      "u018"
-    ],
-    "indicatorIds": [
-      "CTU-KPI-08",
-      "CTU-KPI-09"
-    ],
+    "supportUnitIds": ["u018"],
+    "indicatorIds": ["CTU-KPI-08", "CTU-KPI-09"],
     "status": "approved",
     "createdAt": "2024-08-01T00:00:00Z",
     "updatedAt": "2024-08-15T00:00:00Z"
@@ -44,11 +33,48 @@
     "field": "Đội ngũ & Phát triển giảng viên",
     "leadUnitId": "u019",
     "supportUnitIds": [],
-    "indicatorIds": [
-      "CTU-KPI-15"
-    ],
+    "indicatorIds": ["CTU-KPI-15"],
     "status": "draft",
     "createdAt": "2024-09-01T00:00:00Z",
     "updatedAt": "2024-09-01T00:00:00Z"
+  },
+  {
+    "id": "so004",
+    "academicYearId": "ay001",
+    "name": "Đảm bảo tài chính bền vững và nâng cao hiệu quả quản trị",
+    "description": "Duy trì tăng trưởng bền vững, tối ưu hóa nguồn thu và chi",
+    "field": "Quản trị đại học & Tài chính",
+    "leadUnitId": "u022",
+    "supportUnitIds": [],
+    "indicatorIds": ["CTU-KPI-03", "CTU-KPI-04", "CTU-KPI-12"],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
+  },
+  {
+    "id": "so005",
+    "academicYearId": "ay001",
+    "name": "Đẩy mạnh chuyển đổi số và cải cách hành chính toàn diện",
+    "description": "Số hóa quy trình, tăng tỷ lệ xử lý trên môi trường mạng, triển khai ký số",
+    "field": "Chuyển đổi số & Quản trị số",
+    "leadUnitId": "u025",
+    "supportUnitIds": ["u023"],
+    "indicatorIds": ["CTU-KPI-22", "CTU-KPI-23"],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
+  },
+  {
+    "id": "so006",
+    "academicYearId": "ay001",
+    "name": "Mở rộng hợp tác quốc tế và tăng cường phục vụ cộng đồng",
+    "description": "Tăng số lượng sinh viên quốc tế, trao đổi tín chỉ và đề tài hợp tác địa phương",
+    "field": "Hợp tác quốc tế & Phục vụ cộng đồng",
+    "leadUnitId": "u020",
+    "supportUnitIds": ["u021"],
+    "indicatorIds": ["CTU-KPI-16", "CTU-KPI-19", "CTU-KPI-20"],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
   }
 ]
