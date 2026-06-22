@@ -4,11 +4,14 @@
     "name": "Nâng cao chất lượng đào tạo đạt chuẩn quốc tế",
     "description": "Đạt kiểm định chất lượng theo chuẩn AUN-QA, nâng tỷ lệ sinh viên hài lòng trên 85%",
     "field": "Đào tạo & Đảm bảo chất lượng",
-    "leadUnitId": "u014",
-    "supportUnitIds": ["u015", "u016"],
+    "leadUnitId": "u303",
+    "supportUnitIds": [
+      "u015",
+      "u016"
+    ],
     "status": "approved",
     "createdAt": "2024-08-01T00:00:00Z",
-    "updatedAt": "2024-08-15T00:00:00Z"
+    "updatedAt": "2026-06-22T09:06:19.394Z"
   },
   {
     "id": "so002",
@@ -16,7 +19,9 @@
     "description": "Tăng số lượng công bố quốc tế, đề tài NCKH, sản phẩm SHTT",
     "field": "KHCN & Đổi mới sáng tạo",
     "leadUnitId": "u017",
-    "supportUnitIds": ["u018"],
+    "supportUnitIds": [
+      "u018"
+    ],
     "status": "approved",
     "createdAt": "2024-08-01T00:00:00Z",
     "updatedAt": "2024-08-15T00:00:00Z"
@@ -49,7 +54,9 @@
     "description": "Số hóa quy trình, tăng tỷ lệ xử lý trên môi trường mạng, triển khai ký số",
     "field": "Chuyển đổi số & Quản trị số",
     "leadUnitId": "u025",
-    "supportUnitIds": ["u023"],
+    "supportUnitIds": [
+      "u023"
+    ],
     "status": "approved",
     "createdAt": "2024-08-01T00:00:00Z",
     "updatedAt": "2024-08-15T00:00:00Z"
@@ -60,9 +67,11 @@
     "description": "Tăng số lượng sinh viên quốc tế, trao đổi tín chỉ và đề tài hợp tác địa phương",
     "field": "Hợp tác quốc tế & Phục vụ cộng đồng",
     "leadUnitId": "u020",
-    "supportUnitIds": ["u021"],
-    "status": "approved",
+    "supportUnitIds": [
+      "u021"
+    ],
+    "status": "locked",
     "createdAt": "2024-08-01T00:00:00Z",
-    "updatedAt": "2024-08-15T00:00:00Z"
+    "updatedAt": "2026-06-22T09:20:24.509Z"
   }
 ]
