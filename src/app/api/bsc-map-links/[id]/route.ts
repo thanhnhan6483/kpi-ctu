@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb } from '@/lib/db';
 
 interface BSCMapLink {
-  id: string; academicYearId: string; perspectiveId: string;
+  id: string; perspectiveId: string;
   objectiveId: string; indicatorId?: string;
   linkType: 'perspective_to_objective' | 'objective_to_indicator';
   weight: number; createdAt: string;

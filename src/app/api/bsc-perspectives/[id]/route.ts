@@ -3,7 +3,7 @@ import { readDb, writeDb } from '@/lib/db';
 
 interface BSCPerspective {
   id: string; name: string; code: string; description: string;
-  sortOrder: number; color: string; academicYearId: string;
+  sortOrder: number; color: string;
   status: 'active' | 'inactive';
 }
 

@@ -449,13 +449,11 @@ export interface BSCPerspective {
   description: string;
   sortOrder: number;
   color: string;
-  academicYearId: string;
   status: 'active' | 'inactive';
 }
 
 export interface BSCMapLink {
   id: string;
-  academicYearId: string;
   perspectiveId: string;
   objectiveId: string;
   indicatorId?: string;
@@ -547,7 +545,6 @@ export interface JobPosition {
 
 export interface StrategicObjective {
   id: string;
-  academicYearId: string;
   name: string;
   description: string;
   field: string;

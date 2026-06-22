@@ -1,7 +1,6 @@
 [
   {
     "id": "bscl001",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "linkType": "perspective_to_objective",
@@ -10,7 +9,6 @@
   },
   {
     "id": "bscl002",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
     "linkType": "perspective_to_objective",
@@ -19,7 +17,6 @@
   },
   {
     "id": "bscl003",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc002",
     "objectiveId": "so004",
     "linkType": "perspective_to_objective",
@@ -28,7 +25,6 @@
   },
   {
     "id": "bscl004",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc003",
     "objectiveId": "so005",
     "linkType": "perspective_to_objective",
@@ -37,7 +33,6 @@
   },
   {
     "id": "bscl005",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "linkType": "perspective_to_objective",
@@ -46,7 +41,6 @@
   },
   {
     "id": "bscl006",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so003",
     "linkType": "perspective_to_objective",
@@ -55,7 +49,6 @@
   },
   {
     "id": "bscl007",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-02",
@@ -65,7 +58,6 @@
   },
   {
     "id": "bscl008",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-05",
@@ -75,7 +67,6 @@
   },
   {
     "id": "bscl009",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-06",
@@ -85,7 +76,6 @@
   },
   {
     "id": "bscl010",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-07",
@@ -95,7 +85,6 @@
   },
   {
     "id": "bscl011",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-08",
@@ -105,7 +94,6 @@
   },
   {
     "id": "bscl012",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-09",
@@ -115,7 +103,6 @@
   },
   {
     "id": "bscl013",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-10",
@@ -125,7 +112,6 @@
   },
   {
     "id": "bscl014",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so001",
     "indicatorId": "CTU-KPI-11",
@@ -135,7 +121,6 @@
   },
   {
     "id": "bscl015",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
     "indicatorId": "CTU-KPI-16",
@@ -145,7 +130,6 @@
   },
   {
     "id": "bscl016",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
     "indicatorId": "CTU-KPI-19",
@@ -155,7 +139,6 @@
   },
   {
     "id": "bscl017",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
     "indicatorId": "CTU-KPI-20",
@@ -165,7 +148,6 @@
   },
   {
     "id": "bscl018",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc003",
     "objectiveId": "so005",
     "indicatorId": "CTU-KPI-22",
@@ -175,7 +157,6 @@
   },
   {
     "id": "bscl019",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc003",
     "objectiveId": "so005",
     "indicatorId": "CTU-KPI-23",
@@ -185,7 +166,6 @@
   },
   {
     "id": "bscl020",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "indicatorId": "CTU-KPI-13",
@@ -195,7 +175,6 @@
   },
   {
     "id": "bscl021",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "indicatorId": "CTU-KPI-14",
@@ -205,7 +184,6 @@
   },
   {
     "id": "bscl022",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "indicatorId": "CTU-KPI-15",
@@ -215,7 +193,6 @@
   },
   {
     "id": "bscl023",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "indicatorId": "CTU-KPI-17",
@@ -225,7 +202,6 @@
   },
   {
     "id": "bscl024",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so002",
     "indicatorId": "CTU-KPI-18",
@@ -235,7 +211,6 @@
   },
   {
     "id": "bscl025",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so003",
     "indicatorId": "CTU-KPI-01",
@@ -245,7 +220,6 @@
   },
   {
     "id": "bscl026",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc004",
     "objectiveId": "so003",
     "indicatorId": "CTU-KPI-21",
@@ -255,7 +229,6 @@
   },
   {
     "id": "bscl027",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc002",
     "objectiveId": "so004",
     "indicatorId": "CTU-KPI-03",
@@ -265,7 +238,6 @@
   },
   {
     "id": "bscl028",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc002",
     "objectiveId": "so004",
     "indicatorId": "CTU-KPI-04",
@@ -275,7 +247,6 @@
   },
   {
     "id": "bscl029",
-    "academicYearId": "ay001",
     "perspectiveId": "bsc002",
     "objectiveId": "so004",
     "indicatorId": "CTU-KPI-12",

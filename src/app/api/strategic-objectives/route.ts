@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
   const now = new Date().toISOString();
   const newItem: StrategicObjective = {
     id: `so${generateId()}`,
-    academicYearId: body.academicYearId,
     name: body.name,
     description: body.description || '',
     field: body.field || '',

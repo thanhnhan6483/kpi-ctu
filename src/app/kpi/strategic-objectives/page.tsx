@@ -10,7 +10,6 @@ import kpiGroupsData from '@/data/kpi-groups.json';
 
 interface StrategicObjective {
   id: string;
-  academicYearId: string;
   name: string;
   description: string;
   field: string;
@@ -42,7 +41,6 @@ const fields = ['Đào tạo & Đảm bảo chất lượng', 'KHCN & Đổi m�
 export default function StrategicObjectivesPage() {
   const [years, setYears] = useState<AcademicYear[]>([]);
   const [items, setItems] = useState<StrategicObjective[]>([]);
-  const [selectedYearId, setSelectedYearId] = useState('');
   const [search, setSearch] = useState('');
   const [role, setRole] = useState<'staff' | 'approver'>('staff');
   const [showCreate, setShowCreate] = useState(false);
@@ -58,22 +56,17 @@ export default function StrategicObjectivesPage() {
       ]);
       setYears(y);
       setItems(s);
-      if (!selectedYearId) {
-        const active = y.find(ay => ay.status === 'active');
-        if (active) setSelectedYearId(active.id);
-      }
     } catch { /* empty */ } finally { setLoading(false); }
-  }, [selectedYearId]);
+  }, []);
 
   useEffect(() => { load(); }, [load]);
 
   const filtered = items.filter(i =>
-    i.academicYearId === selectedYearId &&
-    (i.name.toLowerCase().includes(search.toLowerCase()) || i.field.toLowerCase().includes(search.toLowerCase()))
+    i.name.toLowerCase().includes(search.toLowerCase()) || i.field.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleCreate = async (data: Partial<StrategicObjective>) => {
-    await apiPost<StrategicObjective>('/api/strategic-objectives', { ...data, academicYearId: selectedYearId });
+    await apiPost<StrategicObjective>('/api/strategic-objectives', data);
     setShowCreate(false);
     load();
   };
@@ -157,13 +150,6 @@ export default function StrategicObjectivesPage() {
         <div className="card-header"><h3 className="text-white">Danh sách mục tiêu chiến lược</h3></div>
         <div className="p-4">
           <div className="flex gap-4 mb-4 flex-wrap items-center">
-            <div className="flex gap-2">
-              {years.map(ay => (
-                <button key={ay.id} onClick={() => setSelectedYearId(ay.id)} className={`px-3 py-1.5 rounded-lg text-sm font-medium ${selectedYearId === ay.id ? 'bg-primary text-white' : 'bg-bg-cream text-text-dark hover:bg-primary-light'}`}>
-                  {ay.name}
-                </button>
-              ))}
-            </div>
             <div className="flex gap-1 bg-white border border-border rounded-lg p-0.5">
               <button onClick={() => setRole('staff')} className={`px-3 py-1 rounded text-xs font-medium ${role === 'staff' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Cán bộ KPI</button>
               <button onClick={() => setRole('approver')} className={`px-3 py-1 rounded text-xs font-medium ${role === 'approver' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Người duyệt</button>

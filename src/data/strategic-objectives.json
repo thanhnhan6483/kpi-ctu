@@ -1,7 +1,6 @@
 [
   {
     "id": "so001",
-    "academicYearId": "ay001",
     "name": "Nâng cao chất lượng đào tạo đạt chuẩn quốc tế",
     "description": "Đạt kiểm định chất lượng theo chuẩn AUN-QA, nâng tỷ lệ sinh viên hài lòng trên 85%",
     "field": "Đào tạo & Đảm bảo chất lượng",
@@ -14,7 +13,6 @@
   },
   {
     "id": "so002",
-    "academicYearId": "ay001",
     "name": "Tăng cường nghiên cứu khoa học và chuyển giao công nghệ",
     "description": "Tăng số lượng công bố quốc tế, đề tài NCKH, sản phẩm SHTT",
     "field": "KHCN & Đổi mới sáng tạo",
@@ -27,7 +25,6 @@
   },
   {
     "id": "so003",
-    "academicYearId": "ay001",
     "name": "Phát triển đội ngũ giảng viên chất lượng cao",
     "description": "Tỷ lệ giảng viên có trình độ tiến sĩ trên 45%, có 5 GS/PGS mới",
     "field": "Đội ngũ & Phát triển giảng viên",
@@ -40,7 +37,6 @@
   },
   {
     "id": "so004",
-    "academicYearId": "ay001",
     "name": "Đảm bảo tài chính bền vững và nâng cao hiệu quả quản trị",
     "description": "Duy trì tăng trưởng bền vững, tối ưu hóa nguồn thu và chi",
     "field": "Quản trị đại học & Tài chính",
@@ -53,7 +49,6 @@
   },
   {
     "id": "so005",
-    "academicYearId": "ay001",
     "name": "Đẩy mạnh chuyển đổi số và cải cách hành chính toàn diện",
     "description": "Số hóa quy trình, tăng tỷ lệ xử lý trên môi trường mạng, triển khai ký số",
     "field": "Chuyển đổi số & Quản trị số",
@@ -66,7 +61,6 @@
   },
   {
     "id": "so006",
-    "academicYearId": "ay001",
     "name": "Mở rộng hợp tác quốc tế và tăng cường phục vụ cộng đồng",
     "description": "Tăng số lượng sinh viên quốc tế, trao đổi tín chỉ và đề tài hợp tác địa phương",
     "field": "Hợp tác quốc tế & Phục vụ cộng đồng",
