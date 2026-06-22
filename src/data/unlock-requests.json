@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "id": "ulr_001",
+    "objectType": "evaluation",
+    "objectId": "EVL001",
+    "requestedBy": "u_NguyenVanB",
+    "reason": "Điểm tự đánh giá bị nhập sai, cần điều chỉnh từ 60 lên 75",
+    "scope": "Điểm tự đánh giá",
+    "durationHours": 24,
+    "approvedBy": null,
+    "approvedAt": null,
+    "status": "pending",
+    "note": "",
+    "createdAt": "2026-06-20T08:30:00Z"
+  },
+  {
+    "id": "ulr_002",
+    "objectType": "score",
+    "objectId": "score_DT-01_c001",
+    "requestedBy": "u_PhamThiC",
+    "reason": "Giá trị thực tế đã được cập nhật nhưng điểm chưa phản ánh đúng",
+    "scope": "Điểm KPI DT-01",
+    "durationHours": 48,
+    "approvedBy": "u_QuanTriVien",
+    "approvedAt": "2026-06-21T10:00:00Z",
+    "status": "approved",
+    "note": "Đồng ý mở khóa để cập nhật lại điểm",
+    "createdAt": "2026-06-19T14:20:00Z"
+  },
+  {
+    "id": "ulr_003",
+    "objectType": "cycle",
+    "objectId": "c001",
+    "requestedBy": "u_TranVanD",
+    "reason": "Cần bổ sung minh chứng cho học kỳ trước do thiếu sót",
+    "scope": "Toàn bộ chu kỳ",
+    "durationHours": 72,
+    "approvedBy": null,
+    "approvedAt": null,
+    "status": "rejected",
+    "note": "Chu kỳ đã khóa theo quy định, không thể mở lại",
+    "createdAt": "2026-06-18T09:15:00Z"
+  },
+  {
+    "id": "ulr_004",
+    "objectType": "evidence",
+    "objectId": "evid_003",
+    "requestedBy": "u_LeThiE",
+    "reason": "File minh chứng bị upload nhầm, cần thay thế bằng file đúng",
+    "scope": "Minh chứng KPI GV-02",
+    "durationHours": 12,
+    "approvedBy": "u_QuanTriVien",
+    "approvedAt": "2026-06-22T08:00:00Z",
+    "status": "pending",
+    "note": "",
+    "createdAt": "2026-06-22T07:45:00Z"
+  }
+]
