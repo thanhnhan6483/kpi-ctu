@@ -550,7 +550,6 @@ export interface StrategicObjective {
   field: string;
   leadUnitId: string;
   supportUnitIds: string[];
-  indicatorIds: string[];
   status: 'draft' | 'submitted' | 'approved' | 'locked';
   createdAt: string;
   updatedAt: string;

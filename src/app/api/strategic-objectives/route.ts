@@ -17,7 +17,6 @@ export async function POST(request: NextRequest) {
     field: body.field || '',
     leadUnitId: body.leadUnitId || '',
     supportUnitIds: body.supportUnitIds || [],
-    indicatorIds: body.indicatorIds || [],
     status: 'draft',
     createdAt: now,
     updatedAt: now,

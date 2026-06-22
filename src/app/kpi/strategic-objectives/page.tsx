@@ -5,8 +5,6 @@ import { Plus, Search, Edit, Trash2, Target, Send, CheckCircle, Lock, Compass, X
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
-import indicatorsData from '@/data/indicators.json';
-import kpiGroupsData from '@/data/kpi-groups.json';
 
 interface StrategicObjective {
   id: string;
@@ -15,7 +13,6 @@ interface StrategicObjective {
   field: string;
   leadUnitId: string;
   supportUnitIds: string[];
-  indicatorIds: string[];
   status: 'draft' | 'submitted' | 'approved' | 'locked';
   createdAt: string;
   updatedAt: string;
@@ -25,9 +22,6 @@ interface AcademicYear { id: string; name: string; status: string; }
 
 const unitMap: Record<string, string> = {};
 (unitsData as { id: string; name: string }[]).forEach(u => { unitMap[u.id] = u.name; });
-
-const indicatorMap: Record<string, string> = {};
-(indicatorsData as { id: string; name: string }[]).forEach(i => { indicatorMap[i.id] = i.name; });
 
 const statusConfig: Record<string, { label: string; color: string }> = {
   draft: { label: 'Nháp', color: 'bg-gray-100 text-gray-600' },
@@ -92,7 +86,7 @@ export default function StrategicObjectivesPage() {
   };
 
   const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<StrategicObjective>) => void; initial?: StrategicObjective }) => {
-    const [form, setForm] = useState(initial || { name: '', description: '', field: '', leadUnitId: '', supportUnitIds: [] as string[], indicatorIds: [] as string[] });
+    const [form, setForm] = useState(initial || { name: '', description: '', field: '', leadUnitId: '', supportUnitIds: [] as string[] });
     return (
       <form onSubmit={e => { e.preventDefault(); onSubmit(form); }} className="space-y-4">
         <div>
@@ -116,13 +110,6 @@ export default function StrategicObjectivesPage() {
             <option value="">-- Chọn đơn vị --</option>
             {(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
           </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Chỉ tiêu KPI liên kết</label>
-          <select multiple value={form.indicatorIds} onChange={e => setForm({ ...form, indicatorIds: Array.from(e.target.selectedOptions, o => o.value) })} className="w-full px-3 py-2 border rounded-lg text-sm" size={4}>
-            {(indicatorsData as { id: string; name: string }[]).map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
-          </select>
-          <p className="text-xs text-text-light mt-1">Giữ Ctrl để chọn nhiều</p>
         </div>
         <div className="flex justify-end gap-2 pt-2">
           <button type="button" onClick={() => initial ? setShowEdit(false) : setShowCreate(false)} className="px-4 py-2 border rounded-lg text-sm">Hủy</button>
@@ -180,9 +167,6 @@ export default function StrategicObjectivesPage() {
                     <div className="flex flex-wrap gap-3 text-xs text-text-light">
                       <span className="bg-primary-light text-primary px-2 py-0.5 rounded">{item.field}</span>
                       <span>Chủ trì: {unitMap[item.leadUnitId] || '-'}</span>
-                      {item.indicatorIds.length > 0 && (
-                        <span>{item.indicatorIds.length} chỉ tiêu liên kết</span>
-                      )}
                     </div>
                   </div>
                   <div className="flex items-center gap-1 ml-4">
