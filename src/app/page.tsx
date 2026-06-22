@@ -174,7 +174,7 @@ export default function DashboardPage() {
               </button>
             ))}
           </div>
-          <a href="/reports" className="btn-secondary text-sm">Xuất báo cáo</a>
+          <a href="/api/reports/export?type=dashboard&format=csv" className="btn-secondary text-sm flex items-center gap-1" download>Xuất báo cáo</a>
           <a href="/kpi/progress" className="btn-primary text-sm">Cập nhật KPI</a>
         </div>
       </div>

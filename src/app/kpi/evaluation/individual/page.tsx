@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit, User, Building2 } from 'lucide-react';
+import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit, User, Building2, MessageSquare } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
-import { apiGet, apiPut } from '@/lib/api';
+import { apiGet, apiPut, apiPost } from '@/lib/api';
 import individualKpisData from '@/data/individual-kpis.json';
 
 interface IndividualEvaluation {
@@ -73,6 +73,8 @@ export default function IndividualEvaluationPage() {
   const [showManagerEval, setShowManagerEval] = useState(false);
   const [showCouncilEval, setShowCouncilEval] = useState(false);
   const [showLock, setShowLock] = useState(false);
+  const [showComplaint, setShowComplaint] = useState(false);
+  const [complaintContent, setComplaintContent] = useState('');
   const [selectedEval, setSelectedEval] = useState<IndividualEvaluation | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -266,6 +268,7 @@ export default function IndividualEvaluationPage() {
                         {ev.status === 'evaluated' && (
                           <button onClick={() => { setSelectedEval(ev); setShowLock(true); }} className="p-1 text-primary hover:bg-primary-light rounded" title="Khóa kết quả"><Lock size={14} /></button>
                         )}
+                        <button onClick={() => { setSelectedEval(ev); setComplaintContent(''); setShowComplaint(true); }} className="p-1 text-orange-600 hover:bg-orange-50 rounded" title="Khiếu nại"><MessageSquare size={14} /></button>
                       </div>
                     </td>
                   </tr>
@@ -382,6 +385,24 @@ export default function IndividualEvaluationPage() {
           <div className="flex justify-end gap-2 pt-4 border-t">
             <button onClick={() => { setShowLock(false); setSelectedEval(null); }} className="btn-secondary">Hủy</button>
             <button onClick={handleLock} className="btn-primary flex items-center gap-2"><Lock size={14} /> Khóa kết quả</button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal isOpen={showComplaint} onClose={() => { setShowComplaint(false); setSelectedEval(null); }} title="Gửi khiếu nại / Giải trình">
+        <div className="space-y-4">
+          <div className="p-3 bg-bg-cream rounded-lg border border-border text-sm">
+            <div className="font-medium">{selectedEval?.personName} - {selectedEval?.positionCode}</div>
+            <div className="text-xs text-text-light mt-1">Đơn vị: {selectedEval?.unitName} | Điểm: {selectedEval?.finalScore ?? '-'} | Xếp loại: {selectedEval?.grade ?? '-'}</div>
+          </div>
+          <div><label className="block text-sm font-medium mb-1">Nội dung khiếu nại *</label><textarea value={complaintContent} onChange={e => setComplaintContent(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm" rows={4} placeholder="Mô tả lý do khiếu nại..." required /></div>
+          <div className="flex justify-end gap-2 pt-2 border-t">
+            <button onClick={() => { setShowComplaint(false); setSelectedEval(null); }} className="px-4 py-2 border border-border rounded-lg text-sm">Hủy</button>
+            <button onClick={async () => {
+              if (!complaintContent.trim()) { alert('Vui lòng nhập nội dung khiếu nại'); return; }
+              await apiPost('/api/complaints', { title: `Khiếu nại đánh giá ${selectedEval?.personName}`, content: complaintContent, unitName: selectedEval?.unitName || '', priority: 'medium', status: 'pending', code: `CMP${Date.now()}` });
+              setShowComplaint(false); setSelectedEval(null);
+            }} className="btn-primary flex items-center gap-1"><MessageSquare size={14} /> Gửi khiếu nại</button>
           </div>
         </div>
       </Modal>

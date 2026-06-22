@@ -1,0 +1,7 @@
+[
+  { "id": "ks001", "name": "Bản nháp", "code": "draft", "description": "Kế hoạch đang ở trạng thái nháp, chưa gửi phê duyệt", "color": "#9e9e9e", "sortOrder": 1, "category": "plan" },
+  { "id": "ks002", "name": "Đã gửi", "code": "submitted", "description": "Kế hoạch đã được gửi và chờ phê duyệt", "color": "#2196f3", "sortOrder": 2, "category": "plan" },
+  { "id": "ks003", "name": "Đã duyệt", "code": "approved", "description": "Kế hoạch đã được phê duyệt chính thức", "color": "#4caf50", "sortOrder": 3, "category": "plan" },
+  { "id": "ks004", "name": "Chờ bổ sung", "code": "needs_supplement", "description": "Minh chứng cần bổ sung thêm thông tin", "color": "#ff9800", "sortOrder": 4, "category": "evidence" },
+  { "id": "ks005", "name": "Hợp lệ", "code": "valid", "description": "Minh chứng đã được xác nhận hợp lệ", "color": "#4caf50", "sortOrder": 5, "category": "evidence" }
+]

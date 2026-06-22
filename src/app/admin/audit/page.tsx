@@ -54,6 +54,7 @@ const actionColors: Record<string, string> = {
 export default function AuditPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [actionFilter, setActionFilter] = useState('all');
+  const [postLockFilter, setPostLockFilter] = useState(false);
 
   const getUserName = (userId: string) => {
     const user = usersData.find((u: Record<string, unknown>) => u.id === userId);
@@ -66,7 +67,8 @@ export default function AuditPage() {
       (log.detail as string).toLowerCase().includes(searchTerm.toLowerCase()) ||
       (objectTypeLabels[log.objectType as string] || '').toLowerCase().includes(searchTerm.toLowerCase());
     const matchesAction = actionFilter === 'all' || log.action === actionFilter;
-    return matchesSearch && matchesAction;
+    const matchesPostLock = !postLockFilter || ['lock', 'update', 'unlock'].includes(log.action as string);
+    return matchesSearch && matchesAction && matchesPostLock;
   });
 
   return (
@@ -142,6 +144,10 @@ export default function AuditPage() {
             <option key={key} value={key}>{label}</option>
           ))}
         </select>
+        <label className="flex items-center gap-2 px-3 py-2 bg-white border border-border rounded-lg text-sm cursor-pointer hover:bg-bg-cream">
+          <input type="checkbox" checked={postLockFilter} onChange={e => setPostLockFilter(e.target.checked)} className="rounded" />
+          Chỉnh sửa sau khóa
+        </label>
       </div>
 
       <div className="card">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, Edit, Trash2, Target, Send, CheckCircle, Lock, Compass } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Target, Send, CheckCircle, Lock, Compass, XCircle, History } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
@@ -44,6 +44,7 @@ export default function StrategicObjectivesPage() {
   const [items, setItems] = useState<StrategicObjective[]>([]);
   const [selectedYearId, setSelectedYearId] = useState('');
   const [search, setSearch] = useState('');
+  const [role, setRole] = useState<'staff' | 'approver'>('staff');
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [selected, setSelected] = useState<StrategicObjective | null>(null);
@@ -85,7 +86,7 @@ export default function StrategicObjectivesPage() {
   };
 
   const handleStatusChange = async (item: StrategicObjective, status: string) => {
-    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', locked: 'khóa' };
+    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', locked: 'khóa', draft: 'yêu cầu chỉnh sửa' };
     if (!confirm(`${labels[status] || status} mục tiêu "${item.name}"?`)) return;
     await apiPut(`/api/strategic-objectives/${item.id}`, { status });
     load();
@@ -155,13 +156,17 @@ export default function StrategicObjectivesPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white">Danh sách mục tiêu chiến lược</h3></div>
         <div className="p-4">
-          <div className="flex gap-4 mb-4 flex-wrap">
+          <div className="flex gap-4 mb-4 flex-wrap items-center">
             <div className="flex gap-2">
               {years.map(ay => (
                 <button key={ay.id} onClick={() => setSelectedYearId(ay.id)} className={`px-3 py-1.5 rounded-lg text-sm font-medium ${selectedYearId === ay.id ? 'bg-primary text-white' : 'bg-bg-cream text-text-dark hover:bg-primary-light'}`}>
                   {ay.name}
                 </button>
               ))}
+            </div>
+            <div className="flex gap-1 bg-white border border-border rounded-lg p-0.5">
+              <button onClick={() => setRole('staff')} className={`px-3 py-1 rounded text-xs font-medium ${role === 'staff' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Cán bộ KPI</button>
+              <button onClick={() => setRole('approver')} className={`px-3 py-1 rounded text-xs font-medium ${role === 'approver' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Người duyệt</button>
             </div>
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light" size={16} />
@@ -195,15 +200,23 @@ export default function StrategicObjectivesPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-1 ml-4">
-                    {item.status === 'draft' && (
+                    {item.status === 'draft' && role === 'staff' && (
                       <button onClick={() => handleStatusChange(item, 'submitted')} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded" title="Trình duyệt">
                         <Send size={14} />
                       </button>
                     )}
-                    {item.status === 'submitted' && (
-                      <button onClick={() => handleStatusChange(item, 'approved')} className="p-1.5 text-green-600 hover:bg-green-50 rounded" title="Phê duyệt">
-                        <CheckCircle size={14} />
-                      </button>
+                    {item.status === 'submitted' && role === 'approver' && (
+                      <>
+                        <button onClick={() => handleStatusChange(item, 'approved')} className="p-1.5 text-green-600 hover:bg-green-50 rounded" title="Phê duyệt">
+                          <CheckCircle size={14} />
+                        </button>
+                        <button onClick={() => handleStatusChange(item, 'draft')} className="p-1.5 text-orange-600 hover:bg-orange-50 rounded" title="Yêu cầu chỉnh sửa">
+                          <XCircle size={14} />
+                        </button>
+                      </>
+                    )}
+                    {item.status === 'submitted' && role === 'staff' && (
+                      <span className="text-xs text-text-light italic">Đã trình</span>
                     )}
                     {item.status === 'approved' && (
                       <button onClick={() => handleStatusChange(item, 'locked')} className="p-1.5 text-red-600 hover:bg-red-50 rounded" title="Khóa">
@@ -217,6 +230,22 @@ export default function StrategicObjectivesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="card-header"><h3 className="text-white flex items-center gap-2"><History size={16} /> Luồng phê duyệt</h3></div>
+        <div className="p-4">
+          <div className="flex items-center gap-0 text-sm">
+            <div className="flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-l-lg text-gray-600 font-medium">Nháp</div>
+            <div className="w-6 h-0.5 bg-gray-300" />
+            <div className="flex items-center gap-1 px-3 py-1.5 bg-yellow-100 text-yellow-700 font-medium">Trình duyệt</div>
+            <div className="w-6 h-0.5 bg-gray-300" />
+            <div className="flex items-center gap-1 px-3 py-1.5 bg-green-100 text-green-700 font-medium">Phê duyệt</div>
+            <div className="w-6 h-0.5 bg-gray-300" />
+            <div className="flex items-center gap-1 px-3 py-1.5 bg-red-100 text-red-600 rounded-r-lg font-medium">Khóa</div>
+          </div>
+          <p className="text-xs text-text-light mt-2">Vai trò hiện tại: <strong>{role === 'approver' ? 'Người duyệt' : 'Cán bộ KPI'}</strong></p>
         </div>
       </div>
 

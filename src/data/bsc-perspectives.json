@@ -1,0 +1,6 @@
+[
+  { "id": "bsc001", "name": "Khách hàng & Xã hội", "code": "CS", "description": "Sự hài lòng của người học, phụ huynh và đóng góp cho xã hội", "sortOrder": 1, "color": "#2196f3", "academicYearId": "ay002", "status": "active" },
+  { "id": "bsc002", "name": "Tài chính & Nguồn lực", "code": "TC", "description": "Quản lý tài chính, huy động nguồn lực và hiệu quả đầu tư", "sortOrder": 2, "color": "#4caf50", "academicYearId": "ay002", "status": "active" },
+  { "id": "bsc003", "name": "Quy trình nội bộ", "code": "QTNB", "description": "Hiệu quả quy trình quản lý, đào tạo và hỗ trợ", "sortOrder": 3, "color": "#ff9800", "academicYearId": "ay002", "status": "active" },
+  { "id": "bsc004", "name": "Phát triển năng lực", "code": "PTNL", "description": "Nâng cao năng lực đội ngũ và phát triển tổ chức", "sortOrder": 4, "color": "#9c27b0", "academicYearId": "ay002", "status": "active" }
+]

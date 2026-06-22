@@ -34,6 +34,7 @@ const statusConfig: Record<string, { label: string; color: string }> = {
   draft: { label: 'Bản nháp', color: '#6b7280' },
   submitted: { label: 'Chờ duyệt', color: '#eab308' },
   approved: { label: 'Đã duyệt', color: '#22c55e' },
+  committed: { label: 'Đã cam kết', color: '#8b5cf6' },
   in_progress: { label: 'Đang thực hiện', color: '#3b82f6' },
 };
 
@@ -232,6 +233,23 @@ export default function MyKPIPage() {
                     <Send size={14} /> Gửi duyệt
                   </button>
                 </div>
+              )}
+              {myPlan.status === 'approved' && (
+                <button onClick={async () => {
+                  if (!confirm('Cam kết thực hiện KPI?')) return;
+                  setSaving(true);
+                  await apiPut(`/api/individual-plans/${myPlan.id}`, { status: 'committed' });
+                  setSaving(false);
+                  window.location.reload();
+                }} disabled={saving}
+                  className="bg-accent-green hover:opacity-90 text-white px-3 py-1 rounded text-xs font-medium transition-colors flex items-center gap-1">
+                  <CheckCircle size={14} /> {saving ? 'Đang xử lý...' : 'Cam kết thực hiện'}
+                </button>
+              )}
+              {myPlan.status === 'committed' && (
+                <span className="bg-purple-500/20 text-purple-200 px-3 py-1 rounded text-xs font-medium flex items-center gap-1">
+                  <CheckCircle size={14} /> Đã cam kết
+                </span>
               )}
             </div>
             <div className="p-0 overflow-x-auto">

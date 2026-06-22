@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Send, ArrowRight, GitBranch, Edit, Trash2, XCircle } from 'lucide-react';
+import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Send, ArrowRight, GitBranch, Edit, Trash2, XCircle, Calculator, Users } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
@@ -71,6 +71,11 @@ export default function CascadeAssignmentsPage() {
   const [showEdit, setShowEdit] = useState(false);
   const [selected, setSelected] = useState<KPICascadeAssignment | null>(null);
   const [loading, setLoading] = useState(true);
+  const [cascadeRules, setCascadeRules] = useState<{ fromUnitId: string; toUnitId: string; targetPercent: number }[]>([]);
+  const [showRuleForm, setShowRuleForm] = useState(false);
+  const [ruleFromUnit, setRuleFromUnit] = useState('');
+  const [ruleToUnit, setRuleToUnit] = useState('');
+  const [rulePercent, setRulePercent] = useState(0);
 
   const load = useCallback(async () => {
     try {
@@ -212,6 +217,50 @@ export default function CascadeAssignmentsPage() {
         </div>
       </div>
 
+      <div className="card">
+        <div className="card-header flex items-center justify-between">
+          <h3 className="text-white">Quy tắc Cascade</h3>
+          <button onClick={() => setShowRuleForm(true)} className="px-3 py-1 bg-white/20 text-white rounded-lg text-xs hover:bg-white/30 flex items-center gap-1">
+            <Plus size={12} /> Thêm quy tắc
+          </button>
+        </div>
+        <div className="p-4">
+          {cascadeRules.length === 0 ? (
+            <p className="text-sm text-text-light">Chưa có quy tắc cascade nào. Thêm quy tắc để xác định tỷ lệ đóng góp giữa các đơn vị.</p>
+          ) : (
+            <div className="flex flex-wrap gap-3">
+              {cascadeRules.map((rule, i) => (
+                <div key={i} className="flex items-center gap-2 px-3 py-2 bg-bg-cream rounded-lg border border-border text-sm">
+                  <span className="font-medium">{unitMap[rule.fromUnitId] || rule.fromUnitId}</span>
+                  <span className="text-text-light">→</span>
+                  <span className="font-medium">{unitMap[rule.toUnitId] || rule.toUnitId}</span>
+                  <span className="badge badge-info">{rule.targetPercent}%</span>
+                  <button onClick={() => setCascadeRules(cascadeRules.filter((_, j) => j !== i))} className="p-1 text-red-500 hover:bg-red-50 rounded"><Trash2 size={12} /></button>
+                </div>
+              ))}
+            </div>
+          )}
+          {showRuleForm && (
+            <form onSubmit={e => { e.preventDefault(); setCascadeRules([...cascadeRules, { fromUnitId: ruleFromUnit, toUnitId: ruleToUnit, targetPercent: rulePercent }]); setShowRuleForm(false); setRuleFromUnit(''); setRuleToUnit(''); setRulePercent(0); }}
+              className="mt-3 flex flex-wrap items-end gap-2 p-3 bg-bg-cream rounded-lg border border-border">
+              <div><label className="block text-xs font-medium mb-1">Từ đơn vị</label>
+                <select value={ruleFromUnit} onChange={e => setRuleFromUnit(e.target.value)} required className="px-3 py-2 border rounded-lg text-sm">
+                  <option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
+                </select>
+              </div>
+              <div><label className="block text-xs font-medium mb-1">Đến đơn vị</label>
+                <select value={ruleToUnit} onChange={e => setRuleToUnit(e.target.value)} required className="px-3 py-2 border rounded-lg text-sm">
+                  <option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
+                </select>
+              </div>
+              <div><label className="block text-xs font-medium mb-1">Tỷ lệ (%)</label><input type="number" value={rulePercent} onChange={e => setRulePercent(Number(e.target.value))} className="w-20 px-3 py-2 border rounded-lg text-sm" min={0} max={100} required /></div>
+              <button type="submit" className="px-4 py-2 bg-primary text-white rounded-lg text-sm">Thêm</button>
+              <button type="button" onClick={() => setShowRuleForm(false)} className="px-4 py-2 border rounded-lg text-sm">Hủy</button>
+            </form>
+          )}
+        </div>
+      </div>
+
       <div className="flex flex-wrap gap-4">
         <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
@@ -281,12 +330,87 @@ export default function CascadeAssignmentsPage() {
         </div>
       </div>
 
+      <div className="card">
+        <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Phân bổ gợi ý</h3></div>
+        <div className="p-4">
+          <SuggestedDistribution cycleId={selectedCycleId} items={cycleFiltered} unitsData={unitsData as { id: string; name: string }[]} onApply={() => load()} />
+        </div>
+      </div>
+
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Phân bổ KPI mới">
         <Form onSubmit={handleCreate} />
       </Modal>
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa phân bổ KPI">
         {selected && <Form onSubmit={handleUpdate} initial={selected} />}
       </Modal>
+    </div>
+  );
+}
+
+function SuggestedDistribution({ cycleId, items, unitsData, onApply }: { cycleId: string; items: KPICascadeAssignment[]; unitsData: { id: string; name: string }[]; onApply: () => void }) {
+  const [staffCounts, setStaffCounts] = useState<Record<string, number>>({});
+  const [suggestions, setSuggestions] = useState<Record<string, number> | null>(null);
+  const [totalStaff, setTotalStaff] = useState(0);
+
+  const unitIds = [...new Set(items.filter(i => i.status === 'draft').map(i => i.toUnitId))];
+
+  const handleCalculate = () => {
+    const total = Object.values(staffCounts).reduce((s, v) => s + v, 0);
+    setTotalStaff(total);
+    if (total === 0) return;
+    const dist: Record<string, number> = {};
+    for (const item of items) {
+      if (item.status !== 'draft') continue;
+      const pct = (staffCounts[item.toUnitId] || 0) / total;
+      dist[item.id] = Math.round(item.targetValue * pct);
+    }
+    setSuggestions(dist);
+  };
+
+  const handleAccept = async () => {
+    for (const item of items) {
+      if (item.status !== 'draft' || !suggestions) continue;
+      const val = suggestions[item.id];
+      if (val !== undefined) {
+        await apiPut(`/api/cascade-assignments/${item.id}`, { targetValue: val });
+      }
+    }
+    setSuggestions(null);
+    onApply();
+  };
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-text-light">Nhập số giảng viên/quy mô cho từng đơn vị để tính gợi ý phân bổ chỉ tiêu theo tỷ lệ.</p>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {unitIds.map(uid => (
+          <div key={uid}>
+            <label className="block text-xs font-medium mb-1">{unitsData.find(u => u.id === uid)?.name || uid}</label>
+            <input type="number" min={0} value={staffCounts[uid] ?? ''} onChange={e => setStaffCounts({ ...staffCounts, [uid]: Number(e.target.value) })}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm" placeholder="Số GV" />
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-2">
+        <button onClick={handleCalculate} disabled={unitIds.length === 0} className="btn-primary flex items-center gap-1 text-sm"><Calculator size={14} /> Tính toán gợi ý</button>
+        {suggestions && <button onClick={handleAccept} className="px-4 py-2 bg-accent-green text-white rounded-lg text-sm flex items-center gap-1 hover:opacity-90"><CheckCircle size={14} /> Áp dụng</button>}
+      </div>
+      {suggestions && (
+        <div className="border border-border rounded-lg overflow-hidden">
+          <table className="table text-sm">
+            <thead><tr><th>Chỉ tiêu</th><th>Giá trị cũ</th><th>Gợi ý</th></tr></thead>
+            <tbody>
+              {items.filter(i => i.status === 'draft').map(item => (
+                <tr key={item.id}>
+                  <td className="font-medium">{item.indicatorName}</td>
+                  <td>{item.targetValue} {item.unit}</td>
+                  <td className="font-bold text-primary">{suggestions[item.id] ?? item.targetValue} {item.unit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

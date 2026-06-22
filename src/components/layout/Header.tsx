@@ -20,9 +20,25 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar?: () => vo
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const [activeRoleLabel, setActiveRoleLabel] = useState('');
+
+  useEffect(() => {
+    const updateRole = () => {
+      const role = localStorage.getItem('activeRole');
+      const labels: Record<string, string> = {
+        admin: 'Quản trị viên', board: 'Ban Giám hiệu', council: 'Hội đồng KPI',
+        unit_manager: 'Trưởng đơn vị', kpi_staff: 'Cán bộ KPI', staff: 'Nhân viên',
+      };
+      setActiveRoleLabel(role ? labels[role] || role : '');
+    };
+    updateRole();
+    window.addEventListener('roleChange', updateRole);
+    return () => window.removeEventListener('roleChange', updateRole);
+  }, []);
+
   const user = session?.user;
   const displayName = user?.name || 'Admin';
-  const displayRole = user?.username === 'admin' ? 'Quản trị viên' : 'Người dùng';
+  const displayRole = activeRoleLabel || 'Người dùng';
 
   return (
     <header className="h-16 bg-primary flex items-center justify-between px-4 sm:px-6 shadow-sm">

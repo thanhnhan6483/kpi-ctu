@@ -1,0 +1,7 @@
+[
+  { "id": "ds001", "name": "Phần mềm Đào tạo (EduSoft)", "code": "EDUSOFT", "description": "Hệ thống quản lý đào tạo - điểm số, học phần, sinh viên", "responsibleUnitId": "unit001", "sourceType": "api", "config": { "endpoint": "/api/v1/education", "method": "GET" }, "status": "active" },
+  { "id": "ds002", "name": "Phần mềm Nhân sự (HRM)", "code": "HRM", "description": "Hệ thống quản lý nhân sự và cán bộ", "responsibleUnitId": "unit002", "sourceType": "api", "config": { "endpoint": "/api/v1/hrm", "method": "GET" }, "status": "active" },
+  { "id": "ds003", "name": "Phần mềm KHCN (Research)", "code": "RESEARCH", "description": "Hệ thống quản lý đề tài, công bố khoa học", "responsibleUnitId": "unit003", "sourceType": "api", "config": { "endpoint": "/api/v1/research", "method": "GET" }, "status": "active" },
+  { "id": "ds004", "name": "Nhập liệu thủ công", "code": "MANUAL", "description": "Dữ liệu nhập thủ công từ các đơn vị", "responsibleUnitId": "unit004", "sourceType": "manual", "config": { "template": "excel" }, "status": "active" },
+  { "id": "ds005", "name": "Hệ thống E-Office", "code": "EOFFICE", "description": "Hệ thống văn phòng điện tử và quy trình phê duyệt", "responsibleUnitId": "unit002", "sourceType": "integrated", "config": { "endpoint": "/api/v1/eoffice", "method": "GET" }, "status": "active" }
+]

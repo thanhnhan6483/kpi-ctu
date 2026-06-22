@@ -6,11 +6,23 @@ import { apiPut } from '@/lib/api';
 import usersData from '@/data/users.json';
 import rolesData from '@/data/roles.json';
 import userRolesData from '@/data/user-roles.json';
+import auditLogs from '@/data/audit-logs.json';
 
 interface UserWithRole { id: string; username: string; fullName: string; email: string; status: string; roles: string[]; lastLogin?: string; }
 
 const roleMap: Record<string, string> = {};
 (rolesData as { id: string; name: string; description: string }[]).forEach(r => { roleMap[r.id] = r.description; });
+const roleNameMap: Record<string, string> = {};
+(rolesData as { id: string; name: string; description: string }[]).forEach(r => { roleNameMap[r.id] = r.name; });
+
+const roleCards = [
+  { role: 'admin', label: 'Quản trị viên', desc: 'Toàn quyền hệ thống', icon: Shield, color: '#f44336' },
+  { role: 'board', label: 'Ban Giám hiệu', desc: 'Xem toàn trường, phê duyệt', icon: Users, color: '#9c27b0' },
+  { role: 'council', label: 'Hội đồng KPI', desc: 'Rà soát, khóa kết quả', icon: CheckCircle, color: '#2196f3' },
+  { role: 'unit_manager', label: 'Trưởng đơn vị', desc: 'Quản lý KPI đơn vị', icon: Building, color: '#ff9800' },
+  { role: 'kpi_staff', label: 'Cán bộ KPI', desc: 'Cập nhật tiến độ, minh chứng', icon: FileText, color: '#4caf50' },
+  { role: 'staff', label: 'Nhân viên', desc: 'KPI cá nhân, tự đánh giá', icon: Users, color: '#607d8b' },
+];
 
 export default function SecurityPage() {
   const [activeTab, setActiveTab] = useState<'password' | 'sessions' | 'roles'>('password');
@@ -49,11 +61,15 @@ export default function SecurityPage() {
     } finally { setLoading(false); }
   };
 
-  const sessions = [
-    { id: 1, device: 'Chrome trên Windows', ip: '192.168.1.100', lastActive: '2026-06-19 14:30', status: 'active' },
-    { id: 2, device: 'Safari trên iPhone', ip: '192.168.1.101', lastActive: '2026-06-18 09:15', status: 'inactive' },
-    { id: 3, device: 'Firefox trên Linux', ip: '10.0.0.50', lastActive: '2026-06-17 16:45', status: 'inactive' },
-  ];
+  const loginSessions = (auditLogs as { id: string; userId: string; action: string; objectType: string; ipAddress: string; createdAt: string; detail: string }[])
+    .filter(l => l.action === 'login')
+    .map((l, idx) => ({
+      id: l.id,
+      device: l.detail || 'Unknown',
+      ip: l.ipAddress,
+      lastActive: new Date(l.createdAt).toLocaleString('vi-VN'),
+      status: idx === 0 ? 'active' : 'inactive',
+    }));
 
   return (
     <div className="space-y-6">
@@ -114,7 +130,7 @@ export default function SecurityPage() {
             <div className="overflow-x-auto"><table className="table">
               <thead><tr><th>STT</th><th>Thiết bị</th><th>Địa chỉ IP</th><th>Lần hoạt động cuối</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
               <tbody>
-                {sessions.map((s, idx) => (
+                {loginSessions.map((s, idx) => (
                   <tr key={s.id}>
                     <td>{idx + 1}</td>
                     <td className="font-medium">{s.device}</td>
@@ -138,26 +154,37 @@ export default function SecurityPage() {
         <div className="card">
           <div className="card-header"><h3 className="text-white">Chuyển vai trò làm việc</h3></div>
           <div className="p-4">
-            <p className="text-sm text-text-light mb-4">Chọn vai trò để xem dữ liệu theo phạm vi tương ứng:</p>
+            <p className="text-sm text-text-light mb-2">Vai trò hiện tại của bạn:</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {(() => {
+                const currentUserId = 'u002';
+                const userRoleIds = (userRolesData as { userId: string; roleId: string }[])
+                  .filter(ur => ur.userId === currentUserId)
+                  .map(ur => ur.roleId);
+                const userRoleDescs = userRoleIds.map(rid => roleMap[rid] || rid);
+                return userRoleDescs.length > 0
+                  ? userRoleDescs.map((desc, i) => <span key={i} className="badge badge-info text-xs">{desc}</span>)
+                  : <span className="text-xs text-text-light">Chưa có vai trò</span>;
+              })()}
+            </div>
+            <p className="text-sm text-text-light mb-4">Chọn vai trò để chuyển đổi chế độ làm việc:</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {[
-                { role: 'admin', label: 'Quản trị viên', desc: 'Toàn quyền hệ thống', icon: Shield, color: '#f44336' },
-                { role: 'board', label: 'Ban Giám hiệu', desc: 'Xem toàn trường, phê duyệt', icon: Users, color: '#9c27b0' },
-                { role: 'council', label: 'Hội đồng KPI', desc: 'Rà soát, khóa kết quả', icon: CheckCircle, color: '#2196f3' },
-                { role: 'unit_manager', label: 'Trưởng đơn vị', desc: 'Quản lý KPI đơn vị', icon: Building, color: '#ff9800' },
-                { role: 'kpi_staff', label: 'Cán bộ KPI', desc: 'Cập nhật tiến độ, minh chứng', icon: FileText, color: '#4caf50' },
-                { role: 'staff', label: 'Nhân viên', desc: 'KPI cá nhân, tự đánh giá', icon: Users, color: '#607d8b' },
-              ].map(r => (
-                <button key={r.role} className="p-4 border border-border rounded-lg text-left hover:border-primary hover:bg-primary-light/10 transition-colors">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg" style={{ backgroundColor: `${r.color}20` }}><r.icon size={20} style={{ color: r.color }} /></div>
-                    <div>
-                      <div className="font-medium text-sm">{r.label}</div>
-                      <div className="text-xs text-text-light">{r.desc}</div>
+              {roleCards.map(r => {
+                const isActive = typeof window !== 'undefined' && localStorage.getItem('activeRole') === r.role;
+                return (
+                  <button key={r.role} onClick={() => { localStorage.setItem('activeRole', r.role); window.dispatchEvent(new Event('roleChange')); }}
+                    className={`p-4 border rounded-lg text-left transition-colors ${isActive ? 'border-primary bg-primary-light/10 ring-2 ring-primary' : 'border-border hover:border-primary hover:bg-primary-light/10'}`}>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 rounded-lg" style={{ backgroundColor: `${r.color}20` }}><r.icon size={20} style={{ color: r.color }} /></div>
+                      <div>
+                        <div className="font-medium text-sm">{r.label}</div>
+                        <div className="text-xs text-text-light">{r.desc}</div>
+                      </div>
                     </div>
-                  </div>
-                </button>
-              ))}
+                    {isActive && <div className="text-xs text-primary font-medium mt-1">Đang hoạt động</div>}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

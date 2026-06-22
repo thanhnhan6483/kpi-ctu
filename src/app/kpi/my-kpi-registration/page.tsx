@@ -59,6 +59,7 @@ export default function MyKPIRegistrationPage() {
   const [items, setItems] = useState<PersonalKPIRegistration[]>([]);
   const [selectedCycleId, setSelectedCycleId] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState<'register' | 'history'>('register');
   const [showAddItem, setShowAddItem] = useState(false);
   const [showDetail, setShowDetail] = useState(false);
   const [selected, setSelected] = useState<PersonalKPIRegistration | null>(null);
@@ -201,6 +202,55 @@ export default function MyKPIRegistrationPage() {
         </div>
       </div>
 
+      <div className="flex gap-1 bg-white border border-border rounded-lg p-0.5 w-fit mb-4">
+        <button onClick={() => setActiveTab('register')} className={`px-4 py-1.5 rounded text-sm font-medium ${activeTab === 'register' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Đăng ký</button>
+        <button onClick={() => setActiveTab('history')} className={`px-4 py-1.5 rounded text-sm font-medium ${activeTab === 'history' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Lịch sử</button>
+      </div>
+
+      {activeTab === 'history' ? (
+        <div className="card">
+          <div className="card-header"><h3 className="text-white flex items-center gap-2"><History size={16} /> Lịch sử thay đổi</h3></div>
+          <div className="p-4">
+            {!currentReg ? (
+              <p className="text-sm text-text-light">Chưa có phiếu đăng ký</p>
+            ) : (
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0"><div className="w-3 h-3 rounded-full bg-green-500" /></div>
+                  <div><p className="text-sm font-medium">Tạo phiếu</p><p className="text-xs text-text-light">{new Date(currentReg.createdAt).toLocaleString('vi-VN')}</p></div>
+                </div>
+                {currentReg.submittedAt && (
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0"><Send size={14} className="text-blue-600" /></div>
+                    <div><p className="text-sm font-medium">Gửi đăng ký</p><p className="text-xs text-text-light">{new Date(currentReg.submittedAt).toLocaleString('vi-VN')}</p></div>
+                  </div>
+                )}
+                {currentReg.approvedAt && (
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0"><CheckCircle size={14} className="text-green-600" /></div>
+                    <div><p className="text-sm font-medium">Phê duyệt</p><p className="text-xs text-text-light">{new Date(currentReg.approvedAt).toLocaleString('vi-VN')}</p></div>
+                  </div>
+                )}
+                {currentReg.committedAt && (
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center shrink-0"><CheckCircle size={14} className="text-purple-600" /></div>
+                    <div><p className="text-sm font-medium">Cam kết thực hiện</p><p className="text-xs text-text-light">{new Date(currentReg.committedAt).toLocaleString('vi-VN')}</p></div>
+                  </div>
+                )}
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0"><FileText size={14} className="text-gray-500" /></div>
+                  <div><p className="text-sm font-medium">Cập nhật lần cuối</p><p className="text-xs text-text-light">{new Date(currentReg.updatedAt).toLocaleString('vi-VN')}</p></div>
+                </div>
+                <div className="flex items-center gap-1 text-xs text-text-light mt-2">
+                  <span className="badge" style={{ backgroundColor: `${statusConfig[currentReg.status]?.color}20`, color: statusConfig[currentReg.status]?.color }}>{statusConfig[currentReg.status]?.label}</span>
+                  <span>— trạng thái hiện tại</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <>
       <div className="flex flex-wrap gap-4">
         <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
@@ -294,16 +344,7 @@ export default function MyKPIRegistrationPage() {
           </div>
         )}
       </div>
-
-      {currentReg && currentReg.status !== 'draft' && (
-        <div className="card p-4">
-          <h3 className="font-heading font-bold text-sm mb-3 flex items-center gap-2"><History size={14} /> Lịch sử</h3>
-          <div className="space-y-2 text-sm text-text-light">
-            {currentReg.submittedAt && <div>• Gửi đăng ký: {new Date(currentReg.submittedAt).toLocaleString('vi-VN')}</div>}
-            {currentReg.approvedAt && <div>• Được phê duyệt: {new Date(currentReg.approvedAt).toLocaleString('vi-VN')}</div>}
-            {currentReg.committedAt && <div>• Cam kết thực hiện: {new Date(currentReg.committedAt).toLocaleString('vi-VN')}</div>}
-          </div>
-        </div>
+        </>
       )}
 
       <Modal isOpen={showAddItem} onClose={() => setShowAddItem(false)} title="Thêm KPI cá nhân">

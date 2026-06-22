@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Eye, Send, XCircle, MessageSquare, Edit } from 'lucide-react';
+import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Eye, Send, XCircle, MessageSquare, Edit, History } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
@@ -67,6 +67,9 @@ export default function PlansPage() {
   const [showAction, setShowAction] = useState(false);
   const [actionType, setActionType] = useState<'approve' | 'revision' | 'reject'>('approve');
   const [actionNote, setActionNote] = useState('');
+  const [showVersions, setShowVersions] = useState(false);
+  const [versions, setVersions] = useState<any[]>([]);
+  const [versionsLoading, setVersionsLoading] = useState(false);
 
   useEffect(() => {
     fetch(`/api/cycles?academicYearId=${selectedYearId}`)
@@ -164,6 +167,16 @@ export default function PlansPage() {
     setActionType(type);
     setActionNote('');
     setShowAction(true);
+  };
+
+  const openVersions = async (planId: string) => {
+    setVersionsLoading(true);
+    try {
+      const res = await fetch(`/api/plan-versions?planId=${planId}`);
+      setVersions(await res.json());
+    } catch { setVersions([]); }
+    setVersionsLoading(false);
+    setShowVersions(true);
   };
 
   const getCycleName = (cycleId: string) => cycles.find(c => c.id === cycleId)?.name || '';
@@ -270,6 +283,7 @@ export default function PlansPage() {
                         {(plan.status === 'approved' || plan.status === 'in_progress') && (
                           <button className="p-1 text-primary hover:bg-primary-light rounded" title="Xem"><Eye size={14} /></button>
                         )}
+                        <button onClick={() => openVersions(plan.id)} className="p-1 text-gray-500 hover:bg-gray-100 rounded" title="Lịch sử phiên bản"><History size={14} /></button>
                         {plan.status === 'needs_revision' && (
                           <>
                             <button className="p-1 text-primary hover:bg-primary-light rounded" title="Sửa"><Edit size={14} /></button>
@@ -285,6 +299,33 @@ export default function PlansPage() {
           </table></div>
         </div>
       </div>
+
+      <Modal isOpen={showVersions} onClose={() => setShowVersions(false)} title="Lịch sử phiên bản">
+        <div className="space-y-3">
+          {versionsLoading ? <div className="text-center py-8 text-text-light">Đang tải...</div> :
+          versions.length === 0 ? <div className="text-center py-8 text-text-light">Chưa có lịch sử phiên bản</div> :
+          versions.map((v: any, i: number) => (
+            <div key={v.id} className="flex gap-3 p-3 bg-bg-cream rounded-lg border border-border">
+              <div className="flex flex-col items-center">
+                <div className="w-8 h-8 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">{v.version}</div>
+                {i < versions.length - 1 && <div className="w-px flex-1 bg-border my-1" />}
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-sm">v{v.version}</span>
+                  <span className="badge text-xs" style={{ backgroundColor: v.changeType === 'approve' ? '#22c55e20' : v.changeType === 'create' ? '#3b82f620' : '#eab30820', color: v.changeType === 'approve' ? '#22c55e' : v.changeType === 'create' ? '#3b82f6' : '#eab308' }}>
+                    {v.changeType === 'create' ? 'Tạo' : v.changeType === 'update' ? 'Cập nhật' : v.changeType === 'submit' ? 'Gửi duyệt' : v.changeType === 'approve' ? 'Phê duyệt' : v.changeType === 'revision' ? 'Yêu cầu sửa' : v.changeType}
+                  </span>
+                </div>
+                <div className="text-xs text-text-light mt-1">
+                  {v.changedBy} - {new Date(v.createdAt).toLocaleString('vi-VN')}
+                </div>
+                {v.note && <div className="text-xs text-text-dark mt-1">{v.note}</div>}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Modal>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo kế hoạch mới">
         <CreatePlanForm

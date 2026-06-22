@@ -96,6 +96,29 @@ const menuItems: MenuItem[] = [
   },
 
   {
+    href: '/kpi/domain',
+    label: 'Nghiệp vụ KPI',
+    icon: Briefcase,
+    children: [
+      { href: '/kpi/domain/training-admission', label: 'Tuyển sinh' },
+      { href: '/kpi/domain/training-program', label: 'CTĐT & Học phần' },
+      { href: '/kpi/domain/graduation-employment', label: 'Tốt nghiệp & Việc làm' },
+      { href: '/kpi/domain/survey-quality', label: 'Khảo sát & ĐBCL' },
+      { href: '/kpi/domain/research', label: 'KHCN' },
+      { href: '/kpi/domain/international', label: 'Hợp tác quốc tế' },
+      { href: '/kpi/domain/finance', label: 'Tài chính' },
+      { href: '/kpi/domain/hr-staffing', label: 'Đội ngũ' },
+      { href: '/kpi/domain/digital-transformation', label: 'Chuyển đổi số' },
+      { href: '/kpi/domain/community-service', label: 'Phục vụ cộng đồng' },
+      { href: '/kpi/domain/lecturer', label: 'Giảng viên' },
+      { href: '/kpi/domain/staff', label: 'Viên chức' },
+      { href: '/kpi/domain/researcher', label: 'Nghiên cứu viên' },
+      { href: '/kpi/domain/service-staff', label: 'Nhân viên phục vụ' },
+      { href: '/kpi/domain/adjustment', label: 'Điều chỉnh kết quả' },
+    ],
+  },
+
+  {
     href: '/kpi/academic-years',
     label: 'Thiết lập',
     icon: Settings,
@@ -135,6 +158,8 @@ const menuItems: MenuItem[] = [
       { href: '/admin/api-configs', label: 'Kết nối tích hợp' },
       { href: '/admin/scheduled-reports', label: 'Báo cáo định kỳ' },
       { href: '/admin/bsc', label: 'Bản đồ BSC' },
+      { href: '/admin/approval-workflows', label: 'Quy trình phê duyệt' },
+      { href: '/admin/data-reconciliation', label: 'Đối soát dữ liệu' },
       { href: '/admin/support-tickets', label: 'Yêu cầu hỗ trợ' },
       { href: '/admin/settings', label: 'Cài đặt' },
     ],
@@ -158,8 +183,9 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     if (pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences')) return ['/kpi/plans'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/approvals')) return ['/kpi/evaluation'];
     if (pathname.startsWith('/kpi/warnings') || pathname.startsWith('/admin/complaints') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/reports')) return ['/kpi/warnings'];
+    if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-fields') || pathname.startsWith('/admin/data-sources') || pathname.startsWith('/admin/formulas') || pathname.startsWith('/admin/thresholds') || pathname.startsWith('/admin/report-templates') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/rubrics') || pathname.startsWith('/admin/kpi-data')) return ['/kpi/academic-years'];
-    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/notification-templates') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/scheduled-reports') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
+    if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/notification-templates') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/sla-configs') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/scheduled-reports') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/support-tickets') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
     if (pathname.startsWith('/kpi/architecture') || pathname.startsWith('/kpi/roles-guide')) return ['/kpi/architecture'];
     return ['/kpi'];
   });

@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { FileText, CheckCircle, Clock, Search, Award, TrendingUp, Download, Users, Building, BarChart2 } from 'lucide-react';
+import { FileText, CheckCircle, Clock, Search, Award, TrendingUp, Download, Users, Building, BarChart2, Sliders } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
-import { apiGet } from '@/lib/api';
+import { apiGet, apiPost } from '@/lib/api';
 import scoresData from '@/data/scores.json';
 import planItemsData from '@/data/plan-items.json';
 import plansData from '@/data/plans.json';
@@ -67,6 +67,9 @@ export default function ScoringPage() {
   const [activeTab, setActiveTab] = useState<'unit' | 'individual'>('unit');
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [showNormalize, setShowNormalize] = useState(false);
+  const [normalizeScores, setNormalizeScores] = useState<Record<string, number>>({});
+  const [normalizeReason, setNormalizeReason] = useState('');
 
   const load = useCallback(async () => {
     try {
@@ -156,6 +159,7 @@ export default function ScoringPage() {
           <p className="text-text-light mt-1">Tổng hợp điểm, áp dụng hệ số miễn giảm, xếp loại theo ngưỡng (XV.3-XV.5)</p>
         </div>
         <div className="flex gap-2">
+          <button onClick={() => { setNormalizeScores({}); setNormalizeReason(''); setShowNormalize(true); }} className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90"><Sliders size={14} /> Chuẩn hóa</button>
           <a href="/api/reports/export?type=unit&format=csv" className="px-4 py-2 bg-accent-green text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download><Download size={14} /> Xuất CSV Đơn vị</a>
           <a href="/api/reports/export?type=individual&format=csv" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download><Download size={14} /> Xuất CSV Cá nhân</a>
           <a href="/api/reports/export?type=reward&format=csv" className="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90" download><Download size={14} /> Xuất CSV Thi đua</a>
@@ -245,6 +249,58 @@ export default function ScoringPage() {
           )}
         </div>
       </div>
+
+      <Modal isOpen={showNormalize} onClose={() => setShowNormalize(false)} title="Chuẩn hóa điểm">
+        <div className="space-y-4">
+          <p className="text-sm text-text-light">Điều chỉnh điểm sau khi đã áp dụng hệ số miễn giảm. Lưu ý: thay đổi này sẽ được ghi vào nhật ký kiểm tra.</p>
+          {activeTab === 'individual' && (
+            <div className="overflow-x-auto max-h-[300px] overflow-y-auto border border-border rounded-lg">
+              <table className="table text-sm">
+                <thead><tr><th>Họ tên</th><th>Điểm hiện tại</th><th>Điều chỉnh</th></tr></thead>
+                <tbody>
+                  {filteredIndividuals.map(i => (
+                    <tr key={i.personId + i.personName}>
+                      <td className="font-medium">{i.personName}</td>
+                      <td className="font-bold">{i.adjustedScore ?? i.finalScore ?? '-'}</td>
+                      <td><input type="number" value={normalizeScores[i.personId] ?? i.adjustedScore ?? i.finalScore ?? ''} onChange={e => setNormalizeScores({ ...normalizeScores, [i.personId]: Number(e.target.value) })} className="w-20 px-2 py-1 border border-border rounded text-sm text-center" min={0} max={120} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {activeTab === 'unit' && (
+            <div className="overflow-x-auto max-h-[300px] overflow-y-auto border border-border rounded-lg">
+              <table className="table text-sm">
+                <thead><tr><th>Đơn vị</th><th>Điểm hiện tại</th><th>Điều chỉnh</th></tr></thead>
+                <tbody>
+                  {filteredUnits.map(u => (
+                    <tr key={u.unitId}>
+                      <td className="font-medium">{u.unitName}</td>
+                      <td className="font-bold">{u.avgScore}</td>
+                      <td><input type="number" value={normalizeScores[u.unitId] ?? u.avgScore} onChange={e => setNormalizeScores({ ...normalizeScores, [u.unitId]: Number(e.target.value) })} className="w-20 px-2 py-1 border border-border rounded text-sm text-center" min={0} max={120} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <div><label className="block text-sm font-medium mb-1">Lý do chuẩn hóa *</label><textarea value={normalizeReason} onChange={e => setNormalizeReason(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm" rows={2} placeholder="Nhập lý do điều chỉnh điểm..." /></div>
+          <div className="flex justify-end gap-2 pt-2 border-t">
+            <button onClick={() => setShowNormalize(false)} className="px-4 py-2 border border-border rounded-lg text-sm">Hủy</button>
+            <button onClick={async () => {
+              if (!normalizeReason.trim()) { alert('Vui lòng nhập lý do chuẩn hóa'); return; }
+              await apiPost('/api/notifications', {
+                title: 'Chuẩn hóa điểm',
+                content: `Điều chỉnh điểm ${activeTab === 'individual' ? 'cá nhân' : 'đơn vị'}: ${normalizeReason}`,
+                userId: 'u001',
+              }).catch(() => {});
+              setShowNormalize(false);
+              alert('Đã lưu chuẩn hóa điểm thành công.');
+            }} className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm flex items-center gap-1 hover:opacity-90"><Sliders size={14} /> Lưu chuẩn hóa</button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
