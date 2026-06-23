@@ -4,7 +4,6 @@ import { readDb, writeDb } from '@/lib/db';
 interface KPITemplate {
   id: string;
   name: string;
-  academicYearId: string;
   targetLevel: string;
   status: string;
   description: string;

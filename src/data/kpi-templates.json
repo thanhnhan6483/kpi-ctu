@@ -2,10 +2,9 @@
   {
     "id": "tpl001",
     "name": "Bộ KPI mẫu cấp Trường",
-    "academicYearId": "ay001",
     "targetLevel": "school",
     "status": "draft",
-    "description": "Bộ chỉ tiêu KPI cấp Trường cho năm học 2025-2026",
+    "description": "Bộ chỉ tiêu KPI cấp Trường",
     "indicatorCount": 2,
     "totalWeight": 10,
     "createdAt": "2024-08-01T00:00:00Z",
@@ -17,7 +16,6 @@
   {
     "id": "tpl002",
     "name": "Bộ KPI mẫu Giảng viên ",
-    "academicYearId": "ay001",
     "targetLevel": "individual",
     "status": "draft",
     "description": "Bộ KPI theo vị trí giảng viên",
@@ -28,17 +26,5 @@
     "approvedAt": "2024-08-15T00:00:00Z",
     "activatedAt": "2024-09-01T00:00:00Z",
     "lockedAt": "2026-06-23T01:22:21.443Z"
-  },
-  {
-    "id": "tplmqpyny0q6vhv31y5v5b",
-    "name": "qqq",
-    "academicYearId": "ay001",
-    "targetLevel": "school",
-    "status": "draft",
-    "description": "qq",
-    "indicatorCount": 2,
-    "totalWeight": 10,
-    "createdAt": "2026-06-23T01:23:49.370Z",
-    "updatedAt": "2026-06-23T01:28:34.738Z"
   }
 ]

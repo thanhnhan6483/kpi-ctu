@@ -4,7 +4,6 @@ import { readDb, writeDb, generateId } from '@/lib/db';
 interface KPITemplate {
   id: string;
   name: string;
-  academicYearId: string;
   targetLevel: string;
   status: string;
   description: string;
@@ -28,7 +27,6 @@ export async function POST(request: NextRequest) {
   const newItem: KPITemplate = {
     id: `tpl${generateId()}`,
     name: body.name,
-    academicYearId: body.academicYearId || 'ay001',
     targetLevel: body.targetLevel || 'school',
     status: 'draft',
     description: body.description || '',

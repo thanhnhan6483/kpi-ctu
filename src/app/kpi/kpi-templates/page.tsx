@@ -2,16 +2,14 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, FileText, List, Eye } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, FileText, List } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
-import academicYearsData from '@/data/academic-years.json';
 import type { SchoolKPICatalog, UnitKPICatalog, IndividualKPICatalog, KPITemplateItem } from '@/types';
 
 interface KPITemplate {
   id: string;
   name: string;
-  academicYearId: string;
   targetLevel: 'school' | 'unit' | 'department' | 'individual';
   status: 'draft' | 'submitted' | 'approved' | 'active' | 'locked' | 'inactive';
   description: string;
@@ -139,14 +137,11 @@ export default function KPITemplatesPage() {
   };
 
   const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<KPITemplate>) => void; initial?: KPITemplate }) => {
-    const [form, setForm] = useState(initial || { name: '', academicYearId: 'ay001', targetLevel: 'school' as const, description: '' });
+    const [form, setForm] = useState(initial || { name: '', targetLevel: 'school' as const, description: '' });
     return (
       <form onSubmit={e => { e.preventDefault(); onSubmit(form); }} className="space-y-4">
         <div><label className="block text-sm font-medium mb-1">Tên bộ KPI mẫu *</label><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm" required /></div>
-        <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-1">Năm học</label><select value={form.academicYearId} onChange={e => setForm({ ...form, academicYearId: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm">{(academicYearsData as any[]).map(y => <option key={y.id} value={y.id}>{y.name}</option>)}</select></div>
-          <div><label className="block text-sm font-medium mb-1">Cấp áp dụng</label><select value={form.targetLevel} onChange={e => setForm({ ...form, targetLevel: e.target.value as any })} className="w-full px-3 py-2 border rounded-lg text-sm"><option value="school">Cấp Trường</option><option value="unit">Cấp Đơn vị</option><option value="department">Cấp Bộ môn</option><option value="individual">Cấp Cá nhân</option></select></div>
-        </div>
+        <div><label className="block text-sm font-medium mb-1">Cấp áp dụng</label><select value={form.targetLevel} onChange={e => setForm({ ...form, targetLevel: e.target.value as any })} className="w-full px-3 py-2 border rounded-lg text-sm"><option value="school">Cấp Trường</option><option value="unit">Cấp Đơn vị</option><option value="department">Cấp Bộ môn</option><option value="individual">Cấp Cá nhân</option></select></div>
         <div><label className="block text-sm font-medium mb-1">Mô tả</label><textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm" rows={2} /></div>
         <div className="flex justify-end gap-2"><button type="button" onClick={() => onSubmit({})} className="px-4 py-2 border rounded-lg text-sm">Hủy</button><button type="submit" className="btn-primary text-xs">Lưu</button></div>
       </form>

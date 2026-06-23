@@ -10,7 +10,6 @@ import type { SchoolKPICatalog, UnitKPICatalog, IndividualKPICatalog, KPITemplat
 interface KPITemplate {
   id: string;
   name: string;
-  academicYearId: string;
   targetLevel: 'school' | 'unit' | 'department' | 'individual';
   status: 'draft' | 'submitted' | 'approved' | 'active' | 'locked' | 'inactive';
   description: string;
