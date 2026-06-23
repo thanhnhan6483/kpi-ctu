@@ -6110,5 +6110,201 @@
       }
     ],
     "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_ctu_mqq3",
+    "academicYearId": "ay001",
+    "name": "Đại học Cần Thơ",
+    "code": "CTU",
+    "type": "university",
+    "level": "school",
+    "description": "",
+    "kpiCount": 23,
+    "kpis": [
+      {
+        "id": "CTU-KPI-01",
+        "name": "CTU-KPI-01 — Tỉ lệ giảng viên toàn thời gian có trình độ tiến sĩ",
+        "target": 0,
+        "unit": "%",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-01"
+      },
+      {
+        "id": "CTU-KPI-02",
+        "name": "CTU-KPI-02 — Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "target": 0,
+        "unit": "%",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-02"
+      },
+      {
+        "id": "CTU-KPI-03",
+        "name": "CTU-KPI-03 — Chỉ số tăng trưởng bền vững",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-03"
+      },
+      {
+        "id": "CTU-KPI-04",
+        "name": "CTU-KPI-04 — Biên độ hoạt động trung bình 3 năm",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-04"
+      },
+      {
+        "id": "CTU-KPI-05",
+        "name": "CTU-KPI-05 — Tỉ lệ tuyển sinh đại học chính quy",
+        "target": 0,
+        "unit": "%",
+        "weight": 8,
+        "indicatorId": "CTU-KPI-05"
+      },
+      {
+        "id": "CTU-KPI-06",
+        "name": "CTU-KPI-06 — Tỉ lệ SV chính quy tốt nghiệp đúng hạn",
+        "target": 0,
+        "unit": "%",
+        "weight": 7,
+        "indicatorId": "CTU-KPI-06"
+      },
+      {
+        "id": "CTU-KPI-07",
+        "name": "CTU-KPI-07 — Số lượng CTĐT hoàn thành tự đánh giá",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-07"
+      },
+      {
+        "id": "CTU-KPI-08",
+        "name": "CTU-KPI-08 — Tỉ lệ người tốt nghiệp có việc làm trong 12 tháng",
+        "target": 0,
+        "unit": "%",
+        "weight": 7,
+        "indicatorId": "CTU-KPI-08"
+      },
+      {
+        "id": "CTU-KPI-09",
+        "name": "CTU-KPI-09 — Tỉ lệ người tốt nghiệp có việc làm phù hợp/học tiếp",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-09"
+      },
+      {
+        "id": "CTU-KPI-10",
+        "name": "CTU-KPI-10 — Tỉ lệ người học hài lòng với giảng viên",
+        "target": 0,
+        "unit": "%",
+        "weight": 4,
+        "indicatorId": "CTU-KPI-10"
+      },
+      {
+        "id": "CTU-KPI-11",
+        "name": "CTU-KPI-11 — Tỉ lệ người tốt nghiệp hài lòng tổng thể",
+        "target": 0,
+        "unit": "%",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-11"
+      },
+      {
+        "id": "CTU-KPI-12",
+        "name": "CTU-KPI-12 — Tỉ trọng thu từ KHCN trên tổng thu",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-12"
+      },
+      {
+        "id": "CTU-KPI-13",
+        "name": "CTU-KPI-13 — Số công bố trên giảng viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-13"
+      },
+      {
+        "id": "CTU-KPI-14",
+        "name": "CTU-KPI-14 — Số công bố WoS, Scopus bình quân trên giảng viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-14"
+      },
+      {
+        "id": "CTU-KPI-15",
+        "name": "CTU-KPI-15 — Số lượng đơn đăng ký SHTT được chấp nhận",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-15"
+      },
+      {
+        "id": "CTU-KPI-16",
+        "name": "CTU-KPI-16 — Số lượng đề tài NCKH hợp tác địa phương/doanh nghiệp",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-16"
+      },
+      {
+        "id": "CTU-KPI-17",
+        "name": "CTU-KPI-17 — Số lượng đề tài NCKH cấp cơ sở của sinh viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-17"
+      },
+      {
+        "id": "CTU-KPI-18",
+        "name": "CTU-KPI-18 — Tỉ lệ VC-NLĐ tham gia chủ nhiệm đề tài NCKH cấp cơ sở",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-18"
+      },
+      {
+        "id": "CTU-KPI-19",
+        "name": "CTU-KPI-19 — Số lượng SV quốc tế học tại trường",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 4,
+        "indicatorId": "CTU-KPI-19"
+      },
+      {
+        "id": "CTU-KPI-20",
+        "name": "CTU-KPI-20 — Số lượng sinh viên trao đổi tín chỉ",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-20"
+      },
+      {
+        "id": "CTU-KPI-21",
+        "name": "CTU-KPI-21 — Số giảng viên đạt chuẩn GS/PGS",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-21"
+      },
+      {
+        "id": "CTU-KPI-22",
+        "name": "CTU-KPI-22 — Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-22"
+      },
+      {
+        "id": "CTU-KPI-23",
+        "name": "CTU-KPI-23 — Văn bản nội bộ ký số trên Eoffice",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-23"
+      }
+    ]
   }
 ]

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId } from '@/lib/db';
-import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry } from '@/types';
+import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, BSCMapLink } from '@/types';
 
 export async function POST(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -80,16 +80,26 @@ export async function POST(request: NextRequest) {
     };
   });
 
+  // Clone bsc-map-links for objective_to_indicator (code is preserved, no remap needed)
+  const existingLinks = readDb<BSCMapLink>('bsc-map-links');
+  const sourceLinks = existingLinks.filter(l => l.linkType === 'objective_to_indicator');
+  const clonedLinks = sourceLinks.map(l => ({
+    ...l,
+    id: `bscl${generateId()}`,
+  }));
+
   // Persist
   writeDb('kpi-groups', [...existingGroups, ...clonedGroups]);
   writeDb('indicators', [...existingIndicators, ...clonedIndicators]);
   writeDb('unit-kpis', [...existingUnitKpis, ...clonedUnitKpis]);
   writeDb('individual-kpis', [...existingIndKpis, ...clonedIndKpis]);
+  writeDb('bsc-map-links', [...existingLinks, ...clonedLinks]);
 
   return NextResponse.json({
     groups: clonedGroups.length,
     indicators: clonedIndicators.length,
     unitKpis: clonedUnitKpis.length,
     individualKpis: clonedIndKpis.length,
+    bscMapLinks: clonedLinks.length,
   });
 }

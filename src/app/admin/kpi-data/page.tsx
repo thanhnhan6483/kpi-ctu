@@ -211,7 +211,7 @@ export default function KPIDataPage() {
         <div className="p-0">
           {tab === 'indicators' && (
             <table className="table">
-              <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Mục tiêu CL</th><th>Thao tác</th></tr></thead>
+              <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Mục tiêu CL</th><th>Thao tác</th></tr></thead>
               <tbody>
                 {indicators.map(ind => {
                   const objNames = indicatorToObjectives[ind.code] || [];
@@ -219,7 +219,6 @@ export default function KPIDataPage() {
                     <tr key={ind.id}>
                       <td><span className="badge badge-info">{ind.code}</span></td>
                       <td className="font-medium max-w-[250px] truncate" title={ind.name}>{ind.name}</td>
-                      <td><span className="badge badge-info">{ind.categoryId}</span></td>
                       <td>{ind.unit}</td>
                       <td>{ind.targetValue}</td>
                       <td>{ind.weight}%</td>

@@ -4574,5 +4574,221 @@
     "targetValue": 103.5,
     "weight": 8,
     "dueDate": "2027-08-31"
+  },
+  {
+    "id": "PImqqe9jr1ua8gxbpmoio",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9juoxuxux5do1p",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9jz84wersdm9jkq",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9k2sklg3hg50g7",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9k5c37axtxmsq6q",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9lk11r2qc26lq85",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9n69zy5rr8neqc",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9q0ubzneaurfohf",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9rpz4c8vg1s5hc",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg4a44az9cfgteb2",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg5y7mmd8fyzg0hq",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg7vmv6gysk2m12h",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg9zugln5pgczdt",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegcr5vwzwzirj43",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegf9px9bgqb7gr9",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegh1r9rqi3looie9",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegixl4c66qtegcmi",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegm90qligqr2cafl",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqtwb0i3mk0bw872",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqvm2mfv06h3hfdg",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqyvyahsmqmrjh8",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer1p5e350xufohsl",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer3e9wtfzfbhnvgs",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer6yhgz3n58rovhq",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer91wcu9btwy2yq",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqerb3rn8femqxsqy9",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqerft6hgwabx82w5",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
   }
 ]

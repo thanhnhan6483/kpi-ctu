@@ -66,15 +66,23 @@ export default function KPITemplateDetailPage() {
   const [editTargetValue, setEditTargetValue] = useState(0);
   const [editCapRate, setEditCapRate] = useState(100);
 
+  // Apply to year
+  const [showApply, setShowApply] = useState(false);
+  const [applyYear, setApplyYear] = useState('');
+  const [applying, setApplying] = useState(false);
+  const [applyResult, setApplyResult] = useState<{ success: boolean; unitsApplied?: number; totalKpisCreated?: number; skippedUnits?: string[] } | null>(null);
+  const [academicYears, setAcademicYears] = useState<{ id: string; name: string }[]>([]);
+
   const load = useCallback(async () => {
     try {
-      const [t, ti, sc, uc, ic, mu] = await Promise.all([
+      const [t, ti, sc, uc, ic, mu, ay] = await Promise.all([
         apiGet<KPITemplate>(`/api/kpi-templates/${id}`),
         apiGet<KPITemplateItem[]>(`/api/kpi-template-items?templateId=${id}`),
         apiGet<SchoolKPICatalog[]>('/api/school-kpi-catalog'),
         apiGet<UnitKPICatalog[]>('/api/unit-kpi-catalog'),
         apiGet<IndividualKPICatalog[]>('/api/individual-kpi-catalog'),
         apiGet<{ id: string; name: string }[]>('/api/measurement-units'),
+        apiGet<{ id: string; name: string }[]>('/api/academic-years'),
       ]);
       setTemplate(t);
       setTemplateItems(ti);
@@ -82,6 +90,7 @@ export default function KPITemplateDetailPage() {
       setUnitCatalog(uc.filter(u => u.status === 'active'));
       setIndCatalog(ic.filter(i => i.status === 'active'));
       setMeasurementUnits(mu);
+      setAcademicYears(ay);
     } catch { /* empty */ } finally { setLoading(false); }
   }, [id]);
 
@@ -225,6 +234,7 @@ export default function KPITemplateDetailPage() {
           {template.status === 'draft' && <button onClick={() => handleStatusChange('submitted')} className="btn-primary text-xs flex items-center gap-1"><Send size={14} /> Trình duyệt</button>}
           {template.status === 'submitted' && <button onClick={() => handleStatusChange('approved')} className="btn-primary text-xs flex items-center gap-1"><CheckCircle size={14} /> Phê duyệt</button>}
           {template.status === 'approved' && <button onClick={() => handleStatusChange('active')} className="btn-primary text-xs flex items-center gap-1"><Play size={14} /> Kích hoạt</button>}
+          {(template.status === 'active' || template.status === 'locked') && <button onClick={() => setShowApply(true)} className="btn-primary text-xs flex items-center gap-1" style={{background: '#8b5cf6'}}><Play size={14} /> Áp dụng cho năm học</button>}
           {template.status === 'active' && <button onClick={() => handleStatusChange('locked')} className="btn-primary text-xs flex items-center gap-1"><Lock size={14} /> Khóa</button>}
           {template.status === 'locked' && <button onClick={() => handleStatusChange('draft')} className="btn-primary text-xs flex items-center gap-1" style={{background: '#f97316'}}><Unlock size={14} /> Mở khóa</button>}
           {template.status === 'draft' && <button onClick={() => setEditInfo(true)} className="btn-secondary text-xs flex items-center gap-1"><Edit size={14} /> Sửa thông tin</button>}
@@ -325,6 +335,62 @@ export default function KPITemplateDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Apply to year modal */}
+      <Modal isOpen={showApply} onClose={() => { setShowApply(false); setApplyResult(null); }} title="Áp dụng bộ KPI mẫu cho năm học">
+        {!applyResult ? (
+          <div className="space-y-4">
+            <p className="text-sm text-text-light">Chọn năm học để áp dụng bộ mẫu <strong>{template.name}</strong> cho các đơn vị cấp <strong>{levelLabels[template.targetLevel]}</strong>.</p>
+            <div>
+              <label className="block text-sm font-medium mb-1">Năm học *</label>
+              <select value={applyYear} onChange={e => setApplyYear(e.target.value)} className="w-full px-3 py-2 border rounded-lg text-sm">
+                <option value="">-- Chọn --</option>
+                {academicYears.map(y => <option key={y.id} value={y.id}>{y.name}</option>)}
+              </select>
+            </div>
+            <div className="flex justify-end gap-2">
+              <button onClick={() => { setShowApply(false); setApplyResult(null); }} className="btn-secondary text-xs">Hủy</button>
+              <button onClick={async () => {
+                if (!applyYear) return;
+                setApplying(true);
+                try {
+                  const res = await fetch(`/api/kpi-templates/${id}?action=apply`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ academicYearId: applyYear }),
+                  });
+                  const data = await res.json();
+                  setApplyResult(data);
+                } catch { setApplyResult({ success: false }); }
+                finally { setApplying(false); }
+              }} disabled={!applyYear || applying} className="btn-primary text-xs">
+                {applying ? 'Đang áp dụng...' : 'Xác nhận áp dụng'}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {applyResult.success ? (
+              <>
+                <div className="flex items-center gap-2 text-green-700 bg-green-50 p-3 rounded-lg">
+                  <CheckCircle size={20} /> Áp dụng thành công!
+                </div>
+                <p className="text-sm">Đã tạo <strong>{applyResult.unitsApplied}</strong> bộ chỉ tiêu cho các đơn vị với <strong>{applyResult.totalKpisCreated}</strong> chỉ số KPI.</p>
+                {applyResult.skippedUnits && applyResult.skippedUnits.length > 0 && (
+                  <p className="text-xs text-text-light">Bỏ qua {applyResult.skippedUnits.length} đơn vị đã có dữ liệu: {applyResult.skippedUnits.join(', ')}</p>
+                )}
+              </>
+            ) : (
+              <div className="flex items-center gap-2 text-red-700 bg-red-50 p-3 rounded-lg">
+                <AlertCircle size={20} /> Áp dụng thất bại. Vui lòng thử lại.
+              </div>
+            )}
+            <div className="flex justify-end">
+              <button onClick={() => { setShowApply(false); setApplyResult(null); }} className="btn-primary text-xs">Đóng</button>
+            </div>
+          </div>
+        )}
+      </Modal>
 
       {/* Edit item modal */}
       <Modal isOpen={!!editItem} onClose={() => setEditItem(null)} title="Sửa chỉ số trong mẫu">

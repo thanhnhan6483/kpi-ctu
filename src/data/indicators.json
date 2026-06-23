@@ -922,47 +922,5 @@
     "academicYearId": "ay003",
     "targetValue": 35,
     "weight": 5
-  },
-  {
-    "id": "CTU-KPI-mqk7uqy27cw5o3jz45",
-    "code": "CTU-KPI-21",
-    "name": "Số giảng viên đạt chuẩn GS/PGS",
-    "categoryId": "grp_mqk7uqy2msdfm9t6ger",
-    "formula": "Tổng số kết quả hợp lệ được xác nhận trong kỳ",
-    "unit": "số lượng",
-    "direction": "higher_better",
-    "requiredEvidence": true,
-    "maxScore": 10,
-    "academicYearId": "ay003",
-    "targetValue": 6,
-    "weight": 7
-  },
-  {
-    "id": "CTU-KPI-mqk7uqy2o6depwk8m7g",
-    "code": "CTU-KPI-22",
-    "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
-    "categoryId": "grp_mqk7uqy2qr4y5zeavid",
-    "formula": "Giá trị đạt được / tổng mẫu hợp lệ x 100%",
-    "unit": "%",
-    "direction": "higher_better",
-    "requiredEvidence": true,
-    "maxScore": 10,
-    "academicYearId": "ay003",
-    "targetValue": 92,
-    "weight": 5
-  },
-  {
-    "id": "CTU-KPI-mqk7uqy22swkeklwq1p",
-    "code": "CTU-KPI-23",
-    "name": "Văn bản nội bộ ký số trên Eoffice",
-    "categoryId": "grp_mqk7uqy2qr4y5zeavid",
-    "formula": "Tổng số kết quả hợp lệ được xác nhận trong kỳ",
-    "unit": "%",
-    "direction": "higher_better",
-    "requiredEvidence": true,
-    "maxScore": 10,
-    "academicYearId": "ay003",
-    "targetValue": 103,
-    "weight": 5
   }
 ]

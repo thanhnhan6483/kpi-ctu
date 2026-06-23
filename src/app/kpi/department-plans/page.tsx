@@ -7,6 +7,7 @@ import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
 import usersData from '@/data/users.json';
 import indicatorsData from '@/data/indicators.json';
+import type { KPITemplate, KPITemplateItem } from '@/types';
 
 interface DepartmentPlan {
   id: string;
@@ -34,6 +35,9 @@ interface DepartmentPlanItem {
 }
 
 interface KPICycle { id: string; name: string; status: string; }
+
+const unitParentMap: Record<string, string> = {};
+(unitsData as { id: string; parentId: string | null }[]).forEach(u => { if (u.parentId) unitParentMap[u.id] = u.parentId; });
 
 const unitMap: Record<string, string> = {};
 (unitsData as { id: string; name: string }[]).forEach(u => { unitMap[u.id] = u.name; });
@@ -66,6 +70,11 @@ export default function DepartmentPlansPage() {
   const [showAssign, setShowAssign] = useState(false);
   const [selected, setSelected] = useState<DepartmentPlan | null>(null);
   const [loading, setLoading] = useState(true);
+  const [templates, setTemplates] = useState<KPITemplate[]>([]);
+  const [templateItems, setTemplateItems] = useState<KPITemplateItem[]>([]);
+  const [detailPlan, setDetailPlan] = useState<DepartmentPlan | null>(null);
+  const [showDetail, setShowDetail] = useState(false);
+  const [showAddKpi, setShowAddKpi] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -82,6 +91,13 @@ export default function DepartmentPlansPage() {
 
   useEffect(() => { load(); }, [load]);
 
+  useEffect(() => {
+    Promise.all([
+      apiGet<KPITemplate[]>('/api/kpi-templates'),
+      apiGet<KPITemplateItem[]>('/api/kpi-template-items'),
+    ]).then(([t, ti]) => { setTemplates(t); setTemplateItems(ti); }).catch(() => {});
+  }, []);
+
   const cycleFiltered = items.filter(i => i.cycleId === selectedCycleId);
 
   const filtered = cycleFiltered.filter(i => {
@@ -97,13 +113,69 @@ export default function DepartmentPlansPage() {
   const submittedCount = cycleFiltered.filter(i => i.status === 'submitted').length;
   const approvedCount = cycleFiltered.filter(i => i.status === 'approved').length;
 
-  const handleCreate = async (data: Partial<DepartmentPlan>) => {
+  const handleCreate = async (data: Partial<DepartmentPlan> & { templateId?: string; cycleId?: string }) => {
+    const planCycleId = data.cycleId || selectedCycleId;
     const newItem = await apiPost<DepartmentPlan>('/api/department-plans', {
-      cycleId: selectedCycleId,
+      cycleId: planCycleId,
       departmentId: data.departmentId,
       name: data.name,
       description: data.description,
     });
+
+    const addedIndicatorIds = new Set<string>();
+    const finalItems: DepartmentPlanItem[] = [];
+
+    const parentUnitId = unitParentMap[data.departmentId || ''];
+    if (parentUnitId) {
+      const unitPlans = await apiGet<{ id: string; cycleId: string; ownerId: string }[]>('/api/plans');
+      const parentPlan = unitPlans.find(p => p.cycleId === planCycleId && p.ownerId === parentUnitId);
+      if (parentPlan) {
+        const parentItems = await apiGet<{ indicatorId: string; targetValue: number; weight: number; dueDate: string }[]>(
+          `/api/plan-items?planId=${parentPlan.id}`
+        );
+        for (const pi of parentItems) {
+          const indName = (indicatorsData as { id: string; name: string }[]).find(i => i.id === pi.indicatorId)?.name || pi.indicatorId;
+          finalItems.push({
+            id: `dpi${Date.now()}_${pi.indicatorId}`,
+            indicatorId: pi.indicatorId,
+            indicatorName: indName,
+            targetValue: pi.targetValue,
+            unit: '%',
+            weight: pi.weight,
+            assignedTo: '',
+            assignedUserName: '',
+            dueDate: pi.dueDate || '',
+            note: '',
+          });
+          addedIndicatorIds.add(pi.indicatorId);
+        }
+      }
+    }
+
+    if (data.templateId) {
+      const tItems = templateItems.filter(ti => ti.templateId === data.templateId);
+      for (const ti of tItems) {
+        if (addedIndicatorIds.has(ti.indicatorId)) continue;
+        finalItems.push({
+          id: `dpi${Date.now()}_${ti.indicatorId}`,
+          indicatorId: ti.indicatorId,
+          indicatorName: (indicatorsData as { id: string; name: string }[]).find(i => i.id === ti.indicatorId)?.name || ti.indicatorId,
+          targetValue: ti.targetValue || 0,
+          unit: '%',
+          weight: ti.weight,
+          assignedTo: '',
+          assignedUserName: '',
+          dueDate: '',
+          note: '',
+        });
+        addedIndicatorIds.add(ti.indicatorId);
+      }
+    }
+
+    if (finalItems.length > 0) {
+      await apiPut(`/api/department-plans/${newItem.id}`, { items: finalItems });
+    }
+
     setItems([...items, newItem]);
     setShowCreate(false);
   };
@@ -131,26 +203,52 @@ export default function DepartmentPlansPage() {
     setShowAssign(false);
   };
 
-  const handleRemoveItem = async (planId: string, itemId: string) => {
-    const plan = items.find(i => i.id === planId);
-    if (!plan) return;
-    const updatedItems = plan.items.filter(item => item.id !== itemId);
-    await apiPut(`/api/department-plans/${planId}`, { items: updatedItems });
-    setItems(items.map(i => i.id === planId ? { ...i, items: updatedItems } : i));
-  };
-
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa kế hoạch này?')) return;
     await apiDelete(`/api/department-plans/${id}`);
     setItems(items.filter(i => i.id !== id));
   };
 
-  const PlanForm = ({ onSubmit, initial }: { onSubmit: (d: Partial<DepartmentPlan>) => void; initial?: DepartmentPlan }) => {
+  const openDetail = (plan: DepartmentPlan) => {
+    setDetailPlan(plan);
+    setShowDetail(true);
+  };
+
+  const handleAddKpi = async (data: { indicatorId: string; indicatorName: string; targetValue: number; unit: string; weight: number; assignedTo: string; dueDate: string }) => {
+    if (!detailPlan) return;
+    const newItem: DepartmentPlanItem = {
+      id: `dpi${Date.now()}`,
+      ...data,
+      assignedUserName: userMap[data.assignedTo] || '',
+      note: '',
+    };
+    const updatedItems = [...detailPlan.items, newItem];
+    await apiPut(`/api/department-plans/${detailPlan.id}`, { items: updatedItems });
+    setDetailPlan({ ...detailPlan, items: updatedItems });
+    setItems(items.map(i => i.id === detailPlan.id ? { ...i, items: updatedItems } : i));
+    setShowAddKpi(false);
+  };
+
+  const handleRemoveItem = async (itemId: string) => {
+    if (!detailPlan) return;
+    if (!confirm('Xóa KPI này?')) return;
+    const updatedItems = detailPlan.items.filter((item: any) => item.id !== itemId);
+    await apiPut(`/api/department-plans/${detailPlan.id}`, { items: updatedItems });
+    setDetailPlan({ ...detailPlan, items: updatedItems });
+    setItems(items.map(i => i.id === detailPlan.id ? { ...i, items: updatedItems } : i));
+  };
+
+  const PlanForm = ({ onSubmit, initial }: { onSubmit: (d: Partial<DepartmentPlan> & { templateId?: string }) => void; initial?: DepartmentPlan }) => {
     const [form, setForm] = useState(initial || { departmentId: '', name: '', description: '' });
+    const [templateId, setTemplateId] = useState('');
+    const [cycleId, setCycleId] = useState(selectedCycleId);
+    const deptTemplates = templates.filter(t => t.targetLevel === 'department' && (t.status === 'active' || t.status === 'locked'));
     return (
-      <form onSubmit={e => { e.preventDefault(); onSubmit(form); }} className="space-y-4">
+      <form onSubmit={e => { e.preventDefault(); onSubmit({ ...form, templateId, cycleId }); }} className="space-y-4">
         <div><label className="block text-sm font-medium mb-1">Bộ môn/Đơn vị *</label><select value={form.departmentId} onChange={e => setForm({ ...form, departmentId: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required><option value="">-- Chọn bộ môn --</option>{(unitsData as { id: string; name: string; type: string }[]).filter(u => u.type === 'department' || u.type === 'faculty').map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-1">Chu kỳ *</label><select value={cycleId} onChange={e => setCycleId(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required><option value="">-- Chọn chu kỳ --</option>{cycles.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></div>
         <div><label className="block text-sm font-medium mb-1">Tên kế hoạch *</label><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" placeholder="VD: Kế hoạch KPI bộ môn 2025-2026" required /></div>
+        <div><label className="block text-sm font-medium mb-1">Bộ KPI mẫu</label><select value={templateId} onChange={e => setTemplateId(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="">-- Không dùng mẫu --</option>{deptTemplates.map(t => <option key={t.id} value={t.id}>{t.name} ({t.indicatorCount} chỉ tiêu)</option>)}</select></div>
         <div><label className="block text-sm font-medium mb-1">Mô tả</label><textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" rows={2} /></div>
         <div className="flex justify-end gap-2 pt-2"><button type="button" onClick={() => onSubmit({})} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream">Hủy</button><button type="submit" className="btn-primary">Lưu</button></div>
       </form>
@@ -260,6 +358,7 @@ export default function DepartmentPlansPage() {
                       </td>
                       <td>
                         <div className="flex gap-1">
+                          <button onClick={() => openDetail(plan)} className="p-1 hover:bg-blue-50 rounded" title="Xem chi tiết"><Eye size={14} className="text-blue-600" /></button>
                           {plan.status === 'draft' && <button onClick={() => handleStatusChange(plan, 'submitted')} className="p-1 hover:bg-blue-50 rounded" title="Trình duyệt"><Send size={14} className="text-blue-600" /></button>}
                           {plan.status === 'submitted' && <button onClick={() => handleStatusChange(plan, 'approved')} className="p-1 hover:bg-green-50 rounded" title="Phê duyệt"><CheckCircle size={14} className="text-green-600" /></button>}
                           {plan.status === 'approved' && <button onClick={() => handleStatusChange(plan, 'in_progress')} className="p-1 hover:bg-yellow-50 rounded" title="Bắt đầu"><ArrowRight size={14} className="text-yellow-600" /></button>}
@@ -286,6 +385,117 @@ export default function DepartmentPlansPage() {
       <Modal isOpen={showAssign} onClose={() => { setShowAssign(false); setSelected(null); }} title="Phân công KPI cho giảng viên">
         {selected && <AssignForm planId={selected.id} onSubmit={(itemId, item) => { if (itemId) handleAddItem(selected.id, item); }} />}
       </Modal>
+
+      <Modal isOpen={showDetail} onClose={() => { setShowDetail(false); setDetailPlan(null); }} title={`Chi tiết kế hoạch — ${detailPlan ? unitMap[detailPlan.departmentId] || '' : ''}`} maxWidth="max-w-4xl">
+        {detailPlan && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="text-sm text-text-light">
+                Tên: <span className="font-medium text-text-dark">{detailPlan.name}</span> | Trạng thái: <span className="badge" style={{ backgroundColor: `${statusConfig[detailPlan.status]?.color}20`, color: statusConfig[detailPlan.status]?.color }}>{statusConfig[detailPlan.status]?.label}</span>
+              </div>
+              {detailPlan.status === 'draft' && (
+                <button onClick={() => setShowAddKpi(true)} className="btn-primary text-xs flex items-center gap-1"><Plus size={14} /> Thêm KPI</button>
+              )}
+            </div>
+            <div className="overflow-x-auto">
+              <table className="table text-sm">
+                <thead>
+                  <tr><th>STT</th><th>Chỉ tiêu KPI</th><th>Mục tiêu</th><th>Trọng số</th><th>Phân công</th><th>Hạn</th><th>Thao tác</th></tr>
+                </thead>
+                <tbody>
+                  {detailPlan.items.length === 0 ? (
+                    <tr><td colSpan={7} className="text-center py-6 text-text-light">Chưa có chỉ tiêu nào</td></tr>
+                  ) : detailPlan.items.map((item: any, idx: number) => (
+                    <tr key={item.id}>
+                      <td>{idx + 1}</td>
+                      <td className="font-medium">{item.indicatorName || item.indicatorId}</td>
+                      <td>{item.targetValue}</td>
+                      <td>{item.weight}%</td>
+                      <td className="text-text-light">{item.assignedUserName || '-'}</td>
+                      <td className="text-text-light">{item.dueDate || '-'}</td>
+                      <td>
+                        {detailPlan.status === 'draft' && (
+                          <button onClick={() => handleRemoveItem(item.id)} className="p-1 hover:bg-red-50 rounded" title="Xóa"><Trash2 size={14} className="text-red-600" /></button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      <Modal isOpen={showAddKpi} onClose={() => setShowAddKpi(false)} title="Thêm KPI vào kế hoạch">
+        <AddDeptKpiForm onSubmit={handleAddKpi} onCancel={() => setShowAddKpi(false)} />
+      </Modal>
     </div>
+  );
+}
+
+function AddDeptKpiForm({ onSubmit, onCancel }: {
+  onSubmit: (data: { indicatorId: string; indicatorName: string; targetValue: number; unit: string; weight: number; assignedTo: string; dueDate: string }) => void;
+  onCancel: () => void;
+}) {
+  const [indicatorId, setIndicatorId] = useState('');
+  const [targetValue, setTargetValue] = useState(0);
+  const [unit, setUnit] = useState('%');
+  const [weight, setWeight] = useState(5);
+  const [assignedTo, setAssignedTo] = useState('');
+  const [dueDate, setDueDate] = useState('');
+
+  const handleIndicatorChange = (id: string) => {
+    const ind = (indicatorsData as { id: string; name: string; unit: string }[]).find(i => i.id === id);
+    setIndicatorId(id);
+    setUnit(ind?.unit || '%');
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const ind = (indicatorsData as { id: string; name: string }[]).find(i => i.id === indicatorId);
+    onSubmit({ indicatorId, indicatorName: ind?.name || indicatorId, targetValue, unit, weight, assignedTo, dueDate });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-text-dark mb-1">Chỉ tiêu KPI *</label>
+        <select value={indicatorId} onChange={e => handleIndicatorChange(e.target.value)} required
+          className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+          <option value="">-- Chọn chỉ tiêu --</option>
+          {(indicatorsData as { id: string; name: string }[]).map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
+        </select>
+      </div>
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-text-dark mb-1">Mục tiêu</label>
+          <input type="number" value={targetValue} onChange={e => setTargetValue(Number(e.target.value))}
+            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-text-dark mb-1">Trọng số (%)</label>
+          <input type="number" value={weight} onChange={e => setWeight(Number(e.target.value))} min={0} max={100}
+            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-text-dark mb-1">Hạn thực hiện</label>
+          <input type="date" value={dueDate} onChange={e => setDueDate(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-text-dark mb-1">Phân công cho</label>
+        <select value={assignedTo} onChange={e => setAssignedTo(e.target.value)}
+          className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+          <option value="">-- Chọn giảng viên --</option>
+          {(usersData as { id: string; fullName: string }[]).map(u => <option key={u.id} value={u.id}>{u.fullName}</option>)}
+        </select>
+      </div>
+      <div className="flex justify-end gap-2 pt-4">
+        <button type="button" onClick={onCancel} className="btn-secondary">Hủy</button>
+        <button type="submit" className="btn-primary">Thêm KPI</button>
+      </div>
+    </form>
   );
 }

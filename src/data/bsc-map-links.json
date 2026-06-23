@@ -120,15 +120,6 @@
     "createdAt": "2024-08-01T00:00:00Z"
   },
   {
-    "id": "bscl015",
-    "perspectiveId": "bsc001",
-    "objectiveId": "so006",
-    "indicatorId": "CTU-KPI-16",
-    "linkType": "objective_to_indicator",
-    "weight": 1,
-    "createdAt": "2024-08-01T00:00:00Z"
-  },
-  {
     "id": "bscl016",
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
@@ -142,24 +133,6 @@
     "perspectiveId": "bsc001",
     "objectiveId": "so006",
     "indicatorId": "CTU-KPI-20",
-    "linkType": "objective_to_indicator",
-    "weight": 1,
-    "createdAt": "2024-08-01T00:00:00Z"
-  },
-  {
-    "id": "bscl018",
-    "perspectiveId": "bsc003",
-    "objectiveId": "so005",
-    "indicatorId": "CTU-KPI-22",
-    "linkType": "objective_to_indicator",
-    "weight": 1,
-    "createdAt": "2024-08-01T00:00:00Z"
-  },
-  {
-    "id": "bscl019",
-    "perspectiveId": "bsc003",
-    "objectiveId": "so005",
-    "indicatorId": "CTU-KPI-23",
     "linkType": "objective_to_indicator",
     "weight": 1,
     "createdAt": "2024-08-01T00:00:00Z"
@@ -210,24 +183,6 @@
     "createdAt": "2024-08-01T00:00:00Z"
   },
   {
-    "id": "bscl025",
-    "perspectiveId": "bsc004",
-    "objectiveId": "so003",
-    "indicatorId": "CTU-KPI-01",
-    "linkType": "objective_to_indicator",
-    "weight": 1,
-    "createdAt": "2024-08-01T00:00:00Z"
-  },
-  {
-    "id": "bscl026",
-    "perspectiveId": "bsc004",
-    "objectiveId": "so003",
-    "indicatorId": "CTU-KPI-21",
-    "linkType": "objective_to_indicator",
-    "weight": 1,
-    "createdAt": "2024-08-01T00:00:00Z"
-  },
-  {
     "id": "bscl027",
     "perspectiveId": "bsc002",
     "objectiveId": "so004",
@@ -253,5 +208,32 @@
     "linkType": "objective_to_indicator",
     "weight": 1,
     "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bsclmqq9p1beog912kjtc1a",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so006",
+    "indicatorId": "CTU-KPI-16",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:32:36.074Z"
+  },
+  {
+    "id": "bsclmqq9p1d23n6i1odd6dw",
+    "perspectiveId": "bsc003",
+    "objectiveId": "so005",
+    "indicatorId": "CTU-KPI-16",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:32:36.135Z"
+  },
+  {
+    "id": "bsclmqq9tkzkycb6fb94sdp",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-01",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:36:08.192Z"
   }
 ]

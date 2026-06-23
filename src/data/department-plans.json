@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "id": "dpmqqg9gs3hg41duhnz5m",
+    "cycleId": "c001",
+    "description": "",
+    "status": "draft",
+    "items": [
+      {
+        "id": "dpi1782208133775",
+        "indicatorId": "CTU-KPI-02",
+        "indicatorName": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "targetValue": 0,
+        "unit": "%",
+        "weight": 5,
+        "assignedTo": "u004",
+        "dueDate": "",
+        "assignedUserName": "Lê Hoàng D",
+        "note": ""
+      },
+      {
+        "indicatorId": "CTU-KPI-02",
+        "targetValue": 0,
+        "unit": "%",
+        "weight": 0,
+        "assignedTo": "u003",
+        "dueDate": "",
+        "note": "",
+        "id": "dpi1782208142623",
+        "indicatorName": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "assignedUserName": "Trần Thị B"
+      }
+    ],
+    "createdAt": "2026-06-23T09:36:26.931Z",
+    "updatedAt": "2026-06-23T09:49:02.683Z",
+    "name": "Test",
+    "departmentId": "u108",
+    "templateId": ""
+  }
+]

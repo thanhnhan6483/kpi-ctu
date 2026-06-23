@@ -5,6 +5,8 @@ import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Send, User, 
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import indicatorsData from '@/data/indicators.json';
+import usersData from '@/data/users.json';
+import type { KPITemplate, KPITemplateItem } from '@/types';
 
 interface PersonalKPIRegistration {
   id: string;
@@ -64,6 +66,9 @@ export default function MyKPIRegistrationPage() {
   const [showDetail, setShowDetail] = useState(false);
   const [selected, setSelected] = useState<PersonalKPIRegistration | null>(null);
   const [loading, setLoading] = useState(true);
+  const [templates, setTemplates] = useState<KPITemplate[]>([]);
+  const [templateItems, setTemplateItems] = useState<KPITemplateItem[]>([]);
+  const [showCreate, setShowCreate] = useState(false);
 
   const currentUserId = 'u002';
 
@@ -82,6 +87,13 @@ export default function MyKPIRegistrationPage() {
 
   useEffect(() => { load(); }, [load]);
 
+  useEffect(() => {
+    Promise.all([
+      apiGet<KPITemplate[]>('/api/kpi-templates'),
+      apiGet<KPITemplateItem[]>('/api/kpi-template-items'),
+    ]).then(([t, ti]) => { setTemplates(t); setTemplateItems(ti); }).catch(() => {});
+  }, []);
+
   const myRegistrations = items.filter(i => i.cycleId === selectedCycleId && i.userId === currentUserId);
   const filtered = statusFilter === 'all' ? myRegistrations : myRegistrations.filter(i => i.status === statusFilter);
 
@@ -90,14 +102,65 @@ export default function MyKPIRegistrationPage() {
   const approvedCount = myRegistrations.filter(i => i.status === 'approved').length;
   const committedCount = myRegistrations.filter(i => i.status === 'committed').length;
 
-  const handleCreate = async () => {
+  const handleCreate = async (templateId?: string) => {
+    const addedIndicatorIds = new Set<string>();
+    const regItems: PersonalKPIItem[] = [];
+
+    const userUnitId = (usersData as { id: string; unitId: string }[]).find(u => u.id === currentUserId)?.unitId;
+    if (userUnitId) {
+      const deptPlans = await apiGet<{ id: string; cycleId: string; departmentId: string }[]>('/api/department-plans');
+      const deptPlan = deptPlans.find(p => p.cycleId === selectedCycleId && p.departmentId === userUnitId);
+      if (deptPlan) {
+        const deptItems = await apiGet<{ indicatorId: string; indicatorName: string; targetValue: number; unit: string; weight: number; dueDate: string }[]>(
+          `/api/department-plans/${deptPlan.id}`
+        );
+        const planData = deptItems as any;
+        if (planData.items) {
+          for (const di of planData.items) {
+            regItems.push({
+              id: `pki${Date.now()}_${di.indicatorId}`,
+              indicatorId: di.indicatorId,
+              indicatorName: di.indicatorName || di.indicatorId,
+              targetValue: di.targetValue || 0,
+              unit: di.unit || '%',
+              weight: di.weight || 0,
+              actionPlan: '',
+              evidencePlan: '',
+              dueDate: di.dueDate || '',
+            });
+            addedIndicatorIds.add(di.indicatorId);
+          }
+        }
+      }
+    }
+
+    if (templateId) {
+      const tItems = templateItems.filter(ti => ti.templateId === templateId);
+      for (const ti of tItems) {
+        if (addedIndicatorIds.has(ti.indicatorId)) continue;
+        regItems.push({
+          id: `pki${Date.now()}_${ti.indicatorId}`,
+          indicatorId: ti.indicatorId,
+          indicatorName: (indicatorsData as { id: string; name: string }[]).find(i => i.id === ti.indicatorId)?.name || ti.indicatorId,
+          targetValue: ti.targetValue || 0,
+          unit: '%',
+          weight: ti.weight,
+          actionPlan: '',
+          evidencePlan: '',
+          dueDate: '',
+        });
+        addedIndicatorIds.add(ti.indicatorId);
+      }
+    }
+
     const newItem = await apiPost<PersonalKPIRegistration>('/api/personal-kpi-registrations', {
       cycleId: selectedCycleId,
       userId: currentUserId,
       positionCode: 'GV',
-      items: [],
+      items: regItems,
     });
     setItems([...items, newItem]);
+    setShowCreate(false);
   };
 
   const handleAddItem = async (item: PersonalKPIItem) => {
@@ -168,7 +231,7 @@ export default function MyKPIRegistrationPage() {
         </div>
         <div className="flex items-center gap-3">
           {!currentReg && (
-            <button onClick={handleCreate} className="btn-primary flex items-center gap-2">
+            <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
               <Plus size={16} /> Tạo phiếu đăng ký
             </button>
           )}
@@ -273,7 +336,7 @@ export default function MyKPIRegistrationPage() {
             <div className="p-8 text-center">
               <User size={48} className="mx-auto text-text-light mb-3" />
               <p className="text-text-light mb-4">Chưa có phiếu đăng ký KPI cá nhân cho chu kỳ này</p>
-              <button onClick={handleCreate} className="btn-primary">Tạo phiếu đăng ký</button>
+              <button onClick={() => setShowCreate(true)} className="btn-primary">Tạo phiếu đăng ký</button>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -347,9 +410,45 @@ export default function MyKPIRegistrationPage() {
         </>
       )}
 
+      <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo phiếu đăng ký KPI cá nhân">
+        <CreateRegForm
+          templates={templates}
+          templateItems={templateItems}
+          onSubmit={handleCreate}
+          onCancel={() => setShowCreate(false)}
+        />
+      </Modal>
+
       <Modal isOpen={showAddItem} onClose={() => setShowAddItem(false)} title="Thêm KPI cá nhân">
         <ItemForm onSubmit={handleAddItem} />
       </Modal>
+    </div>
+  );
+}
+
+function CreateRegForm({ templates, templateItems, onSubmit, onCancel }: {
+  templates: KPITemplate[];
+  templateItems: KPITemplateItem[];
+  onSubmit: (templateId?: string) => void;
+  onCancel: () => void;
+}) {
+  const [templateId, setTemplateId] = useState('');
+  const indTemplates = templates.filter(t => t.targetLevel === 'individual' && (t.status === 'active' || t.status === 'locked'));
+  return (
+    <div className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-text-dark mb-1">Bộ KPI mẫu</label>
+        <select value={templateId} onChange={e => setTemplateId(e.target.value)}
+          className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+          <option value="">-- Không dùng mẫu (tự thêm KPI) --</option>
+          {indTemplates.map(t => <option key={t.id} value={t.id}>{t.name} ({t.indicatorCount} chỉ tiêu)</option>)}
+        </select>
+        <p className="text-xs text-text-light mt-1">Chọn bộ KPI mẫu để tự động thêm chỉ tiêu, hoặc bỏ trống để tự thêm sau</p>
+      </div>
+      <div className="flex justify-end gap-2 pt-4">
+        <button onClick={onCancel} className="btn-secondary">Hủy</button>
+        <button onClick={() => onSubmit(templateId || undefined)} className="btn-primary">Tạo phiếu</button>
+      </div>
     </div>
   );
 }

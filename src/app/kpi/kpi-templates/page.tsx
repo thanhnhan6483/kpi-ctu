@@ -40,7 +40,6 @@ export default function KPITemplatesPage() {
   const [filterLevel, setFilterLevel] = useState('');
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [showClone, setShowClone] = useState(false);
   const [selected, setSelected] = useState<KPITemplate | null>(null);
   const [loading, setLoading] = useState(true);
   const [viewItems, setViewItems] = useState<KPITemplateItem[]>([]);
@@ -99,16 +98,6 @@ export default function KPITemplatesPage() {
     setItems(items.map(i => i.id === item.id ? { ...i, ...updates } : i));
   };
 
-  const handleClone = async (item: KPITemplate) => {
-    const cloned = await apiPost<KPITemplate>('/api/kpi-templates', {
-      ...item,
-      name: `${item.name} (Bản sao)`,
-      status: 'draft',
-    });
-    setItems([...items, cloned]);
-    setShowClone(false);
-  };
-
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa bộ KPI mẫu này?')) return;
     await apiDelete(`/api/kpi-templates/${id}`);
@@ -136,14 +125,14 @@ export default function KPITemplatesPage() {
     return unit?.name || '';
   };
 
-  const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<KPITemplate>) => void; initial?: KPITemplate }) => {
+  const Form = ({ onSubmit, onClose, initial }: { onSubmit: (d: Partial<KPITemplate>) => void; onClose?: () => void; initial?: KPITemplate }) => {
     const [form, setForm] = useState(initial || { name: '', targetLevel: 'school' as const, description: '' });
     return (
       <form onSubmit={e => { e.preventDefault(); onSubmit(form); }} className="space-y-4">
         <div><label className="block text-sm font-medium mb-1">Tên bộ KPI mẫu *</label><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm" required /></div>
         <div><label className="block text-sm font-medium mb-1">Cấp áp dụng</label><select value={form.targetLevel} onChange={e => setForm({ ...form, targetLevel: e.target.value as any })} className="w-full px-3 py-2 border rounded-lg text-sm"><option value="school">Cấp Trường</option><option value="unit">Cấp Đơn vị</option><option value="department">Cấp Bộ môn</option><option value="individual">Cấp Cá nhân</option></select></div>
         <div><label className="block text-sm font-medium mb-1">Mô tả</label><textarea value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 border rounded-lg text-sm" rows={2} /></div>
-        <div className="flex justify-end gap-2"><button type="button" onClick={() => onSubmit({})} className="px-4 py-2 border rounded-lg text-sm">Hủy</button><button type="submit" className="btn-primary text-xs">Lưu</button></div>
+        <div className="flex justify-end gap-2"><button type="button" onClick={onClose} className="px-4 py-2 border rounded-lg text-sm">Hủy</button><button type="submit" className="btn-primary text-xs">Lưu</button></div>
       </form>
     );
   };
@@ -156,7 +145,6 @@ export default function KPITemplatesPage() {
           <p className="text-text-light mt-1">Quản lý, duyệt, kích hoạt và khóa bộ KPI mẫu (III.1-III.8)</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={() => setShowClone(true)} className="px-3 py-2 border rounded-lg text-sm flex items-center gap-1"><Plus size={14} /> Sao chép từ chu kỳ trước</button>
           <button onClick={() => setShowCreate(true)} className="btn-primary text-xs flex items-center gap-1"><Plus size={14} /> Tạo mới</button>
         </div>
       </div>
@@ -243,19 +231,8 @@ export default function KPITemplatesPage() {
         )}
       </Modal>
 
-      <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo bộ KPI mẫu mới"><Form onSubmit={handleCreate} /></Modal>
-      <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa">{selected && <Form onSubmit={async (d) => { await apiPut(`/api/kpi-templates/${selected.id}`, d); load(); setShowEdit(false); }} initial={selected} />}</Modal>
-      <Modal isOpen={showClone} onClose={() => setShowClone(false)} title="Sao chép từ chu kỳ trước">
-        <div className="space-y-3">
-          <p className="text-sm text-text-light">Chọn bộ KPI mẫu cần sao chép:</p>
-          {items.filter(i => i.status === 'active' || i.status === 'locked').map(item => (
-            <div key={item.id} className="flex items-center justify-between p-3 bg-bg-cream rounded-lg">
-              <div><div className="font-medium text-sm">{item.name}</div><div className="text-xs text-text-light">{levelLabels[item.targetLevel]} • {item.indicatorCount} KPI</div></div>
-              <button onClick={() => handleClone(item)} className="px-3 py-1 bg-primary text-white rounded-lg text-xs">Sao chép</button>
-            </div>
-          ))}
-        </div>
-      </Modal>
+      <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo bộ KPI mẫu mới"><Form onSubmit={handleCreate} onClose={() => setShowCreate(false)} /></Modal>
+      <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa">{selected && <Form onSubmit={async (d) => { await apiPut(`/api/kpi-templates/${selected.id}`, d); load(); setShowEdit(false); }} onClose={() => { setShowEdit(false); setSelected(null); }} initial={selected} />}</Modal>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { FileText, CheckCircle, Clock, AlertTriangle, Search, Plus, Send, ArrowRight, GitBranch, Edit, Trash2, XCircle, Calculator, Users } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
-import indicatorsData from '@/data/indicators.json';
 import usersData from '@/data/users.json';
+import type { KPIIndicator, AcademicYear } from '@/types';
 
 interface KPICascadeAssignment {
   id: string;
@@ -40,9 +40,6 @@ const unitMap: Record<string, string> = {};
 const userMap: Record<string, string> = {};
 (usersData as { id: string; fullName: string }[]).forEach(u => { userMap[u.id] = u.fullName; });
 
-const indicatorMap: Record<string, { name: string; unit: string }> = {};
-(indicatorsData as { id: string; name: string; unit: string }[]).forEach(i => { indicatorMap[i.id] = { name: i.name, unit: i.unit }; });
-
 const statusConfig: Record<string, { label: string; color: string }> = {
   draft: { label: 'Bản nháp', color: '#6b7280' },
   assigned: { label: 'Đã giao', color: '#3b82f6' },
@@ -59,40 +56,56 @@ const statusFilters = [
   { value: 'in_progress', label: 'Đang TH' },
 ];
 
-const levelLabels: Record<string, string> = { school: 'Trường', unit: 'Đơn vị', department: 'Bộ môn', individual: 'Cá nhân' };
-
 export default function CascadeAssignmentsPage() {
+  const [years, setYears] = useState<AcademicYear[]>([]);
+  const [selectedYearId, setSelectedYearId] = useState('');
   const [cycles, setCycles] = useState<KPICycle[]>([]);
+  const [indicators, setIndicators] = useState<KPIIndicator[]>([]);
   const [items, setItems] = useState<KPICascadeAssignment[]>([]);
   const [selectedCycleId, setSelectedCycleId] = useState('');
+  const selectedCycleIdRef = useRef(selectedCycleId);
+  selectedCycleIdRef.current = selectedCycleId;
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [detailTab, setDetailTab] = useState<'list' | 'ratio'>('list');
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [selected, setSelected] = useState<KPICascadeAssignment | null>(null);
   const [loading, setLoading] = useState(true);
-  const [cascadeRules, setCascadeRules] = useState<{ fromUnitId: string; toUnitId: string; targetPercent: number }[]>([]);
-  const [showRuleForm, setShowRuleForm] = useState(false);
-  const [ruleFromUnit, setRuleFromUnit] = useState('');
-  const [ruleToUnit, setRuleToUnit] = useState('');
-  const [rulePercent, setRulePercent] = useState(0);
 
-  const load = useCallback(async () => {
+  const loadYears = useCallback(async () => {
+    const y = await apiGet<AcademicYear[]>('/api/academic-years');
+    setYears(y);
+    if (!selectedYearId) {
+      const active = y.find(ay => ay.status === 'active');
+      if (active) setSelectedYearId(active.id);
+    }
+  }, [selectedYearId]);
+
+  const load = useCallback(async (yearId: string) => {
+    if (!yearId) return;
     try {
-      const [c, a] = await Promise.all([
+      const [c, a, ind] = await Promise.all([
         apiGet<KPICycle[]>('/api/cycles'),
         apiGet<KPICascadeAssignment[]>('/api/cascade-assignments'),
+        apiGet<KPIIndicator[]>(`/api/indicators?academicYearId=${yearId}`),
       ]);
-      setCycles(c);
+      const yearCycles = c.filter(cy => cy.academicYearId === yearId);
+      setCycles(yearCycles);
       setItems(a);
-      if (!selectedCycleId && c.length > 0) {
-        const active = c.find(cy => cy.status === 'active');
-        setSelectedCycleId(active?.id || c[0].id);
+      setIndicators(ind);
+      if (!selectedCycleIdRef.current && yearCycles.length > 0) {
+        const active = yearCycles.find(cy => cy.status === 'active');
+        setSelectedCycleId(active?.id || yearCycles[0].id);
       }
     } catch { /* empty */ } finally { setLoading(false); }
-  }, [selectedCycleId]);
+  }, []);
 
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => { loadYears(); }, [loadYears]);
+  useEffect(() => { if (selectedYearId) load(selectedYearId); }, [selectedYearId, load]);
+
+  const indicatorMap: Record<string, { name: string; unit: string }> = {};
+  indicators.forEach(i => { indicatorMap[i.id] = { name: i.name, unit: i.unit }; });
 
   const cycleFiltered = items.filter(i => i.cycleId === selectedCycleId);
 
@@ -114,27 +127,27 @@ export default function CascadeAssignmentsPage() {
   const handleCreate = async (data: Partial<KPICascadeAssignment>) => {
     await apiPost<KPICascadeAssignment>('/api/cascade-assignments', { ...data, cycleId: selectedCycleId });
     setShowCreate(false);
-    load();
+    load(selectedYearId);
   };
 
   const handleUpdate = async (data: Partial<KPICascadeAssignment>) => {
     if (!selected) return;
     await apiPut(`/api/cascade-assignments/${selected.id}`, data);
     setShowEdit(false);
-    load();
+    load(selectedYearId);
   };
 
   const handleStatusChange = async (item: KPICascadeAssignment, status: string) => {
     const labels: Record<string, string> = { assigned: 'giao KPI', accepted: 'nhận KPI', rejected: 'từ chối', in_progress: 'bắt đầu thực hiện' };
     if (!confirm(`${labels[status] || status} cho "${item.indicatorName}"?`)) return;
     await apiPut(`/api/cascade-assignments/${item.id}`, { status });
-    load();
+    load(selectedYearId);
   };
 
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa phân bổ KPI này?')) return;
     await apiDelete(`/api/cascade-assignments/${id}`);
-    load();
+    load(selectedYearId);
   };
 
   const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<KPICascadeAssignment>) => void; initial?: KPICascadeAssignment }) => {
@@ -151,29 +164,61 @@ export default function CascadeAssignmentsPage() {
 
     return (
       <form onSubmit={e => { e.preventDefault(); onSubmit(form); }} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-1">Cấp gửi (từ) *</label><select value={form.fromLevel} onChange={e => setForm({ ...form, fromLevel: e.target.value as any })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="school">Trường</option><option value="unit">Đơn vị</option><option value="department">Bộ môn</option></select></div>
-          <div><label className="block text-sm font-medium mb-1">Đơn vị gửi *</label><select value={form.fromUnitId} onChange={e => setForm({ ...form, fromUnitId: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Đơn vị nhận *</label>
+          <select value={form.toUnitId} onChange={e => setForm({ ...form, toUnitId: e.target.value })} required
+            className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary">
+            <option value="">-- Chọn đơn vị --</option>
+            {(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
+          </select>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-1">Cấp nhận (đến) *</label><select value={form.toLevel} onChange={e => setForm({ ...form, toLevel: e.target.value as any })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="unit">Đơn vị</option><option value="department">Bộ môn</option><option value="individual">Cá nhân</option></select></div>
-          <div><label className="block text-sm font-medium mb-1">Đơn vị/nhận *</label><select value={form.toUnitId} onChange={e => setForm({ ...form, toUnitId: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Chỉ tiêu Trường *</label>
+          <select value={form.indicatorId} onChange={e => handleIndicatorChange(e.target.value)} required
+            className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary">
+            <option value="">-- Chọn chỉ tiêu --</option>
+            {indicators.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
+          </select>
         </div>
-        {form.toLevel === 'individual' && (
-          <div><label className="block text-sm font-medium mb-1">Cá nhân nhận</label><select value={form.toUserId || ''} onChange={e => setForm({ ...form, toUserId: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary"><option value="">-- Chọn --</option>{(usersData as { id: string; fullName: string }[]).map(u => <option key={u.id} value={u.id}>{u.fullName}</option>)}</select></div>
-        )}
-        <div><label className="block text-sm font-medium mb-1">Chỉ tiêu KPI *</label><select value={form.indicatorId} onChange={e => handleIndicatorChange(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required><option value="">-- Chọn chỉ tiêu --</option>{(indicatorsData as { id: string; name: string }[]).map(i => <option key={i.id} value={i.id}>{i.name}</option>)}</select></div>
         <div className="grid grid-cols-3 gap-4">
-          <div><label className="block text-sm font-medium mb-1">Chỉ tiêu mục tiêu *</label><input type="number" value={form.targetValue} onChange={e => setForm({ ...form, targetValue: Number(e.target.value) })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required /></div>
-          <div><label className="block text-sm font-medium mb-1">Đơn vị đo</label><input value={form.unit} onChange={e => setForm({ ...form, unit: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" /></div>
-          <div><label className="block text-sm font-medium mb-1">Trọng số (%) *</label><input type="number" value={form.weight} onChange={e => setForm({ ...form, weight: Number(e.target.value) })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" required min={0} max={100} /></div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Mục tiêu *</label>
+            <input type="number" value={form.targetValue} onChange={e => setForm({ ...form, targetValue: Number(e.target.value) })} required
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Đơn vị đo</label>
+            <input value={form.unit} onChange={e => setForm({ ...form, unit: e.target.value })}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Trọng số (%) *</label>
+            <input type="number" value={form.weight} onChange={e => setForm({ ...form, weight: Number(e.target.value) })} required min={0} max={100}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-1">Hạn thực hiện</label><input type="date" value={form.dueDate} onChange={e => setForm({ ...form, dueDate: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" /></div>
-          <div className="flex items-end pb-1"><label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={form.evidenceRequired} onChange={e => setForm({ ...form, evidenceRequired: e.target.checked })} className="rounded" /> Yêu cầu minh chứng</label></div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Hạn thực hiện</label>
+            <input type="date" value={form.dueDate} onChange={e => setForm({ ...form, dueDate: e.target.value })}
+              className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+          </div>
+          <div className="flex items-end pb-1">
+            <label className="flex items-center gap-2 text-sm">
+              <input type="checkbox" checked={form.evidenceRequired} onChange={e => setForm({ ...form, evidenceRequired: e.target.checked })} className="rounded" />
+              Yêu cầu minh chứng
+            </label>
+          </div>
         </div>
-        <div><label className="block text-sm font-medium mb-1">Ghi chú</label><textarea value={form.note} onChange={e => setForm({ ...form, note: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" rows={2} /></div>
-        <div className="flex justify-end gap-2 pt-2"><button type="button" onClick={() => initial ? setShowEdit(false) : setShowCreate(false)} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream">Hủy</button><button type="submit" className="btn-primary">Lưu</button></div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Ghi chú</label>
+          <textarea value={form.note} onChange={e => setForm({ ...form, note: e.target.value })}
+            className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" rows={2} />
+        </div>
+        <div className="flex justify-end gap-2 pt-2">
+          <button type="button" onClick={() => initial ? setShowEdit(false) : setShowCreate(false)} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream">Hủy</button>
+          <button type="submit" className="btn-primary">Lưu</button>
+        </div>
       </form>
     );
   };
@@ -188,6 +233,16 @@ export default function CascadeAssignmentsPage() {
         <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
           <Plus size={16} /> Phân bổ KPI
         </button>
+      </div>
+
+      <div className="flex items-center gap-3 flex-wrap">
+        <span className="text-sm font-medium text-text-dark">Năm học:</span>
+        {years.map(ay => (
+          <button key={ay.id} onClick={() => { setSelectedYearId(ay.id); setSelectedCycleId(''); }}
+            className={`px-3 py-1.5 rounded text-sm transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
+            {ay.name}
+          </button>
+        ))}
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -217,125 +272,84 @@ export default function CascadeAssignmentsPage() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header flex items-center justify-between">
-          <h3 className="text-white">Quy tắc Cascade</h3>
-          <button onClick={() => setShowRuleForm(true)} className="px-3 py-1 bg-white/20 text-white rounded-lg text-xs hover:bg-white/30 flex items-center gap-1">
-            <Plus size={12} /> Thêm quy tắc
-          </button>
-        </div>
-        <div className="p-4">
-          {cascadeRules.length === 0 ? (
-            <p className="text-sm text-text-light">Chưa có quy tắc cascade nào. Thêm quy tắc để xác định tỷ lệ đóng góp giữa các đơn vị.</p>
-          ) : (
-            <div className="flex flex-wrap gap-3">
-              {cascadeRules.map((rule, i) => (
-                <div key={i} className="flex items-center gap-2 px-3 py-2 bg-bg-cream rounded-lg border border-border text-sm">
-                  <span className="font-medium">{unitMap[rule.fromUnitId] || rule.fromUnitId}</span>
-                  <span className="text-text-light">→</span>
-                  <span className="font-medium">{unitMap[rule.toUnitId] || rule.toUnitId}</span>
-                  <span className="badge badge-info">{rule.targetPercent}%</span>
-                  <button onClick={() => setCascadeRules(cascadeRules.filter((_, j) => j !== i))} className="p-1 text-red-500 hover:bg-red-50 rounded"><Trash2 size={12} /></button>
-                </div>
+      <div className="flex gap-1 bg-white border border-border rounded-lg p-0.5 w-fit">
+        <button onClick={() => setDetailTab('list')} className={`px-4 py-1.5 rounded text-sm font-medium ${detailTab === 'list' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Danh sách phân bổ</button>
+        <button onClick={() => setDetailTab('ratio')} className={`px-4 py-1.5 rounded text-sm font-medium ${detailTab === 'ratio' ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>Tỷ lệ đóng góp (VI.6)</button>
+      </div>
+
+      {detailTab === 'list' && (
+        <>
+          <div className="flex flex-wrap gap-4">
+            <div className="relative flex-1 min-w-[200px]">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
+              <input type="text" placeholder="Tìm kiếm phân bổ KPI..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {statusFilters.map((s) => (
+                <button key={s.value} onClick={() => setStatusFilter(s.value)}
+                  className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === s.value ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
+                  {s.label}
+                </button>
               ))}
             </div>
-          )}
-          {showRuleForm && (
-            <form onSubmit={e => { e.preventDefault(); setCascadeRules([...cascadeRules, { fromUnitId: ruleFromUnit, toUnitId: ruleToUnit, targetPercent: rulePercent }]); setShowRuleForm(false); setRuleFromUnit(''); setRuleToUnit(''); setRulePercent(0); }}
-              className="mt-3 flex flex-wrap items-end gap-2 p-3 bg-bg-cream rounded-lg border border-border">
-              <div><label className="block text-xs font-medium mb-1">Từ đơn vị</label>
-                <select value={ruleFromUnit} onChange={e => setRuleFromUnit(e.target.value)} required className="px-3 py-2 border rounded-lg text-sm">
-                  <option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
-                </select>
-              </div>
-              <div><label className="block text-xs font-medium mb-1">Đến đơn vị</label>
-                <select value={ruleToUnit} onChange={e => setRuleToUnit(e.target.value)} required className="px-3 py-2 border rounded-lg text-sm">
-                  <option value="">-- Chọn --</option>{(unitsData as { id: string; name: string }[]).map(u => <option key={u.id} value={u.id}>{u.name}</option>)}
-                </select>
-              </div>
-              <div><label className="block text-xs font-medium mb-1">Tỷ lệ (%)</label><input type="number" value={rulePercent} onChange={e => setRulePercent(Number(e.target.value))} className="w-20 px-3 py-2 border rounded-lg text-sm" min={0} max={100} required /></div>
-              <button type="submit" className="px-4 py-2 bg-primary text-white rounded-lg text-sm">Thêm</button>
-              <button type="button" onClick={() => setShowRuleForm(false)} className="px-4 py-2 border rounded-lg text-sm">Hủy</button>
-            </form>
-          )}
-        </div>
-      </div>
+          </div>
 
-      <div className="flex flex-wrap gap-4">
-        <div className="relative flex-1 min-w-[200px]">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={16} />
-          <input type="text" placeholder="Tìm kiếm phân bổ KPI..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {statusFilters.map((s) => (
-            <button key={s.value} onClick={() => setStatusFilter(s.value)}
-              className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === s.value ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
-              {s.label}
-            </button>
-          ))}
-        </div>
-      </div>
+          <div className="card">
+            <div className="card-header"><h3 className="text-white">Danh sách phân bổ KPI</h3></div>
+            <div className="p-0">
+              <div className="overflow-x-auto">
+                <table className="table">
+                  <thead>
+                    <tr><th>STT</th><th>Chỉ tiêu KPI</th><th>Đơn vị nhận</th><th>Mục tiêu</th><th>Trọng số</th><th>Hạn</th><th>Trạng thái</th><th>Thao tác</th></tr>
+                  </thead>
+                  <tbody>
+                    {loading ? (
+                      <tr><td colSpan={8} className="text-center py-8">Đang tải...</td></tr>
+                    ) : filtered.length === 0 ? (
+                      <tr><td colSpan={8} className="text-center py-8">Chưa có phân bổ KPI nào</td></tr>
+                    ) : filtered.map((item, idx) => {
+                      const status = statusConfig[item.status] || statusConfig.draft;
+                      return (
+                        <tr key={item.id}>
+                          <td className="text-sm text-text-light">{idx + 1}</td>
+                          <td className="text-sm font-medium">{item.indicatorName}</td>
+                          <td className="text-sm">{unitMap[item.toUnitId] || '-'}</td>
+                          <td className="text-sm">{item.targetValue} {item.unit}</td>
+                          <td className="text-sm">{item.weight}%</td>
+                          <td className="text-sm text-text-light">{item.dueDate || '-'}</td>
+                          <td>
+                            <span className="badge" style={{ backgroundColor: `${status.color}20`, color: status.color }}>{status.label}</span>
+                          </td>
+                          <td>
+                            <div className="flex gap-1">
+                              {item.status === 'draft' && <button onClick={() => handleStatusChange(item, 'assigned')} className="p-1 hover:bg-blue-50 rounded" title="Giao KPI"><Send size={14} className="text-blue-600" /></button>}
+                              {item.status === 'assigned' && <button onClick={() => handleStatusChange(item, 'accepted')} className="p-1 hover:bg-green-50 rounded" title="Nhận KPI"><CheckCircle size={14} className="text-green-600" /></button>}
+                              {item.status === 'assigned' && <button onClick={() => handleStatusChange(item, 'rejected')} className="p-1 hover:bg-red-50 rounded" title="Từ chối"><XCircle size={14} className="text-red-600" /></button>}
+                              {item.status === 'accepted' && <button onClick={() => handleStatusChange(item, 'in_progress')} className="p-1 hover:bg-yellow-50 rounded" title="Bắt đầu TH"><ArrowRight size={14} className="text-yellow-600" /></button>}
+                              <button onClick={() => { setSelected(item); setShowEdit(true); }} className="p-1 hover:bg-blue-50 rounded" title="Chỉnh sửa"><Edit size={14} className="text-blue-600" /></button>
+                              <button onClick={() => handleDelete(item.id)} className="p-1 hover:bg-red-50 rounded" title="Xóa"><Trash2 size={14} className="text-red-600" /></button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
-      <div className="card">
-        <div className="card-header"><h3 className="text-white">Danh sách phân bổ KPI</h3></div>
-        <div className="p-0">
-          <div className="overflow-x-auto">
-            <table className="table">
-              <thead>
-                <tr><th>Luồng</th><th>Chỉ tiêu KPI</th><th>Mục tiêu</th><th>Trọng số</th><th>Hạn</th><th>Trạng thái</th><th>Thao tác</th></tr>
-              </thead>
-              <tbody>
-                {loading ? (
-                  <tr><td colSpan={7} className="text-center py-8">Đang tải...</td></tr>
-                ) : filtered.length === 0 ? (
-                  <tr><td colSpan={7} className="text-center py-8">Chưa có phân bổ KPI nào</td></tr>
-                ) : filtered.map((item) => {
-                  const status = statusConfig[item.status] || statusConfig.draft;
-                  return (
-                    <tr key={item.id}>
-                      <td>
-                        <div className="flex items-center gap-1 text-sm">
-                          <span className="font-medium">{levelLabels[item.fromLevel]}</span>
-                          <ArrowRight size={12} className="text-text-light" />
-                          <span className="font-medium">{levelLabels[item.toLevel]}</span>
-                        </div>
-                        <div className="text-xs text-text-light mt-0.5">
-                          {unitMap[item.fromUnitId] || '-'} → {unitMap[item.toUnitId] || '-'}
-                        </div>
-                      </td>
-                      <td className="text-sm font-medium">{item.indicatorName}</td>
-                      <td className="text-sm">{item.targetValue} {item.unit}</td>
-                      <td className="text-sm">{item.weight}%</td>
-                      <td className="text-sm text-text-light">{item.dueDate || '-'}</td>
-                      <td>
-                        <span className="badge" style={{ backgroundColor: `${status.color}20`, color: status.color }}>{status.label}</span>
-                      </td>
-                      <td>
-                        <div className="flex gap-1">
-                          {item.status === 'draft' && <button onClick={() => handleStatusChange(item, 'assigned')} className="p-1 hover:bg-blue-50 rounded" title="Giao KPI"><Send size={14} className="text-blue-600" /></button>}
-                          {item.status === 'assigned' && <button onClick={() => handleStatusChange(item, 'accepted')} className="p-1 hover:bg-green-50 rounded" title="Nhận KPI"><CheckCircle size={14} className="text-green-600" /></button>}
-                          {item.status === 'assigned' && <button onClick={() => handleStatusChange(item, 'rejected')} className="p-1 hover:bg-red-50 rounded" title="Từ chối"><XCircle size={14} className="text-red-600" /></button>}
-                          {item.status === 'accepted' && <button onClick={() => handleStatusChange(item, 'in_progress')} className="p-1 hover:bg-yellow-50 rounded" title="Bắt đầu TH"><ArrowRight size={14} className="text-yellow-600" /></button>}
-                          <button onClick={() => { setSelected(item); setShowEdit(true); }} className="p-1 hover:bg-blue-50 rounded" title="Chỉnh sửa"><Edit size={14} className="text-blue-600" /></button>
-                          <button onClick={() => handleDelete(item.id)} className="p-1 hover:bg-red-50 rounded" title="Xóa"><Trash2 size={14} className="text-red-600" /></button>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+      {detailTab === 'ratio' && (
+        <div className="card">
+          <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Tỷ lệ đóng góp (VI.6)</h3></div>
+          <div className="p-4">
+            <ContributionRatioTable indicatorsData={indicators} cascadeItems={cycleFiltered} unitsData={unitsData as { id: string; name: string }[]} />
           </div>
         </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Tỷ lệ đóng góp (VI.6)</h3></div>
-        <div className="p-4">
-          <ContributionRatioTable indicatorsData={indicatorsData as { id: string; name: string; targetValue: number; unit: string }[]} unitsData={unitsData as { id: string; name: string }[]} />
-        </div>
-      </div>
+      )}
 
       <div className="card">
         <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Phân bổ gợi ý</h3></div>
@@ -354,75 +368,53 @@ export default function CascadeAssignmentsPage() {
   );
 }
 
-function ContributionRatioTable({ indicatorsData, unitsData }: {
+function ContributionRatioTable({ indicatorsData, cascadeItems, unitsData }: {
   indicatorsData: { id: string; name: string; targetValue: number; unit: string }[];
+  cascadeItems: { indicatorId: string; indicatorName: string; toUnitId: string; targetValue: number; unit: string }[];
   unitsData: { id: string; name: string }[];
 }) {
-  const [distributions, setDistributions] = useState<Record<string, Record<string, number>>>({});
-  const [showAdd, setShowAdd] = useState(false);
-  const [addIndicator, setAddIndicator] = useState('');
-  const [addUnit, setAddUnit] = useState('');
-  const [addRatio, setAddRatio] = useState(0);
+  const unitMap = useMemo(() => {
+    const m: Record<string, string> = {};
+    (unitsData as { id: string; name: string }[]).forEach(u => { m[u.id] = u.name; });
+    return m;
+  }, [unitsData]);
+
+  const grouped = useMemo(() => {
+    const map: Record<string, { total: number; units: Record<string, number> }> = {};
+    cascadeItems.forEach(item => {
+      if (!map[item.indicatorId]) map[item.indicatorId] = { total: 0, units: {} };
+      map[item.indicatorId].total += item.targetValue;
+      map[item.indicatorId].units[item.toUnitId] = (map[item.indicatorId].units[item.toUnitId] || 0) + item.targetValue;
+    });
+    return map;
+  }, [cascadeItems]);
 
   const schoolIndicators = indicatorsData.filter(i => i.id.startsWith('CTU'));
-
-  const getTotalUnitTarget = (indicatorId: string) => {
-    const dists = distributions[indicatorId] || {};
-    return Object.values(dists).reduce((s, v) => s + v, 0);
-  };
-
-  const getSchoolTarget = (indicatorId: string) => {
-    return indicatorsData.find(i => i.id === indicatorId)?.targetValue || 0;
-  };
-
-  const addDistribution = () => {
-    if (!addIndicator || !addUnit) return;
-    setDistributions(prev => ({
-      ...prev,
-      [addIndicator]: { ...(prev[addIndicator] || {}), [addUnit]: addRatio },
-    }));
-    setAddIndicator('');
-    setAddUnit('');
-    setAddRatio(0);
-    setShowAdd(false);
-  };
-
-  const removeDistribution = (indicatorId: string, unitId: string) => {
-    setDistributions(prev => {
-      const updated = { ...prev };
-      if (updated[indicatorId]) {
-        const newDists = { ...updated[indicatorId] };
-        delete newDists[unitId];
-        updated[indicatorId] = newDists;
-      }
-      return updated;
-    });
-  };
 
   return (
     <div className="space-y-4">
       <p className="text-sm text-text-light">
-        Bảng phân bổ chỉ tiêu KPI cấp Trường xuống các đơn vị. Nhập tỷ lệ đóng góp (%) cho từng đơn vị theo từng chỉ tiêu.
+        Tỷ lệ đóng góp của từng đơn vị cho chỉ tiêu cấp Trường (tự động từ kết quả phân bổ Cascade).
       </p>
       <div className="overflow-x-auto">
         <table className="table text-sm">
           <thead>
             <tr>
-              <th>KPI Trường</th>
-              <th>Chỉ tiêu trường</th>
-              <th>Tổng các đơn vị</th>
-              <th>Tỷ lệ phân bổ</th>
-              <th>Thao tác</th>
+              <th>Chỉ tiêu Trường</th>
+              <th>Mục tiêu</th>
+              <th>Tổng đơn vị</th>
+              <th>Tỷ lệ</th>
             </tr>
           </thead>
           <tbody>
             {schoolIndicators.length === 0 ? (
-              <tr><td colSpan={5} className="text-center py-6 text-text-light">Chưa có KPI cấp Trường</td></tr>
+              <tr><td colSpan={4} className="text-center py-6 text-text-light">Chưa có KPI cấp Trường</td></tr>
             ) : schoolIndicators.map(ind => {
-              const totalUnit = getTotalUnitTarget(ind.id);
-              const schoolTarget = getSchoolTarget(ind.id);
-              const ratio = schoolTarget > 0 ? Math.round((totalUnit / schoolTarget) * 100) : 0;
-              const dists = distributions[ind.id] || {};
+              const g = grouped[ind.id];
+              const totalUnit = g?.total || 0;
+              const schoolTarget = ind.targetValue;
+              const ratio = schoolTarget > 0 ? Math.min(Math.round((totalUnit / schoolTarget) * 100), 100) : 0;
+              const units = g?.units || {};
               return (
                 <tr key={ind.id}>
                   <td className="font-medium">{ind.name}</td>
@@ -431,10 +423,7 @@ function ContributionRatioTable({ indicatorsData, unitsData }: {
                     {totalUnit} {ind.unit}
                   </td>
                   <td>
-                    <span className={`badge ${ratio >= 100 ? 'badge-success' : 'badge-warning'}`}>{ratio}%</span>
-                  </td>
-                  <td>
-                    <button onClick={() => { setAddIndicator(ind.id); setAddUnit(''); setAddRatio(0); setShowAdd(true); }} className="p-1 text-primary hover:bg-primary-light rounded" title="Thêm phân bổ"><Plus size={14} /></button>
+                    <span className={`badge ${ratio >= 100 ? (totalUnit > schoolTarget ? 'badge-danger' : 'badge-success') : 'badge-warning'}`}>{ratio}%</span>
                   </td>
                 </tr>
               );
@@ -442,54 +431,6 @@ function ContributionRatioTable({ indicatorsData, unitsData }: {
           </tbody>
         </table>
       </div>
-      {schoolIndicators.length > 0 && (
-        <div className="mt-4 space-y-2">
-          <p className="text-xs font-medium text-text-light">Chi tiết phân bổ theo đơn vị:</p>
-          {schoolIndicators.map(ind => {
-            const dists = distributions[ind.id] || {};
-            const entries = Object.entries(dists);
-            if (entries.length === 0) return null;
-            return (
-              <div key={ind.id} className="p-3 bg-bg-cream rounded-lg border border-border">
-                <div className="text-xs font-medium mb-2">{ind.name}</div>
-                <div className="flex flex-wrap gap-2">
-                  {entries.map(([unitId, val]) => (
-                    <div key={unitId} className="flex items-center gap-1 px-2 py-1 bg-white rounded border border-border text-xs">
-                      <span className="font-medium">{unitsData.find(u => u.id === unitId)?.name || unitId}</span>
-                      <span className="text-primary font-bold">{val}%</span>
-                      <button onClick={() => removeDistribution(ind.id, unitId)} className="p-0.5 text-red-500 hover:bg-red-50 rounded"><Trash2 size={10} /></button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-      {showAdd && (
-        <div className="p-4 bg-bg-cream rounded-lg border border-border">
-          <h4 className="text-sm font-medium mb-3">Thêm tỷ lệ phân bổ</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div>
-              <label className="block text-xs font-medium mb-1">Đơn vị</label>
-              <select value={addUnit} onChange={e => setAddUnit(e.target.value)} className="w-full px-3 py-2 border border-border rounded-lg text-sm">
-                <option value="">-- Chọn --</option>
-                {(unitsData as { id: string; name: string; type?: string }[]).filter(u => u.type === 'faculty' || u.type === 'department' || u.type === 'school').map(u => (
-                  <option key={u.id} value={u.id}>{u.name}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-medium mb-1">Tỷ lệ (%)</label>
-              <input type="number" value={addRatio} onChange={e => setAddRatio(Number(e.target.value))} className="w-full px-3 py-2 border border-border rounded-lg text-sm" min={0} max={100} />
-            </div>
-            <div className="flex items-end gap-2">
-              <button onClick={addDistribution} className="px-4 py-2 bg-primary text-white rounded-lg text-sm">Thêm</button>
-              <button onClick={() => setShowAdd(false)} className="px-4 py-2 border border-border rounded-lg text-sm">Hủy</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -51,6 +51,7 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
       { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
+      { href: '/admin/school-indicators', label: 'Chỉ tiêu Trường' },
       { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
       { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
       { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
@@ -67,7 +68,6 @@ const menuItems: MenuItem[] = [
       { href: '/kpi/plans', label: 'Kế hoạch KPI đơn vị' },
       { href: '/kpi/department-plans', label: 'Kế hoạch KPI bộ môn' },
       { href: '/kpi/my-kpi-registration', label: 'Đăng ký KPI cá nhân' },
-      { href: '/kpi/my-kpi', label: 'KPI của tôi' },
       { href: '/kpi/plan-versions', label: 'Phiên bản kế hoạch' },
     ],
   },
@@ -174,7 +174,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-catalogs')) return ['/setup'];
-    if (pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
+    if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
