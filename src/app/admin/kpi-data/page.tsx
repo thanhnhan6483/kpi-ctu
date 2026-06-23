@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy, ChevronDown, ChevronRight, Compass, ArrowRight } from 'lucide-react';
+import { Target, Building, Users, Plus, Edit, Trash2, Copy, ChevronDown, ChevronRight, Compass, ArrowRight } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import strategicObjectives from '@/data/strategic-objectives.json';
 import bscMapLinks from '@/data/bsc-map-links.json';
-import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear, StrategicObjective, BSCMapLink } from '@/types';
+import type { KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear, StrategicObjective, BSCMapLink } from '@/types';
 
 type TabKey = 'indicators' | 'unit' | 'individual';
 
@@ -15,18 +15,14 @@ export default function KPIDataPage() {
   const [selectedYearId, setSelectedYearId] = useState('');
 
   const [tab, setTab] = useState<TabKey>('indicators');
-  const [groups, setGroups] = useState<KPIGroup[]>([]);
   const [indicators, setIndicators] = useState<KPIIndicator[]>([]);
   const [unitKpis, setUnitKpis] = useState<UnitKPIEntry[]>([]);
   const [indKpis, setIndKpis] = useState<IndividualKPIEntry[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
-  const [showGroupModal, setShowGroupModal] = useState(false);
-  const [groupEditId, setGroupEditId] = useState<string | null>(null);
   const [showCloneModal, setShowCloneModal] = useState(false);
   const [cloneFromYear, setCloneFromYear] = useState('');
   const [cloning, setCloning] = useState(false);
-  const [filterGroupId, setFilterGroupId] = useState<string | null>(null);
   const [expandedUnits, setExpandedUnits] = useState<Set<string>>(new Set());
   const [expandedInds, setExpandedInds] = useState<Set<string>>(new Set());
 
@@ -59,13 +55,12 @@ export default function KPIDataPage() {
   const loadData = useCallback(async (yearId: string) => {
     if (!yearId) return;
     const q = `?academicYearId=${yearId}`;
-    const [g, i, u, p] = await Promise.all([
-      apiGet<KPIGroup[]>(`/api/kpi-groups${q}`),
+    const [i, u, p] = await Promise.all([
       apiGet<KPIIndicator[]>(`/api/indicators${q}`),
       apiGet<UnitKPIEntry[]>(`/api/unit-kpis${q}`),
       apiGet<IndividualKPIEntry[]>(`/api/individual-kpis${q}`),
     ]);
-    setGroups(g); setIndicators(i); setUnitKpis(u); setIndKpis(p);
+    setIndicators(i); setUnitKpis(u); setIndKpis(p);
   }, []);
 
   useEffect(() => { loadYears(); }, [loadYears]);
@@ -74,7 +69,7 @@ export default function KPIDataPage() {
     if (selectedYearId) loadData(selectedYearId);
   }, [selectedYearId, loadData]);
 
-  const hasData = groups.length > 0 || indicators.length > 0 || unitKpis.length > 0 || indKpis.length > 0;
+  const hasData = indicators.length > 0 || unitKpis.length > 0 || indKpis.length > 0;
 
   const apiEntity = (t: TabKey) => {
     if (t === 'indicators') return 'indicators';
@@ -94,26 +89,9 @@ export default function KPIDataPage() {
     loadData(selectedYearId);
   };
 
-  const handleGroupSave = async (data: any) => {
-    const payload = { ...data, academicYearId: selectedYearId };
-    if (groupEditId) {
-      await apiPut(`/api/kpi-groups/${groupEditId}`, payload);
-    } else {
-      await apiPost('/api/kpi-groups', payload);
-    }
-    setShowGroupModal(false); setGroupEditId(null); loadData(selectedYearId);
-  };
-
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa mục này?')) return;
     await apiDelete(`/api/${apiEntity(tab)}/${id}`);
-    loadData(selectedYearId);
-  };
-
-  const handleGroupDelete = async (id: string) => {
-    const count = indicators.filter(i => i.categoryId === id).length;
-    if (count > 0 && !confirm(`Lĩnh vực này đang có ${count} chỉ tiêu. Xoá sẽ mất liên kết. Tiếp tục?`)) return;
-    await apiDelete(`/api/kpi-groups/${id}`);
     loadData(selectedYearId);
   };
 
@@ -148,9 +126,6 @@ export default function KPIDataPage() {
           <p className="text-text-light mt-1">Gán chỉ tiêu theo năm học và đơn vị</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={() => { setGroupEditId(null); setShowGroupModal(true); }} className="btn-secondary flex items-center gap-1 text-xs">
-            <Layers size={14} /> Lĩnh vực
-          </button>
           <button onClick={handleCloneClick} className="btn-primary flex items-center gap-1 text-xs">
             <Copy size={14} /> Sao chép
           </button>
@@ -213,7 +188,7 @@ export default function KPIDataPage() {
         {allTabs.map(t => {
           const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setFilterGroupId(null); }}
+            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); }}
               className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${tab === t.id ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'}`}>
               <Icon size={16} /> {t.label}
               <span className="badge badge-info ml-1">{t.count}</span>
@@ -226,13 +201,6 @@ export default function KPIDataPage() {
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">{allTabs.find(t => t.id === tab)?.label || 'Danh mục'}</h3>
           <div className="flex items-center gap-2">
-            {tab === 'indicators' && (
-              <select value={filterGroupId || ''} onChange={e => setFilterGroupId(e.target.value || null)}
-                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
-                <option value="">Tất cả lĩnh vực</option>
-                {groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-              </select>
-            )}
             {selectedYearId && (
               <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
                 <Plus size={14} /> Thêm
@@ -245,13 +213,13 @@ export default function KPIDataPage() {
             <table className="table">
               <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Mục tiêu CL</th><th>Thao tác</th></tr></thead>
               <tbody>
-                {(filterGroupId ? indicators.filter(ind => ind.categoryId === filterGroupId) : indicators).map(ind => {
+                {indicators.map(ind => {
                   const objNames = indicatorToObjectives[ind.code] || [];
                   return (
                     <tr key={ind.id}>
                       <td><span className="badge badge-info">{ind.code}</span></td>
                       <td className="font-medium max-w-[250px] truncate" title={ind.name}>{ind.name}</td>
-                      <td>{groups.find(g => g.id === ind.categoryId)?.name || ind.categoryId}</td>
+                      <td><span className="badge badge-info">{ind.categoryId}</span></td>
                       <td>{ind.unit}</td>
                       <td>{ind.targetValue}</td>
                       <td>{ind.weight}%</td>
@@ -270,7 +238,7 @@ export default function KPIDataPage() {
                     </tr>
                   );
                 })}
-                {(filterGroupId ? indicators.filter(ind => ind.categoryId === filterGroupId) : indicators).length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {indicators.length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
@@ -420,61 +388,9 @@ export default function KPIDataPage() {
       {/* Modal: Add/Edit current tab items */}
       <Modal isOpen={showModal} onClose={() => { setShowModal(false); setEditId(null); }}
         title={`${editId ? 'Sửa' : 'Thêm'} ${tab === 'indicators' ? 'Chỉ tiêu Trường' : tab === 'unit' ? 'KPI Đơn vị' : 'KPI Cá nhân'}`} maxWidth="max-w-3xl">
-        {tab === 'indicators' && <IndicatorForm item={indicators.find(i => i.id === editId) || null} groups={groups} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'unit' && <UnitForm item={unitKpis.find(u => u.id === editId) || null} groups={groups} indicators={indicators} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        {tab === 'indicators' && <IndicatorForm item={indicators.find(i => i.id === editId) || null} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        {tab === 'unit' && <UnitForm item={unitKpis.find(u => u.id === editId) || null} indicators={indicators} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'individual' && <IndividualForm item={indKpis.find(p => p.id === editId) || null} unitKpis={unitKpis} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-      </Modal>
-
-      {/* Modal: Group management */}
-      <Modal isOpen={showGroupModal} onClose={() => { setShowGroupModal(false); setGroupEditId(null); }}
-        title={groupEditId ? 'Sửa Lĩnh vực KPI' : 'Quản lý Lĩnh vực KPI'} maxWidth="max-w-2xl">
-        <div className="space-y-4">
-          <div className="flex justify-end">
-            <button onClick={() => { setGroupEditId(null); setShowGroupModal(true); setGroupEditId('new'); }} className="btn-primary text-xs flex items-center gap-1">
-              <Plus size={14} /> Thêm lĩnh vực
-            </button>
-          </div>
-          <table className="table">
-            <thead><tr><th>ID</th><th>Tên Lĩnh vực</th><th>Mã</th><th>Số chỉ tiêu</th><th>Trọng số</th><th>Cấp</th><th>Thao tác</th></tr></thead>
-            <tbody>
-              {groups.map(g => {
-                const count = indicators.filter(i => i.categoryId === g.id).length;
-                return (
-                  <tr key={g.id}>
-                    <td><span className="badge badge-info">{g.id}</span></td>
-                    <td className="font-medium">{g.name}</td>
-                    <td>{g.code}</td>
-                    <td><span className="text-primary font-medium">{count}</span></td>
-                    <td>{g.defaultWeight}%</td>
-                    <td>{g.targetLevel === 'school' ? 'Trường' : g.targetLevel === 'unit' ? 'Đơn vị' : 'Cá nhân'}</td>
-                    <td><Actions id={g.id} onEdit={() => { setGroupEditId(g.id); }} onDelete={() => handleGroupDelete(g.id)} /></td>
-                  </tr>
-                );
-              })}
-              {groups.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-4">Chưa có lĩnh vực nào</td></tr>}
-            </tbody>
-          </table>
-        </div>
-      </Modal>
-
-      {/* Group inline edit form */}
-      <Modal
-        isOpen={!!groupEditId && groupEditId !== 'new' && groupEditId !== null}
-        onClose={() => setGroupEditId(null)}
-        title="Sửa Lĩnh vực KPI"
-      >
-        {groupEditId && groupEditId !== 'new' && (
-          <GroupForm item={groups.find(g => g.id === groupEditId) || null} onSubmit={handleGroupSave} onCancel={() => setGroupEditId(null)} />
-        )}
-      </Modal>
-
-      {/* Group create form */}
-      <Modal
-        isOpen={groupEditId === 'new'}
-        onClose={() => setGroupEditId(null)}
-        title="Thêm Lĩnh vực KPI"
-      >
-        <GroupForm item={null} onSubmit={handleGroupSave} onCancel={() => setGroupEditId(null)} />
       </Modal>
 
       {/* Clone modal */}
@@ -509,29 +425,11 @@ function Actions({ id, onEdit, onDelete }: { id: string; onEdit: () => void; onD
   );
 }
 
-function GroupForm({ item, onSubmit, onCancel }: { item: KPIGroup | null; onSubmit: (data: any) => void; onCancel: () => void }) {
-  const [name, setName] = useState(item?.name || '');
-  const [code, setCode] = useState(item?.code || '');
-  const [defaultWeight, setDefaultWeight] = useState(item?.defaultWeight ?? 10);
-  const [targetLevel, setTargetLevel] = useState(item?.targetLevel || 'school');
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, defaultWeight, targetLevel }); };
-  return (
-    <form onSubmit={handle} className="space-y-4">
-      <div><label className="block text-sm font-medium mb-1">Tên Lĩnh vực *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Mã *</label><input type="text" value={code} onChange={e => setCode(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Trọng số mặc định *</label><input type="number" value={defaultWeight} onChange={e => setDefaultWeight(Number(e.target.value))} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      </div>
-      <div><label className="block text-sm font-medium mb-1">Cấp</label><select value={targetLevel} onChange={e => setTargetLevel(e.target.value as 'school' | 'unit' | 'individual')} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"><option value="school">Trường</option><option value="unit">Đơn vị</option><option value="individual">Cá nhân</option></select></div>
-      <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
-    </form>
-  );
-}
 
-function IndicatorForm({ item, groups, onSubmit, onCancel }: { item: KPIIndicator | null; groups: KPIGroup[]; onSubmit: (data: any) => void; onCancel: () => void }) {
+function IndicatorForm({ item, onSubmit, onCancel }: { item: KPIIndicator | null; onSubmit: (data: any) => void; onCancel: () => void }) {
   const [name, setName] = useState(item?.name || '');
   const [code, setCode] = useState(item?.code || '');
-  const [categoryId, setCategoryId] = useState(item?.categoryId || groups[0]?.id || '');
+  const [categoryId, setCategoryId] = useState(item?.categoryId || '');
   const [formula, setFormula] = useState(item?.formula || '');
   const [unit, setUnit] = useState(item?.unit || '%');
   const [direction, setDirection] = useState(item?.direction || 'higher_better');
@@ -545,7 +443,7 @@ function IndicatorForm({ item, groups, onSubmit, onCancel }: { item: KPIIndicato
       <div><label className="block text-sm font-medium mb-1">Tên chỉ tiêu *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
       <div className="grid grid-cols-2 gap-4">
         <div><label className="block text-sm font-medium mb-1">Mã</label><input type="text" value={code} onChange={e => setCode(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Lĩnh vực *</label><select value={categoryId} onChange={e => setCategoryId(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">{groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-1">Mã nhóm</label><input type="text" value={categoryId} onChange={e => setCategoryId(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
       </div>
       <div><label className="block text-sm font-medium mb-1">Công thức</label><input type="text" value={formula} onChange={e => setFormula(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
       <div className="grid grid-cols-3 gap-4">
@@ -563,7 +461,7 @@ function IndicatorForm({ item, groups, onSubmit, onCancel }: { item: KPIIndicato
   );
 }
 
-function UnitForm({ item, groups, indicators, onSubmit, onCancel }: { item: UnitKPIEntry | null; groups: KPIGroup[]; indicators: KPIIndicator[]; onSubmit: (data: any) => void; onCancel: () => void }) {
+function UnitForm({ item, indicators, onSubmit, onCancel }: { item: UnitKPIEntry | null; indicators: KPIIndicator[]; onSubmit: (data: any) => void; onCancel: () => void }) {
   const [name, setName] = useState(item?.name || '');
   const [code, setCode] = useState(item?.code || '');
   const [type, setType] = useState(item?.type || 'department');
