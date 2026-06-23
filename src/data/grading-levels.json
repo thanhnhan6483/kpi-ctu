@@ -1,0 +1,7 @@
+[
+  { "id": "gl001", "name": "Xuất sắc", "code": "xuat_sac", "minScore": 90, "maxScore": 100, "color": "#4caf50", "description": "Hoàn thành vượt chỉ tiêu, có sáng kiến mới", "status": "active" },
+  { "id": "gl002", "name": "Tốt", "code": "tot", "minScore": 80, "maxScore": 89, "color": "#2196f3", "description": "Hoàn thành tốt các chỉ tiêu được giao", "status": "active" },
+  { "id": "gl003", "name": "Đạt", "code": "dat", "minScore": 65, "maxScore": 79, "color": "#ff9800", "description": "Hoàn thành cơ bản các chỉ tiêu", "status": "active" },
+  { "id": "gl004", "name": "Cần cải thiện", "code": "can_cai_thien", "minScore": 50, "maxScore": 64, "color": "#ffc107", "description": "Chưa đạt yêu cầu, cần cải thiện", "status": "active" },
+  { "id": "gl005", "name": "Không đạt", "code": "khong_dat", "minScore": 0, "maxScore": 49, "color": "#f44336", "description": "Không đạt yêu cầu tối thiểu", "status": "active" }
+]

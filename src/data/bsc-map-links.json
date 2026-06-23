@@ -1,0 +1,239 @@
+[
+  {
+    "id": "bscl001",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "linkType": "perspective_to_objective",
+    "weight": 30,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl002",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so006",
+    "linkType": "perspective_to_objective",
+    "weight": 15,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl003",
+    "perspectiveId": "bsc002",
+    "objectiveId": "so004",
+    "linkType": "perspective_to_objective",
+    "weight": 20,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl004",
+    "perspectiveId": "bsc003",
+    "objectiveId": "so005",
+    "linkType": "perspective_to_objective",
+    "weight": 15,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl005",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "linkType": "perspective_to_objective",
+    "weight": 25,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl006",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so003",
+    "linkType": "perspective_to_objective",
+    "weight": 15,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl007",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-02",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl008",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-05",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl009",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-06",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl010",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-07",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl011",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-08",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl012",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-09",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl013",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-10",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl014",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-11",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl016",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so006",
+    "indicatorId": "CTU-KPI-19",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl017",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so006",
+    "indicatorId": "CTU-KPI-20",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl020",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "indicatorId": "CTU-KPI-13",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl021",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "indicatorId": "CTU-KPI-14",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl022",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "indicatorId": "CTU-KPI-15",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl023",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "indicatorId": "CTU-KPI-17",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl024",
+    "perspectiveId": "bsc004",
+    "objectiveId": "so002",
+    "indicatorId": "CTU-KPI-18",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl027",
+    "perspectiveId": "bsc002",
+    "objectiveId": "so004",
+    "indicatorId": "CTU-KPI-03",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl028",
+    "perspectiveId": "bsc002",
+    "objectiveId": "so004",
+    "indicatorId": "CTU-KPI-04",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bscl029",
+    "perspectiveId": "bsc002",
+    "objectiveId": "so004",
+    "indicatorId": "CTU-KPI-12",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "id": "bsclmqq9p1beog912kjtc1a",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so006",
+    "indicatorId": "CTU-KPI-16",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:32:36.074Z"
+  },
+  {
+    "id": "bsclmqq9p1d23n6i1odd6dw",
+    "perspectiveId": "bsc003",
+    "objectiveId": "so005",
+    "indicatorId": "CTU-KPI-16",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:32:36.135Z"
+  },
+  {
+    "id": "bsclmqq9tkzkycb6fb94sdp",
+    "perspectiveId": "bsc001",
+    "objectiveId": "so001",
+    "indicatorId": "CTU-KPI-01",
+    "linkType": "objective_to_indicator",
+    "weight": 1,
+    "createdAt": "2026-06-23T06:36:08.192Z"
+  }
+]

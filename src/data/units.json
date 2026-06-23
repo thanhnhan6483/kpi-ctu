@@ -1,0 +1,479 @@
+[
+  {
+    "id": "u001",
+    "parentId": null,
+    "name": "Đại học Cần Thơ",
+    "code": "CTU",
+    "type": "university",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u101",
+    "parentId": "u001",
+    "name": "Trường Bách khoa",
+    "code": "BK",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u102",
+    "parentId": "u001",
+    "name": "Trường Công nghệ Thông tin & Truyền thông",
+    "code": "CNTT",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u103",
+    "parentId": "u001",
+    "name": "Trường Kinh tế",
+    "code": "KTC",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u104",
+    "parentId": "u001",
+    "name": "Trường Nông nghiệp",
+    "code": "NN",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u105",
+    "parentId": "u001",
+    "name": "Trường Sư phạm",
+    "code": "SP",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u106",
+    "parentId": "u001",
+    "name": "Trường Thủy sản",
+    "code": "TS",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u107",
+    "parentId": "u001",
+    "name": "Trường Khoa học Tự nhiên",
+    "code": "KHTN",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u108",
+    "parentId": "u001",
+    "name": "Khoa Khoa học Chính trị, Xã hội và Nhân văn",
+    "code": "KHCT",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u109",
+    "parentId": "u001",
+    "name": "Khoa Luật",
+    "code": "LUAT",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u110",
+    "parentId": "u001",
+    "name": "Khoa Môi trường & Tài nguyên Thiên nhiên",
+    "code": "MT",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u111",
+    "parentId": "u001",
+    "name": "Khoa Ngoại ngữ",
+    "code": "NNN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u112",
+    "parentId": "u001",
+    "name": "Cơ sở Hậu Giang",
+    "code": "CSHG",
+    "type": "campus",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u113",
+    "parentId": "u001",
+    "name": "Cơ sở Sóc Trăng",
+    "code": "CSST",
+    "type": "campus",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u114",
+    "parentId": "u001",
+    "name": "Khoa Sau đại học",
+    "code": "SDH",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u115",
+    "parentId": "u001",
+    "name": "Viện Mekong",
+    "code": "VMEK",
+    "type": "institute",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u116",
+    "parentId": "u001",
+    "name": "Viện Công nghệ Sinh học và Thực phẩm",
+    "code": "VCLST",
+    "type": "institute",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u117",
+    "parentId": "u001",
+    "name": "Trường THPT Thực hành Sư phạm",
+    "code": "THPTSP",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u201",
+    "parentId": "u001",
+    "name": "Trung tâm Đào tạo",
+    "code": "TTDT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u202",
+    "parentId": "u001",
+    "name": "Trung tâm Bồi dưỡng Nghiệp vụ Sư phạm",
+    "code": "TTBDSP",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u203",
+    "parentId": "u001",
+    "name": "Trung tâm Chuyển đổi số và Truyền thông",
+    "code": "TTCDS",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u204",
+    "parentId": "u001",
+    "name": "Trung tâm Công nghệ Phần mềm",
+    "code": "TTPT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u205",
+    "parentId": "u001",
+    "name": "Trung tâm Đánh giá năng lực Ngoại ngữ",
+    "code": "TTDGNL",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u206",
+    "parentId": "u001",
+    "name": "Trung tâm Đào tạo, NC và Tư vấn kinh tế",
+    "code": "TTDTKT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u207",
+    "parentId": "u001",
+    "name": "Trung tâm Điện - Điện tử",
+    "code": "TTDD",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u208",
+    "parentId": "u001",
+    "name": "Trung tâm Điện tử Tin học",
+    "code": "TTDTI",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u209",
+    "parentId": "u001",
+    "name": "Trung tâm Giáo dục Quốc phòng & An ninh",
+    "code": "TTGQPA",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u210",
+    "parentId": "u001",
+    "name": "Trung tâm Kiểm định và Tư vấn Xây dựng",
+    "code": "TTKDXD",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u211",
+    "parentId": "u001",
+    "name": "Trung tâm Đào tạo liên tục",
+    "code": "TTDTLC",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u212",
+    "parentId": "u001",
+    "name": "Trung tâm Nghiên cứu và Ứng dụng công nghệ",
+    "code": "TTNCUD",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u213",
+    "parentId": "u001",
+    "name": "Trung tâm Ngoại ngữ",
+    "code": "TTNN",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u214",
+    "parentId": "u001",
+    "name": "Trung tâm Bồi dưỡng kiến thức pháp luật và bổ trợ tư pháp",
+    "code": "TTBDPL",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u215",
+    "parentId": "u001",
+    "name": "Thư viện Đại học Cần Thơ",
+    "code": "TV",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u216",
+    "parentId": "u001",
+    "name": "Công ty TNHH MTV KHCN",
+    "code": "CTKHCN",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u301",
+    "parentId": "u001",
+    "name": "Phòng Công tác Sinh viên",
+    "code": "PCTS",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u302",
+    "parentId": "u001",
+    "name": "Phòng Đào tạo",
+    "code": "PDT",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u303",
+    "parentId": "u001",
+    "name": "Phòng Đối ngoại và Đào tạo quốc tế",
+    "code": "PDN",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u304",
+    "parentId": "u001",
+    "name": "Phòng Kế hoạch và Tài chính",
+    "code": "PKTC",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u305",
+    "parentId": "u001",
+    "name": "Phòng Khoa học, Công nghệ và Đổi mới sáng tạo",
+    "code": "PKHCN",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u306",
+    "parentId": "u001",
+    "name": "Phòng Phát triển cơ sở vật chất và dự án",
+    "code": "PPCV",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u307",
+    "parentId": "u001",
+    "name": "Phòng Quản lý chất lượng",
+    "code": "PQLCL",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u308",
+    "parentId": "u001",
+    "name": "Phòng Pháp chế",
+    "code": "PPC",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u309",
+    "parentId": "u001",
+    "name": "Phòng Tổ chức và Phát triển nhân sự",
+    "code": "PTCNS",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u310",
+    "parentId": "u001",
+    "name": "Ban Quản lý dự án ODA",
+    "code": "QLDAODA",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u311",
+    "parentId": "u001",
+    "name": "Nhà Xuất bản Đại học Cần Thơ",
+    "code": "NXB",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u312",
+    "parentId": "u001",
+    "name": "Văn phòng Đại học Cần Thơ",
+    "code": "VP",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u014",
+    "parentId": "u102",
+    "name": "Bộ môn Khoa học máy tính",
+    "code": "BMKHMT",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u313",
+    "parentId": "u001",
+    "name": "Khoa Công nghệ Thông tin",
+    "code": "KCN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u314",
+    "parentId": "u313",
+    "name": "Bộ môn Công nghệ Thông tin",
+    "code": "BMCN",
+    "type": "department",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u315",
+    "parentId": "u001",
+    "name": "Ký túc xá",
+    "code": "KTX",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u316",
+    "parentId": "u001",
+    "name": "Đơn vị Nghiên cứu",
+    "code": "DVNC",
+    "type": "research",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u317",
+    "parentId": "u001",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
+    "code": "TTTT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u318",
+    "parentId": "u001",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
+    "code": "TTDV",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  }
+]

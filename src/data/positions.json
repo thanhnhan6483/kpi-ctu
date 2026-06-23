@@ -1,0 +1,12 @@
+[
+  { "id": "pos001", "name": "Giáo sư", "code": "GS", "level": "Cao nhất", "category": "Giảng viên", "status": "active" },
+  { "id": "pos002", "name": "Phó Giáo sư", "code": "PGS", "level": "Cao", "category": "Giảng viên", "status": "active" },
+  { "id": "pos003", "name": "Giảng viên chính", "code": "GVC", "level": "Trung bình", "category": "Giảng viên", "status": "active" },
+  { "id": "pos004", "name": "Giảng viên", "code": "GV", "level": "Cơ bản", "category": "Giảng viên", "status": "active" },
+  { "id": "pos005", "name": "Trưởng khoa", "code": "TK", "level": "Quản lý", "category": "Quản lý đơn vị", "status": "active" },
+  { "id": "pos006", "name": "Phó Trưởng khoa", "code": "PTK", "level": "Quản lý", "category": "Quản lý đơn vị", "status": "active" },
+  { "id": "pos007", "name": "Trưởng bộ môn", "code": "TBM", "level": "Quản lý", "category": "Quản lý bộ môn", "status": "active" },
+  { "id": "pos008", "name": "Viên chức", "code": "VC", "level": "Cơ bản", "category": "Viên chức", "status": "active" },
+  { "id": "pos009", "name": "Chuyên viên", "code": "CV", "level": "Cơ bản", "category": "Viên chức", "status": "active" },
+  { "id": "pos010", "name": "Nghiên cứu viên", "code": "NCV", "level": "Chuyên môn", "category": "Nghiên cứu", "status": "active" }
+]

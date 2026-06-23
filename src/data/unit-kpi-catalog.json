@@ -1,0 +1,1146 @@
+[
+  {
+    "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-01",
+    "id": "BM-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ đề cương học phần được cập nhật",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-02",
+    "id": "BM-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần có học liệu số",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-03",
+    "id": "BM-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Điểm hài lòng SV về giảng dạy",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-10",
+    "code": "BM-04",
+    "id": "BM-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số công bố bình quân/GV bộ môn",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-13",
+    "code": "BM-05",
+    "id": "BM-05",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số đề tài/sáng kiến chuyên môn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-06",
+    "id": "BM-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-07",
+    "id": "BM-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần có ngân hàng câu hỏi/rubric",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-08",
+    "id": "BM-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "BM-09",
+    "id": "BM-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-22",
+    "code": "CNTT-01",
+    "id": "CNTT-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hệ thống trọng yếu hoạt động ổn định",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-02",
+    "id": "CNTT-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-03",
+    "id": "CNTT-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ tài khoản người dùng đồng bộ SSO",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-04",
+    "id": "CNTT-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu tích hợp vào kho dữ liệu",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-05",
+    "id": "CNTT-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sao lưu dữ liệu thành công",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-06",
+    "id": "CNTT-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ lỗ hổng bảo mật nghiêm trọng được xử lý",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-07",
+    "id": "CNTT-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-08",
+    "id": "CNTT-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hệ thống có tài liệu kỹ thuật cập nhật",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-09",
+    "id": "CNTT-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số sáng kiến chuyển đổi số được triển khai",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "CNTT-10",
+    "id": "CNTT-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số CTĐT hoàn thành tự đánh giá",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-07",
+    "code": "DBCL-01",
+    "id": "DBCL-01",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Tỉ lệ CTĐT có kế hoạch cải tiến",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-02",
+    "id": "DBCL-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ minh chứng kiểm định được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-03",
+    "id": "DBCL-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ khảo sát người học đúng kế hoạch",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-04",
+    "id": "DBCL-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ phản hồi khảo sát hợp lệ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-05",
+    "id": "DBCL-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người học với giảng viên",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-10",
+    "code": "DBCL-06",
+    "id": "DBCL-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người tốt nghiệp",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-11",
+    "code": "DBCL-07",
+    "id": "DBCL-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ khuyến nghị cải tiến được theo dõi",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-08",
+    "id": "DBCL-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ báo cáo chất lượng nộp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-09",
+    "id": "DBCL-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số đợt tập huấn đảm bảo chất lượng",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DBCL-10",
+    "id": "DBCL-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-05",
+    "code": "DT-01",
+    "id": "DT-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ CTĐT cập nhật đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-02",
+    "id": "DT-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-03",
+    "id": "DT-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-02",
+    "code": "DT-04",
+    "id": "DT-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-06",
+    "code": "DT-05",
+    "id": "DT-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ xử lý học vụ đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-06",
+    "id": "DT-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-07",
+    "id": "DT-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người học về dịch vụ đào tạo",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-10",
+    "code": "DT-08",
+    "id": "DT-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-09",
+    "id": "DT-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DT-10",
+    "id": "DT-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ yêu cầu dịch vụ xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-01",
+    "id": "DV-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người dùng dịch vụ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-02",
+    "id": "DV-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ quy trình dịch vụ được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-03",
+    "id": "DV-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ dịch vụ có minh chứng đầy đủ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-04",
+    "id": "DV-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sự cố dịch vụ tái diễn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-05",
+    "id": "DV-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ chi phí dịch vụ trong định mức",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-06",
+    "id": "DV-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số sáng kiến cải tiến dịch vụ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-07",
+    "id": "DV-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ báo cáo vận hành nộp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-08",
+    "id": "DV-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "DV-09",
+    "id": "DV-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số SV quốc tế học tại Trường",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-19",
+    "code": "HTQT-01",
+    "id": "HTQT-01",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số SV trao đổi tín chỉ",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-20",
+    "code": "HTQT-02",
+    "id": "HTQT-02",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số MOU/MOA còn hiệu lực",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-03",
+    "id": "HTQT-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ MOU có hoạt động thực chất",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-04",
+    "id": "HTQT-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số đoàn quốc tế đến làm việc",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-05",
+    "id": "HTQT-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số lượt GV tham gia trao đổi quốc tế",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-06",
+    "id": "HTQT-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ HTQT xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-07",
+    "id": "HTQT-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số chương trình hợp tác đào tạo/NCKHQT",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-08",
+    "id": "HTQT-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu HTQT được cập nhật đầy đủ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "HTQT-09",
+    "id": "HTQT-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số công bố bình quân trên giảng viên",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-13",
+    "code": "KHCN-01",
+    "id": "KHCN-01",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số công bố WoS/Scopus bình quân trên GV",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-14",
+    "code": "KHCN-02",
+    "id": "KHCN-02",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số đơn SHTT được chấp nhận",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-15",
+    "code": "KHCN-03",
+    "id": "KHCN-03",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số đề tài hợp tác địa phương/doanh nghiệp",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-16",
+    "code": "KHCN-04",
+    "id": "KHCN-04",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số đề tài NCKH sinh viên",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-17",
+    "code": "KHCN-05",
+    "id": "KHCN-05",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Tỉ lệ đề tài nghiệm thu đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHCN-06",
+    "id": "KHCN-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ trọng thu KHCN trên tổng thu",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-12",
+    "code": "KHCN-07",
+    "id": "KHCN-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ KHCN xử lý trực tuyến",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHCN-08",
+    "id": "KHCN-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số sản phẩm chuyển giao công nghệ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHCN-09",
+    "id": "KHCN-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu công bố được chuẩn hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHCN-10",
+    "id": "KHCN-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Chỉ số tăng trưởng bền vững",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-03",
+    "code": "KHTC-01",
+    "id": "KHTC-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Biên độ hoạt động trung bình 3 năm",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-04",
+    "code": "KHTC-02",
+    "id": "KHTC-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-03",
+    "id": "KHTC-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-04",
+    "id": "KHTC-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ chứng từ tài chính được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-05",
+    "id": "KHTC-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dự toán đơn vị cập nhật đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-06",
+    "id": "KHTC-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu tài chính tích hợp KPI",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-07",
+    "id": "KHTC-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-08",
+    "id": "KHTC-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sai sót chứng từ phải trả lại",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KHTC-09",
+    "id": "KHTC-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hoàn thành chỉ tiêu tuyển sinh",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-05",
+    "code": "KTV-01",
+    "id": "KTV-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-06",
+    "code": "KTV-02",
+    "id": "KTV-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần có đề cương cập nhật",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTV-03",
+    "id": "KTV-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ học phần sẵn sàng dạy trực tuyến",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-02",
+    "code": "KTV-04",
+    "id": "KTV-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số công bố bình quân/GV",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-13",
+    "code": "KTV-05",
+    "id": "KTV-05",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số công bố WoS/Scopus bình quân/GV",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-14",
+    "code": "KTV-06",
+    "id": "KTV-06",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Tỉ lệ người học hài lòng về giảng dạy",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-10",
+    "code": "KTV-07",
+    "id": "KTV-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ người tốt nghiệp có việc làm",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-08",
+    "code": "KTV-08",
+    "id": "KTV-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số đề tài NCKH sinh viên",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-17",
+    "code": "KTV-09",
+    "id": "KTV-09",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số hoạt động hợp tác DN/ĐP",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTV-10",
+    "id": "KTV-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ xử lý trên môi trường mạng",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-22",
+    "code": "KTV-11",
+    "id": "KTV-11",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ phòng/khu ở đạt chuẩn vận hành",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-01",
+    "id": "KTX-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ yêu cầu SV xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-02",
+    "id": "KTX-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng sinh viên nội trú",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-03",
+    "id": "KTX-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ nội trú xử lý trực tuyến",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-04",
+    "id": "KTX-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ phản ánh an ninh xử lý kịp thời",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-05",
+    "id": "KTX-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ bảo trì cơ sở vật chất đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-06",
+    "id": "KTX-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số hoạt động hỗ trợ đời sống SV",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-07",
+    "id": "KTX-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu cư trú cập nhật đầy đủ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-08",
+    "id": "KTX-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sự cố tái diễn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "KTX-09",
+    "id": "KTX-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-13",
+    "code": "NC-01",
+    "id": "NC-01",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số công bố WoS/Scopus",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-14",
+    "code": "NC-02",
+    "id": "NC-02",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-03",
+    "id": "NC-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-16",
+    "code": "NC-04",
+    "id": "NC-04",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Doanh thu từ hoạt động KHCN",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-05",
+    "id": "NC-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số đơn SHTT/giải pháp hữu ích",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-15",
+    "code": "NC-06",
+    "id": "NC-06",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-07",
+    "id": "NC-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu nghiên cứu được lưu trữ đúng quy định",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-08",
+    "id": "NC-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-09",
+    "id": "NC-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "NC-10",
+    "id": "NC-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ GV toàn thời gian có trình độ tiến sĩ",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-01",
+    "code": "TCCB-01",
+    "id": "TCCB-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số GV được công nhận GS/PGS",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-21",
+    "code": "TCCB-02",
+    "id": "TCCB-02",
+    "unitId": "mu008"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ nhân sự được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-03",
+    "id": "TCCB-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ quy hoạch, bổ nhiệm xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-04",
+    "id": "TCCB-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ VC hoàn thành đánh giá năm đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-05",
+    "id": "TCCB-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ GV tham gia bồi dưỡng phát triển năng lực",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-06",
+    "id": "TCCB-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ vị trí việc làm có mô tả công việc cập nhật",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-07",
+    "id": "TCCB-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu nhân sự đồng bộ với hệ thống KPI",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-08",
+    "id": "TCCB-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TCCB-09",
+    "id": "TCCB-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số chiến dịch truyền thông tuyển sinh triển khai",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-01",
+    "id": "TTTD-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ lead tuyển sinh được xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-02",
+    "id": "TTTD-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ chuyển đổi từ tư vấn sang đăng ký",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-03",
+    "id": "TTTD-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số hoạt động quan hệ doanh nghiệp",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-04",
+    "id": "TTTD-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số cơ hội thực tập/việc làm kết nối",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-05",
+    "id": "TTTD-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ người tốt nghiệp có việc làm sau 12 tháng",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-08",
+    "code": "TTTD-06",
+    "id": "TTTD-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ nội dung truyền thông phát hành đúng kế hoạch",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-07",
+    "id": "TTTD-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức độ tương tác truyền thông số",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-08",
+    "id": "TTTD-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng doanh nghiệp đối tác",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-09",
+    "id": "TTTD-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ dữ liệu doanh nghiệp/cựu SV cập nhật",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TTTD-10",
+    "id": "TTTD-10",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ tài nguyên học liệu số tăng mới",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-01",
+    "id": "TV-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số lượt truy cập thư viện số",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-02",
+    "id": "TV-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ yêu cầu mượn/trả xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-03",
+    "id": "TV-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng người dùng thư viện",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-04",
+    "id": "TV-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ giáo trình/tài liệu học phần được hỗ trợ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-05",
+    "id": "TV-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Số buổi hướng dẫn kỹ năng thông tin",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-06",
+    "id": "TV-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ tài liệu được biên mục đúng chuẩn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-07",
+    "id": "TV-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ quy trình thư viện được số hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-08",
+    "id": "TV-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ sự cố dịch vụ xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "TV-09",
+    "id": "TV-09",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+    "status": "active",
+    "linkedCatalogId": "CTU-KPI-23",
+    "code": "VPT-01",
+    "id": "VPT-01",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ văn bản xử lý đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-02",
+    "id": "VPT-02",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ lịch họp/giao ban cập nhật đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-03",
+    "id": "VPT-03",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-04",
+    "id": "VPT-04",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-05",
+    "id": "VPT-05",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ quy trình hành chính chuẩn hóa",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-06",
+    "id": "VPT-06",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Mức hài lòng về công tác hành chính",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-07",
+    "id": "VPT-07",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ nhiệm vụ BGH giao được theo dõi",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-08",
+    "id": "VPT-08",
+    "unitId": "mu001"
+  },
+  {
+    "name": "Tỉ lệ nhiệm vụ quá hạn",
+    "status": "active",
+    "linkedCatalogId": null,
+    "code": "VPT-09",
+    "id": "VPT-09",
+    "unitId": "mu001"
+  }
+]

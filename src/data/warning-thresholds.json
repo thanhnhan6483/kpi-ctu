@@ -1,0 +1,7 @@
+[
+  { "id": "wt001", "name": "Sắp đến hạn 7 ngày", "code": "DEADLINE_7D", "description": "Cảnh báo khi còn 7 ngày đến hạn hoàn thành", "thresholdType": "deadline_days", "operator": "lte", "value": 7, "color": "#ff9800", "icon": "clock", "isSystem": true, "status": "active" },
+  { "id": "wt002", "name": "Sắp đến hạn 1 ngày", "code": "DEADLINE_1D", "description": "Cảnh báo khi còn 1 ngày đến hạn hoàn thành", "thresholdType": "deadline_days", "operator": "lte", "value": 1, "color": "#f44336", "icon": "alert-triangle", "isSystem": true, "status": "active" },
+  { "id": "wt003", "name": "Tỷ lệ hoàn thành thấp", "code": "COMPLETION_LOW", "description": "Cảnh báo khi tỷ lệ hoàn thành dưới 50%", "thresholdType": "completion_percent", "operator": "lt", "value": 50, "color": "#f44336", "icon": "trending-down", "isSystem": true, "status": "active" },
+  { "id": "wt004", "name": "Thiếu minh chứng", "code": "EVIDENCE_MISSING", "description": "Cảnh báo khi chưa có minh chứng cho chỉ tiêu", "thresholdType": "evidence_count", "operator": "eq", "value": 0, "color": "#ff9800", "icon": "file-minus", "isSystem": true, "status": "active" },
+  { "id": "wt005", "name": "Chênh lệch điểm lớn", "code": "SCORE_GAP_HIGH", "description": "Cảnh báo khi chênh lệch điểm tự đánh giá và quản lý > 20", "thresholdType": "score_gap", "operator": "gt", "value": 20, "color": "#f44336", "icon": "users", "isSystem": true, "status": "active" }
+]

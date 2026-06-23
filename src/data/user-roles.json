@@ -1,0 +1,20 @@
+[
+  {
+    "userId": "u001",
+    "roleId": "r001"
+  },
+  {
+    "userId": "u002",
+    "roleId": "r005",
+    "scopeUnitId": "u003"
+  },
+  {
+    "userId": "u003",
+    "roleId": "r004",
+    "scopeUnitId": "u002"
+  },
+  {
+    "userId": "u004",
+    "roleId": "r004"
+  }
+]

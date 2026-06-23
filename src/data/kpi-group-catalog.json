@@ -1,0 +1,58 @@
+[
+  {
+    "id": "grp_dao_tao",
+    "code": "DT",
+    "name": "Đào tạo và đảm bảo chất lượng giáo dục",
+    "defaultWeight": 30,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_khcn",
+    "code": "KHCN",
+    "name": "KHCN, đổi mới sáng tạo và sở hữu trí tuệ",
+    "defaultWeight": 20,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_doi_ngu",
+    "code": "DN",
+    "name": "Đội ngũ, nhân lực và phát triển giảng viên",
+    "defaultWeight": 15,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_quoc_te",
+    "code": "QT",
+    "name": "Hợp tác quốc tế và trao đổi học thuật",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_quan_tri",
+    "code": "QT",
+    "name": "Quản trị đại học, tài chính và phát triển bền vững",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_chuyen_so",
+    "code": "CDS",
+    "name": "Chuyển đổi số và quản trị số",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_phuc_vu",
+    "code": "PV",
+    "name": "Phục vụ cộng đồng và gắn kết địa phương/doanh nghiệp",
+    "defaultWeight": 5,
+    "targetLevel": "school",
+    "status": "active"
+  }
+]

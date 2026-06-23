@@ -1,0 +1,135 @@
+[
+  {
+    "id": "EV001",
+    "planItemId": "pi_DT-01_c001",
+    "evidenceType": "file",
+    "fileName": "Danh_sach_tuyen_sinh_2026.xlsx",
+    "status": "valid",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "Trần Thị B",
+    "reviewedAt": "2026-06-10T10:00:00Z",
+    "submittedAt": "2026-06-10T08:00:00Z",
+    "submittedBy": "Trần Thị B"
+  },
+  {
+    "id": "EV002",
+    "planItemId": "pi_KHCN-01_c001",
+    "evidenceType": "file",
+    "fileName": "Cong_bo_khoa_hoc_Q1_2026.xlsx",
+    "status": "needs_supplement",
+    "reviewerNote": "Cần bổ sung DOI cho 2 bài báo",
+    "submittedAt": "2026-06-15T08:00:00Z",
+    "submittedBy": "Chuyên viên KHCN"
+  },
+  {
+    "id": "EV003",
+    "planItemId": "pi_CNTT-01_c001",
+    "evidenceType": "system_log",
+    "fileName": "Log_he_thong_Q1_2026.json",
+    "status": "valid",
+    "reviewerNote": "Log hệ thống hợp lệ",
+    "reviewedBy": "Đặng Phúc H",
+    "reviewedAt": "2026-06-12T10:00:00Z",
+    "submittedAt": "2026-06-12T08:00:00Z",
+    "submittedBy": "Đặng Phúc H"
+  },
+  {
+    "id": "EV004",
+    "planItemId": "pi_DT-05_c001",
+    "evidenceType": "url",
+    "fileName": "https://daotao.ctu.edu.vn/bao-cao-tot-nghiep",
+    "status": "pending",
+    "submittedAt": "2026-06-15T14:00:00Z",
+    "submittedBy": "Trần Thị B"
+  },
+  {
+    "id": "EVmqk9uwdr",
+    "planItemId": "pi_DT-03_c001",
+    "evidenceType": "file",
+    "fileName": "Bao_cao_tuyen_sinh.xlsx",
+    "status": "needs_supplement",
+    "submittedAt": "2025-04-23T14:33:30Z",
+    "submittedBy": "Đặng Phúc H",
+    "reviewerNote": "Cần bổ sung thêm thông tin",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2025-07-14T16:52:41Z"
+  },
+  {
+    "id": "EVmqk9y37l",
+    "planItemId": "pi_DT-02_c001",
+    "evidenceType": "file",
+    "fileName": "Bao_cao_NCKH.docx",
+    "status": "valid",
+    "submittedAt": "2025-03-24T11:13:53Z",
+    "submittedBy": "Chuyên viên KHCN",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2025-04-15T8:35:30Z"
+  },
+  {
+    "id": "EVmqk9y37m",
+    "planItemId": "pi_KTX-05_c002",
+    "evidenceType": "file",
+    "fileName": "Khao_sat_HL.docx",
+    "status": "pending",
+    "submittedAt": "2024-06-17T11:42:41Z",
+    "submittedBy": "Đặng Phúc H"
+  },
+  {
+    "id": "EVmqk9yg9h",
+    "planItemId": "pi_DT-05_c001",
+    "evidenceType": "url",
+    "fileName": "Hop_dong_NCKH.pdf",
+    "status": "pending",
+    "submittedAt": "2025-05-02T15:52:32Z",
+    "submittedBy": "Vũ Thanh G"
+  },
+  {
+    "id": "EVmqk9yg9i",
+    "planItemId": "pi_VPT-03_c001",
+    "evidenceType": "file",
+    "fileName": "Phan_cong_GD.docx",
+    "status": "valid",
+    "submittedAt": "2025-05-05T10:8:22Z",
+    "submittedBy": "Phạm Minh E",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2025-05-05T12:25:52Z"
+  },
+  {
+    "id": "EVmqkowakd",
+    "planItemId": "pi_DT-04_c001",
+    "evidenceType": "system_log",
+    "fileName": "Bao_cao_NCKH.docx",
+    "status": "valid",
+    "submittedAt": "2025-07-21T8:29:18Z",
+    "submittedBy": "Đặng Phúc H",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2025-08-15T15:13:39Z"
+  },
+  {
+    "id": "EVmqkowake",
+    "planItemId": "pi_DT-02_c002",
+    "evidenceType": "system_log",
+    "fileName": "Lich_trinh_DT.xlsx",
+    "status": "valid",
+    "submittedAt": "2024-03-05T17:24:40Z",
+    "submittedBy": "Hoàng Thị F",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2024-07-11T8:8:11Z"
+  },
+  {
+    "id": "EVmqkowakf",
+    "planItemId": "pi_TCCB-02_c004",
+    "evidenceType": "system_log",
+    "fileName": "Bien_ban_hop.docx",
+    "status": "valid",
+    "submittedAt": "2026-06-22T15:23:55Z",
+    "submittedBy": "Phạm Minh E",
+    "reviewerNote": "Dữ liệu chính xác",
+    "reviewedBy": "PGS.TS Nguyễn Mạnh Hùng",
+    "reviewedAt": "2026-08-05T13:29:47Z"
+  }
+]

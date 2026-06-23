@@ -1,0 +1,10 @@
+[
+  { "id": "ec001", "name": "Giảng viên mới tuyển dụng (dưới 12 tháng)", "code": "new_hire", "coefficient": 0.8, "description": "Giảm 20% chỉ tiêu cho năm đầu tiên", "applicablePositions": ["GV", "NCV"], "status": "active" },
+  { "id": "ec002", "name": "Kiêm nhiệm quản lý", "code": "concurrent_mgmt", "coefficient": 0.7, "description": "Giảm 30% chỉ tiêu khi kiêm nhiệm chức danh quản lý", "applicablePositions": ["GVQL", "BM"], "status": "active" },
+  { "id": "ec003", "name": "Nghỉ phép dài hạn (từ 1 tháng)", "code": "long_leave", "coefficient": 0.5, "description": "Giảm 50% chỉ tiêu khi nghỉ phép từ 1 tháng trở lên", "applicablePositions": ["GV", "GVQL", "BM", "NCV", "CV", "CVDT"], "status": "active" },
+  { "id": "ec004", "name": "Chuyển đơn vị giữa chừng", "code": "mid_transfer", "coefficient": 0.6, "description": "Giảm 40% chỉ tiêu khi chuyển đơn vị giữa kỳ", "applicablePositions": ["GV", "GVQL", "BM", "NCV", "CV", "CVDT"], "status": "active" },
+  { "id": "ec005", "name": "Nghiên cứu viên tập trung NCKH", "code": "research_focused", "coefficient": 0.9, "description": "Giảm 10% chỉ tiêu giảng dạy cho nghiên cứu viên", "applicablePositions": ["NCV"], "status": "active" },
+  { "id": "ec006", "name": "Thâm niên trên 20 năm", "code": "senior_20", "coefficient": 0.9, "description": "Giảm 10% chỉ tiêu cho giảng viên thâm niên cao", "applicablePositions": ["GV", "GVQL"], "status": "active" },
+  { "id": "ec007", "name": "Đang nghiên cứu sinh", "code": "phd_student", "coefficient": 0.75, "description": "Giảm 25% chỉ tiêu cho giảng viên đang học tiến sĩ", "applicablePositions": ["GV"], "status": "active" },
+  { "id": "ec008", "name": "Không áp dụng miễn giảm", "code": "none", "coefficient": 1.0, "description": "Áp dụng đầy đủ chỉ tiêu", "applicablePositions": ["GV", "GVQL", "BM", "NCV", "CV", "CVDT", "LD", "TV", "KTX"], "status": "active" }
+]

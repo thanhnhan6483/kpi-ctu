@@ -1,0 +1,4794 @@
+[
+  {
+    "id": "pi_DT-01_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "CTU-KPI-05",
+    "targetValue": 90,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-02_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-03_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-04_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "CTU-KPI-02",
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-05_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "CTU-KPI-06",
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-06_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-07_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-08_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "CTU-KPI-10",
+    "targetValue": 4,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-09_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-10_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-01_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-13",
+    "targetValue": 1.6,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-02_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-14",
+    "targetValue": 0.6,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-03_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-15",
+    "targetValue": 14,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-04_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-16",
+    "targetValue": 20,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-05_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-17",
+    "targetValue": 400,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-06_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-07_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": "CTU-KPI-12",
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-08_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-09_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHCN-10_c001",
+    "planId": "plan_unit_khcn_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-01_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": "CTU-KPI-01",
+    "targetValue": 59,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-02_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": "CTU-KPI-21",
+    "targetValue": 15,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-03_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-04_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-05_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-06_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-07_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-08_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 98,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TCCB-09_c001",
+    "planId": "plan_unit_tccb_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-01_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": "CTU-KPI-19",
+    "targetValue": 700,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-02_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": "CTU-KPI-20",
+    "targetValue": 100,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-03_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 50,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-04_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 60,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-05_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 20,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-06_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 30,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-07_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-08_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 15,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_HTQT-09_c001",
+    "planId": "plan_unit_htqt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-01_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": "CTU-KPI-03",
+    "targetValue": 10,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-02_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": "CTU-KPI-04",
+    "targetValue": 10,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-03_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-04_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-05_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-06_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-07_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-08_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KHTC-09_c001",
+    "planId": "plan_unit_khtc_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-01_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": "CTU-KPI-23",
+    "targetValue": 100,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-02_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-03_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-04_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-05_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-06_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-07_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-08_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_VPT-09_c001",
+    "planId": "plan_unit_vpt_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-01_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": "CTU-KPI-22",
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-02_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 99,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-03_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-04_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-05_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 70,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-06_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-07_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-08_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-09_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_CNTT-10_c001",
+    "planId": "plan_unit_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-01_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": "CTU-KPI-07",
+    "targetValue": 14,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-02_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-03_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-04_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-05_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 60,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-06_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": "CTU-KPI-10",
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-07_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": "CTU-KPI-11",
+    "targetValue": 70,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-08_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-09_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DBCL-10_c001",
+    "planId": "plan_unit_dbcl_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-01_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-05",
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-02_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-06",
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-03_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-04_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-02",
+    "targetValue": 10,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-05_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-13",
+    "targetValue": 1.6,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-06_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-14",
+    "targetValue": 0.6,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-07_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-10",
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-08_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-08",
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-09_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-17",
+    "targetValue": 50,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-10_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTV-11_c001",
+    "planId": "plan_unit_khoa_cntt_c001",
+    "indicatorId": "CTU-KPI-22",
+    "targetValue": 80,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-01_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-02_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-03_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 50,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-04_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": "CTU-KPI-10",
+    "targetValue": 4,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-05_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": "CTU-KPI-13",
+    "targetValue": 1.5,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-06_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-07_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-08_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 70,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_BM-09_c001",
+    "planId": "plan_unit_bo_mon_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-01_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 20,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-02_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 10000,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-03_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-04_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-05_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-06_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-07_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-08_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TV-09_c001",
+    "planId": "plan_unit_thu_vien_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-01_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-02_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-03_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-04_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-05_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-06_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-07_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-08_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_KTX-09_c001",
+    "planId": "plan_unit_ktx_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-01_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": "CTU-KPI-13",
+    "targetValue": 1.6,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-02_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": "CTU-KPI-14",
+    "targetValue": 5,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-03_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-04_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": "CTU-KPI-16",
+    "targetValue": 5,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-05_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 500,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-06_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": "CTU-KPI-15",
+    "targetValue": 5,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-07_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-08_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-09_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_NC-10_c001",
+    "planId": "plan_unit_nghien_cuu_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-01_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-02_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-03_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 30,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-04_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 20,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-05_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-06_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": "CTU-KPI-08",
+    "targetValue": 90,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-07_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-08_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 10,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-09_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_TTTD-10_c001",
+    "planId": "plan_unit_truyen_thong_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-01_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-02_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 4,
+    "weight": 20,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-03_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 80,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-04_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-05_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 5,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-06_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-07_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 3,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-08_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DV-09_c001",
+    "planId": "plan_unit_dich_vu_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-01_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-02_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-03_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-04_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-05_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-06_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-07_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-08_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-09_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-10_c002",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-01_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 1,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-02_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-03_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-04_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-05_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-06_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-07_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzp3n8o72jyk",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-08_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-09_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": null,
+    "targetValue": 68,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHCN-10_c002",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-01_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvz8x4gydszhxk",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-02_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzi1ywfl0vma8",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-03_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-04_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-05_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-06_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-07_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-08_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TCCB-09_c002",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-01_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzueaocvplfu",
+    "targetValue": 42.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-02_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzm57zb2ibyr",
+    "targetValue": 25.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-03_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 21.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-04_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-05_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-06_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 25.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-07_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-08_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_HTQT-09_c002",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-01_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzb1i7k9wqotv",
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-02_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzm94j9spxk9d",
+    "targetValue": 10.2,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-03_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-04_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-05_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-06_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-07_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-08_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KHTC-09_c002",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-01_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfkbbqajni9q",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-02_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-03_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-04_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-05_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-06_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-07_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-08_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_VPT-09_c002",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-01_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-02_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-03_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-04_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-05_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-06_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-07_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-08_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-09_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_CNTT-10_c002",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c002",
+    "indicatorId": null,
+    "targetValue": 51,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-01_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzlbr077u984",
+    "targetValue": 3.4,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-02_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-03_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-04_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-05_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-06_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-07_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzmiiuz0cp8an",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-08_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-09_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DBCL-10_c002",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c002",
+    "indicatorId": null,
+    "targetValue": 3.4,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-01_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-02_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-03_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-04_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-05_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-06_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-07_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-08_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-09_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-10_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTV-11_c002",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-01_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-02_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-03_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-04_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-05_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-06_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-07_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-08_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_BM-09_c002",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-01_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-02_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 68,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-03_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-04_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-05_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-06_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 10.2,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-07_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-08_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TV-09_c002",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-01_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-02_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-03_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-04_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-05_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-06_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-07_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-08_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_KTX-09_c002",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-01_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-02_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-03_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-04_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+    "targetValue": 2.6,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-05_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-06_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-07_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-08_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-09_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_NC-10_c002",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c002",
+    "indicatorId": null,
+    "targetValue": 80.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-01_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-02_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-03_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 51,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-04_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-05_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-06_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-07_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-08_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 59.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-09_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_TTTD-10_c002",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-01_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-02_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-03_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-04_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-05_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-06_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 80.8,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-07_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-08_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DV-09_c002",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c002",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-01-15"
+  },
+  {
+    "id": "pi_DT-01_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-02_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-03_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-04_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-05_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-06_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-07_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-08_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-09_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-10_c003",
+    "planId": "plan_unit_mqk7ulvz7pb5zsmzhwf_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-01_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 1,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-02_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-03_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-04_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-05_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-06_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-07_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzp3n8o72jyk",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-08_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-09_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": null,
+    "targetValue": 68,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHCN-10_c003",
+    "planId": "plan_unit_mqk7ulvzzf4otl5t0w_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-01_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvz8x4gydszhxk",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-02_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzi1ywfl0vma8",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-03_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-04_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-05_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-06_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-07_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-08_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TCCB-09_c003",
+    "planId": "plan_unit_mqk7ulvzpcwkwwnq5p_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-01_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzueaocvplfu",
+    "targetValue": 42.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-02_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzm57zb2ibyr",
+    "targetValue": 25.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-03_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 21.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-04_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-05_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-06_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 25.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-07_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-08_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_HTQT-09_c003",
+    "planId": "plan_unit_mqk7ulvzzqd5nlujto_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-01_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzb1i7k9wqotv",
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-02_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzm94j9spxk9d",
+    "targetValue": 10.2,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-03_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-04_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-05_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-06_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-07_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-08_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KHTC-09_c003",
+    "planId": "plan_unit_mqk7ulvzihyn7ozjoy_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-01_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfkbbqajni9q",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-02_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-03_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-04_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-05_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-06_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-07_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-08_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_VPT-09_c003",
+    "planId": "plan_unit_mqk7ulvz85h1fjjuu0d_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-01_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-02_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-03_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-04_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-05_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-06_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-07_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-08_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-09_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_CNTT-10_c003",
+    "planId": "plan_unit_mqk7ulvzr2vvbaalima_c003",
+    "indicatorId": null,
+    "targetValue": 51,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-01_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzlbr077u984",
+    "targetValue": 3.4,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-02_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-03_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-04_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-05_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-06_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-07_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzmiiuz0cp8an",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-08_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-09_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DBCL-10_c003",
+    "planId": "plan_unit_mqk7ulvzyfdz9cpz4bo_c003",
+    "indicatorId": null,
+    "targetValue": 3.4,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-01_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-02_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-03_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-04_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-05_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-06_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-07_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-08_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-09_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+    "targetValue": 12.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-10_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTV-11_c003",
+    "planId": "plan_unit_mqk7ulvzeyjzalx3nqw_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-01_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-02_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-03_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-04_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-05_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-06_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-07_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-08_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_BM-09_c003",
+    "planId": "plan_unit_mqk7ulvz1v6vbw4xai9_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-01_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-02_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 68,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-03_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-04_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-05_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-06_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 10.2,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-07_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-08_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TV-09_c003",
+    "planId": "plan_unit_mqk7ulvza5skq7pk2w7_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-01_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-02_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-03_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-04_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-05_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-06_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-07_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-08_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_KTX-09_c003",
+    "planId": "plan_unit_mqk7ulvz36b1cm886iy_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-01_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+    "targetValue": 1.7,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-02_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+    "targetValue": 8.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-03_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-04_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+    "targetValue": 2.6,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-05_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-06_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-07_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-08_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-09_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 5.1,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_NC-10_c003",
+    "planId": "plan_unit_mqk7ulvz6b86mtims6h_c003",
+    "indicatorId": null,
+    "targetValue": 80.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-01_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 78.2,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-02_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-03_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 51,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-04_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 6.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-05_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-06_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-07_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-08_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 59.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-09_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_TTTD-10_c003",
+    "planId": "plan_unit_mqk7ulvzh41xr86s9zk_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-01_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-02_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-03_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 72.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-04_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 74.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-05_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-06_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 80.8,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-07_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 4.3,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-08_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DV-09_c003",
+    "planId": "plan_unit_mqk7ulvz5tivyqve4kq_c003",
+    "indicatorId": null,
+    "targetValue": 76.5,
+    "weight": 3,
+    "dueDate": "2025-08-31"
+  },
+  {
+    "id": "pi_DT-01_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2q20vp7oabcd",
+    "targetValue": 105.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-02_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-03_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-04_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2t6sip3o8mpr",
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-05_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2hgncpz39qas",
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-06_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-07_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-08_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-09_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DT-10_c004",
+    "planId": "plan_unit_mqk7uqy2p466v1agq9n_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-01_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+    "targetValue": 2.3,
+    "weight": 2,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-02_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+    "targetValue": 11.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-03_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2hd8bc0ou6hd",
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-04_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy24j4tm1m2h7p",
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-05_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2c8heh68c9d",
+    "targetValue": 17.3,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-06_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-07_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2z75vqfy4ey",
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-08_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-09_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": null,
+    "targetValue": 92,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHCN-10_c004",
+    "planId": "plan_unit_mqk7uqy2vzpujthc2zp_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-01_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2wwzzc0zxa48",
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-02_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy27cw5o3jz45",
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-03_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-04_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-05_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-06_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-07_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-08_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TCCB-09_c004",
+    "planId": "plan_unit_mqk7uqy25iuyrst6v5e_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-01_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2ng7e74i3trh",
+    "targetValue": 57.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-02_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2roh49fgxx0h",
+    "targetValue": 34.5,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-03_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 28.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-04_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-05_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 17.3,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-06_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 34.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-07_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-08_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 9.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_HTQT-09_c004",
+    "planId": "plan_unit_mqk7uqy2plfak8fhcxk_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-01_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2nimi8kq6k47",
+    "targetValue": 9.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-02_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2t61gszuwxa",
+    "targetValue": 13.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-03_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-04_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-05_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-06_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-07_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-08_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KHTC-09_c004",
+    "planId": "plan_unit_mqk7uqy2b2dr3n9a3mk_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-01_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy22swkeklwq1p",
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-02_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-03_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-04_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-05_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-06_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-07_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-08_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_VPT-09_c004",
+    "planId": "plan_unit_mqk7uqy2wm01w8w9mr9_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-01_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2o6depwk8m7g",
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-02_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-03_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-04_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-05_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-06_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-07_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-08_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-09_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_CNTT-10_c004",
+    "planId": "plan_unit_mqk7uqy2w0qsggsv6ma_c004",
+    "indicatorId": null,
+    "targetValue": 69,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-01_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy23fjm5tld1id",
+    "targetValue": 4.6,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-02_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-03_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-04_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-05_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-06_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-07_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2xnuq2vbo1us",
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-08_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-09_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DBCL-10_c004",
+    "planId": "plan_unit_mqk7uqy2is5d8x5h1y_c004",
+    "indicatorId": null,
+    "targetValue": 4.6,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-01_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2q20vp7oabcd",
+    "targetValue": 105.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-02_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2hgncpz39qas",
+    "targetValue": 103.5,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-03_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-04_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2t6sip3o8mpr",
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-05_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+    "targetValue": 2.3,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-06_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+    "targetValue": 11.5,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-07_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-08_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2s8kc2r6lza",
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-09_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2c8heh68c9d",
+    "targetValue": 17.3,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-10_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": null,
+    "targetValue": 6.9,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTV-11_c004",
+    "planId": "plan_unit_mqk7uqy237iexndcbbt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2o6depwk8m7g",
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-01_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-02_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-03_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-04_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+    "targetValue": 97.7,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-05_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+    "targetValue": 2.3,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-06_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-07_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-08_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_BM-09_c004",
+    "planId": "plan_unit_mqk7uqy2lnwytynokt_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-01_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-02_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 92,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-03_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-04_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-05_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-06_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 13.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-07_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-08_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TV-09_c004",
+    "planId": "plan_unit_mqk7uqy3uugs9nw79i8_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-01_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-02_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-03_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-04_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-05_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-06_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-07_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 6.9,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-08_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_KTX-09_c004",
+    "planId": "plan_unit_mqk7uqy39ror9wn1gv_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-01_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+    "targetValue": 2.3,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-02_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+    "targetValue": 11.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-03_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-04_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy24j4tm1m2h7p",
+    "targetValue": 3.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-05_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-06_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2hd8bc0ou6hd",
+    "targetValue": 5.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-07_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-08_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-09_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 6.9,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_NC-10_c004",
+    "planId": "plan_unit_mqk7uqy3a73irjeylpn_c004",
+    "indicatorId": null,
+    "targetValue": 109.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-01_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 105.8,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-02_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-03_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 69,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-04_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 9.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-05_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-06_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": "CTU-KPI-mqk7uqy2s8kc2r6lza",
+    "targetValue": 101.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-07_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-08_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 80.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-09_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_TTTD-10_c004",
+    "planId": "plan_unit_mqk7uqy36vnmur57f7f_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-01_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-02_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-03_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 97.7,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-04_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 101.2,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-05_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-06_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 109.2,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-07_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 5.8,
+    "weight": 6,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-08_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 7,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "pi_DV-09_c004",
+    "planId": "plan_unit_mqk7uqy3hxlpwi5tptc_c004",
+    "indicatorId": null,
+    "targetValue": 103.5,
+    "weight": 8,
+    "dueDate": "2027-08-31"
+  },
+  {
+    "id": "PImqqe9jr1ua8gxbpmoio",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9juoxuxux5do1p",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9jz84wersdm9jkq",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9k2sklg3hg50g7",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9k5c37axtxmsq6q",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9lk11r2qc26lq85",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9n69zy5rr8neqc",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9q0ubzneaurfohf",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqe9rpz4c8vg1s5hc",
+    "planId": "PLmqqe9jpr9nb95rh0o0j",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg4a44az9cfgteb2",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg5y7mmd8fyzg0hq",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg7vmv6gysk2m12h",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeg9zugln5pgczdt",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegcr5vwzwzirj43",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegf9px9bgqb7gr9",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegh1r9rqi3looie9",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegixl4c66qtegcmi",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqegm90qligqr2cafl",
+    "planId": "PLmqqeg48my1c6pwru4en",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqtwb0i3mk0bw872",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-01",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqvm2mfv06h3hfdg",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-02",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqeqyvyahsmqmrjh8",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-03",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer1p5e350xufohsl",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-04",
+    "targetValue": 0,
+    "weight": 5,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer3e9wtfzfbhnvgs",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-05",
+    "targetValue": 0,
+    "weight": 15,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer6yhgz3n58rovhq",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-07",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqer91wcu9btwy2yq",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-08",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqerb3rn8femqxsqy9",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-09",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  },
+  {
+    "id": "PImqqerft6hgwabx82w5",
+    "planId": "PLmqqeqt60swjiqpafh6m",
+    "indicatorId": "KTV-10",
+    "targetValue": 0,
+    "weight": 10,
+    "dueDate": ""
+  }
+]

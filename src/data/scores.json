@@ -1,0 +1,5938 @@
+[
+  {
+    "id": "score_DT-01_c001",
+    "planItemId": "pi_DT-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-02_c001",
+    "planItemId": "pi_DT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-03_c001",
+    "planItemId": "pi_DT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-04_c001",
+    "planItemId": "pi_DT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-05_c001",
+    "planItemId": "pi_DT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-06_c001",
+    "planItemId": "pi_DT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-07_c001",
+    "planItemId": "pi_DT-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-08_c001",
+    "planItemId": "pi_DT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-09_c001",
+    "planItemId": "pi_DT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-10_c001",
+    "planItemId": "pi_DT-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-01_c001",
+    "planItemId": "pi_KHCN-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-02_c001",
+    "planItemId": "pi_KHCN-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-03_c001",
+    "planItemId": "pi_KHCN-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-04_c001",
+    "planItemId": "pi_KHCN-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-05_c001",
+    "planItemId": "pi_KHCN-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-06_c001",
+    "planItemId": "pi_KHCN-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-07_c001",
+    "planItemId": "pi_KHCN-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-08_c001",
+    "planItemId": "pi_KHCN-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-09_c001",
+    "planItemId": "pi_KHCN-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHCN-10_c001",
+    "planItemId": "pi_KHCN-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-01_c001",
+    "planItemId": "pi_TCCB-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-02_c001",
+    "planItemId": "pi_TCCB-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-03_c001",
+    "planItemId": "pi_TCCB-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-04_c001",
+    "planItemId": "pi_TCCB-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-05_c001",
+    "planItemId": "pi_TCCB-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-06_c001",
+    "planItemId": "pi_TCCB-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-07_c001",
+    "planItemId": "pi_TCCB-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-08_c001",
+    "planItemId": "pi_TCCB-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TCCB-09_c001",
+    "planItemId": "pi_TCCB-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-01_c001",
+    "planItemId": "pi_HTQT-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-02_c001",
+    "planItemId": "pi_HTQT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-03_c001",
+    "planItemId": "pi_HTQT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-04_c001",
+    "planItemId": "pi_HTQT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-05_c001",
+    "planItemId": "pi_HTQT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-06_c001",
+    "planItemId": "pi_HTQT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-07_c001",
+    "planItemId": "pi_HTQT-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-08_c001",
+    "planItemId": "pi_HTQT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_HTQT-09_c001",
+    "planItemId": "pi_HTQT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-01_c001",
+    "planItemId": "pi_KHTC-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-02_c001",
+    "planItemId": "pi_KHTC-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-03_c001",
+    "planItemId": "pi_KHTC-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-04_c001",
+    "planItemId": "pi_KHTC-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-05_c001",
+    "planItemId": "pi_KHTC-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-06_c001",
+    "planItemId": "pi_KHTC-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-07_c001",
+    "planItemId": "pi_KHTC-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-08_c001",
+    "planItemId": "pi_KHTC-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KHTC-09_c001",
+    "planItemId": "pi_KHTC-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-01_c001",
+    "planItemId": "pi_VPT-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-02_c001",
+    "planItemId": "pi_VPT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-03_c001",
+    "planItemId": "pi_VPT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-04_c001",
+    "planItemId": "pi_VPT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-05_c001",
+    "planItemId": "pi_VPT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-06_c001",
+    "planItemId": "pi_VPT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-07_c001",
+    "planItemId": "pi_VPT-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-08_c001",
+    "planItemId": "pi_VPT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_VPT-09_c001",
+    "planItemId": "pi_VPT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-01_c001",
+    "planItemId": "pi_CNTT-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-02_c001",
+    "planItemId": "pi_CNTT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-03_c001",
+    "planItemId": "pi_CNTT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-04_c001",
+    "planItemId": "pi_CNTT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-05_c001",
+    "planItemId": "pi_CNTT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-06_c001",
+    "planItemId": "pi_CNTT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-07_c001",
+    "planItemId": "pi_CNTT-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-08_c001",
+    "planItemId": "pi_CNTT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-09_c001",
+    "planItemId": "pi_CNTT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_CNTT-10_c001",
+    "planItemId": "pi_CNTT-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-01_c001",
+    "planItemId": "pi_DBCL-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-02_c001",
+    "planItemId": "pi_DBCL-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-03_c001",
+    "planItemId": "pi_DBCL-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-04_c001",
+    "planItemId": "pi_DBCL-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-05_c001",
+    "planItemId": "pi_DBCL-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-06_c001",
+    "planItemId": "pi_DBCL-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-07_c001",
+    "planItemId": "pi_DBCL-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-08_c001",
+    "planItemId": "pi_DBCL-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-09_c001",
+    "planItemId": "pi_DBCL-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DBCL-10_c001",
+    "planItemId": "pi_DBCL-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-01_c001",
+    "planItemId": "pi_KTV-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-02_c001",
+    "planItemId": "pi_KTV-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-03_c001",
+    "planItemId": "pi_KTV-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-04_c001",
+    "planItemId": "pi_KTV-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-05_c001",
+    "planItemId": "pi_KTV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-06_c001",
+    "planItemId": "pi_KTV-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-07_c001",
+    "planItemId": "pi_KTV-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-08_c001",
+    "planItemId": "pi_KTV-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-09_c001",
+    "planItemId": "pi_KTV-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-10_c001",
+    "planItemId": "pi_KTV-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTV-11_c001",
+    "planItemId": "pi_KTV-11_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-01_c001",
+    "planItemId": "pi_BM-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-02_c001",
+    "planItemId": "pi_BM-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-03_c001",
+    "planItemId": "pi_BM-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-04_c001",
+    "planItemId": "pi_BM-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-05_c001",
+    "planItemId": "pi_BM-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-06_c001",
+    "planItemId": "pi_BM-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-07_c001",
+    "planItemId": "pi_BM-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-08_c001",
+    "planItemId": "pi_BM-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_BM-09_c001",
+    "planItemId": "pi_BM-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-01_c001",
+    "planItemId": "pi_TV-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-02_c001",
+    "planItemId": "pi_TV-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-03_c001",
+    "planItemId": "pi_TV-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-04_c001",
+    "planItemId": "pi_TV-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-05_c001",
+    "planItemId": "pi_TV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-06_c001",
+    "planItemId": "pi_TV-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-07_c001",
+    "planItemId": "pi_TV-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-08_c001",
+    "planItemId": "pi_TV-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TV-09_c001",
+    "planItemId": "pi_TV-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-01_c001",
+    "planItemId": "pi_KTX-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-02_c001",
+    "planItemId": "pi_KTX-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-03_c001",
+    "planItemId": "pi_KTX-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-04_c001",
+    "planItemId": "pi_KTX-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-05_c001",
+    "planItemId": "pi_KTX-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-06_c001",
+    "planItemId": "pi_KTX-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-07_c001",
+    "planItemId": "pi_KTX-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-08_c001",
+    "planItemId": "pi_KTX-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_KTX-09_c001",
+    "planItemId": "pi_KTX-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-01_c001",
+    "planItemId": "pi_NC-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-02_c001",
+    "planItemId": "pi_NC-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-03_c001",
+    "planItemId": "pi_NC-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-04_c001",
+    "planItemId": "pi_NC-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-05_c001",
+    "planItemId": "pi_NC-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-06_c001",
+    "planItemId": "pi_NC-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-07_c001",
+    "planItemId": "pi_NC-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-08_c001",
+    "planItemId": "pi_NC-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-09_c001",
+    "planItemId": "pi_NC-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_NC-10_c001",
+    "planItemId": "pi_NC-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-01_c001",
+    "planItemId": "pi_TTTD-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-02_c001",
+    "planItemId": "pi_TTTD-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-03_c001",
+    "planItemId": "pi_TTTD-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-04_c001",
+    "planItemId": "pi_TTTD-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-05_c001",
+    "planItemId": "pi_TTTD-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-06_c001",
+    "planItemId": "pi_TTTD-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-07_c001",
+    "planItemId": "pi_TTTD-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-08_c001",
+    "planItemId": "pi_TTTD-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-09_c001",
+    "planItemId": "pi_TTTD-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_TTTD-10_c001",
+    "planItemId": "pi_TTTD-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-01_c001",
+    "planItemId": "pi_DV-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-02_c001",
+    "planItemId": "pi_DV-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-03_c001",
+    "planItemId": "pi_DV-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-04_c001",
+    "planItemId": "pi_DV-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-05_c001",
+    "planItemId": "pi_DV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-06_c001",
+    "planItemId": "pi_DV-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-07_c001",
+    "planItemId": "pi_DV-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-08_c001",
+    "planItemId": "pi_DV-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DV-09_c001",
+    "planItemId": "pi_DV-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-01_c001",
+    "planItemId": "pi_DT-01_c001",
+    "selfScore": 82,
+    "managerScore": null,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-02_c001",
+    "planItemId": "pi_DT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-03_c001",
+    "planItemId": "pi_DT-03_c001",
+    "selfScore": 100,
+    "managerScore": 89,
+    "councilScore": 76,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-04_c001",
+    "planItemId": "pi_DT-04_c001",
+    "selfScore": 110,
+    "managerScore": null,
+    "councilScore": 95,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-05_c001",
+    "planItemId": "pi_DT-05_c001",
+    "selfScore": 92,
+    "managerScore": null,
+    "councilScore": 68,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-06_c001",
+    "planItemId": "pi_DT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-07_c001",
+    "planItemId": "pi_DT-07_c001",
+    "selfScore": 81,
+    "managerScore": 71,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-08_c001",
+    "planItemId": "pi_DT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-09_c001",
+    "planItemId": "pi_DT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-10_c001",
+    "planItemId": "pi_DT-10_c001",
+    "selfScore": 120,
+    "managerScore": null,
+    "councilScore": 109,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-01_c001",
+    "planItemId": "pi_KHCN-01_c001",
+    "selfScore": 85,
+    "managerScore": null,
+    "councilScore": 86,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-02_c001",
+    "planItemId": "pi_KHCN-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-03_c001",
+    "planItemId": "pi_KHCN-03_c001",
+    "selfScore": 112,
+    "managerScore": 110,
+    "councilScore": 66,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-04_c001",
+    "planItemId": "pi_KHCN-04_c001",
+    "selfScore": 59,
+    "managerScore": 83,
+    "councilScore": 63,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-05_c001",
+    "planItemId": "pi_KHCN-05_c001",
+    "selfScore": 94,
+    "managerScore": 90,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-06_c001",
+    "planItemId": "pi_KHCN-06_c001",
+    "selfScore": 81,
+    "managerScore": null,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-07_c001",
+    "planItemId": "pi_KHCN-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-08_c001",
+    "planItemId": "pi_KHCN-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-09_c001",
+    "planItemId": "pi_KHCN-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-10_c001",
+    "planItemId": "pi_KHCN-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-01_c001",
+    "planItemId": "pi_TCCB-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-02_c001",
+    "planItemId": "pi_TCCB-02_c001",
+    "selfScore": 87,
+    "managerScore": 80,
+    "councilScore": 116,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-03_c001",
+    "planItemId": "pi_TCCB-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-04_c001",
+    "planItemId": "pi_TCCB-04_c001",
+    "selfScore": 120,
+    "managerScore": 105,
+    "councilScore": 91,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-05_c001",
+    "planItemId": "pi_TCCB-05_c001",
+    "selfScore": 99,
+    "managerScore": 65,
+    "councilScore": 65,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-06_c001",
+    "planItemId": "pi_TCCB-06_c001",
+    "selfScore": 88,
+    "managerScore": 78,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-07_c001",
+    "planItemId": "pi_TCCB-07_c001",
+    "selfScore": 93,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-08_c001",
+    "planItemId": "pi_TCCB-08_c001",
+    "selfScore": 92,
+    "managerScore": 86,
+    "councilScore": 91,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-09_c001",
+    "planItemId": "pi_TCCB-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-01_c001",
+    "planItemId": "pi_HTQT-01_c001",
+    "selfScore": 114,
+    "managerScore": null,
+    "councilScore": 71,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-02_c001",
+    "planItemId": "pi_HTQT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-03_c001",
+    "planItemId": "pi_HTQT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-04_c001",
+    "planItemId": "pi_HTQT-04_c001",
+    "selfScore": 110,
+    "managerScore": 100,
+    "councilScore": 113,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-05_c001",
+    "planItemId": "pi_HTQT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-06_c001",
+    "planItemId": "pi_HTQT-06_c001",
+    "selfScore": 66,
+    "managerScore": 93,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-07_c001",
+    "planItemId": "pi_HTQT-07_c001",
+    "selfScore": 88,
+    "managerScore": null,
+    "councilScore": 111,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-08_c001",
+    "planItemId": "pi_HTQT-08_c001",
+    "selfScore": 66,
+    "managerScore": 51,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-09_c001",
+    "planItemId": "pi_HTQT-09_c001",
+    "selfScore": 88,
+    "managerScore": 87,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-01_c001",
+    "planItemId": "pi_KHTC-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-02_c001",
+    "planItemId": "pi_KHTC-02_c001",
+    "selfScore": 91,
+    "managerScore": 87,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-03_c001",
+    "planItemId": "pi_KHTC-03_c001",
+    "selfScore": 54,
+    "managerScore": 105,
+    "councilScore": 65,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-04_c001",
+    "planItemId": "pi_KHTC-04_c001",
+    "selfScore": 72,
+    "managerScore": 80,
+    "councilScore": 77,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-05_c001",
+    "planItemId": "pi_KHTC-05_c001",
+    "selfScore": 65,
+    "managerScore": 112,
+    "councilScore": 113,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-06_c001",
+    "planItemId": "pi_KHTC-06_c001",
+    "selfScore": 77,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-07_c001",
+    "planItemId": "pi_KHTC-07_c001",
+    "selfScore": 104,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-08_c001",
+    "planItemId": "pi_KHTC-08_c001",
+    "selfScore": 84,
+    "managerScore": 112,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-09_c001",
+    "planItemId": "pi_KHTC-09_c001",
+    "selfScore": 119,
+    "managerScore": 62,
+    "councilScore": 84,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-01_c001",
+    "planItemId": "pi_VPT-01_c001",
+    "selfScore": 70,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-02_c001",
+    "planItemId": "pi_VPT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-03_c001",
+    "planItemId": "pi_VPT-03_c001",
+    "selfScore": 61,
+    "managerScore": 90,
+    "councilScore": 58,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-04_c001",
+    "planItemId": "pi_VPT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-05_c001",
+    "planItemId": "pi_VPT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-06_c001",
+    "planItemId": "pi_VPT-06_c001",
+    "selfScore": 109,
+    "managerScore": 75,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-07_c001",
+    "planItemId": "pi_VPT-07_c001",
+    "selfScore": 108,
+    "managerScore": 82,
+    "councilScore": 99,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-08_c001",
+    "planItemId": "pi_VPT-08_c001",
+    "selfScore": 89,
+    "managerScore": 110,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-09_c001",
+    "planItemId": "pi_VPT-09_c001",
+    "selfScore": 67,
+    "managerScore": 105,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-01_c001",
+    "planItemId": "pi_CNTT-01_c001",
+    "selfScore": 119,
+    "managerScore": null,
+    "councilScore": 66,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-02_c001",
+    "planItemId": "pi_CNTT-02_c001",
+    "selfScore": 117,
+    "managerScore": null,
+    "councilScore": 117,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-03_c001",
+    "planItemId": "pi_CNTT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-04_c001",
+    "planItemId": "pi_CNTT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-05_c001",
+    "planItemId": "pi_CNTT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-06_c001",
+    "planItemId": "pi_CNTT-06_c001",
+    "selfScore": 96,
+    "managerScore": null,
+    "councilScore": 72,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-07_c001",
+    "planItemId": "pi_CNTT-07_c001",
+    "selfScore": 72,
+    "managerScore": 87,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-08_c001",
+    "planItemId": "pi_CNTT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-09_c001",
+    "planItemId": "pi_CNTT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-10_c001",
+    "planItemId": "pi_CNTT-10_c001",
+    "selfScore": 64,
+    "managerScore": 73,
+    "councilScore": 108,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-01_c001",
+    "planItemId": "pi_DBCL-01_c001",
+    "selfScore": 72,
+    "managerScore": 107,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-02_c001",
+    "planItemId": "pi_DBCL-02_c001",
+    "selfScore": 97,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-03_c001",
+    "planItemId": "pi_DBCL-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-04_c001",
+    "planItemId": "pi_DBCL-04_c001",
+    "selfScore": 59,
+    "managerScore": 109,
+    "councilScore": 59,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-05_c001",
+    "planItemId": "pi_DBCL-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-06_c001",
+    "planItemId": "pi_DBCL-06_c001",
+    "selfScore": 101,
+    "managerScore": 97,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-07_c001",
+    "planItemId": "pi_DBCL-07_c001",
+    "selfScore": 87,
+    "managerScore": 85,
+    "councilScore": 61,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-08_c001",
+    "planItemId": "pi_DBCL-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-09_c001",
+    "planItemId": "pi_DBCL-09_c001",
+    "selfScore": 100,
+    "managerScore": 94,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-10_c001",
+    "planItemId": "pi_DBCL-10_c001",
+    "selfScore": 90,
+    "managerScore": 111,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-01_c001",
+    "planItemId": "pi_KTV-01_c001",
+    "selfScore": 110,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-02_c001",
+    "planItemId": "pi_KTV-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-03_c001",
+    "planItemId": "pi_KTV-03_c001",
+    "selfScore": 72,
+    "managerScore": 96,
+    "councilScore": 53,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-04_c001",
+    "planItemId": "pi_KTV-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-05_c001",
+    "planItemId": "pi_KTV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-06_c001",
+    "planItemId": "pi_KTV-06_c001",
+    "selfScore": 116,
+    "managerScore": 113,
+    "councilScore": 96,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-07_c001",
+    "planItemId": "pi_KTV-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-08_c001",
+    "planItemId": "pi_KTV-08_c001",
+    "selfScore": 77,
+    "managerScore": 57,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-09_c001",
+    "planItemId": "pi_KTV-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-10_c001",
+    "planItemId": "pi_KTV-10_c001",
+    "selfScore": 114,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-11_c001",
+    "planItemId": "pi_KTV-11_c001",
+    "selfScore": 63,
+    "managerScore": null,
+    "councilScore": 54,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-01_c001",
+    "planItemId": "pi_BM-01_c001",
+    "selfScore": 59,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-02_c001",
+    "planItemId": "pi_BM-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-03_c001",
+    "planItemId": "pi_BM-03_c001",
+    "selfScore": 118,
+    "managerScore": 54,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-04_c001",
+    "planItemId": "pi_BM-04_c001",
+    "selfScore": 94,
+    "managerScore": 66,
+    "councilScore": 88,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-05_c001",
+    "planItemId": "pi_BM-05_c001",
+    "selfScore": 86,
+    "managerScore": 92,
+    "councilScore": 82,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-06_c001",
+    "planItemId": "pi_BM-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-07_c001",
+    "planItemId": "pi_BM-07_c001",
+    "selfScore": 59,
+    "managerScore": null,
+    "councilScore": 93,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-08_c001",
+    "planItemId": "pi_BM-08_c001",
+    "selfScore": 85,
+    "managerScore": 74,
+    "councilScore": 85,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-09_c001",
+    "planItemId": "pi_BM-09_c001",
+    "selfScore": 80,
+    "managerScore": 81,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-01_c001",
+    "planItemId": "pi_TV-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-02_c001",
+    "planItemId": "pi_TV-02_c001",
+    "selfScore": 86,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-03_c001",
+    "planItemId": "pi_TV-03_c001",
+    "selfScore": 113,
+    "managerScore": 115,
+    "councilScore": 115,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-04_c001",
+    "planItemId": "pi_TV-04_c001",
+    "selfScore": 61,
+    "managerScore": null,
+    "councilScore": 115,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-05_c001",
+    "planItemId": "pi_TV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-06_c001",
+    "planItemId": "pi_TV-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-07_c001",
+    "planItemId": "pi_TV-07_c001",
+    "selfScore": 62,
+    "managerScore": 93,
+    "councilScore": 110,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-08_c001",
+    "planItemId": "pi_TV-08_c001",
+    "selfScore": 91,
+    "managerScore": 68,
+    "councilScore": 119,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-09_c001",
+    "planItemId": "pi_TV-09_c001",
+    "selfScore": 84,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-01_c001",
+    "planItemId": "pi_KTX-01_c001",
+    "selfScore": 102,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-02_c001",
+    "planItemId": "pi_KTX-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-03_c001",
+    "planItemId": "pi_KTX-03_c001",
+    "selfScore": 91,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-04_c001",
+    "planItemId": "pi_KTX-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-05_c001",
+    "planItemId": "pi_KTX-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-06_c001",
+    "planItemId": "pi_KTX-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-07_c001",
+    "planItemId": "pi_KTX-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-08_c001",
+    "planItemId": "pi_KTX-08_c001",
+    "selfScore": 97,
+    "managerScore": null,
+    "councilScore": 59,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-09_c001",
+    "planItemId": "pi_KTX-09_c001",
+    "selfScore": 66,
+    "managerScore": 52,
+    "councilScore": 55,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-01_c001",
+    "planItemId": "pi_NC-01_c001",
+    "selfScore": 98,
+    "managerScore": 81,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-02_c001",
+    "planItemId": "pi_NC-02_c001",
+    "selfScore": 59,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-03_c001",
+    "planItemId": "pi_NC-03_c001",
+    "selfScore": 58,
+    "managerScore": 79,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-04_c001",
+    "planItemId": "pi_NC-04_c001",
+    "selfScore": 63,
+    "managerScore": 55,
+    "councilScore": 70,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-05_c001",
+    "planItemId": "pi_NC-05_c001",
+    "selfScore": 108,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-06_c001",
+    "planItemId": "pi_NC-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-07_c001",
+    "planItemId": "pi_NC-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-08_c001",
+    "planItemId": "pi_NC-08_c001",
+    "selfScore": 92,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-09_c001",
+    "planItemId": "pi_NC-09_c001",
+    "selfScore": 115,
+    "managerScore": 86,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-10_c001",
+    "planItemId": "pi_NC-10_c001",
+    "selfScore": 50,
+    "managerScore": 82,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-01_c001",
+    "planItemId": "pi_TTTD-01_c001",
+    "selfScore": 117,
+    "managerScore": null,
+    "councilScore": 80,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-02_c001",
+    "planItemId": "pi_TTTD-02_c001",
+    "selfScore": 58,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-03_c001",
+    "planItemId": "pi_TTTD-03_c001",
+    "selfScore": 113,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-04_c001",
+    "planItemId": "pi_TTTD-04_c001",
+    "selfScore": 53,
+    "managerScore": null,
+    "councilScore": 85,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-05_c001",
+    "planItemId": "pi_TTTD-05_c001",
+    "selfScore": 106,
+    "managerScore": 115,
+    "councilScore": 113,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-06_c001",
+    "planItemId": "pi_TTTD-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-07_c001",
+    "planItemId": "pi_TTTD-07_c001",
+    "selfScore": 78,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-08_c001",
+    "planItemId": "pi_TTTD-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-09_c001",
+    "planItemId": "pi_TTTD-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-10_c001",
+    "planItemId": "pi_TTTD-10_c001",
+    "selfScore": 55,
+    "managerScore": 53,
+    "councilScore": 105,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-01_c001",
+    "planItemId": "pi_DV-01_c001",
+    "selfScore": 56,
+    "managerScore": 88,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-02_c001",
+    "planItemId": "pi_DV-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-03_c001",
+    "planItemId": "pi_DV-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-04_c001",
+    "planItemId": "pi_DV-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-05_c001",
+    "planItemId": "pi_DV-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-06_c001",
+    "planItemId": "pi_DV-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-07_c001",
+    "planItemId": "pi_DV-07_c001",
+    "selfScore": 78,
+    "managerScore": 73,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-08_c001",
+    "planItemId": "pi_DV-08_c001",
+    "selfScore": 66,
+    "managerScore": 74,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-09_c001",
+    "planItemId": "pi_DV-09_c001",
+    "selfScore": 107,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-01_c002",
+    "planItemId": "pi_DT-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-02_c002",
+    "planItemId": "pi_DT-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-03_c002",
+    "planItemId": "pi_DT-03_c002",
+    "selfScore": 95,
+    "managerScore": 78,
+    "councilScore": 89,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-04_c002",
+    "planItemId": "pi_DT-04_c002",
+    "selfScore": 88,
+    "managerScore": 89,
+    "councilScore": 73,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-05_c002",
+    "planItemId": "pi_DT-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-06_c002",
+    "planItemId": "pi_DT-06_c002",
+    "selfScore": 77,
+    "managerScore": null,
+    "councilScore": 120,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-07_c002",
+    "planItemId": "pi_DT-07_c002",
+    "selfScore": 116,
+    "managerScore": 71,
+    "councilScore": 59,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-08_c002",
+    "planItemId": "pi_DT-08_c002",
+    "selfScore": 81,
+    "managerScore": 55,
+    "councilScore": 102,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-09_c002",
+    "planItemId": "pi_DT-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-10_c002",
+    "planItemId": "pi_DT-10_c002",
+    "selfScore": 73,
+    "managerScore": 105,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-01_c002",
+    "planItemId": "pi_KHCN-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-02_c002",
+    "planItemId": "pi_KHCN-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-03_c002",
+    "planItemId": "pi_KHCN-03_c002",
+    "selfScore": 104,
+    "managerScore": 107,
+    "councilScore": 112,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-04_c002",
+    "planItemId": "pi_KHCN-04_c002",
+    "selfScore": 114,
+    "managerScore": 87,
+    "councilScore": 112,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-05_c002",
+    "planItemId": "pi_KHCN-05_c002",
+    "selfScore": 100,
+    "managerScore": 109,
+    "councilScore": 59,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-06_c002",
+    "planItemId": "pi_KHCN-06_c002",
+    "selfScore": 57,
+    "managerScore": null,
+    "councilScore": 99,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-07_c002",
+    "planItemId": "pi_KHCN-07_c002",
+    "selfScore": 89,
+    "managerScore": 113,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-08_c002",
+    "planItemId": "pi_KHCN-08_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-09_c002",
+    "planItemId": "pi_KHCN-09_c002",
+    "selfScore": 118,
+    "managerScore": 57,
+    "councilScore": 115,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-10_c002",
+    "planItemId": "pi_KHCN-10_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-01_c002",
+    "planItemId": "pi_TCCB-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-02_c002",
+    "planItemId": "pi_TCCB-02_c002",
+    "selfScore": 110,
+    "managerScore": 71,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-03_c002",
+    "planItemId": "pi_TCCB-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-04_c002",
+    "planItemId": "pi_TCCB-04_c002",
+    "selfScore": 108,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-05_c002",
+    "planItemId": "pi_TCCB-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-06_c002",
+    "planItemId": "pi_TCCB-06_c002",
+    "selfScore": 87,
+    "managerScore": 75,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-07_c002",
+    "planItemId": "pi_TCCB-07_c002",
+    "selfScore": 69,
+    "managerScore": null,
+    "councilScore": 58,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-08_c002",
+    "planItemId": "pi_TCCB-08_c002",
+    "selfScore": 72,
+    "managerScore": null,
+    "councilScore": 102,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-09_c002",
+    "planItemId": "pi_TCCB-09_c002",
+    "selfScore": 91,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-01_c002",
+    "planItemId": "pi_HTQT-01_c002",
+    "selfScore": 53,
+    "managerScore": 82,
+    "councilScore": 101,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-02_c002",
+    "planItemId": "pi_HTQT-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-03_c002",
+    "planItemId": "pi_HTQT-03_c002",
+    "selfScore": 79,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-04_c002",
+    "planItemId": "pi_HTQT-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-05_c002",
+    "planItemId": "pi_HTQT-05_c002",
+    "selfScore": 57,
+    "managerScore": 106,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-06_c002",
+    "planItemId": "pi_HTQT-06_c002",
+    "selfScore": 81,
+    "managerScore": 63,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-07_c002",
+    "planItemId": "pi_HTQT-07_c002",
+    "selfScore": 104,
+    "managerScore": 96,
+    "councilScore": 72,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-08_c002",
+    "planItemId": "pi_HTQT-08_c002",
+    "selfScore": 101,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-09_c002",
+    "planItemId": "pi_HTQT-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-01_c002",
+    "planItemId": "pi_KHTC-01_c002",
+    "selfScore": 101,
+    "managerScore": null,
+    "councilScore": 91,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-02_c002",
+    "planItemId": "pi_KHTC-02_c002",
+    "selfScore": 77,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-03_c002",
+    "planItemId": "pi_KHTC-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-04_c002",
+    "planItemId": "pi_KHTC-04_c002",
+    "selfScore": 81,
+    "managerScore": 90,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-05_c002",
+    "planItemId": "pi_KHTC-05_c002",
+    "selfScore": 71,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-06_c002",
+    "planItemId": "pi_KHTC-06_c002",
+    "selfScore": 72,
+    "managerScore": 116,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-07_c002",
+    "planItemId": "pi_KHTC-07_c002",
+    "selfScore": 105,
+    "managerScore": null,
+    "councilScore": 99,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-08_c002",
+    "planItemId": "pi_KHTC-08_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-09_c002",
+    "planItemId": "pi_KHTC-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-01_c002",
+    "planItemId": "pi_VPT-01_c002",
+    "selfScore": 118,
+    "managerScore": 53,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-02_c002",
+    "planItemId": "pi_VPT-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-03_c002",
+    "planItemId": "pi_VPT-03_c002",
+    "selfScore": 101,
+    "managerScore": 110,
+    "councilScore": 85,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-04_c002",
+    "planItemId": "pi_VPT-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-05_c002",
+    "planItemId": "pi_VPT-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-06_c002",
+    "planItemId": "pi_VPT-06_c002",
+    "selfScore": 71,
+    "managerScore": 101,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-07_c002",
+    "planItemId": "pi_VPT-07_c002",
+    "selfScore": 90,
+    "managerScore": 66,
+    "councilScore": 117,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-08_c002",
+    "planItemId": "pi_VPT-08_c002",
+    "selfScore": 120,
+    "managerScore": 67,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-09_c002",
+    "planItemId": "pi_VPT-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-01_c002",
+    "planItemId": "pi_CNTT-01_c002",
+    "selfScore": 71,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-02_c002",
+    "planItemId": "pi_CNTT-02_c002",
+    "selfScore": 73,
+    "managerScore": 107,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-03_c002",
+    "planItemId": "pi_CNTT-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-04_c002",
+    "planItemId": "pi_CNTT-04_c002",
+    "selfScore": 110,
+    "managerScore": 55,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-05_c002",
+    "planItemId": "pi_CNTT-05_c002",
+    "selfScore": 107,
+    "managerScore": 97,
+    "councilScore": 107,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-06_c002",
+    "planItemId": "pi_CNTT-06_c002",
+    "selfScore": 114,
+    "managerScore": 81,
+    "councilScore": 109,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-07_c002",
+    "planItemId": "pi_CNTT-07_c002",
+    "selfScore": 66,
+    "managerScore": 59,
+    "councilScore": 73,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-08_c002",
+    "planItemId": "pi_CNTT-08_c002",
+    "selfScore": 72,
+    "managerScore": 101,
+    "councilScore": 88,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-09_c002",
+    "planItemId": "pi_CNTT-09_c002",
+    "selfScore": 80,
+    "managerScore": 74,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-10_c002",
+    "planItemId": "pi_CNTT-10_c002",
+    "selfScore": 81,
+    "managerScore": 55,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-01_c002",
+    "planItemId": "pi_DBCL-01_c002",
+    "selfScore": 101,
+    "managerScore": 117,
+    "councilScore": 101,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-02_c002",
+    "planItemId": "pi_DBCL-02_c002",
+    "selfScore": 80,
+    "managerScore": 103,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-03_c002",
+    "planItemId": "pi_DBCL-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-04_c002",
+    "planItemId": "pi_DBCL-04_c002",
+    "selfScore": 56,
+    "managerScore": 112,
+    "councilScore": 63,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-05_c002",
+    "planItemId": "pi_DBCL-05_c002",
+    "selfScore": 114,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-06_c002",
+    "planItemId": "pi_DBCL-06_c002",
+    "selfScore": 53,
+    "managerScore": 62,
+    "councilScore": 77,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-07_c002",
+    "planItemId": "pi_DBCL-07_c002",
+    "selfScore": 96,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-08_c002",
+    "planItemId": "pi_DBCL-08_c002",
+    "selfScore": 81,
+    "managerScore": null,
+    "councilScore": 70,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-09_c002",
+    "planItemId": "pi_DBCL-09_c002",
+    "selfScore": 50,
+    "managerScore": null,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-10_c002",
+    "planItemId": "pi_DBCL-10_c002",
+    "selfScore": 105,
+    "managerScore": 80,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-01_c002",
+    "planItemId": "pi_KTV-01_c002",
+    "selfScore": 84,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-02_c002",
+    "planItemId": "pi_KTV-02_c002",
+    "selfScore": 99,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-03_c002",
+    "planItemId": "pi_KTV-03_c002",
+    "selfScore": 59,
+    "managerScore": 112,
+    "councilScore": 77,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-04_c002",
+    "planItemId": "pi_KTV-04_c002",
+    "selfScore": 78,
+    "managerScore": 69,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-05_c002",
+    "planItemId": "pi_KTV-05_c002",
+    "selfScore": 88,
+    "managerScore": 60,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-06_c002",
+    "planItemId": "pi_KTV-06_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-07_c002",
+    "planItemId": "pi_KTV-07_c002",
+    "selfScore": 63,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-08_c002",
+    "planItemId": "pi_KTV-08_c002",
+    "selfScore": 90,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-09_c002",
+    "planItemId": "pi_KTV-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-10_c002",
+    "planItemId": "pi_KTV-10_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-11_c002",
+    "planItemId": "pi_KTV-11_c002",
+    "selfScore": 76,
+    "managerScore": 76,
+    "councilScore": 101,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-01_c002",
+    "planItemId": "pi_BM-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-02_c002",
+    "planItemId": "pi_BM-02_c002",
+    "selfScore": 82,
+    "managerScore": 78,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-03_c002",
+    "planItemId": "pi_BM-03_c002",
+    "selfScore": 114,
+    "managerScore": 72,
+    "councilScore": 53,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-04_c002",
+    "planItemId": "pi_BM-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-05_c002",
+    "planItemId": "pi_BM-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-06_c002",
+    "planItemId": "pi_BM-06_c002",
+    "selfScore": 62,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-07_c002",
+    "planItemId": "pi_BM-07_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-08_c002",
+    "planItemId": "pi_BM-08_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-09_c002",
+    "planItemId": "pi_BM-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-01_c002",
+    "planItemId": "pi_TV-01_c002",
+    "selfScore": 118,
+    "managerScore": 118,
+    "councilScore": 64,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-02_c002",
+    "planItemId": "pi_TV-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-03_c002",
+    "planItemId": "pi_TV-03_c002",
+    "selfScore": 69,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-04_c002",
+    "planItemId": "pi_TV-04_c002",
+    "selfScore": 119,
+    "managerScore": 67,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-05_c002",
+    "planItemId": "pi_TV-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-06_c002",
+    "planItemId": "pi_TV-06_c002",
+    "selfScore": 80,
+    "managerScore": null,
+    "councilScore": 57,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-07_c002",
+    "planItemId": "pi_TV-07_c002",
+    "selfScore": 115,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-08_c002",
+    "planItemId": "pi_TV-08_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-09_c002",
+    "planItemId": "pi_TV-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-01_c002",
+    "planItemId": "pi_KTX-01_c002",
+    "selfScore": 120,
+    "managerScore": 80,
+    "councilScore": 102,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-02_c002",
+    "planItemId": "pi_KTX-02_c002",
+    "selfScore": 51,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-03_c002",
+    "planItemId": "pi_KTX-03_c002",
+    "selfScore": 110,
+    "managerScore": 95,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-04_c002",
+    "planItemId": "pi_KTX-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-05_c002",
+    "planItemId": "pi_KTX-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-06_c002",
+    "planItemId": "pi_KTX-06_c002",
+    "selfScore": 100,
+    "managerScore": 62,
+    "councilScore": 102,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-07_c002",
+    "planItemId": "pi_KTX-07_c002",
+    "selfScore": 93,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-08_c002",
+    "planItemId": "pi_KTX-08_c002",
+    "selfScore": 55,
+    "managerScore": 118,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-09_c002",
+    "planItemId": "pi_KTX-09_c002",
+    "selfScore": 61,
+    "managerScore": 108,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-01_c002",
+    "planItemId": "pi_NC-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-02_c002",
+    "planItemId": "pi_NC-02_c002",
+    "selfScore": 74,
+    "managerScore": null,
+    "councilScore": 68,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-03_c002",
+    "planItemId": "pi_NC-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-04_c002",
+    "planItemId": "pi_NC-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-05_c002",
+    "planItemId": "pi_NC-05_c002",
+    "selfScore": 70,
+    "managerScore": 87,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-06_c002",
+    "planItemId": "pi_NC-06_c002",
+    "selfScore": 118,
+    "managerScore": 63,
+    "councilScore": 83,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-07_c002",
+    "planItemId": "pi_NC-07_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-08_c002",
+    "planItemId": "pi_NC-08_c002",
+    "selfScore": 98,
+    "managerScore": 119,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-09_c002",
+    "planItemId": "pi_NC-09_c002",
+    "selfScore": 75,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-10_c002",
+    "planItemId": "pi_NC-10_c002",
+    "selfScore": 117,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-01_c002",
+    "planItemId": "pi_TTTD-01_c002",
+    "selfScore": 86,
+    "managerScore": null,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-02_c002",
+    "planItemId": "pi_TTTD-02_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-03_c002",
+    "planItemId": "pi_TTTD-03_c002",
+    "selfScore": 83,
+    "managerScore": 105,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-04_c002",
+    "planItemId": "pi_TTTD-04_c002",
+    "selfScore": 77,
+    "managerScore": 64,
+    "councilScore": 84,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-05_c002",
+    "planItemId": "pi_TTTD-05_c002",
+    "selfScore": 51,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-06_c002",
+    "planItemId": "pi_TTTD-06_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-07_c002",
+    "planItemId": "pi_TTTD-07_c002",
+    "selfScore": 83,
+    "managerScore": 50,
+    "councilScore": 93,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-08_c002",
+    "planItemId": "pi_TTTD-08_c002",
+    "selfScore": 112,
+    "managerScore": 53,
+    "councilScore": 73,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-09_c002",
+    "planItemId": "pi_TTTD-09_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-10_c002",
+    "planItemId": "pi_TTTD-10_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-01_c002",
+    "planItemId": "pi_DV-01_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-02_c002",
+    "planItemId": "pi_DV-02_c002",
+    "selfScore": 119,
+    "managerScore": null,
+    "councilScore": 91,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-03_c002",
+    "planItemId": "pi_DV-03_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-04_c002",
+    "planItemId": "pi_DV-04_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-05_c002",
+    "planItemId": "pi_DV-05_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-06_c002",
+    "planItemId": "pi_DV-06_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-07_c002",
+    "planItemId": "pi_DV-07_c002",
+    "selfScore": 59,
+    "managerScore": 52,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-08_c002",
+    "planItemId": "pi_DV-08_c002",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-09_c002",
+    "planItemId": "pi_DV-09_c002",
+    "selfScore": 78,
+    "managerScore": 75,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-01_c003",
+    "planItemId": "pi_DT-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-02_c003",
+    "planItemId": "pi_DT-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-03_c003",
+    "planItemId": "pi_DT-03_c003",
+    "selfScore": 105,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-04_c003",
+    "planItemId": "pi_DT-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-05_c003",
+    "planItemId": "pi_DT-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-06_c003",
+    "planItemId": "pi_DT-06_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-07_c003",
+    "planItemId": "pi_DT-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-08_c003",
+    "planItemId": "pi_DT-08_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-09_c003",
+    "planItemId": "pi_DT-09_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-10_c003",
+    "planItemId": "pi_DT-10_c003",
+    "selfScore": 62,
+    "managerScore": 115,
+    "councilScore": 94,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-01_c003",
+    "planItemId": "pi_KHCN-01_c003",
+    "selfScore": 72,
+    "managerScore": 111,
+    "councilScore": 63,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-02_c003",
+    "planItemId": "pi_KHCN-02_c003",
+    "selfScore": 79,
+    "managerScore": 76,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-03_c003",
+    "planItemId": "pi_KHCN-03_c003",
+    "selfScore": 101,
+    "managerScore": 91,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-04_c003",
+    "planItemId": "pi_KHCN-04_c003",
+    "selfScore": 63,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-05_c003",
+    "planItemId": "pi_KHCN-05_c003",
+    "selfScore": 52,
+    "managerScore": 58,
+    "councilScore": 120,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-06_c003",
+    "planItemId": "pi_KHCN-06_c003",
+    "selfScore": 70,
+    "managerScore": 67,
+    "councilScore": 50,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-07_c003",
+    "planItemId": "pi_KHCN-07_c003",
+    "selfScore": 69,
+    "managerScore": 120,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-08_c003",
+    "planItemId": "pi_KHCN-08_c003",
+    "selfScore": 103,
+    "managerScore": 102,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-09_c003",
+    "planItemId": "pi_KHCN-09_c003",
+    "selfScore": 70,
+    "managerScore": 83,
+    "councilScore": 104,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-10_c003",
+    "planItemId": "pi_KHCN-10_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-01_c003",
+    "planItemId": "pi_TCCB-01_c003",
+    "selfScore": 56,
+    "managerScore": 71,
+    "councilScore": 74,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-02_c003",
+    "planItemId": "pi_TCCB-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-03_c003",
+    "planItemId": "pi_TCCB-03_c003",
+    "selfScore": 79,
+    "managerScore": 106,
+    "councilScore": 83,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-04_c003",
+    "planItemId": "pi_TCCB-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-05_c003",
+    "planItemId": "pi_TCCB-05_c003",
+    "selfScore": 96,
+    "managerScore": 59,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-06_c003",
+    "planItemId": "pi_TCCB-06_c003",
+    "selfScore": 112,
+    "managerScore": 87,
+    "councilScore": 51,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-07_c003",
+    "planItemId": "pi_TCCB-07_c003",
+    "selfScore": 92,
+    "managerScore": 73,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-08_c003",
+    "planItemId": "pi_TCCB-08_c003",
+    "selfScore": 66,
+    "managerScore": 56,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-09_c003",
+    "planItemId": "pi_TCCB-09_c003",
+    "selfScore": 73,
+    "managerScore": null,
+    "councilScore": 103,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-01_c003",
+    "planItemId": "pi_HTQT-01_c003",
+    "selfScore": 102,
+    "managerScore": null,
+    "councilScore": 72,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-02_c003",
+    "planItemId": "pi_HTQT-02_c003",
+    "selfScore": 70,
+    "managerScore": 106,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-03_c003",
+    "planItemId": "pi_HTQT-03_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-04_c003",
+    "planItemId": "pi_HTQT-04_c003",
+    "selfScore": 52,
+    "managerScore": 73,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-05_c003",
+    "planItemId": "pi_HTQT-05_c003",
+    "selfScore": 60,
+    "managerScore": null,
+    "councilScore": 96,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-06_c003",
+    "planItemId": "pi_HTQT-06_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-07_c003",
+    "planItemId": "pi_HTQT-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-08_c003",
+    "planItemId": "pi_HTQT-08_c003",
+    "selfScore": 111,
+    "managerScore": 66,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-09_c003",
+    "planItemId": "pi_HTQT-09_c003",
+    "selfScore": 89,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-01_c003",
+    "planItemId": "pi_KHTC-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-02_c003",
+    "planItemId": "pi_KHTC-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-03_c003",
+    "planItemId": "pi_KHTC-03_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-04_c003",
+    "planItemId": "pi_KHTC-04_c003",
+    "selfScore": 75,
+    "managerScore": 57,
+    "councilScore": 84,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-05_c003",
+    "planItemId": "pi_KHTC-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-06_c003",
+    "planItemId": "pi_KHTC-06_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-07_c003",
+    "planItemId": "pi_KHTC-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-08_c003",
+    "planItemId": "pi_KHTC-08_c003",
+    "selfScore": 89,
+    "managerScore": 96,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-09_c003",
+    "planItemId": "pi_KHTC-09_c003",
+    "selfScore": 104,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-01_c003",
+    "planItemId": "pi_VPT-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-02_c003",
+    "planItemId": "pi_VPT-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-03_c003",
+    "planItemId": "pi_VPT-03_c003",
+    "selfScore": 87,
+    "managerScore": 90,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-04_c003",
+    "planItemId": "pi_VPT-04_c003",
+    "selfScore": 96,
+    "managerScore": 73,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-05_c003",
+    "planItemId": "pi_VPT-05_c003",
+    "selfScore": 52,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-06_c003",
+    "planItemId": "pi_VPT-06_c003",
+    "selfScore": 116,
+    "managerScore": 79,
+    "councilScore": 89,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-07_c003",
+    "planItemId": "pi_VPT-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-08_c003",
+    "planItemId": "pi_VPT-08_c003",
+    "selfScore": 100,
+    "managerScore": 109,
+    "councilScore": 104,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-09_c003",
+    "planItemId": "pi_VPT-09_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-01_c003",
+    "planItemId": "pi_CNTT-01_c003",
+    "selfScore": 83,
+    "managerScore": 83,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-02_c003",
+    "planItemId": "pi_CNTT-02_c003",
+    "selfScore": 56,
+    "managerScore": 95,
+    "councilScore": 83,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-03_c003",
+    "planItemId": "pi_CNTT-03_c003",
+    "selfScore": 96,
+    "managerScore": 87,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-04_c003",
+    "planItemId": "pi_CNTT-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-05_c003",
+    "planItemId": "pi_CNTT-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-06_c003",
+    "planItemId": "pi_CNTT-06_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-07_c003",
+    "planItemId": "pi_CNTT-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-08_c003",
+    "planItemId": "pi_CNTT-08_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-09_c003",
+    "planItemId": "pi_CNTT-09_c003",
+    "selfScore": 118,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-10_c003",
+    "planItemId": "pi_CNTT-10_c003",
+    "selfScore": 117,
+    "managerScore": 58,
+    "councilScore": 68,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-01_c003",
+    "planItemId": "pi_DBCL-01_c003",
+    "selfScore": 97,
+    "managerScore": 114,
+    "councilScore": 85,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-02_c003",
+    "planItemId": "pi_DBCL-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-03_c003",
+    "planItemId": "pi_DBCL-03_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-04_c003",
+    "planItemId": "pi_DBCL-04_c003",
+    "selfScore": 56,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-05_c003",
+    "planItemId": "pi_DBCL-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-06_c003",
+    "planItemId": "pi_DBCL-06_c003",
+    "selfScore": 104,
+    "managerScore": 115,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-07_c003",
+    "planItemId": "pi_DBCL-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-08_c003",
+    "planItemId": "pi_DBCL-08_c003",
+    "selfScore": 64,
+    "managerScore": null,
+    "councilScore": 72,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-09_c003",
+    "planItemId": "pi_DBCL-09_c003",
+    "selfScore": 61,
+    "managerScore": null,
+    "councilScore": 107,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-10_c003",
+    "planItemId": "pi_DBCL-10_c003",
+    "selfScore": 118,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-01_c003",
+    "planItemId": "pi_KTV-01_c003",
+    "selfScore": 61,
+    "managerScore": 94,
+    "councilScore": 107,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-02_c003",
+    "planItemId": "pi_KTV-02_c003",
+    "selfScore": 63,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-03_c003",
+    "planItemId": "pi_KTV-03_c003",
+    "selfScore": 107,
+    "managerScore": 98,
+    "councilScore": 63,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-04_c003",
+    "planItemId": "pi_KTV-04_c003",
+    "selfScore": 114,
+    "managerScore": null,
+    "councilScore": 60,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-05_c003",
+    "planItemId": "pi_KTV-05_c003",
+    "selfScore": 71,
+    "managerScore": 110,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-06_c003",
+    "planItemId": "pi_KTV-06_c003",
+    "selfScore": 117,
+    "managerScore": null,
+    "councilScore": 87,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-07_c003",
+    "planItemId": "pi_KTV-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-08_c003",
+    "planItemId": "pi_KTV-08_c003",
+    "selfScore": 111,
+    "managerScore": 109,
+    "councilScore": 108,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-09_c003",
+    "planItemId": "pi_KTV-09_c003",
+    "selfScore": 53,
+    "managerScore": null,
+    "councilScore": 107,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-10_c003",
+    "planItemId": "pi_KTV-10_c003",
+    "selfScore": 63,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-11_c003",
+    "planItemId": "pi_KTV-11_c003",
+    "selfScore": 82,
+    "managerScore": 118,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-01_c003",
+    "planItemId": "pi_BM-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-02_c003",
+    "planItemId": "pi_BM-02_c003",
+    "selfScore": 52,
+    "managerScore": 84,
+    "councilScore": 103,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-03_c003",
+    "planItemId": "pi_BM-03_c003",
+    "selfScore": 71,
+    "managerScore": 68,
+    "councilScore": 71,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-04_c003",
+    "planItemId": "pi_BM-04_c003",
+    "selfScore": 65,
+    "managerScore": null,
+    "councilScore": 74,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-05_c003",
+    "planItemId": "pi_BM-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-06_c003",
+    "planItemId": "pi_BM-06_c003",
+    "selfScore": 60,
+    "managerScore": 116,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-07_c003",
+    "planItemId": "pi_BM-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-08_c003",
+    "planItemId": "pi_BM-08_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-09_c003",
+    "planItemId": "pi_BM-09_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-01_c003",
+    "planItemId": "pi_TV-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-02_c003",
+    "planItemId": "pi_TV-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-03_c003",
+    "planItemId": "pi_TV-03_c003",
+    "selfScore": 60,
+    "managerScore": null,
+    "councilScore": 87,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-04_c003",
+    "planItemId": "pi_TV-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-05_c003",
+    "planItemId": "pi_TV-05_c003",
+    "selfScore": 96,
+    "managerScore": 77,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-06_c003",
+    "planItemId": "pi_TV-06_c003",
+    "selfScore": 91,
+    "managerScore": null,
+    "councilScore": 119,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-07_c003",
+    "planItemId": "pi_TV-07_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-08_c003",
+    "planItemId": "pi_TV-08_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-09_c003",
+    "planItemId": "pi_TV-09_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-01_c003",
+    "planItemId": "pi_KTX-01_c003",
+    "selfScore": 65,
+    "managerScore": 60,
+    "councilScore": 64,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-02_c003",
+    "planItemId": "pi_KTX-02_c003",
+    "selfScore": 73,
+    "managerScore": null,
+    "councilScore": 53,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-03_c003",
+    "planItemId": "pi_KTX-03_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-04_c003",
+    "planItemId": "pi_KTX-04_c003",
+    "selfScore": 64,
+    "managerScore": 104,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-05_c003",
+    "planItemId": "pi_KTX-05_c003",
+    "selfScore": 94,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-06_c003",
+    "planItemId": "pi_KTX-06_c003",
+    "selfScore": 77,
+    "managerScore": null,
+    "councilScore": 111,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-07_c003",
+    "planItemId": "pi_KTX-07_c003",
+    "selfScore": 56,
+    "managerScore": 79,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-08_c003",
+    "planItemId": "pi_KTX-08_c003",
+    "selfScore": 56,
+    "managerScore": 120,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-09_c003",
+    "planItemId": "pi_KTX-09_c003",
+    "selfScore": 70,
+    "managerScore": 116,
+    "councilScore": 95,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-01_c003",
+    "planItemId": "pi_NC-01_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-02_c003",
+    "planItemId": "pi_NC-02_c003",
+    "selfScore": 57,
+    "managerScore": null,
+    "councilScore": 57,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-03_c003",
+    "planItemId": "pi_NC-03_c003",
+    "selfScore": 92,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-04_c003",
+    "planItemId": "pi_NC-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-05_c003",
+    "planItemId": "pi_NC-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-06_c003",
+    "planItemId": "pi_NC-06_c003",
+    "selfScore": 119,
+    "managerScore": 53,
+    "councilScore": 54,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-07_c003",
+    "planItemId": "pi_NC-07_c003",
+    "selfScore": 55,
+    "managerScore": 115,
+    "councilScore": 65,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-08_c003",
+    "planItemId": "pi_NC-08_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-09_c003",
+    "planItemId": "pi_NC-09_c003",
+    "selfScore": 119,
+    "managerScore": null,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-10_c003",
+    "planItemId": "pi_NC-10_c003",
+    "selfScore": 56,
+    "managerScore": 98,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-01_c003",
+    "planItemId": "pi_TTTD-01_c003",
+    "selfScore": 52,
+    "managerScore": 118,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-02_c003",
+    "planItemId": "pi_TTTD-02_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-03_c003",
+    "planItemId": "pi_TTTD-03_c003",
+    "selfScore": 108,
+    "managerScore": 79,
+    "councilScore": 117,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-04_c003",
+    "planItemId": "pi_TTTD-04_c003",
+    "selfScore": 97,
+    "managerScore": 79,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-05_c003",
+    "planItemId": "pi_TTTD-05_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-06_c003",
+    "planItemId": "pi_TTTD-06_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-07_c003",
+    "planItemId": "pi_TTTD-07_c003",
+    "selfScore": 58,
+    "managerScore": null,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-08_c003",
+    "planItemId": "pi_TTTD-08_c003",
+    "selfScore": 96,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-09_c003",
+    "planItemId": "pi_TTTD-09_c003",
+    "selfScore": 97,
+    "managerScore": 103,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-10_c003",
+    "planItemId": "pi_TTTD-10_c003",
+    "selfScore": 99,
+    "managerScore": 103,
+    "councilScore": 76,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-01_c003",
+    "planItemId": "pi_DV-01_c003",
+    "selfScore": 97,
+    "managerScore": 67,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-02_c003",
+    "planItemId": "pi_DV-02_c003",
+    "selfScore": 52,
+    "managerScore": null,
+    "councilScore": 80,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-03_c003",
+    "planItemId": "pi_DV-03_c003",
+    "selfScore": 55,
+    "managerScore": 69,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-04_c003",
+    "planItemId": "pi_DV-04_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-05_c003",
+    "planItemId": "pi_DV-05_c003",
+    "selfScore": 95,
+    "managerScore": 75,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-06_c003",
+    "planItemId": "pi_DV-06_c003",
+    "selfScore": 65,
+    "managerScore": 79,
+    "councilScore": 114,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-07_c003",
+    "planItemId": "pi_DV-07_c003",
+    "selfScore": 52,
+    "managerScore": 111,
+    "councilScore": 79,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-08_c003",
+    "planItemId": "pi_DV-08_c003",
+    "selfScore": 79,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-09_c003",
+    "planItemId": "pi_DV-09_c003",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-01_c004",
+    "planItemId": "pi_DT-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-02_c004",
+    "planItemId": "pi_DT-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-03_c004",
+    "planItemId": "pi_DT-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-04_c004",
+    "planItemId": "pi_DT-04_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-05_c004",
+    "planItemId": "pi_DT-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-06_c004",
+    "planItemId": "pi_DT-06_c004",
+    "selfScore": 65,
+    "managerScore": null,
+    "councilScore": 105,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-07_c004",
+    "planItemId": "pi_DT-07_c004",
+    "selfScore": 60,
+    "managerScore": 120,
+    "councilScore": 71,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-08_c004",
+    "planItemId": "pi_DT-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-09_c004",
+    "planItemId": "pi_DT-09_c004",
+    "selfScore": 70,
+    "managerScore": 71,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-10_c004",
+    "planItemId": "pi_DT-10_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-01_c004",
+    "planItemId": "pi_KHCN-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-02_c004",
+    "planItemId": "pi_KHCN-02_c004",
+    "selfScore": 82,
+    "managerScore": 68,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-03_c004",
+    "planItemId": "pi_KHCN-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-04_c004",
+    "planItemId": "pi_KHCN-04_c004",
+    "selfScore": 64,
+    "managerScore": 58,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-05_c004",
+    "planItemId": "pi_KHCN-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-06_c004",
+    "planItemId": "pi_KHCN-06_c004",
+    "selfScore": 93,
+    "managerScore": 102,
+    "councilScore": 85,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-07_c004",
+    "planItemId": "pi_KHCN-07_c004",
+    "selfScore": 116,
+    "managerScore": 70,
+    "councilScore": 70,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-08_c004",
+    "planItemId": "pi_KHCN-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-09_c004",
+    "planItemId": "pi_KHCN-09_c004",
+    "selfScore": 85,
+    "managerScore": 56,
+    "councilScore": 101,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHCN-10_c004",
+    "planItemId": "pi_KHCN-10_c004",
+    "selfScore": 107,
+    "managerScore": null,
+    "councilScore": 53,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-01_c004",
+    "planItemId": "pi_TCCB-01_c004",
+    "selfScore": 110,
+    "managerScore": 111,
+    "councilScore": 95,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-02_c004",
+    "planItemId": "pi_TCCB-02_c004",
+    "selfScore": 100,
+    "managerScore": 107,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-03_c004",
+    "planItemId": "pi_TCCB-03_c004",
+    "selfScore": 92,
+    "managerScore": 70,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-04_c004",
+    "planItemId": "pi_TCCB-04_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-05_c004",
+    "planItemId": "pi_TCCB-05_c004",
+    "selfScore": 120,
+    "managerScore": 103,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-06_c004",
+    "planItemId": "pi_TCCB-06_c004",
+    "selfScore": 112,
+    "managerScore": 91,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-07_c004",
+    "planItemId": "pi_TCCB-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-08_c004",
+    "planItemId": "pi_TCCB-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TCCB-09_c004",
+    "planItemId": "pi_TCCB-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-01_c004",
+    "planItemId": "pi_HTQT-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-02_c004",
+    "planItemId": "pi_HTQT-02_c004",
+    "selfScore": 64,
+    "managerScore": 51,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-03_c004",
+    "planItemId": "pi_HTQT-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-04_c004",
+    "planItemId": "pi_HTQT-04_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-05_c004",
+    "planItemId": "pi_HTQT-05_c004",
+    "selfScore": 69,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-06_c004",
+    "planItemId": "pi_HTQT-06_c004",
+    "selfScore": 61,
+    "managerScore": 118,
+    "councilScore": 91,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-07_c004",
+    "planItemId": "pi_HTQT-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-08_c004",
+    "planItemId": "pi_HTQT-08_c004",
+    "selfScore": 101,
+    "managerScore": 91,
+    "councilScore": 61,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_HTQT-09_c004",
+    "planItemId": "pi_HTQT-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-01_c004",
+    "planItemId": "pi_KHTC-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-02_c004",
+    "planItemId": "pi_KHTC-02_c004",
+    "selfScore": 110,
+    "managerScore": 61,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-03_c004",
+    "planItemId": "pi_KHTC-03_c004",
+    "selfScore": 64,
+    "managerScore": 97,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-04_c004",
+    "planItemId": "pi_KHTC-04_c004",
+    "selfScore": 75,
+    "managerScore": 70,
+    "councilScore": 84,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-05_c004",
+    "planItemId": "pi_KHTC-05_c004",
+    "selfScore": 83,
+    "managerScore": null,
+    "councilScore": 108,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-06_c004",
+    "planItemId": "pi_KHTC-06_c004",
+    "selfScore": 83,
+    "managerScore": 100,
+    "councilScore": 81,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-07_c004",
+    "planItemId": "pi_KHTC-07_c004",
+    "selfScore": 54,
+    "managerScore": 86,
+    "councilScore": 116,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-08_c004",
+    "planItemId": "pi_KHTC-08_c004",
+    "selfScore": 62,
+    "managerScore": 50,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KHTC-09_c004",
+    "planItemId": "pi_KHTC-09_c004",
+    "selfScore": 62,
+    "managerScore": null,
+    "councilScore": 67,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-01_c004",
+    "planItemId": "pi_VPT-01_c004",
+    "selfScore": 78,
+    "managerScore": 61,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-02_c004",
+    "planItemId": "pi_VPT-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-03_c004",
+    "planItemId": "pi_VPT-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-04_c004",
+    "planItemId": "pi_VPT-04_c004",
+    "selfScore": 112,
+    "managerScore": 113,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-05_c004",
+    "planItemId": "pi_VPT-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-06_c004",
+    "planItemId": "pi_VPT-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-07_c004",
+    "planItemId": "pi_VPT-07_c004",
+    "selfScore": 120,
+    "managerScore": null,
+    "councilScore": 79,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-08_c004",
+    "planItemId": "pi_VPT-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_VPT-09_c004",
+    "planItemId": "pi_VPT-09_c004",
+    "selfScore": 118,
+    "managerScore": 104,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-01_c004",
+    "planItemId": "pi_CNTT-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-02_c004",
+    "planItemId": "pi_CNTT-02_c004",
+    "selfScore": 53,
+    "managerScore": 60,
+    "councilScore": 55,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-03_c004",
+    "planItemId": "pi_CNTT-03_c004",
+    "selfScore": 54,
+    "managerScore": 65,
+    "councilScore": 78,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-04_c004",
+    "planItemId": "pi_CNTT-04_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-05_c004",
+    "planItemId": "pi_CNTT-05_c004",
+    "selfScore": 99,
+    "managerScore": 77,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-06_c004",
+    "planItemId": "pi_CNTT-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-07_c004",
+    "planItemId": "pi_CNTT-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-08_c004",
+    "planItemId": "pi_CNTT-08_c004",
+    "selfScore": 116,
+    "managerScore": 83,
+    "councilScore": 110,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-09_c004",
+    "planItemId": "pi_CNTT-09_c004",
+    "selfScore": 52,
+    "managerScore": 119,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_CNTT-10_c004",
+    "planItemId": "pi_CNTT-10_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-01_c004",
+    "planItemId": "pi_DBCL-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-02_c004",
+    "planItemId": "pi_DBCL-02_c004",
+    "selfScore": 112,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-03_c004",
+    "planItemId": "pi_DBCL-03_c004",
+    "selfScore": 100,
+    "managerScore": 67,
+    "councilScore": 80,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-04_c004",
+    "planItemId": "pi_DBCL-04_c004",
+    "selfScore": 88,
+    "managerScore": null,
+    "councilScore": 83,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-05_c004",
+    "planItemId": "pi_DBCL-05_c004",
+    "selfScore": 118,
+    "managerScore": null,
+    "councilScore": 90,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-06_c004",
+    "planItemId": "pi_DBCL-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-07_c004",
+    "planItemId": "pi_DBCL-07_c004",
+    "selfScore": 76,
+    "managerScore": null,
+    "councilScore": 87,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-08_c004",
+    "planItemId": "pi_DBCL-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-09_c004",
+    "planItemId": "pi_DBCL-09_c004",
+    "selfScore": 66,
+    "managerScore": null,
+    "councilScore": 53,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DBCL-10_c004",
+    "planItemId": "pi_DBCL-10_c004",
+    "selfScore": 97,
+    "managerScore": null,
+    "councilScore": 107,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-01_c004",
+    "planItemId": "pi_KTV-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-02_c004",
+    "planItemId": "pi_KTV-02_c004",
+    "selfScore": 58,
+    "managerScore": 85,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-03_c004",
+    "planItemId": "pi_KTV-03_c004",
+    "selfScore": 100,
+    "managerScore": null,
+    "councilScore": 57,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-04_c004",
+    "planItemId": "pi_KTV-04_c004",
+    "selfScore": 90,
+    "managerScore": 53,
+    "councilScore": 78,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-05_c004",
+    "planItemId": "pi_KTV-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-06_c004",
+    "planItemId": "pi_KTV-06_c004",
+    "selfScore": 72,
+    "managerScore": 112,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-07_c004",
+    "planItemId": "pi_KTV-07_c004",
+    "selfScore": 65,
+    "managerScore": 107,
+    "councilScore": 112,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-08_c004",
+    "planItemId": "pi_KTV-08_c004",
+    "selfScore": 74,
+    "managerScore": null,
+    "councilScore": 84,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-09_c004",
+    "planItemId": "pi_KTV-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-10_c004",
+    "planItemId": "pi_KTV-10_c004",
+    "selfScore": 109,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTV-11_c004",
+    "planItemId": "pi_KTV-11_c004",
+    "selfScore": 56,
+    "managerScore": 62,
+    "councilScore": 54,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-01_c004",
+    "planItemId": "pi_BM-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-02_c004",
+    "planItemId": "pi_BM-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-03_c004",
+    "planItemId": "pi_BM-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-04_c004",
+    "planItemId": "pi_BM-04_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-05_c004",
+    "planItemId": "pi_BM-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-06_c004",
+    "planItemId": "pi_BM-06_c004",
+    "selfScore": 117,
+    "managerScore": 110,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-07_c004",
+    "planItemId": "pi_BM-07_c004",
+    "selfScore": 67,
+    "managerScore": 102,
+    "councilScore": 72,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-08_c004",
+    "planItemId": "pi_BM-08_c004",
+    "selfScore": 100,
+    "managerScore": 78,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_BM-09_c004",
+    "planItemId": "pi_BM-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-01_c004",
+    "planItemId": "pi_TV-01_c004",
+    "selfScore": 90,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-02_c004",
+    "planItemId": "pi_TV-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-03_c004",
+    "planItemId": "pi_TV-03_c004",
+    "selfScore": 99,
+    "managerScore": 54,
+    "councilScore": 97,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-04_c004",
+    "planItemId": "pi_TV-04_c004",
+    "selfScore": 105,
+    "managerScore": 75,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-05_c004",
+    "planItemId": "pi_TV-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-06_c004",
+    "planItemId": "pi_TV-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-07_c004",
+    "planItemId": "pi_TV-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-08_c004",
+    "planItemId": "pi_TV-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TV-09_c004",
+    "planItemId": "pi_TV-09_c004",
+    "selfScore": 59,
+    "managerScore": 92,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-01_c004",
+    "planItemId": "pi_KTX-01_c004",
+    "selfScore": 116,
+    "managerScore": 52,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-02_c004",
+    "planItemId": "pi_KTX-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-03_c004",
+    "planItemId": "pi_KTX-03_c004",
+    "selfScore": 116,
+    "managerScore": 63,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-04_c004",
+    "planItemId": "pi_KTX-04_c004",
+    "selfScore": 51,
+    "managerScore": 64,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-05_c004",
+    "planItemId": "pi_KTX-05_c004",
+    "selfScore": 69,
+    "managerScore": 78,
+    "councilScore": 98,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-06_c004",
+    "planItemId": "pi_KTX-06_c004",
+    "selfScore": 53,
+    "managerScore": 92,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-07_c004",
+    "planItemId": "pi_KTX-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-08_c004",
+    "planItemId": "pi_KTX-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_KTX-09_c004",
+    "planItemId": "pi_KTX-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-01_c004",
+    "planItemId": "pi_NC-01_c004",
+    "selfScore": 72,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-02_c004",
+    "planItemId": "pi_NC-02_c004",
+    "selfScore": 87,
+    "managerScore": 103,
+    "councilScore": 86,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-03_c004",
+    "planItemId": "pi_NC-03_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-04_c004",
+    "planItemId": "pi_NC-04_c004",
+    "selfScore": 57,
+    "managerScore": 89,
+    "councilScore": 89,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-05_c004",
+    "planItemId": "pi_NC-05_c004",
+    "selfScore": 72,
+    "managerScore": 69,
+    "councilScore": 66,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-06_c004",
+    "planItemId": "pi_NC-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-07_c004",
+    "planItemId": "pi_NC-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-08_c004",
+    "planItemId": "pi_NC-08_c004",
+    "selfScore": 55,
+    "managerScore": 60,
+    "councilScore": 82,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-09_c004",
+    "planItemId": "pi_NC-09_c004",
+    "selfScore": 88,
+    "managerScore": 83,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_NC-10_c004",
+    "planItemId": "pi_NC-10_c004",
+    "selfScore": 88,
+    "managerScore": 89,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-01_c004",
+    "planItemId": "pi_TTTD-01_c004",
+    "selfScore": 106,
+    "managerScore": 98,
+    "councilScore": 120,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-02_c004",
+    "planItemId": "pi_TTTD-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-03_c004",
+    "planItemId": "pi_TTTD-03_c004",
+    "selfScore": 63,
+    "managerScore": 83,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-04_c004",
+    "planItemId": "pi_TTTD-04_c004",
+    "selfScore": 115,
+    "managerScore": 92,
+    "councilScore": 104,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-05_c004",
+    "planItemId": "pi_TTTD-05_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-06_c004",
+    "planItemId": "pi_TTTD-06_c004",
+    "selfScore": 51,
+    "managerScore": 57,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-07_c004",
+    "planItemId": "pi_TTTD-07_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-08_c004",
+    "planItemId": "pi_TTTD-08_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-09_c004",
+    "planItemId": "pi_TTTD-09_c004",
+    "selfScore": 101,
+    "managerScore": 70,
+    "councilScore": 92,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_TTTD-10_c004",
+    "planItemId": "pi_TTTD-10_c004",
+    "selfScore": 69,
+    "managerScore": 81,
+    "councilScore": 93,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-01_c004",
+    "planItemId": "pi_DV-01_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-02_c004",
+    "planItemId": "pi_DV-02_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-03_c004",
+    "planItemId": "pi_DV-03_c004",
+    "selfScore": 90,
+    "managerScore": 115,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-04_c004",
+    "planItemId": "pi_DV-04_c004",
+    "selfScore": 120,
+    "managerScore": 82,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-05_c004",
+    "planItemId": "pi_DV-05_c004",
+    "selfScore": 76,
+    "managerScore": 104,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-06_c004",
+    "planItemId": "pi_DV-06_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-07_c004",
+    "planItemId": "pi_DV-07_c004",
+    "selfScore": 113,
+    "managerScore": 56,
+    "councilScore": 75,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-08_c004",
+    "planItemId": "pi_DV-08_c004",
+    "selfScore": 92,
+    "managerScore": 52,
+    "councilScore": 69,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DV-09_c004",
+    "planItemId": "pi_DV-09_c004",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "SCmqqe9jtp5jadosgc84h",
+    "planItemId": "PImqqe9jr1ua8gxbpmoio",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9jw7atxn3kfx56",
+    "planItemId": "PImqqe9juoxuxux5do1p",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9k1grfde05ypf5",
+    "planItemId": "PImqqe9jz84wersdm9jkq",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9k44yktvxk68r1",
+    "planItemId": "PImqqe9k2sklg3hg50g7",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9k6vptr7x0cm3wh",
+    "planItemId": "PImqqe9k5c37axtxmsq6q",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9lmmsbvnvjvjj17",
+    "planItemId": "PImqqe9lk11r2qc26lq85",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9oc22ggciyuhp7u",
+    "planItemId": "PImqqe9n69zy5rr8neqc",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9q4a1p6lw1m595b",
+    "planItemId": "PImqqe9q0ubzneaurfohf",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqe9tauw7py6uw3j7",
+    "planItemId": "PImqqe9rpz4c8vg1s5hc",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqeg4f2y2eghn8mofe",
+    "planItemId": "PImqqeg4a44az9cfgteb2",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqeg75q9ojhhn4yk4",
+    "planItemId": "PImqqeg5y7mmd8fyzg0hq",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqeg9wn7yropdi4mi3",
+    "planItemId": "PImqqeg7vmv6gysk2m12h",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegbhorysdyhlkc5t",
+    "planItemId": "PImqqeg9zugln5pgczdt",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegdu5xowahgq0bbq",
+    "planItemId": "PImqqegcr5vwzwzirj43",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegfdcdlg4bfn1xaq",
+    "planItemId": "PImqqegf9px9bgqb7gr9",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegitu1gd6zdn1t4n",
+    "planItemId": "PImqqegh1r9rqi3looie9",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegkgh8cd7w4uw9jl",
+    "planItemId": "PImqqegixl4c66qtegcmi",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqegnc9p4c7jf6ilus",
+    "planItemId": "PImqqegm90qligqr2cafl",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqeqvi13wyqf3efqn4",
+    "planItemId": "PImqqeqtwb0i3mk0bw872",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqeqxcwbj8ebq3qzw",
+    "planItemId": "PImqqeqvm2mfv06h3hfdg",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqer05i3zr6xnqwxos",
+    "planItemId": "PImqqeqyvyahsmqmrjh8",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqer1t4tewiczurjsb",
+    "planItemId": "PImqqer1p5e350xufohsl",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqer4q9z2yhntb9iz",
+    "planItemId": "PImqqer3e9wtfzfbhnvgs",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqer72kj90fswdsoi9",
+    "planItemId": "PImqqer6yhgz3n58rovhq",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqerazkzyo63bolkv",
+    "planItemId": "PImqqer91wcu9btwy2yq",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqerczpmdmsdcvvqy",
+    "planItemId": "PImqqerb3rn8femqxsqy9",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  },
+  {
+    "id": "SCmqqerhhfmo0ifxy9adm",
+    "planItemId": "PImqqerft6hgwabx82w5",
+    "selfScore": 0,
+    "managerScore": 0,
+    "councilScore": 0,
+    "finalScore": 0
+  }
+]

@@ -1,0 +1,7 @@
+[
+  { "id": "tg001", "name": "Giảng viên các khoa", "code": "GV_KHOA", "description": "Nhóm giảng viên thuộc các khoa đào tạo", "level": "department", "positionIds": ["pos001", "pos002", "pos003", "pos004"], "kpiTemplateId": "kpt001", "status": "active" },
+  { "id": "tg002", "name": "Quản lý đơn vị", "code": "QL_DONVI", "description": "Nhóm trưởng/phó các đơn vị, khoa, phòng ban", "level": "unit", "positionIds": ["pos005", "pos006"], "kpiTemplateId": "kpt002", "status": "active" },
+  { "id": "tg003", "name": "Viên chức hành chính", "code": "VC_HANHCHINH", "description": "Nhóm viên chức, chuyên viên các phòng ban", "level": "individual", "positionIds": ["pos008", "pos009"], "kpiTemplateId": "kpt003", "status": "active" },
+  { "id": "tg004", "name": "Trưởng bộ môn", "code": "TBM", "description": "Nhóm trưởng bộ môn thuộc các khoa", "level": "department", "positionIds": ["pos007"], "kpiTemplateId": "kpt001", "status": "active" },
+  { "id": "tg005", "name": "Đơn vị đào tạo", "code": "DV_DAOTAO", "description": "Nhóm các khoa và trung tâm đào tạo", "level": "school", "positionIds": [], "kpiTemplateId": "kpt004", "status": "active" }
+]

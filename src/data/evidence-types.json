@@ -1,0 +1,10 @@
+[
+  { "id": "et001", "name": "Tệp tin", "code": "file", "description": "Tải lên file PDF, Word, Excel, ảnh", "maxSize": "10MB", "required": true, "status": "active" },
+  { "id": "et002", "name": "Liên kết URL", "code": "url", "description": "Đường dẫn đến tài liệu trực tuyến", "maxSize": "-", "required": true, "status": "active" },
+  { "id": "et003", "name": "Log hệ thống", "code": "system_log", "description": "Nhật ký tự động từ hệ thống tích hợp", "maxSize": "-", "required": false, "status": "active" },
+  { "id": "et004", "name": "Quyết định", "code": "decision", "description": "Quyết định phê duyệt, ban hành", "maxSize": "5MB", "required": true, "status": "active" },
+  { "id": "et005", "name": "Biên bản", "code": "minutes", "description": "Biên bản họp, nghiệm thu, kiểm tra", "maxSize": "5MB", "required": true, "status": "active" },
+  { "id": "et006", "name": "Báo cáo", "code": "report", "description": "Báo cáo định kỳ, tổng hợp", "maxSize": "10MB", "required": true, "status": "active" },
+  { "id": "et007", "name": "Khảo sát", "code": "survey", "description": "Kết quả khảo sát, phiếu feedback", "maxSize": "-", "required": false, "status": "active" },
+  { "id": "et008", "name": "Email", "code": "email", "description": "Xác nhận qua email", "maxSize": "-", "required": false, "status": "active" }
+]

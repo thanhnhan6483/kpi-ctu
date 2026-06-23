@@ -1,0 +1,10 @@
+[
+  { "id": "jp001", "name": "Giảng viên", "code": "GV", "description": "Giảng viên đại học, thực hiện giảng dạy, NCKH, phục vụ cộng đồng", "kpiGroupId": "grp_dao_tao", "approvalLevel": "Trưởng bộ môn", "status": "active" },
+  { "id": "jp002", "name": "Giảng viên kiêm nhiệm quản lý", "code": "GVQL", "description": "Giảng viên kiêm nhiệm chức danh quản lý khoa/bộ môn", "kpiGroupId": "grp_dao_tao", "approvalLevel": "Trưởng khoa", "status": "active" },
+  { "id": "jp003", "name": "Trưởng bộ môn", "code": "TBM", "description": "Quản lý bộ môn, phân công KPI cho giảng viên", "kpiGroupId": "grp_quan_tri", "approvalLevel": "Trưởng khoa", "status": "active" },
+  { "id": "jp004", "name": "Trưởng khoa", "code": "TK", "description": "Quản lý khoa, phê duyệt KPI đơn vị", "kpiGroupId": "grp_quan_tri", "approvalLevel": "Ban Giám hiệu", "status": "active" },
+  { "id": "jp005", "name": "Nghiên cứu viên", "code": "NCV", "description": "Nghiên cứu khoa học, công bố, đề tài, sản phẩm KHCN", "kpiGroupId": "grp_khcn", "approvalLevel": "Trưởng đơn vị", "status": "active" },
+  { "id": "jp006", "name": "Viên chức hành chính", "code": "CV", "description": "Viên chức phục vụ hành chính, văn phòng", "kpiGroupId": "grp_quan_tri", "approvalLevel": "Trưởng đơn vị", "status": "active" },
+  { "id": "jp007", "name": "Viên chức kỹ thuật", "code": "CVDT", "description": "Viên chức phục vụ chuyển đổi số, kỹ thuật", "kpiGroupId": "grp_chuyen_so", "approvalLevel": "Trưởng đơn vị", "status": "active" },
+  { "id": "jp008", "name": "Nhân viên phục vụ", "code": "NV", "description": "Nhân viên phục vụ cơ sở vật chất, an ninh", "kpiGroupId": "grp_phuc_vu", "approvalLevel": "Trưởng đơn vị", "status": "active" }
+]

@@ -1,0 +1,6310 @@
+[
+  {
+    "id": "unit_pdt",
+    "name": "Phòng Đào tạo",
+    "code": "PDT",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tuyển sinh, chương trình đào tạo, tiến độ học tập và tốt nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-02",
+        "name": "Tỉ lệ CTĐT cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-04",
+        "name": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-02",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-05",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-06",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-08",
+        "name": "Mức hài lòng người học về dịch vụ đào tạo",
+        "indicatorId": "CTU-KPI-10",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_khcn",
+    "name": "Phòng Khoa học, Công nghệ và Đổi mới sáng tạo",
+    "code": "PKHCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý công bố, đề tài, SHTT, doanh thu KHCN và hợp tác nghiên cứu",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "KHCN-01",
+        "name": "Số công bố bình quân trên giảng viên",
+        "indicatorId": "CTU-KPI-13",
+        "weight": 1,
+        "target": 2,
+        "unit": "số lượng"
+      },
+      {
+        "id": "KHCN-02",
+        "name": "Số công bố WoS/Scopus bình quân trên GV",
+        "indicatorId": "CTU-KPI-14",
+        "target": 10,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-03",
+        "name": "Số đơn SHTT được chấp nhận",
+        "indicatorId": "CTU-KPI-15",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-04",
+        "name": "Số đề tài hợp tác địa phương/doanh nghiệp",
+        "indicatorId": "CTU-KPI-16",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-05",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-17",
+        "target": 15,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-06",
+        "name": "Tỉ lệ đề tài nghiệm thu đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-07",
+        "name": "Tỉ trọng thu KHCN trên tổng thu",
+        "indicatorId": "CTU-KPI-12",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-08",
+        "name": "Tỉ lệ hồ sơ KHCN xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-09",
+        "name": "Số sản phẩm chuyển giao công nghệ",
+        "indicatorId": null,
+        "target": 80,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHCN-10",
+        "name": "Tỉ lệ dữ liệu công bố được chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tccb",
+    "name": "Phòng Tổ chức và Phát triển nhân sự",
+    "code": "PTCNS",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý phát triển đội ngũ, trình độ tiến sĩ, GS/PGS và vị trí việc làm",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TCCB-01",
+        "name": "Tỉ lệ GV toàn thời gian có trình độ tiến sĩ",
+        "indicatorId": "CTU-KPI-01",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-02",
+        "name": "Số GV được công nhận GS/PGS",
+        "indicatorId": "CTU-KPI-21",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-03",
+        "name": "Tỉ lệ hồ sơ nhân sự được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-04",
+        "name": "Tỉ lệ quy hoạch, bổ nhiệm xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-05",
+        "name": "Tỉ lệ VC hoàn thành đánh giá năm đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-06",
+        "name": "Tỉ lệ GV tham gia bồi dưỡng phát triển năng lực",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-07",
+        "name": "Tỉ lệ vị trí việc làm có mô tả công việc cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-08",
+        "name": "Tỉ lệ dữ liệu nhân sự đồng bộ với hệ thống KPI",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-09",
+        "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_htqt",
+    "name": "Phòng Đối ngoại và Đào tạo quốc tế",
+    "code": "PDN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý SV quốc tế, trao đổi tín chỉ và hợp tác học thuật",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "HTQT-01",
+        "name": "Số SV quốc tế học tại Trường",
+        "indicatorId": "CTU-KPI-19",
+        "target": 50,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-02",
+        "name": "Số SV trao đổi tín chỉ",
+        "indicatorId": "CTU-KPI-20",
+        "target": 30,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-03",
+        "name": "Số MOU/MOA còn hiệu lực",
+        "indicatorId": null,
+        "target": 25,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-04",
+        "name": "Tỉ lệ MOU có hoạt động thực chất",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-05",
+        "name": "Số đoàn quốc tế đến làm việc",
+        "indicatorId": null,
+        "target": 15,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-06",
+        "name": "Số lượt GV tham gia trao đổi quốc tế",
+        "indicatorId": null,
+        "target": 30,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-07",
+        "name": "Tỉ lệ hồ sơ HTQT xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-08",
+        "name": "Số chương trình hợp tác đào tạo/NCKHQT",
+        "indicatorId": null,
+        "target": 8,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "HTQT-09",
+        "name": "Tỉ lệ dữ liệu HTQT được cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_khtc",
+    "name": "Phòng Kế hoạch và Tài chính",
+    "code": "PKTC",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tài chính, tăng trưởng bền vững và biên độ hoạt động",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KHTC-01",
+        "name": "Chỉ số tăng trưởng bền vững",
+        "indicatorId": "CTU-KPI-03",
+        "target": 8,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-02",
+        "name": "Biên độ hoạt động trung bình 3 năm",
+        "indicatorId": "CTU-KPI-04",
+        "target": 12,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-03",
+        "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-04",
+        "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-05",
+        "name": "Tỉ lệ chứng từ tài chính được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-06",
+        "name": "Tỉ lệ dự toán đơn vị cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-07",
+        "name": "Tỉ lệ dữ liệu tài chính tích hợp KPI",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-08",
+        "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-09",
+        "name": "Tỉ lệ sai sót chứng từ phải trả lại",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_vpt",
+    "name": "Văn phòng Đại học Cần Thơ",
+    "code": "VP",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý văn bản, Eoffice, ký số, lịch công tác và điều phối hành chính",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-03",
+        "name": "Tỉ lệ lịch họp/giao ban cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-06",
+        "name": "Tỉ lệ quy trình hành chính chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-08",
+        "name": "Tỉ lệ nhiệm vụ BGH giao được theo dõi",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_cntt",
+    "name": "Trung tâm Chuyển đổi số và Truyền thông",
+    "code": "TTCDS",
+    "type": "center",
+    "level": "unit",
+    "description": "Vận hành nền tảng số, tích hợp dữ liệu, bảo mật và hỗ trợ người dùng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "CNTT-01",
+        "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-22",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-02",
+        "name": "Tỉ lệ hệ thống trọng yếu hoạt động ổn định",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-03",
+        "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-04",
+        "name": "Tỉ lệ tài khoản người dùng đồng bộ SSO",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-05",
+        "name": "Tỉ lệ dữ liệu tích hợp vào kho dữ liệu",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-06",
+        "name": "Tỉ lệ sao lưu dữ liệu thành công",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-07",
+        "name": "Tỉ lệ lỗ hổng bảo mật nghiêm trọng được xử lý",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-08",
+        "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-09",
+        "name": "Tỉ lệ hệ thống có tài liệu kỹ thuật cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-10",
+        "name": "Số sáng kiến chuyển đổi số được triển khai",
+        "indicatorId": null,
+        "target": 60,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_dbcl",
+    "name": "Phòng Quản lý chất lượng",
+    "code": "PQLCL",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý kiểm định, tự đánh giá, khảo sát, cải tiến chất lượng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DBCL-01",
+        "name": "Số CTĐT hoàn thành tự đánh giá",
+        "indicatorId": "CTU-KPI-07",
+        "target": 4,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-02",
+        "name": "Tỉ lệ CTĐT có kế hoạch cải tiến",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-03",
+        "name": "Tỉ lệ minh chứng kiểm định được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-04",
+        "name": "Tỉ lệ khảo sát người học đúng kế hoạch",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-05",
+        "name": "Tỉ lệ phản hồi khảo sát hợp lệ",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-06",
+        "name": "Mức hài lòng người học với giảng viên",
+        "indicatorId": "CTU-KPI-10",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-07",
+        "name": "Mức hài lòng người tốt nghiệp",
+        "indicatorId": "CTU-KPI-11",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-08",
+        "name": "Tỉ lệ khuyến nghị cải tiến được theo dõi",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-09",
+        "name": "Tỉ lệ báo cáo chất lượng nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-10",
+        "name": "Số đợt tập huấn đảm bảo chất lượng",
+        "indicatorId": null,
+        "target": 4,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_khoa_cntt",
+    "name": "Khoa Công nghệ Thông tin",
+    "code": "KCN",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo, nghiên cứu, phục vụ người học, hợp tác và phát triển đội ngũ",
+    "kpiCount": 11,
+    "kpis": [
+      {
+        "id": "KTV-01",
+        "name": "Tỉ lệ hoàn thành chỉ tiêu tuyển sinh",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-02",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-06",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-03",
+        "name": "Tỉ lệ học phần có đề cương cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-04",
+        "name": "Tỉ lệ học phần sẵn sàng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-02",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-05",
+        "name": "Số công bố bình quân/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KTV-06",
+        "name": "Số công bố WoS/Scopus bình quân/GV",
+        "indicatorId": "CTU-KPI-14",
+        "target": 10,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KTV-07",
+        "name": "Tỉ lệ người học hài lòng về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-08",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm",
+        "indicatorId": "CTU-KPI-08",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-09",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-17",
+        "target": 15,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "KTV-10",
+        "name": "Số hoạt động hợp tác DN/ĐP",
+        "indicatorId": null,
+        "target": 6,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTV-11",
+        "name": "Tỉ lệ hồ sơ xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-22",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_bo_mon",
+    "name": "Bộ môn Công nghệ Thông tin",
+    "code": "BMCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý học phần, phân công giảng dạy, nghiên cứu và hỗ trợ SV",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-03",
+        "name": "Tỉ lệ học phần có học liệu số",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-08",
+        "name": "Tỉ lệ học phần có ngân hàng câu hỏi/rubric",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_thu_vien",
+    "name": "Thư viện Đại học Cần Thơ",
+    "code": "TV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ thư viện, học liệu, tài nguyên số và hỗ trợ kỹ năng thông tin",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TV-01",
+        "name": "Tỉ lệ tài nguyên học liệu số tăng mới",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-02",
+        "name": "Số lượt truy cập thư viện số",
+        "indicatorId": null,
+        "target": 80,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-03",
+        "name": "Tỉ lệ yêu cầu mượn/trả xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-04",
+        "name": "Mức hài lòng người dùng thư viện",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-05",
+        "name": "Tỉ lệ giáo trình/tài liệu học phần được hỗ trợ",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-06",
+        "name": "Số buổi hướng dẫn kỹ năng thông tin",
+        "indicatorId": null,
+        "target": 12,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-07",
+        "name": "Tỉ lệ tài liệu được biên mục đúng chuẩn",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-08",
+        "name": "Tỉ lệ quy trình thư viện được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TV-09",
+        "name": "Tỉ lệ sự cố dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_ktx",
+    "name": "Ký túc xá",
+    "code": "KTX",
+    "type": "center",
+    "level": "unit",
+    "description": "Quản lý nội trú, hỗ trợ đời sống sinh viên, an ninh, an toàn",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KTX-01",
+        "name": "Tỉ lệ phòng/khu ở đạt chuẩn vận hành",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-02",
+        "name": "Tỉ lệ yêu cầu SV xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-03",
+        "name": "Mức hài lòng sinh viên nội trú",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-04",
+        "name": "Tỉ lệ hồ sơ nội trú xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-05",
+        "name": "Tỉ lệ phản ánh an ninh xử lý kịp thời",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-06",
+        "name": "Tỉ lệ bảo trì cơ sở vật chất đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-07",
+        "name": "Số hoạt động hỗ trợ đời sống SV",
+        "indicatorId": null,
+        "target": 6,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-08",
+        "name": "Tỉ lệ dữ liệu cư trú cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KTX-09",
+        "name": "Tỉ lệ sự cố tái diễn",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_nghien_cuu",
+    "name": "Đơn vị Nghiên cứu",
+    "code": "DVNC",
+    "type": "research",
+    "level": "unit",
+    "description": "Thực hiện nghiên cứu, công bố, đề tài, chuyển giao công nghệ, quản lý PTN",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-14",
+        "target": 10,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-16",
+        "target": 3,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-05",
+        "name": "Doanh thu từ hoạt động KHCN",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-06",
+        "name": "Số đơn SHTT/giải pháp hữu ích",
+        "indicatorId": "CTU-KPI-15",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-08",
+        "name": "Tỉ lệ dữ liệu nghiên cứu được lưu trữ đúng quy định",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 6,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_truyen_thong",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
+    "code": "TTTT",
+    "type": "center",
+    "level": "unit",
+    "description": "Tư vấn tuyển sinh, truyền thông số, quản lý CRM, quan hệ doanh nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "TTTD-01",
+        "name": "Số chiến dịch truyền thông tuyển sinh triển khai",
+        "indicatorId": null,
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-02",
+        "name": "Tỉ lệ lead tuyển sinh được xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-03",
+        "name": "Tỉ lệ chuyển đổi từ tư vấn sang đăng ký",
+        "indicatorId": null,
+        "target": 60,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-04",
+        "name": "Số hoạt động quan hệ doanh nghiệp",
+        "indicatorId": null,
+        "target": 8,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-05",
+        "name": "Số cơ hội thực tập/việc làm kết nối",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-06",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm sau 12 tháng",
+        "indicatorId": "CTU-KPI-08",
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-07",
+        "name": "Tỉ lệ nội dung truyền thông phát hành đúng kế hoạch",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-08",
+        "name": "Mức độ tương tác truyền thông số",
+        "indicatorId": null,
+        "target": 70,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-09",
+        "name": "Mức hài lòng doanh nghiệp đối tác",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TTTD-10",
+        "name": "Tỉ lệ dữ liệu doanh nghiệp/cựu SV cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_dich_vu",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
+    "code": "TTDV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ hỗ trợ học tập, sinh hoạt và trải nghiệm người học",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "DV-01",
+        "name": "Tỉ lệ yêu cầu dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-02",
+        "name": "Mức hài lòng người dùng dịch vụ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-03",
+        "name": "Tỉ lệ quy trình dịch vụ được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-04",
+        "name": "Tỉ lệ hồ sơ dịch vụ có minh chứng đầy đủ",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-05",
+        "name": "Tỉ lệ sự cố dịch vụ tái diễn",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-06",
+        "name": "Tỉ lệ chi phí dịch vụ trong định mức",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-07",
+        "name": "Số sáng kiến cải tiến dịch vụ",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-08",
+        "name": "Tỉ lệ báo cáo vận hành nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-09",
+        "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_mqk7ulvz7pb5zsmzhwf",
+    "name": "Phòng Đào tạo",
+    "code": "PDT",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tuyển sinh, chương trình đào tạo, tiến độ học tập và tốt nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+        "target": 78.2,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-02",
+        "name": "Tỉ lệ CTĐT cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-04",
+        "name": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-05",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-08",
+        "name": "Mức hài lòng người học về dịch vụ đào tạo",
+        "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzzf4otl5t0w",
+    "name": "Phòng Khoa học, Công nghệ và Đổi mới sáng tạo",
+    "code": "PKHCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý công bố, đề tài, SHTT, doanh thu KHCN và hợp tác nghiên cứu",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "KHCN-01",
+        "name": "Số công bố bình quân trên giảng viên",
+        "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+        "weight": 1,
+        "target": 1.7,
+        "unit": "số lượng"
+      },
+      {
+        "id": "KHCN-02",
+        "name": "Số công bố WoS/Scopus bình quân trên GV",
+        "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+        "target": 8.5,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-03",
+        "name": "Số đơn SHTT được chấp nhận",
+        "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+        "target": 4.3,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-04",
+        "name": "Số đề tài hợp tác địa phương/doanh nghiệp",
+        "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+        "target": 4.3,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-05",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+        "target": 12.8,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-06",
+        "name": "Tỉ lệ đề tài nghiệm thu đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-07",
+        "name": "Tỉ trọng thu KHCN trên tổng thu",
+        "indicatorId": "CTU-KPI-mqk7ulvzp3n8o72jyk",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-08",
+        "name": "Tỉ lệ hồ sơ KHCN xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-09",
+        "name": "Số sản phẩm chuyển giao công nghệ",
+        "indicatorId": null,
+        "target": 68,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHCN-10",
+        "name": "Tỉ lệ dữ liệu công bố được chuẩn hóa",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzpcwkwwnq5p",
+    "name": "Phòng Tổ chức và Phát triển nhân sự",
+    "code": "PTCNS",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý phát triển đội ngũ, trình độ tiến sĩ, GS/PGS và vị trí việc làm",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TCCB-01",
+        "name": "Tỉ lệ GV toàn thời gian có trình độ tiến sĩ",
+        "indicatorId": "CTU-KPI-mqk7ulvz8x4gydszhxk",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-02",
+        "name": "Số GV được công nhận GS/PGS",
+        "indicatorId": "CTU-KPI-mqk7ulvzi1ywfl0vma8",
+        "target": 4.3,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-03",
+        "name": "Tỉ lệ hồ sơ nhân sự được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-04",
+        "name": "Tỉ lệ quy hoạch, bổ nhiệm xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-05",
+        "name": "Tỉ lệ VC hoàn thành đánh giá năm đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-06",
+        "name": "Tỉ lệ GV tham gia bồi dưỡng phát triển năng lực",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-07",
+        "name": "Tỉ lệ vị trí việc làm có mô tả công việc cập nhật",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-08",
+        "name": "Tỉ lệ dữ liệu nhân sự đồng bộ với hệ thống KPI",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TCCB-09",
+        "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzzqd5nlujto",
+    "name": "Phòng Đối ngoại và Đào tạo quốc tế",
+    "code": "PDN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý SV quốc tế, trao đổi tín chỉ và hợp tác học thuật",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "HTQT-01",
+        "name": "Số SV quốc tế học tại Trường",
+        "indicatorId": "CTU-KPI-mqk7ulvzueaocvplfu",
+        "target": 42.5,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-02",
+        "name": "Số SV trao đổi tín chỉ",
+        "indicatorId": "CTU-KPI-mqk7ulvzm57zb2ibyr",
+        "target": 25.5,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-03",
+        "name": "Số MOU/MOA còn hiệu lực",
+        "indicatorId": null,
+        "target": 21.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-04",
+        "name": "Tỉ lệ MOU có hoạt động thực chất",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-05",
+        "name": "Số đoàn quốc tế đến làm việc",
+        "indicatorId": null,
+        "target": 12.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-06",
+        "name": "Số lượt GV tham gia trao đổi quốc tế",
+        "indicatorId": null,
+        "target": 25.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-07",
+        "name": "Tỉ lệ hồ sơ HTQT xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-08",
+        "name": "Số chương trình hợp tác đào tạo/NCKHQT",
+        "indicatorId": null,
+        "target": 6.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "HTQT-09",
+        "name": "Tỉ lệ dữ liệu HTQT được cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzihyn7ozjoy",
+    "name": "Phòng Kế hoạch và Tài chính",
+    "code": "PKTC",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tài chính, tăng trưởng bền vững và biên độ hoạt động",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KHTC-01",
+        "name": "Chỉ số tăng trưởng bền vững",
+        "indicatorId": "CTU-KPI-mqk7ulvzb1i7k9wqotv",
+        "target": 6.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-02",
+        "name": "Biên độ hoạt động trung bình 3 năm",
+        "indicatorId": "CTU-KPI-mqk7ulvzm94j9spxk9d",
+        "target": 10.2,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-03",
+        "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-04",
+        "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-05",
+        "name": "Tỉ lệ chứng từ tài chính được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-06",
+        "name": "Tỉ lệ dự toán đơn vị cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-07",
+        "name": "Tỉ lệ dữ liệu tài chính tích hợp KPI",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-08",
+        "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KHTC-09",
+        "name": "Tỉ lệ sai sót chứng từ phải trả lại",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvz85h1fjjuu0d",
+    "name": "Văn phòng Đại học Cần Thơ",
+    "code": "VP",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý văn bản, Eoffice, ký số, lịch công tác và điều phối hành chính",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-mqk7ulvzfkbbqajni9q",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-03",
+        "name": "Tỉ lệ lịch họp/giao ban cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-06",
+        "name": "Tỉ lệ quy trình hành chính chuẩn hóa",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-08",
+        "name": "Tỉ lệ nhiệm vụ BGH giao được theo dõi",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzr2vvbaalima",
+    "name": "Trung tâm Chuyển đổi số và Truyền thông",
+    "code": "TTCDS",
+    "type": "center",
+    "level": "unit",
+    "description": "Vận hành nền tảng số, tích hợp dữ liệu, bảo mật và hỗ trợ người dùng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "CNTT-01",
+        "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-02",
+        "name": "Tỉ lệ hệ thống trọng yếu hoạt động ổn định",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-03",
+        "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-04",
+        "name": "Tỉ lệ tài khoản người dùng đồng bộ SSO",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-05",
+        "name": "Tỉ lệ dữ liệu tích hợp vào kho dữ liệu",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-06",
+        "name": "Tỉ lệ sao lưu dữ liệu thành công",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-07",
+        "name": "Tỉ lệ lỗ hổng bảo mật nghiêm trọng được xử lý",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-08",
+        "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-09",
+        "name": "Tỉ lệ hệ thống có tài liệu kỹ thuật cập nhật",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "CNTT-10",
+        "name": "Số sáng kiến chuyển đổi số được triển khai",
+        "indicatorId": null,
+        "target": 51,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzyfdz9cpz4bo",
+    "name": "Phòng Quản lý chất lượng",
+    "code": "PQLCL",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý kiểm định, tự đánh giá, khảo sát, cải tiến chất lượng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DBCL-01",
+        "name": "Số CTĐT hoàn thành tự đánh giá",
+        "indicatorId": "CTU-KPI-mqk7ulvzlbr077u984",
+        "target": 3.4,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-02",
+        "name": "Tỉ lệ CTĐT có kế hoạch cải tiến",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-03",
+        "name": "Tỉ lệ minh chứng kiểm định được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-04",
+        "name": "Tỉ lệ khảo sát người học đúng kế hoạch",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-05",
+        "name": "Tỉ lệ phản hồi khảo sát hợp lệ",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-06",
+        "name": "Mức hài lòng người học với giảng viên",
+        "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-07",
+        "name": "Mức hài lòng người tốt nghiệp",
+        "indicatorId": "CTU-KPI-mqk7ulvzmiiuz0cp8an",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-08",
+        "name": "Tỉ lệ khuyến nghị cải tiến được theo dõi",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-09",
+        "name": "Tỉ lệ báo cáo chất lượng nộp đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DBCL-10",
+        "name": "Số đợt tập huấn đảm bảo chất lượng",
+        "indicatorId": null,
+        "target": 3.4,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzeyjzalx3nqw",
+    "name": "Khoa Công nghệ Thông tin",
+    "code": "KCN",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo, nghiên cứu, phục vụ người học, hợp tác và phát triển đội ngũ",
+    "kpiCount": 11,
+    "kpis": [
+      {
+        "id": "KTV-01",
+        "name": "Tỉ lệ hoàn thành chỉ tiêu tuyển sinh",
+        "indicatorId": "CTU-KPI-mqk7ulvzztvsam2gn",
+        "target": 78.2,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-02",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-mqk7ulvzn1xvatcfl6",
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-03",
+        "name": "Tỉ lệ học phần có đề cương cập nhật",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-04",
+        "name": "Tỉ lệ học phần sẵn sàng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-mqk7ulvzwjubn156dz",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-05",
+        "name": "Số công bố bình quân/GV",
+        "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+        "target": 1.7,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KTV-06",
+        "name": "Số công bố WoS/Scopus bình quân/GV",
+        "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+        "target": 8.5,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KTV-07",
+        "name": "Tỉ lệ người học hài lòng về giảng dạy",
+        "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-08",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm",
+        "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-09",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-mqk7ulvzizw5fxj0mi",
+        "target": 12.8,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "KTV-10",
+        "name": "Số hoạt động hợp tác DN/ĐP",
+        "indicatorId": null,
+        "target": 5.1,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTV-11",
+        "name": "Tỉ lệ hồ sơ xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-mqk7ulvzfexv9dr2ckm",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvz1v6vbw4xai9",
+    "name": "Bộ môn Công nghệ Thông tin",
+    "code": "BMCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý học phần, phân công giảng dạy, nghiên cứu và hỗ trợ SV",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-03",
+        "name": "Tỉ lệ học phần có học liệu số",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-mqk7ulvzvst4wobheyh",
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+        "target": 1.7,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-08",
+        "name": "Tỉ lệ học phần có ngân hàng câu hỏi/rubric",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvza5skq7pk2w7",
+    "name": "Thư viện Đại học Cần Thơ",
+    "code": "TV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ thư viện, học liệu, tài nguyên số và hỗ trợ kỹ năng thông tin",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TV-01",
+        "name": "Tỉ lệ tài nguyên học liệu số tăng mới",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-02",
+        "name": "Số lượt truy cập thư viện số",
+        "indicatorId": null,
+        "target": 68,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-03",
+        "name": "Tỉ lệ yêu cầu mượn/trả xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-04",
+        "name": "Mức hài lòng người dùng thư viện",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-05",
+        "name": "Tỉ lệ giáo trình/tài liệu học phần được hỗ trợ",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-06",
+        "name": "Số buổi hướng dẫn kỹ năng thông tin",
+        "indicatorId": null,
+        "target": 10.2,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-07",
+        "name": "Tỉ lệ tài liệu được biên mục đúng chuẩn",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-08",
+        "name": "Tỉ lệ quy trình thư viện được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TV-09",
+        "name": "Tỉ lệ sự cố dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvz36b1cm886iy",
+    "name": "Ký túc xá",
+    "code": "KTX",
+    "type": "center",
+    "level": "unit",
+    "description": "Quản lý nội trú, hỗ trợ đời sống sinh viên, an ninh, an toàn",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KTX-01",
+        "name": "Tỉ lệ phòng/khu ở đạt chuẩn vận hành",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-02",
+        "name": "Tỉ lệ yêu cầu SV xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-03",
+        "name": "Mức hài lòng sinh viên nội trú",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-04",
+        "name": "Tỉ lệ hồ sơ nội trú xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-05",
+        "name": "Tỉ lệ phản ánh an ninh xử lý kịp thời",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-06",
+        "name": "Tỉ lệ bảo trì cơ sở vật chất đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-07",
+        "name": "Số hoạt động hỗ trợ đời sống SV",
+        "indicatorId": null,
+        "target": 5.1,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-08",
+        "name": "Tỉ lệ dữ liệu cư trú cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "KTX-09",
+        "name": "Tỉ lệ sự cố tái diễn",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvz6b86mtims6h",
+    "name": "Đơn vị Nghiên cứu",
+    "code": "DVNC",
+    "type": "research",
+    "level": "unit",
+    "description": "Thực hiện nghiên cứu, công bố, đề tài, chuyển giao công nghệ, quản lý PTN",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-mqk7ulvzeb9k9sd3egq",
+        "target": 1.7,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-mqk7ulvzfmyv91oyvu4",
+        "target": 8.5,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-mqk7ulvzgikr47z3umw",
+        "target": 2.6,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "NC-05",
+        "name": "Doanh thu từ hoạt động KHCN",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "NC-06",
+        "name": "Số đơn SHTT/giải pháp hữu ích",
+        "indicatorId": "CTU-KPI-mqk7ulvz2b4wccq0lpl",
+        "target": 4.3,
+        "unit": "số lượng",
+        "weight": 3
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "NC-08",
+        "name": "Tỉ lệ dữ liệu nghiên cứu được lưu trữ đúng quy định",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 5.1,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 80.8,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvzh41xr86s9zk",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
+    "code": "TTTT",
+    "type": "center",
+    "level": "unit",
+    "description": "Tư vấn tuyển sinh, truyền thông số, quản lý CRM, quan hệ doanh nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "TTTD-01",
+        "name": "Số chiến dịch truyền thông tuyển sinh triển khai",
+        "indicatorId": null,
+        "target": 78.2,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-02",
+        "name": "Tỉ lệ lead tuyển sinh được xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-03",
+        "name": "Tỉ lệ chuyển đổi từ tư vấn sang đăng ký",
+        "indicatorId": null,
+        "target": 51,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-04",
+        "name": "Số hoạt động quan hệ doanh nghiệp",
+        "indicatorId": null,
+        "target": 6.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-05",
+        "name": "Số cơ hội thực tập/việc làm kết nối",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-06",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm sau 12 tháng",
+        "indicatorId": "CTU-KPI-mqk7ulvz4rpbef14xwt",
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-07",
+        "name": "Tỉ lệ nội dung truyền thông phát hành đúng kế hoạch",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-08",
+        "name": "Mức độ tương tác truyền thông số",
+        "indicatorId": null,
+        "target": 59.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-09",
+        "name": "Mức hài lòng doanh nghiệp đối tác",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "TTTD-10",
+        "name": "Tỉ lệ dữ liệu doanh nghiệp/cựu SV cập nhật",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7ulvz5tivyqve4kq",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
+    "code": "TTDV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ hỗ trợ học tập, sinh hoạt và trải nghiệm người học",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "DV-01",
+        "name": "Tỉ lệ yêu cầu dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-02",
+        "name": "Mức hài lòng người dùng dịch vụ",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-03",
+        "name": "Tỉ lệ quy trình dịch vụ được số hóa",
+        "indicatorId": null,
+        "target": 72.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-04",
+        "name": "Tỉ lệ hồ sơ dịch vụ có minh chứng đầy đủ",
+        "indicatorId": null,
+        "target": 74.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-05",
+        "name": "Tỉ lệ sự cố dịch vụ tái diễn",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-06",
+        "name": "Tỉ lệ chi phí dịch vụ trong định mức",
+        "indicatorId": null,
+        "target": 80.8,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-07",
+        "name": "Số sáng kiến cải tiến dịch vụ",
+        "indicatorId": null,
+        "target": 4.3,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-08",
+        "name": "Tỉ lệ báo cáo vận hành nộp đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      },
+      {
+        "id": "DV-09",
+        "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
+        "indicatorId": null,
+        "target": 76.5,
+        "unit": "%",
+        "weight": 3
+      }
+    ],
+    "academicYearId": "ay001"
+  },
+  {
+    "id": "unit_mqk7uqy2p466v1agq9n",
+    "name": "Phòng Đào tạo",
+    "code": "PDT",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tuyển sinh, chương trình đào tạo, tiến độ học tập và tốt nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-mqk7uqy2q20vp7oabcd",
+        "target": 105.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DT-02",
+        "name": "Tỉ lệ CTĐT cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "DT-04",
+        "name": "Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-mqk7uqy2t6sip3o8mpr",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DT-05",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-mqk7uqy2hgncpz39qas",
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "DT-08",
+        "name": "Mức hài lòng người học về dịch vụ đào tạo",
+        "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2vzpujthc2zp",
+    "name": "Phòng Khoa học, Công nghệ và Đổi mới sáng tạo",
+    "code": "PKHCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý công bố, đề tài, SHTT, doanh thu KHCN và hợp tác nghiên cứu",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "KHCN-01",
+        "name": "Số công bố bình quân trên giảng viên",
+        "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+        "weight": 2,
+        "target": 2.3,
+        "unit": "số lượng"
+      },
+      {
+        "id": "KHCN-02",
+        "name": "Số công bố WoS/Scopus bình quân trên GV",
+        "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+        "target": 11.5,
+        "unit": "số lượng",
+        "weight": 8
+      },
+      {
+        "id": "KHCN-03",
+        "name": "Số đơn SHTT được chấp nhận",
+        "indicatorId": "CTU-KPI-mqk7uqy2hd8bc0ou6hd",
+        "target": 5.8,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "KHCN-04",
+        "name": "Số đề tài hợp tác địa phương/doanh nghiệp",
+        "indicatorId": "CTU-KPI-mqk7uqy24j4tm1m2h7p",
+        "target": 5.8,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "KHCN-05",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-mqk7uqy2c8heh68c9d",
+        "target": 17.3,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "KHCN-06",
+        "name": "Tỉ lệ đề tài nghiệm thu đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHCN-07",
+        "name": "Tỉ trọng thu KHCN trên tổng thu",
+        "indicatorId": "CTU-KPI-mqk7uqy2z75vqfy4ey",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KHCN-08",
+        "name": "Tỉ lệ hồ sơ KHCN xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHCN-09",
+        "name": "Số sản phẩm chuyển giao công nghệ",
+        "indicatorId": null,
+        "target": 92,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KHCN-10",
+        "name": "Tỉ lệ dữ liệu công bố được chuẩn hóa",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy25iuyrst6v5e",
+    "name": "Phòng Tổ chức và Phát triển nhân sự",
+    "code": "PTCNS",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý phát triển đội ngũ, trình độ tiến sĩ, GS/PGS và vị trí việc làm",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TCCB-01",
+        "name": "Tỉ lệ GV toàn thời gian có trình độ tiến sĩ",
+        "indicatorId": "CTU-KPI-mqk7uqy2wwzzc0zxa48",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TCCB-02",
+        "name": "Số GV được công nhận GS/PGS",
+        "indicatorId": "CTU-KPI-mqk7uqy27cw5o3jz45",
+        "target": 5.8,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "TCCB-03",
+        "name": "Tỉ lệ hồ sơ nhân sự được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "TCCB-04",
+        "name": "Tỉ lệ quy hoạch, bổ nhiệm xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TCCB-05",
+        "name": "Tỉ lệ VC hoàn thành đánh giá năm đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "TCCB-06",
+        "name": "Tỉ lệ GV tham gia bồi dưỡng phát triển năng lực",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "TCCB-07",
+        "name": "Tỉ lệ vị trí việc làm có mô tả công việc cập nhật",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TCCB-08",
+        "name": "Tỉ lệ dữ liệu nhân sự đồng bộ với hệ thống KPI",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TCCB-09",
+        "name": "Mức hài lòng đơn vị về dịch vụ nhân sự",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2plfak8fhcxk",
+    "name": "Phòng Đối ngoại và Đào tạo quốc tế",
+    "code": "PDN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý SV quốc tế, trao đổi tín chỉ và hợp tác học thuật",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "HTQT-01",
+        "name": "Số SV quốc tế học tại Trường",
+        "indicatorId": "CTU-KPI-mqk7uqy2ng7e74i3trh",
+        "target": 57.5,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "HTQT-02",
+        "name": "Số SV trao đổi tín chỉ",
+        "indicatorId": "CTU-KPI-mqk7uqy2roh49fgxx0h",
+        "target": 34.5,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "HTQT-03",
+        "name": "Số MOU/MOA còn hiệu lực",
+        "indicatorId": null,
+        "target": 28.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "HTQT-04",
+        "name": "Tỉ lệ MOU có hoạt động thực chất",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "HTQT-05",
+        "name": "Số đoàn quốc tế đến làm việc",
+        "indicatorId": null,
+        "target": 17.3,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "HTQT-06",
+        "name": "Số lượt GV tham gia trao đổi quốc tế",
+        "indicatorId": null,
+        "target": 34.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "HTQT-07",
+        "name": "Tỉ lệ hồ sơ HTQT xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "HTQT-08",
+        "name": "Số chương trình hợp tác đào tạo/NCKHQT",
+        "indicatorId": null,
+        "target": 9.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "HTQT-09",
+        "name": "Tỉ lệ dữ liệu HTQT được cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2b2dr3n9a3mk",
+    "name": "Phòng Kế hoạch và Tài chính",
+    "code": "PKTC",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý tài chính, tăng trưởng bền vững và biên độ hoạt động",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KHTC-01",
+        "name": "Chỉ số tăng trưởng bền vững",
+        "indicatorId": "CTU-KPI-mqk7uqy2nimi8kq6k47",
+        "target": 9.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KHTC-02",
+        "name": "Biên độ hoạt động trung bình 3 năm",
+        "indicatorId": "CTU-KPI-mqk7uqy2t61gszuwxa",
+        "target": 13.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHTC-03",
+        "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHTC-04",
+        "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHTC-05",
+        "name": "Tỉ lệ chứng từ tài chính được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHTC-06",
+        "name": "Tỉ lệ dự toán đơn vị cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KHTC-07",
+        "name": "Tỉ lệ dữ liệu tài chính tích hợp KPI",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "KHTC-08",
+        "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "KHTC-09",
+        "name": "Tỉ lệ sai sót chứng từ phải trả lại",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2wm01w8w9mr9",
+    "name": "Văn phòng Đại học Cần Thơ",
+    "code": "VP",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý văn bản, Eoffice, ký số, lịch công tác và điều phối hành chính",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-mqk7uqy22swkeklwq1p",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "VPT-03",
+        "name": "Tỉ lệ lịch họp/giao ban cập nhật đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "VPT-06",
+        "name": "Tỉ lệ quy trình hành chính chuẩn hóa",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "VPT-08",
+        "name": "Tỉ lệ nhiệm vụ BGH giao được theo dõi",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 6
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2w0qsggsv6ma",
+    "name": "Trung tâm Chuyển đổi số và Truyền thông",
+    "code": "TTCDS",
+    "type": "center",
+    "level": "unit",
+    "description": "Vận hành nền tảng số, tích hợp dữ liệu, bảo mật và hỗ trợ người dùng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "CNTT-01",
+        "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-mqk7uqy2o6depwk8m7g",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "CNTT-02",
+        "name": "Tỉ lệ hệ thống trọng yếu hoạt động ổn định",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "CNTT-03",
+        "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "CNTT-04",
+        "name": "Tỉ lệ tài khoản người dùng đồng bộ SSO",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "CNTT-05",
+        "name": "Tỉ lệ dữ liệu tích hợp vào kho dữ liệu",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "CNTT-06",
+        "name": "Tỉ lệ sao lưu dữ liệu thành công",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "CNTT-07",
+        "name": "Tỉ lệ lỗ hổng bảo mật nghiêm trọng được xử lý",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "CNTT-08",
+        "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "CNTT-09",
+        "name": "Tỉ lệ hệ thống có tài liệu kỹ thuật cập nhật",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "CNTT-10",
+        "name": "Số sáng kiến chuyển đổi số được triển khai",
+        "indicatorId": null,
+        "target": 69,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2is5d8x5h1y",
+    "name": "Phòng Quản lý chất lượng",
+    "code": "PQLCL",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý kiểm định, tự đánh giá, khảo sát, cải tiến chất lượng",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "DBCL-01",
+        "name": "Số CTĐT hoàn thành tự đánh giá",
+        "indicatorId": "CTU-KPI-mqk7uqy23fjm5tld1id",
+        "target": 4.6,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-02",
+        "name": "Tỉ lệ CTĐT có kế hoạch cải tiến",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-03",
+        "name": "Tỉ lệ minh chứng kiểm định được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-04",
+        "name": "Tỉ lệ khảo sát người học đúng kế hoạch",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "DBCL-05",
+        "name": "Tỉ lệ phản hồi khảo sát hợp lệ",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-06",
+        "name": "Mức hài lòng người học với giảng viên",
+        "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-07",
+        "name": "Mức hài lòng người tốt nghiệp",
+        "indicatorId": "CTU-KPI-mqk7uqy2xnuq2vbo1us",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-08",
+        "name": "Tỉ lệ khuyến nghị cải tiến được theo dõi",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "DBCL-09",
+        "name": "Tỉ lệ báo cáo chất lượng nộp đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DBCL-10",
+        "name": "Số đợt tập huấn đảm bảo chất lượng",
+        "indicatorId": null,
+        "target": 4.6,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy237iexndcbbt",
+    "name": "Khoa Công nghệ Thông tin",
+    "code": "KCN",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo, nghiên cứu, phục vụ người học, hợp tác và phát triển đội ngũ",
+    "kpiCount": 11,
+    "kpis": [
+      {
+        "id": "KTV-01",
+        "name": "Tỉ lệ hoàn thành chỉ tiêu tuyển sinh",
+        "indicatorId": "CTU-KPI-mqk7uqy2q20vp7oabcd",
+        "target": 105.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTV-02",
+        "name": "Tỉ lệ SV tốt nghiệp đúng hạn",
+        "indicatorId": "CTU-KPI-mqk7uqy2hgncpz39qas",
+        "target": 103.5,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "KTV-03",
+        "name": "Tỉ lệ học phần có đề cương cập nhật",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KTV-04",
+        "name": "Tỉ lệ học phần sẵn sàng dạy trực tuyến",
+        "indicatorId": "CTU-KPI-mqk7uqy2t6sip3o8mpr",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTV-05",
+        "name": "Số công bố bình quân/GV",
+        "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+        "target": 2.3,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "KTV-06",
+        "name": "Số công bố WoS/Scopus bình quân/GV",
+        "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+        "target": 11.5,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "KTV-07",
+        "name": "Tỉ lệ người học hài lòng về giảng dạy",
+        "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTV-08",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm",
+        "indicatorId": "CTU-KPI-mqk7uqy2s8kc2r6lza",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTV-09",
+        "name": "Số đề tài NCKH sinh viên",
+        "indicatorId": "CTU-KPI-mqk7uqy2c8heh68c9d",
+        "target": 17.3,
+        "unit": "số lượng",
+        "weight": 8
+      },
+      {
+        "id": "KTV-10",
+        "name": "Số hoạt động hợp tác DN/ĐP",
+        "indicatorId": null,
+        "target": 6.9,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KTV-11",
+        "name": "Tỉ lệ hồ sơ xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-mqk7uqy2o6depwk8m7g",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy2lnwytynokt",
+    "name": "Bộ môn Công nghệ Thông tin",
+    "code": "BMCN",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý học phần, phân công giảng dạy, nghiên cứu và hỗ trợ SV",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "BM-03",
+        "name": "Tỉ lệ học phần có học liệu số",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-mqk7uqy2gzk16jij0i7",
+        "target": 97.7,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+        "target": 2.3,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "BM-08",
+        "name": "Tỉ lệ học phần có ngân hàng câu hỏi/rubric",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy3uugs9nw79i8",
+    "name": "Thư viện Đại học Cần Thơ",
+    "code": "TV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ thư viện, học liệu, tài nguyên số và hỗ trợ kỹ năng thông tin",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "TV-01",
+        "name": "Tỉ lệ tài nguyên học liệu số tăng mới",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TV-02",
+        "name": "Số lượt truy cập thư viện số",
+        "indicatorId": null,
+        "target": 92,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TV-03",
+        "name": "Tỉ lệ yêu cầu mượn/trả xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TV-04",
+        "name": "Mức hài lòng người dùng thư viện",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TV-05",
+        "name": "Tỉ lệ giáo trình/tài liệu học phần được hỗ trợ",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TV-06",
+        "name": "Số buổi hướng dẫn kỹ năng thông tin",
+        "indicatorId": null,
+        "target": 13.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TV-07",
+        "name": "Tỉ lệ tài liệu được biên mục đúng chuẩn",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "TV-08",
+        "name": "Tỉ lệ quy trình thư viện được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TV-09",
+        "name": "Tỉ lệ sự cố dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy39ror9wn1gv",
+    "name": "Ký túc xá",
+    "code": "KTX",
+    "type": "center",
+    "level": "unit",
+    "description": "Quản lý nội trú, hỗ trợ đời sống sinh viên, an ninh, an toàn",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "KTX-01",
+        "name": "Tỉ lệ phòng/khu ở đạt chuẩn vận hành",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KTX-02",
+        "name": "Tỉ lệ yêu cầu SV xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KTX-03",
+        "name": "Mức hài lòng sinh viên nội trú",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTX-04",
+        "name": "Tỉ lệ hồ sơ nội trú xử lý trực tuyến",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTX-05",
+        "name": "Tỉ lệ phản ánh an ninh xử lý kịp thời",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTX-06",
+        "name": "Tỉ lệ bảo trì cơ sở vật chất đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "KTX-07",
+        "name": "Số hoạt động hỗ trợ đời sống SV",
+        "indicatorId": null,
+        "target": 6.9,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "KTX-08",
+        "name": "Tỉ lệ dữ liệu cư trú cập nhật đầy đủ",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "KTX-09",
+        "name": "Tỉ lệ sự cố tái diễn",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy3a73irjeylpn",
+    "name": "Đơn vị Nghiên cứu",
+    "code": "DVNC",
+    "type": "research",
+    "level": "unit",
+    "description": "Thực hiện nghiên cứu, công bố, đề tài, chuyển giao công nghệ, quản lý PTN",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-mqk7uqy2y3abxvf2zb",
+        "target": 2.3,
+        "unit": "số lượng",
+        "weight": 6
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-mqk7uqy2m5obwhhoqm",
+        "target": 11.5,
+        "unit": "số lượng",
+        "weight": 8
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-mqk7uqy24j4tm1m2h7p",
+        "target": 3.5,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "NC-05",
+        "name": "Doanh thu từ hoạt động KHCN",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "NC-06",
+        "name": "Số đơn SHTT/giải pháp hữu ích",
+        "indicatorId": "CTU-KPI-mqk7uqy2hd8bc0ou6hd",
+        "target": 5.8,
+        "unit": "số lượng",
+        "weight": 7
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "NC-08",
+        "name": "Tỉ lệ dữ liệu nghiên cứu được lưu trữ đúng quy định",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 6.9,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 109.2,
+        "unit": "%",
+        "weight": 7
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy36vnmur57f7f",
+    "name": "Trung tâm Truyền thông và Tuyển sinh",
+    "code": "TTTT",
+    "type": "center",
+    "level": "unit",
+    "description": "Tư vấn tuyển sinh, truyền thông số, quản lý CRM, quan hệ doanh nghiệp",
+    "kpiCount": 10,
+    "kpis": [
+      {
+        "id": "TTTD-01",
+        "name": "Số chiến dịch truyền thông tuyển sinh triển khai",
+        "indicatorId": null,
+        "target": 105.8,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TTTD-02",
+        "name": "Tỉ lệ lead tuyển sinh được xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TTTD-03",
+        "name": "Tỉ lệ chuyển đổi từ tư vấn sang đăng ký",
+        "indicatorId": null,
+        "target": 69,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TTTD-04",
+        "name": "Số hoạt động quan hệ doanh nghiệp",
+        "indicatorId": null,
+        "target": 9.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TTTD-05",
+        "name": "Số cơ hội thực tập/việc làm kết nối",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TTTD-06",
+        "name": "Tỉ lệ người tốt nghiệp có việc làm sau 12 tháng",
+        "indicatorId": "CTU-KPI-mqk7uqy2s8kc2r6lza",
+        "target": 101.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TTTD-07",
+        "name": "Tỉ lệ nội dung truyền thông phát hành đúng kế hoạch",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TTTD-08",
+        "name": "Mức độ tương tác truyền thông số",
+        "indicatorId": null,
+        "target": 80.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "TTTD-09",
+        "name": "Mức hài lòng doanh nghiệp đối tác",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "TTTD-10",
+        "name": "Tỉ lệ dữ liệu doanh nghiệp/cựu SV cập nhật",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_mqk7uqy3hxlpwi5tptc",
+    "name": "Trung tâm Dịch vụ và Hỗ trợ đào tạo",
+    "code": "TTDV",
+    "type": "center",
+    "level": "unit",
+    "description": "Cung cấp dịch vụ hỗ trợ học tập, sinh hoạt và trải nghiệm người học",
+    "kpiCount": 9,
+    "kpis": [
+      {
+        "id": "DV-01",
+        "name": "Tỉ lệ yêu cầu dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      },
+      {
+        "id": "DV-02",
+        "name": "Mức hài lòng người dùng dịch vụ",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DV-03",
+        "name": "Tỉ lệ quy trình dịch vụ được số hóa",
+        "indicatorId": null,
+        "target": 97.7,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DV-04",
+        "name": "Tỉ lệ hồ sơ dịch vụ có minh chứng đầy đủ",
+        "indicatorId": null,
+        "target": 101.2,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "DV-05",
+        "name": "Tỉ lệ sự cố dịch vụ tái diễn",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "DV-06",
+        "name": "Tỉ lệ chi phí dịch vụ trong định mức",
+        "indicatorId": null,
+        "target": 109.2,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DV-07",
+        "name": "Số sáng kiến cải tiến dịch vụ",
+        "indicatorId": null,
+        "target": 5.8,
+        "unit": "%",
+        "weight": 6
+      },
+      {
+        "id": "DV-08",
+        "name": "Tỉ lệ báo cáo vận hành nộp đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 7
+      },
+      {
+        "id": "DV-09",
+        "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
+        "indicatorId": null,
+        "target": 103.5,
+        "unit": "%",
+        "weight": 8
+      }
+    ],
+    "academicYearId": "ay003"
+  },
+  {
+    "id": "unit_bach_khoa",
+    "name": "Trường Bách khoa",
+    "code": "BK",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo kỹ thuật, công nghệ và quản lý",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_kinh_te",
+    "name": "Trường Kinh tế",
+    "code": "KTC",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo kinh tế, quản trị kinh doanh và tài chính",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_nong_nghiep",
+    "name": "Trường Nông nghiệp",
+    "code": "NN",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo nông nghiệp, phát triển nông thôn",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_su_pham",
+    "name": "Trường Sư phạm",
+    "code": "SP",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo sư phạm và khoa học giáo dục",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_thuy_san",
+    "name": "Trường Thủy sản",
+    "code": "TS",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo thủy sản, nuôi trồng và chế biến",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_khtn",
+    "name": "Trường Khoa học Tự nhiên",
+    "code": "KHTN",
+    "type": "school",
+    "level": "unit",
+    "description": "Đào tạo khoa học tự nhiên và công nghệ",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_thpt_thsp",
+    "name": "Trường THPT Thực hành Sư phạm",
+    "code": "THPTSP",
+    "type": "school",
+    "level": "unit",
+    "description": "Trường thực hành sư phạm cấp THPT",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_khct",
+    "name": "Khoa Khoa học Chính trị, Xã hội và Nhân văn",
+    "code": "KHCT",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo KHXH&NV, chính trị",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_luat",
+    "name": "Khoa Luật",
+    "code": "LUAT",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo luật và các ngành pháp lý",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_mt_tn",
+    "name": "Khoa Môi trường & Tài nguyên Thiên nhiên",
+    "code": "MT",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo môi trường và tài nguyên",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_ngoai_ngu",
+    "name": "Khoa Ngoại ngữ",
+    "code": "NNN",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Đào tạo ngoại ngữ và biên phiên dịch",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_sau_dai_hoc",
+    "name": "Khoa Sau đại học",
+    "code": "SDH",
+    "type": "faculty",
+    "level": "unit",
+    "description": "Quản lý đào tạo sau đại học",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_vien_mekong",
+    "name": "Viện Mekong",
+    "code": "VMEK",
+    "type": "institute",
+    "level": "unit",
+    "description": "Nghiên cứu phát triển vùng ĐBSCL",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 3,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-14",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-16",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_vien_cnsh",
+    "name": "Viện Công nghệ Sinh học và Thực phẩm",
+    "code": "VCLST",
+    "type": "institute",
+    "level": "unit",
+    "description": "Nghiên cứu CNSH, thực phẩm và dược liệu",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 3,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-14",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-16",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_hau_giang",
+    "name": "Cơ sở Hậu Giang",
+    "code": "CSHG",
+    "type": "campus",
+    "level": "unit",
+    "description": "Cơ sở đào tạo tại Hậu Giang",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 10,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_soc_trang",
+    "name": "Cơ sở Sóc Trăng",
+    "code": "CSST",
+    "type": "campus",
+    "level": "unit",
+    "description": "Cơ sở đào tạo tại Sóc Trăng",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 10,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_cts",
+    "name": "Phòng Công tác Sinh viên",
+    "code": "PCTS",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý công tác sinh viên, hỗ trợ và dịch vụ SV",
+    "kpiCount": 3,
+    "kpis": [
+      {
+        "id": "TCCB-04",
+        "name": "Tỉ lệ quy hoạch, bổ nhiệm xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-05",
+        "name": "Tỉ lệ VC hoàn thành đánh giá năm đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "TCCB-07",
+        "name": "Tỉ lệ vị trí việc làm có mô tả công việc cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_pcdv",
+    "name": "Phòng Phát triển cơ sở vật chất và dự án",
+    "code": "PPCV",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý CSVC và dự án đầu tư",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 10,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_phap_che",
+    "name": "Phòng Pháp chế",
+    "code": "PPC",
+    "type": "department",
+    "level": "unit",
+    "description": "Tư vấn pháp lý, kiểm tra văn bản",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 10,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_oda",
+    "name": "Ban Quản lý dự án ODA",
+    "code": "QLDAODA",
+    "type": "department",
+    "level": "unit",
+    "description": "Quản lý dự án ODA và nguồn vốn nước ngoài",
+    "kpiCount": 4,
+    "kpis": [
+      {
+        "id": "KHTC-03",
+        "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-04",
+        "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-05",
+        "name": "Tỉ lệ chứng từ tài chính được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-08",
+        "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_nxb",
+    "name": "Nhà Xuất bản Đại học Cần Thơ",
+    "code": "NXB",
+    "type": "department",
+    "level": "unit",
+    "description": "Xuất bản giáo trình, tài liệu và ấn phẩm",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DV-01",
+        "name": "Tỉ lệ yêu cầu dịch vụ xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-02",
+        "name": "Mức hài lòng người dùng dịch vụ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-03",
+        "name": "Tỉ lệ quy trình dịch vụ được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-07",
+        "name": "Số sáng kiến cải tiến dịch vụ",
+        "indicatorId": null,
+        "target": 2,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-08",
+        "name": "Tỉ lệ báo cáo vận hành nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DV-09",
+        "name": "Tỉ lệ tài sản/dịch vụ kiểm kê đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dao_tao",
+    "name": "Trung tâm Đào tạo",
+    "code": "TTDT",
+    "type": "center",
+    "level": "unit",
+    "description": "Đào tạo ngắn hạn, bồi dưỡng nghiệp vụ",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_bdsp",
+    "name": "Trung tâm Bồi dưỡng Nghiệp vụ Sư phạm",
+    "code": "TTBDSP",
+    "type": "center",
+    "level": "unit",
+    "description": "Bồi dưỡng nghiệp vụ sư phạm, cấp chứng chỉ",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_cnpm",
+    "name": "Trung tâm Công nghệ Phần mềm",
+    "code": "TTPT",
+    "type": "center",
+    "level": "unit",
+    "description": "Phát triển phần mềm, dịch vụ CNTT",
+    "kpiCount": 5,
+    "kpis": [
+      {
+        "id": "CNTT-01",
+        "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-22",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-03",
+        "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-06",
+        "name": "Tỉ lệ sao lưu dữ liệu thành công",
+        "indicatorId": null,
+        "target": 99,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-08",
+        "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-10",
+        "name": "Số sáng kiến chuyển đổi số được triển khai",
+        "indicatorId": null,
+        "target": 2,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dgnl",
+    "name": "Trung tâm Đánh giá năng lực Ngoại ngữ",
+    "code": "TTDGNL",
+    "type": "center",
+    "level": "unit",
+    "description": "Đánh giá năng lực ngoại ngữ, tổ chức thi chứng chỉ",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dtkt",
+    "name": "Trung tâm Đào tạo, NC và Tư vấn kinh tế",
+    "code": "TTDTKT",
+    "type": "center",
+    "level": "unit",
+    "description": "Đào tạo, tư vấn về kinh tế",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dien_dt",
+    "name": "Trung tâm Điện - Điện tử",
+    "code": "TTDD",
+    "type": "center",
+    "level": "unit",
+    "description": "Nghiên cứu ứng dụng điện, điện tử",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 3,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-14",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-16",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dth",
+    "name": "Trung tâm Điện tử Tin học",
+    "code": "TTDTI",
+    "type": "center",
+    "level": "unit",
+    "description": "Đào tạo tin học, ứng dụng CNTT",
+    "kpiCount": 5,
+    "kpis": [
+      {
+        "id": "CNTT-01",
+        "name": "Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "indicatorId": "CTU-KPI-22",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-03",
+        "name": "Tỉ lệ sự cố CNTT xử lý đúng SLA",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-06",
+        "name": "Tỉ lệ sao lưu dữ liệu thành công",
+        "indicatorId": null,
+        "target": 99,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-08",
+        "name": "Mức hài lòng người dùng về hỗ trợ CNTT",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "CNTT-10",
+        "name": "Số sáng kiến chuyển đổi số được triển khai",
+        "indicatorId": null,
+        "target": 2,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_gdqp",
+    "name": "Trung tâm Giáo dục Quốc phòng & An ninh",
+    "code": "TTGQPA",
+    "type": "center",
+    "level": "unit",
+    "description": "Giảng dạy GDQP-AN cho sinh viên",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "BM-01",
+        "name": "Tỉ lệ học phần phân công giảng dạy đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-02",
+        "name": "Tỉ lệ đề cương học phần được cập nhật",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-04",
+        "name": "Điểm hài lòng SV về giảng dạy",
+        "indicatorId": "CTU-KPI-10",
+        "target": 4,
+        "unit": "điểm/5",
+        "weight": 5
+      },
+      {
+        "id": "BM-05",
+        "name": "Số công bố bình quân/GV bộ môn",
+        "indicatorId": "CTU-KPI-13",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "BM-06",
+        "name": "Số đề tài/sáng kiến chuyên môn",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-07",
+        "name": "Tỉ lệ GV tham gia sinh hoạt chuyên môn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "BM-09",
+        "name": "Tỉ lệ nhiệm vụ bộ môn hoàn thành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_kdtv",
+    "name": "Trung tâm Kiểm định và Tư vấn Xây dựng",
+    "code": "TTKDXD",
+    "type": "center",
+    "level": "unit",
+    "description": "Kiểm định chất lượng công trình, tư vấn xây dựng",
+    "kpiCount": 3,
+    "kpis": [
+      {
+        "id": "DBCL-02",
+        "name": "Tỉ lệ CTĐT có kế hoạch cải tiến",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-04",
+        "name": "Tỉ lệ khảo sát người học đúng kế hoạch",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DBCL-09",
+        "name": "Tỉ lệ báo cáo chất lượng nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_dtlc",
+    "name": "Trung tâm Đào tạo liên tục",
+    "code": "TTDTLC",
+    "type": "center",
+    "level": "unit",
+    "description": "Đào tạo liên tục, bồi dưỡng nâng cao",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_ncud",
+    "name": "Trung tâm Nghiên cứu và Ứng dụng công nghệ",
+    "code": "TTNCUD",
+    "type": "center",
+    "level": "unit",
+    "description": "Nghiên cứu ứng dụng công nghệ mới",
+    "kpiCount": 7,
+    "kpis": [
+      {
+        "id": "NC-01",
+        "name": "Số công bố bình quân trên nghiên cứu viên/GV",
+        "indicatorId": "CTU-KPI-13",
+        "target": 3,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-02",
+        "name": "Số công bố WoS/Scopus",
+        "indicatorId": "CTU-KPI-14",
+        "target": 5,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-03",
+        "name": "Số đề tài/dự án nghiên cứu được phê duyệt",
+        "indicatorId": null,
+        "target": 3,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-04",
+        "name": "Số hợp đồng chuyển giao/cung cấp dịch vụ KHCN",
+        "indicatorId": "CTU-KPI-16",
+        "target": 2,
+        "unit": "số lượng",
+        "weight": 5
+      },
+      {
+        "id": "NC-07",
+        "name": "Tỉ lệ thiết bị/PTN vận hành đạt chuẩn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-09",
+        "name": "Số hoạt động hợp tác địa phương/doanh nghiệp",
+        "indicatorId": null,
+        "target": 5,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "NC-10",
+        "name": "Tỉ lệ hồ sơ an toàn PTN đầy đủ",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_ngnn",
+    "name": "Trung tâm Ngoại ngữ",
+    "code": "TTNN",
+    "type": "center",
+    "level": "unit",
+    "description": "Dạy và kiểm tra ngoại ngữ",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "DT-01",
+        "name": "Tỉ lệ hoàn thành kế hoạch tuyển sinh chính quy",
+        "indicatorId": "CTU-KPI-05",
+        "target": 92,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-03",
+        "name": "Tỉ lệ học phần có đề cương chuẩn hóa",
+        "indicatorId": null,
+        "target": 88,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-06",
+        "name": "Tỉ lệ xử lý học vụ đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-07",
+        "name": "Tỉ lệ dữ liệu đào tạo được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-09",
+        "name": "Tỉ lệ báo cáo đào tạo nộp đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "DT-10",
+        "name": "Tỉ lệ cảnh báo học vụ được xử lý",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_tt_bdpl",
+    "name": "Trung tâm Bồi dưỡng kiến thức pháp luật và bổ trợ tư pháp",
+    "code": "TTBDPL",
+    "type": "center",
+    "level": "unit",
+    "description": "Bồi dưỡng kiến thức pháp luật",
+    "kpiCount": 6,
+    "kpis": [
+      {
+        "id": "VPT-01",
+        "name": "Tỉ lệ văn bản nội bộ ký số trên Eoffice",
+        "indicatorId": "CTU-KPI-23",
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-02",
+        "name": "Tỉ lệ văn bản xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-04",
+        "name": "Tỉ lệ thông báo điều hành phát hành đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-05",
+        "name": "Tỉ lệ hồ sơ lưu trữ điện tử đầy đủ",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-07",
+        "name": "Mức hài lòng về công tác hành chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "VPT-09",
+        "name": "Tỉ lệ nhiệm vụ quá hạn",
+        "indicatorId": null,
+        "target": 10,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_ct_khcn",
+    "name": "Công ty TNHH MTV KHCN",
+    "code": "CTKHCN",
+    "type": "center",
+    "level": "unit",
+    "description": "Thương mại hóa sản phẩm KHCN",
+    "kpiCount": 4,
+    "kpis": [
+      {
+        "id": "KHTC-03",
+        "name": "Tỉ lệ báo cáo tài chính nộp đúng hạn",
+        "indicatorId": null,
+        "target": 95,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-04",
+        "name": "Tỉ lệ hồ sơ thanh toán xử lý đúng hạn",
+        "indicatorId": null,
+        "target": 90,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-05",
+        "name": "Tỉ lệ chứng từ tài chính được số hóa",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      },
+      {
+        "id": "KHTC-08",
+        "name": "Mức hài lòng đơn vị về dịch vụ tài chính",
+        "indicatorId": null,
+        "target": 85,
+        "unit": "%",
+        "weight": 5
+      }
+    ],
+    "academicYearId": "ay002"
+  },
+  {
+    "id": "unit_ctu_mqq3",
+    "academicYearId": "ay001",
+    "name": "Đại học Cần Thơ",
+    "code": "CTU",
+    "type": "university",
+    "level": "school",
+    "description": "",
+    "kpiCount": 23,
+    "kpis": [
+      {
+        "id": "CTU-KPI-01",
+        "name": "CTU-KPI-01 — Tỉ lệ giảng viên toàn thời gian có trình độ tiến sĩ",
+        "target": 0,
+        "unit": "%",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-01"
+      },
+      {
+        "id": "CTU-KPI-02",
+        "name": "CTU-KPI-02 — Tỉ lệ học phần sẵn sàng giảng dạy trực tuyến",
+        "target": 0,
+        "unit": "%",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-02"
+      },
+      {
+        "id": "CTU-KPI-03",
+        "name": "CTU-KPI-03 — Chỉ số tăng trưởng bền vững",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-03"
+      },
+      {
+        "id": "CTU-KPI-04",
+        "name": "CTU-KPI-04 — Biên độ hoạt động trung bình 3 năm",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-04"
+      },
+      {
+        "id": "CTU-KPI-05",
+        "name": "CTU-KPI-05 — Tỉ lệ tuyển sinh đại học chính quy",
+        "target": 0,
+        "unit": "%",
+        "weight": 8,
+        "indicatorId": "CTU-KPI-05"
+      },
+      {
+        "id": "CTU-KPI-06",
+        "name": "CTU-KPI-06 — Tỉ lệ SV chính quy tốt nghiệp đúng hạn",
+        "target": 0,
+        "unit": "%",
+        "weight": 7,
+        "indicatorId": "CTU-KPI-06"
+      },
+      {
+        "id": "CTU-KPI-07",
+        "name": "CTU-KPI-07 — Số lượng CTĐT hoàn thành tự đánh giá",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-07"
+      },
+      {
+        "id": "CTU-KPI-08",
+        "name": "CTU-KPI-08 — Tỉ lệ người tốt nghiệp có việc làm trong 12 tháng",
+        "target": 0,
+        "unit": "%",
+        "weight": 7,
+        "indicatorId": "CTU-KPI-08"
+      },
+      {
+        "id": "CTU-KPI-09",
+        "name": "CTU-KPI-09 — Tỉ lệ người tốt nghiệp có việc làm phù hợp/học tiếp",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-09"
+      },
+      {
+        "id": "CTU-KPI-10",
+        "name": "CTU-KPI-10 — Tỉ lệ người học hài lòng với giảng viên",
+        "target": 0,
+        "unit": "%",
+        "weight": 4,
+        "indicatorId": "CTU-KPI-10"
+      },
+      {
+        "id": "CTU-KPI-11",
+        "name": "CTU-KPI-11 — Tỉ lệ người tốt nghiệp hài lòng tổng thể",
+        "target": 0,
+        "unit": "%",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-11"
+      },
+      {
+        "id": "CTU-KPI-12",
+        "name": "CTU-KPI-12 — Tỉ trọng thu từ KHCN trên tổng thu",
+        "target": 0,
+        "unit": "%",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-12"
+      },
+      {
+        "id": "CTU-KPI-13",
+        "name": "CTU-KPI-13 — Số công bố trên giảng viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-13"
+      },
+      {
+        "id": "CTU-KPI-14",
+        "name": "CTU-KPI-14 — Số công bố WoS, Scopus bình quân trên giảng viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 6,
+        "indicatorId": "CTU-KPI-14"
+      },
+      {
+        "id": "CTU-KPI-15",
+        "name": "CTU-KPI-15 — Số lượng đơn đăng ký SHTT được chấp nhận",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-15"
+      },
+      {
+        "id": "CTU-KPI-16",
+        "name": "CTU-KPI-16 — Số lượng đề tài NCKH hợp tác địa phương/doanh nghiệp",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 5,
+        "indicatorId": "CTU-KPI-16"
+      },
+      {
+        "id": "CTU-KPI-17",
+        "name": "CTU-KPI-17 — Số lượng đề tài NCKH cấp cơ sở của sinh viên",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 3,
+        "indicatorId": "CTU-KPI-17"
+      },
+      {
+        "id": "CTU-KPI-18",
+        "name": "CTU-KPI-18 — Tỉ lệ VC-NLĐ tham gia chủ nhiệm đề tài NCKH cấp cơ sở",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-18"
+      },
+      {
+        "id": "CTU-KPI-19",
+        "name": "CTU-KPI-19 — Số lượng SV quốc tế học tại trường",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 4,
+        "indicatorId": "CTU-KPI-19"
+      },
+      {
+        "id": "CTU-KPI-20",
+        "name": "CTU-KPI-20 — Số lượng sinh viên trao đổi tín chỉ",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-20"
+      },
+      {
+        "id": "CTU-KPI-21",
+        "name": "CTU-KPI-21 — Số giảng viên đạt chuẩn GS/PGS",
+        "target": 0,
+        "unit": "số lượng",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-21"
+      },
+      {
+        "id": "CTU-KPI-22",
+        "name": "CTU-KPI-22 — Tỉ lệ quy trình xử lý trên môi trường mạng",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-22"
+      },
+      {
+        "id": "CTU-KPI-23",
+        "name": "CTU-KPI-23 — Văn bản nội bộ ký số trên Eoffice",
+        "target": 0,
+        "unit": "%",
+        "weight": 2,
+        "indicatorId": "CTU-KPI-23"
+      }
+    ]
+  }
+]

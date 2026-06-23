@@ -1,0 +1,77 @@
+[
+  {
+    "id": "so001",
+    "name": "Nâng cao chất lượng đào tạo đạt chuẩn quốc tế",
+    "description": "Đạt kiểm định chất lượng theo chuẩn AUN-QA, nâng tỷ lệ sinh viên hài lòng trên 85%",
+    "field": "Đào tạo & Đảm bảo chất lượng",
+    "leadUnitId": "u303",
+    "supportUnitIds": [
+      "u015",
+      "u016"
+    ],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2026-06-22T09:06:19.394Z"
+  },
+  {
+    "id": "so002",
+    "name": "Tăng cường nghiên cứu khoa học và chuyển giao công nghệ",
+    "description": "Tăng số lượng công bố quốc tế, đề tài NCKH, sản phẩm SHTT",
+    "field": "KHCN & Đổi mới sáng tạo",
+    "leadUnitId": "u017",
+    "supportUnitIds": [
+      "u018"
+    ],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
+  },
+  {
+    "id": "so003",
+    "name": "Phát triển đội ngũ giảng viên chất lượng cao",
+    "description": "Tỷ lệ giảng viên có trình độ tiến sĩ trên 45%, có 5 GS/PGS mới",
+    "field": "Đội ngũ & Phát triển giảng viên",
+    "leadUnitId": "u019",
+    "supportUnitIds": [],
+    "status": "approved",
+    "createdAt": "2024-09-01T00:00:00Z",
+    "updatedAt": "2026-06-23T06:35:59.887Z"
+  },
+  {
+    "id": "so004",
+    "name": "Đảm bảo tài chính bền vững và nâng cao hiệu quả quản trị",
+    "description": "Duy trì tăng trưởng bền vững, tối ưu hóa nguồn thu và chi",
+    "field": "Quản trị đại học & Tài chính",
+    "leadUnitId": "u022",
+    "supportUnitIds": [],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
+  },
+  {
+    "id": "so005",
+    "name": "Đẩy mạnh chuyển đổi số và cải cách hành chính toàn diện",
+    "description": "Số hóa quy trình, tăng tỷ lệ xử lý trên môi trường mạng, triển khai ký số",
+    "field": "Chuyển đổi số & Quản trị số",
+    "leadUnitId": "u025",
+    "supportUnitIds": [
+      "u023"
+    ],
+    "status": "approved",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2024-08-15T00:00:00Z"
+  },
+  {
+    "id": "so006",
+    "name": "Mở rộng hợp tác quốc tế và tăng cường phục vụ cộng đồng",
+    "description": "Tăng số lượng sinh viên quốc tế, trao đổi tín chỉ và đề tài hợp tác địa phương",
+    "field": "Hợp tác quốc tế & Phục vụ cộng đồng",
+    "leadUnitId": "u020",
+    "supportUnitIds": [
+      "u021"
+    ],
+    "status": "locked",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2026-06-22T09:20:24.509Z"
+  }
+]

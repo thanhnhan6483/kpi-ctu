@@ -1,0 +1,7 @@
+[
+  { "id": "sla001", "name": "Đăng ký KPI", "processType": "registration", "targetHours": 48, "warningHours": 36, "escalationUserId": "user001", "isActive": true, "createdAt": "2025-01-01T00:00:00Z", "updatedAt": "2025-01-01T00:00:00Z" },
+  { "id": "sla002", "name": "Phê duyệt kế hoạch", "processType": "approval", "targetHours": 72, "warningHours": 48, "escalationUserId": "user001", "isActive": true, "createdAt": "2025-01-01T00:00:00Z", "updatedAt": "2025-01-01T00:00:00Z" },
+  { "id": "sla003", "name": "Thẩm định minh chứng", "processType": "evidence_review", "targetHours": 120, "warningHours": 96, "escalationUserId": "user002", "isActive": true, "createdAt": "2025-01-01T00:00:00Z", "updatedAt": "2025-01-01T00:00:00Z" },
+  { "id": "sla004", "name": "Đánh giá KPI", "processType": "evaluation", "targetHours": 168, "warningHours": 120, "escalationUserId": "user002", "isActive": true, "createdAt": "2025-01-01T00:00:00Z", "updatedAt": "2025-01-01T00:00:00Z" },
+  { "id": "sla005", "name": "Xử lý khiếu nại", "processType": "complaint", "targetHours": 72, "warningHours": 48, "escalationUserId": "user003", "isActive": true, "createdAt": "2025-01-01T00:00:00Z", "updatedAt": "2025-01-01T00:00:00Z" }
+]
