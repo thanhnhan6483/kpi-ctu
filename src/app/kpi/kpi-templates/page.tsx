@@ -257,7 +257,7 @@ export default function KPITemplatesPage() {
               filtered.map((item, idx) => (
                 <tr key={item.id}>
                   <td>{idx + 1}</td>
-                  <td><div className="font-medium">{item.name}</div><div className="text-xs text-text-light">{item.description}</div></td>
+                  <td><button onClick={() => openIndicators(item)} className="font-medium text-left hover:text-primary transition-colors">{item.name}</button><div className="text-xs text-text-light">{item.description}</div></td>
                   <td><span className="badge badge-info">{levelLabels[item.targetLevel]}</span></td>
                   <td className="text-center">{item.indicatorCount}</td>
                   <td className="text-center">{item.totalWeight}%</td>
