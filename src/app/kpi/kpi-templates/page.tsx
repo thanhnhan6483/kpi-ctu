@@ -187,7 +187,7 @@ export default function KPITemplatesPage() {
                   <td>{idx + 1}</td>
                   <td><div className="font-medium">{item.name}</div><div className="text-xs text-text-light">{item.description}</div></td>
                   <td><span className="badge badge-info">{levelLabels[item.targetLevel]}</span></td>
-                  <td className="text-center"><button onClick={() => openView(item)} className="text-primary hover:underline font-medium">{item.indicatorCount}</button></td>
+                  <td className="text-center"><button onClick={() => openView(item)} className="badge badge-info cursor-pointer hover:bg-blue-100 transition-colors">{item.indicatorCount}</button></td>
                   <td className="text-center">{item.totalWeight}%</td>
                   <td><span className={`badge ${statusConfig[item.status]?.color}`}>{statusConfig[item.status]?.label}</span></td>
                   <td>
@@ -212,26 +212,38 @@ export default function KPITemplatesPage() {
       {/* View items modal */}
       <Modal isOpen={showView} onClose={() => setShowView(false)} title={`Chỉ tiêu trong: ${viewName}`} maxWidth="max-w-3xl">
         {viewItems.length === 0 ? (
-          <p className="text-sm text-text-light py-4 text-center">Chưa có chỉ số nào</p>
+          <p className="text-sm text-text-light py-8 text-center">Chưa có chỉ số nào</p>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="border rounded-lg overflow-hidden">
             <table className="w-full text-sm">
-              <thead><tr className="bg-bg-cream border-b"><th className="text-left px-3 py-2 font-medium text-xs">STT</th><th className="text-left px-3 py-2 font-medium text-xs">Chỉ số</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>ĐVT</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>Trọng số</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>Mục tiêu</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>CapRate</th></tr></thead>
+              <thead>
+                <tr className="bg-bg-cream border-b">
+                  <th className="text-left px-4 py-2.5 font-medium text-xs text-text-light">STT</th>
+                  <th className="text-left px-4 py-2.5 font-medium text-xs text-text-light">Chỉ số</th>
+                  <th className="text-center px-4 py-2.5 font-medium text-xs text-text-light" style={{width:70}}>ĐVT</th>
+                  <th className="text-center px-4 py-2.5 font-medium text-xs text-text-light" style={{width:80}}>Trọng số</th>
+                  <th className="text-center px-4 py-2.5 font-medium text-xs text-text-light" style={{width:80}}>Mục tiêu</th>
+                  <th className="text-center px-4 py-2.5 font-medium text-xs text-text-light" style={{width:80}}>CapRate</th>
+                </tr>
+              </thead>
               <tbody>
                 {viewItems.map((ti, idx) => (
-                  <tr key={ti.id} className="border-b border-border/50">
-                    <td className="px-3 py-2 text-text-light">{idx + 1}</td>
-                    <td className="px-3 py-2">{resolveName(ti.indicatorId)}</td>
-                    <td className="px-3 py-2 text-center text-text-light text-xs">{resolveUnit(ti.indicatorId)}</td>
-                    <td className="px-3 py-2 text-center">{ti.weight}%</td>
-                    <td className="px-3 py-2 text-center">{ti.targetValue}</td>
-                    <td className="px-3 py-2 text-center">{ti.capRate}%</td>
+                  <tr key={ti.id} className="border-b border-border/50 hover:bg-bg-cream/50">
+                    <td className="px-4 py-2.5 text-text-light">{idx + 1}</td>
+                    <td className="px-4 py-2.5 font-medium">{resolveName(ti.indicatorId)}</td>
+                    <td className="px-4 py-2.5 text-center text-text-light text-xs">{resolveUnit(ti.indicatorId)}</td>
+                    <td className="px-4 py-2.5 text-center">{ti.weight}%</td>
+                    <td className="px-4 py-2.5 text-center">{ti.targetValue}</td>
+                    <td className="px-4 py-2.5 text-center">{ti.capRate}%</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         )}
+        <div className="flex justify-end pt-4 border-t mt-4">
+          <span className="text-xs text-text-light">Tổng số: <strong>{viewItems.length}</strong> chỉ số · Tổng trọng số: <strong>{viewItems.reduce((s, i) => s + i.weight, 0)}%</strong></span>
+        </div>
       </Modal>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo bộ KPI mẫu mới"><Form onSubmit={handleCreate} /></Modal>
