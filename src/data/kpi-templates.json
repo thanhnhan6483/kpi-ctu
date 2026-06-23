@@ -28,5 +28,17 @@
     "approvedAt": "2024-08-15T00:00:00Z",
     "activatedAt": "2024-09-01T00:00:00Z",
     "lockedAt": "2026-06-23T01:22:21.443Z"
+  },
+  {
+    "id": "tplmqpyny0q6vhv31y5v5b",
+    "name": "qqq",
+    "academicYearId": "ay001",
+    "targetLevel": "school",
+    "status": "draft",
+    "description": "qq",
+    "indicatorCount": 0,
+    "totalWeight": 0,
+    "createdAt": "2026-06-23T01:23:49.370Z",
+    "updatedAt": "2026-06-23T01:23:49.370Z"
   }
 ]
