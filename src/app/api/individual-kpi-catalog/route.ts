@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     code: body.code,
     name: body.name,
     positionCode: body.positionCode,
-    unit: body.unit,
+    unitId: body.unitId,
     linkedCatalogId: body.linkedCatalogId || null,
     status: 'active',
   };

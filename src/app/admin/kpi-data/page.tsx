@@ -1,31 +1,24 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy, ChevronDown, ChevronRight, Compass, ArrowRight, BookOpen } from 'lucide-react';
+import { Layers, Target, Building, Users, Plus, Edit, Trash2, Copy, ChevronDown, ChevronRight, Compass, ArrowRight } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import strategicObjectives from '@/data/strategic-objectives.json';
 import bscMapLinks from '@/data/bsc-map-links.json';
-import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear, StrategicObjective, BSCMapLink, SchoolKPICatalog, KPIGroupCatalog, UnitKPICatalog, IndividualKPICatalog } from '@/types';
+import type { KPIGroup, KPIIndicator, UnitKPIEntry, IndividualKPIEntry, UnitKPIDetail, IndividualKPIDetail, AcademicYear, StrategicObjective, BSCMapLink } from '@/types';
 
-type TabKey = 'school-catalog' | 'unit-catalog' | 'individual-catalog' | 'group-catalog' | 'indicators' | 'unit' | 'individual';
+type TabKey = 'indicators' | 'unit' | 'individual';
 
 export default function KPIDataPage() {
   const [years, setYears] = useState<AcademicYear[]>([]);
   const [selectedYearId, setSelectedYearId] = useState('');
 
-  const [tab, setTab] = useState<TabKey>('school-catalog');
+  const [tab, setTab] = useState<TabKey>('indicators');
   const [groups, setGroups] = useState<KPIGroup[]>([]);
   const [indicators, setIndicators] = useState<KPIIndicator[]>([]);
   const [unitKpis, setUnitKpis] = useState<UnitKPIEntry[]>([]);
   const [indKpis, setIndKpis] = useState<IndividualKPIEntry[]>([]);
-
-  // Catalog data (independent of year)
-  const [schoolCatalog, setSchoolCatalog] = useState<SchoolKPICatalog[]>([]);
-  const [unitCatalog, setUnitCatalog] = useState<UnitKPICatalog[]>([]);
-  const [indCatalog, setIndCatalog] = useState<IndividualKPICatalog[]>([]);
-  const [groupCatalog, setGroupCatalog] = useState<KPIGroupCatalog[]>([]);
-
   const [showModal, setShowModal] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [showGroupModal, setShowGroupModal] = useState(false);
@@ -36,8 +29,6 @@ export default function KPIDataPage() {
   const [filterGroupId, setFilterGroupId] = useState<string | null>(null);
   const [expandedUnits, setExpandedUnits] = useState<Set<string>>(new Set());
   const [expandedInds, setExpandedInds] = useState<Set<string>>(new Set());
-  const [catalogGroupFilter, setCatalogGroupFilter] = useState<string | null>(null);
-  const [catalogPosFilter, setCatalogPosFilter] = useState<string | null>(null);
 
   const objList = strategicObjectives as StrategicObjective[];
   const linkList = bscMapLinks as BSCMapLink[];
@@ -77,18 +68,7 @@ export default function KPIDataPage() {
     setGroups(g); setIndicators(i); setUnitKpis(u); setIndKpis(p);
   }, []);
 
-  const loadCatalogData = useCallback(async () => {
-    const [sc, uc, ic, gc] = await Promise.all([
-      apiGet<SchoolKPICatalog[]>('/api/school-kpi-catalog'),
-      apiGet<UnitKPICatalog[]>('/api/unit-kpi-catalog'),
-      apiGet<IndividualKPICatalog[]>('/api/individual-kpi-catalog'),
-      apiGet<KPIGroupCatalog[]>('/api/kpi-group-catalog'),
-    ]);
-    setSchoolCatalog(sc); setUnitCatalog(uc); setIndCatalog(ic); setGroupCatalog(gc);
-  }, []);
-
   useEffect(() => { loadYears(); }, [loadYears]);
-  useEffect(() => { loadCatalogData(); }, [loadCatalogData]);
 
   useEffect(() => {
     if (selectedYearId) loadData(selectedYearId);
@@ -97,18 +77,13 @@ export default function KPIDataPage() {
   const hasData = groups.length > 0 || indicators.length > 0 || unitKpis.length > 0 || indKpis.length > 0;
 
   const apiEntity = (t: TabKey) => {
-    if (t === 'school-catalog') return 'school-kpi-catalog';
-    if (t === 'unit-catalog') return 'unit-kpi-catalog';
-    if (t === 'individual-catalog') return 'individual-kpi-catalog';
-    if (t === 'group-catalog') return 'kpi-group-catalog';
     if (t === 'indicators') return 'indicators';
     if (t === 'unit') return 'unit-kpis';
     return 'individual-kpis';
   };
 
   const handleSave = async (data: any) => {
-    const isCatalog = ['school-catalog', 'unit-catalog', 'individual-catalog', 'group-catalog'].includes(tab);
-    const payload = isCatalog ? data : { ...data, academicYearId: selectedYearId };
+    const payload = { ...data, academicYearId: selectedYearId };
     const entity = apiEntity(tab);
     if (editId) {
       await apiPut(`/api/${entity}/${editId}`, payload);
@@ -116,7 +91,7 @@ export default function KPIDataPage() {
       await apiPost(`/api/${entity}`, payload);
     }
     setShowModal(false); setEditId(null);
-    if (isCatalog) { loadCatalogData(); } else { loadData(selectedYearId); }
+    loadData(selectedYearId);
   };
 
   const handleGroupSave = async (data: any) => {
@@ -132,7 +107,7 @@ export default function KPIDataPage() {
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa mục này?')) return;
     await apiDelete(`/api/${apiEntity(tab)}/${id}`);
-    if (isCatalogTab) { loadCatalogData(); } else { loadData(selectedYearId); }
+    loadData(selectedYearId);
   };
 
   const handleGroupDelete = async (id: string) => {
@@ -157,31 +132,20 @@ export default function KPIDataPage() {
     loadData(selectedYearId);
   };
 
-  const catalogTabs = [
-    { id: 'school-catalog' as TabKey, label: 'Chỉ tiêu Trường (DM)', icon: BookOpen, count: schoolCatalog.length },
-    { id: 'unit-catalog' as TabKey, label: 'KPI Đơn vị (DM)', icon: Building, count: unitCatalog.length },
-    { id: 'individual-catalog' as TabKey, label: 'KPI Cá nhân (DM)', icon: Users, count: indCatalog.length },
-    { id: 'group-catalog' as TabKey, label: 'Nhóm chỉ tiêu (DM)', icon: Layers, count: groupCatalog.length },
-  ];
-
-  const yearlyTabs = [
+  const allTabs = [
     { id: 'indicators' as TabKey, label: 'Chỉ tiêu Trường', icon: Target, count: indicators.length },
     { id: 'unit' as TabKey, label: 'KPI Đơn vị', icon: Building, count: unitKpis.length },
     { id: 'individual' as TabKey, label: 'KPI Cá nhân', icon: Users, count: indKpis.length },
   ];
 
-  const isCatalogTab = ['school-catalog', 'unit-catalog', 'individual-catalog', 'group-catalog'].includes(tab);
-  const allTabs = [...catalogTabs, ...yearlyTabs];
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-heading font-bold text-text-dark">Khung KPI chiến lược
-            {isCatalogTab && <span className="text-lg font-normal text-text-light ml-2">— Danh mục</span>}
+          <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI
             {selectedYearId && <span className="text-lg font-normal text-text-light ml-2">— {years.find(y => y.id === selectedYearId)?.name || ''}</span>}
           </h1>
-          <p className="text-text-light mt-1">{isCatalogTab ? 'Danh mục chỉ tiêu (độc lập năm học)' : 'Gán chỉ tiêu theo năm học và đơn vị'}</p>
+          <p className="text-text-light mt-1">Gán chỉ tiêu theo năm học và đơn vị</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => { setGroupEditId(null); setShowGroupModal(true); }} className="btn-secondary flex items-center gap-1 text-xs">
@@ -216,9 +180,7 @@ export default function KPIDataPage() {
         </div>
       </div>
 
-      {/* Year selector (only for yearly config) */}
-      {!isCatalogTab && (
-        <div className="flex items-center gap-3 flex-wrap">
+      <div className="flex items-center gap-3 flex-wrap">
           <span className="text-sm font-medium text-text-dark">Năm học:</span>
           {years.map(ay => (
             <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
@@ -227,9 +189,8 @@ export default function KPIDataPage() {
             </button>
           ))}
         </div>
-      )}
 
-      {!isCatalogTab && !hasData && selectedYearId && (
+      {!hasData && selectedYearId && (
         <div className="card bg-accent-yellow/5 border border-accent-yellow/30">
           <div className="p-4 flex items-center justify-between">
             <div>
@@ -247,22 +208,9 @@ export default function KPIDataPage() {
         </div>
       )}
 
-      {/* Catalog tabs (no year dependency) */}
+      {/* Tabs */}
       <div className="flex gap-2 border-b border-border">
-        {catalogTabs.map(t => {
-          const Icon = t.icon;
-          return (
-            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setFilterGroupId(null); setCatalogGroupFilter(null); setCatalogPosFilter(null); }}
-              className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${tab === t.id ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'}`}>
-              <Icon size={16} /> {t.label}
-              <span className="badge badge-info ml-1">{t.count}</span>
-            </button>
-          );
-        })}
-      </div>
-      {/* Yearly tabs (depend on year) */}
-      <div className="flex gap-2 border-b border-border">
-        {yearlyTabs.map(t => {
+        {allTabs.map(t => {
           const Icon = t.icon;
           return (
             <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setFilterGroupId(null); }}
@@ -278,20 +226,6 @@ export default function KPIDataPage() {
         <div className="card-header flex items-center justify-between">
           <h3 className="text-white">{allTabs.find(t => t.id === tab)?.label || 'Danh mục'}</h3>
           <div className="flex items-center gap-2">
-            {tab === 'school-catalog' && (
-              <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
-                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
-                <option value="">Tất cả nhóm</option>
-                {groupCatalog.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-              </select>
-            )}
-            {tab === 'individual-catalog' && (
-              <select value={catalogPosFilter || ''} onChange={e => setCatalogPosFilter(e.target.value || null)}
-                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
-                <option value="">Tất cả vị trí</option>
-                {[...new Set(indCatalog.map(i => i.positionCode))].map(pc => <option key={pc} value={pc}>{pc}</option>)}
-              </select>
-            )}
             {tab === 'indicators' && (
               <select value={filterGroupId || ''} onChange={e => setFilterGroupId(e.target.value || null)}
                 className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
@@ -299,7 +233,7 @@ export default function KPIDataPage() {
                 {groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
               </select>
             )}
-            {(isCatalogTab || (selectedYearId && !isCatalogTab)) && (
+            {selectedYearId && (
               <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
                 <Plus size={14} /> Thêm
               </button>
@@ -307,82 +241,6 @@ export default function KPIDataPage() {
           </div>
         </div>
         <div className="p-0">
-          {tab === 'school-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>Tên chỉ tiêu</th><th>Nhóm</th><th>Đơn vị</th><th>Hướng</th><th>Điểm tối đa</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {(catalogGroupFilter ? schoolCatalog.filter(s => s.categoryId === catalogGroupFilter) : schoolCatalog).map(s => (
-                  <tr key={s.id}>
-                    <td><span className="badge badge-info">{s.code}</span></td>
-                    <td className="font-medium max-w-[250px] truncate" title={s.name}>{s.name}</td>
-                    <td>{groupCatalog.find(g => g.id === s.categoryId)?.name || s.categoryId}</td>
-                    <td>{s.unit}</td>
-                    <td>{s.direction === 'higher_better' ? '↑' : '↓'}</td>
-                    <td>{s.maxScore}</td>
-                    <td><span className={`badge ${s.status === 'active' ? 'badge-success' : 'badge-warning'}`}>{s.status}</span></td>
-                    <td><Actions id={s.id} onEdit={() => { setEditId(s.id); setShowModal(true); }} onDelete={() => handleDelete(s.id)} /></td>
-                  </tr>
-                ))}
-                {schoolCatalog.length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
-          )}
-          {tab === 'unit-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>Tên KPI</th><th>ĐVT</th><th>Liên kết chỉ tiêu Trường</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {unitCatalog.map(u => (
-                  <tr key={u.id}>
-                    <td><span className="badge badge-info">{u.code}</span></td>
-                    <td className="font-medium">{u.name}</td>
-                    <td>{u.unit}</td>
-                    <td>{u.linkedCatalogId ? <span className="badge badge-info">{u.linkedCatalogId}</span> : <span className="text-text-light text-xs">—</span>}</td>
-                    <td><span className={`badge ${u.status === 'active' ? 'badge-success' : 'badge-warning'}`}>{u.status}</span></td>
-                    <td><Actions id={u.id} onEdit={() => { setEditId(u.id); setShowModal(true); }} onDelete={() => handleDelete(u.id)} /></td>
-                  </tr>
-                ))}
-                {unitCatalog.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
-          )}
-          {tab === 'individual-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>Tên KPI</th><th>Vị trí</th><th>ĐVT</th><th>Liên kết KPI Đơn vị</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {(catalogPosFilter ? indCatalog.filter(i => i.positionCode === catalogPosFilter) : indCatalog).map(i => (
-                  <tr key={i.id}>
-                    <td><span className="badge badge-info">{i.code}</span></td>
-                    <td className="font-medium">{i.name}</td>
-                    <td>{i.positionCode}</td>
-                    <td>{i.unit}</td>
-                    <td>{i.linkedCatalogId ? <span className="badge badge-info">{i.linkedCatalogId}</span> : <span className="text-text-light text-xs">—</span>}</td>
-                    <td><span className={`badge ${i.status === 'active' ? 'badge-success' : 'badge-warning'}`}>{i.status}</span></td>
-                    <td><Actions id={i.id} onEdit={() => { setEditId(i.id); setShowModal(true); }} onDelete={() => handleDelete(i.id)} /></td>
-                  </tr>
-                ))}
-                {indCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
-          )}
-          {tab === 'group-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>Tên nhóm</th><th>Code</th><th>Trọng số mặc định</th><th>Cấp</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {groupCatalog.map(g => (
-                  <tr key={g.id}>
-                    <td><span className="badge badge-info">{g.id}</span></td>
-                    <td className="font-medium">{g.name}</td>
-                    <td>{g.code}</td>
-                    <td>{g.defaultWeight}%</td>
-                    <td>{g.targetLevel === 'school' ? 'Trường' : g.targetLevel === 'unit' ? 'Đơn vị' : 'Cá nhân'}</td>
-                    <td><span className={`badge ${g.status === 'active' ? 'badge-success' : 'badge-warning'}`}>{g.status}</span></td>
-                    <td><Actions id={g.id} onEdit={() => { setEditId(g.id); setShowModal(true); }} onDelete={() => handleDelete(g.id)} /></td>
-                  </tr>
-                ))}
-                {groupCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
-          )}
           {tab === 'indicators' && (
             <table className="table">
               <thead><tr><th>ID</th><th>Tên chỉ tiêu</th><th>Lĩnh vực</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Mục tiêu CL</th><th>Thao tác</th></tr></thead>
@@ -561,11 +419,7 @@ export default function KPIDataPage() {
 
       {/* Modal: Add/Edit current tab items */}
       <Modal isOpen={showModal} onClose={() => { setShowModal(false); setEditId(null); }}
-        title={`${editId ? 'Sửa' : 'Thêm'} ${tab === 'school-catalog' ? 'Chỉ tiêu Trường (Danh mục)' : tab === 'unit-catalog' ? 'KPI Đơn vị (Danh mục)' : tab === 'individual-catalog' ? 'KPI Cá nhân (Danh mục)' : tab === 'group-catalog' ? 'Nhóm chỉ tiêu (Danh mục)' : tab === 'indicators' ? 'Chỉ tiêu Trường' : tab === 'unit' ? 'KPI Đơn vị' : 'KPI Cá nhân'}`} maxWidth="max-w-3xl">
-        {tab === 'school-catalog' && <SchoolCatalogForm item={schoolCatalog.find(s => s.id === editId) || null} groups={groupCatalog} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'unit-catalog' && <UnitCatalogForm item={unitCatalog.find(u => u.id === editId) || null} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'individual-catalog' && <IndividualCatalogForm item={indCatalog.find(i => i.id === editId) || null} positionCodes={[...new Set(indCatalog.map(i => i.positionCode))]} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'group-catalog' && <GroupCatalogForm item={groupCatalog.find(g => g.id === editId) || null} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        title={`${editId ? 'Sửa' : 'Thêm'} ${tab === 'indicators' ? 'Chỉ tiêu Trường' : tab === 'unit' ? 'KPI Đơn vị' : 'KPI Cá nhân'}`} maxWidth="max-w-3xl">
         {tab === 'indicators' && <IndicatorForm item={indicators.find(i => i.id === editId) || null} groups={groups} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'unit' && <UnitForm item={unitKpis.find(u => u.id === editId) || null} groups={groups} indicators={indicators} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'individual' && <IndividualForm item={indKpis.find(p => p.id === editId) || null} unitKpis={unitKpis} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
@@ -652,94 +506,6 @@ function Actions({ id, onEdit, onDelete }: { id: string; onEdit: () => void; onD
       <button onClick={onEdit} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
       <button onClick={onDelete} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
     </div>
-  );
-}
-
-function SchoolCatalogForm({ item, groups, onSubmit, onCancel }: { item: SchoolKPICatalog | null; groups: KPIGroupCatalog[]; onSubmit: (data: any) => void; onCancel: () => void }) {
-  const [name, setName] = useState(item?.name || '');
-  const [code, setCode] = useState(item?.code || '');
-  const [categoryId, setCategoryId] = useState(item?.categoryId || groups[0]?.id || '');
-  const [formula, setFormula] = useState(item?.formula || '');
-  const [unit, setUnit] = useState(item?.unit || '%');
-  const [direction, setDirection] = useState(item?.direction || 'higher_better');
-  const [requiredEvidence, setRequiredEvidence] = useState(item?.requiredEvidence ?? true);
-  const [maxScore, setMaxScore] = useState(item?.maxScore ?? 10);
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, categoryId, formula, unit, direction, requiredEvidence, maxScore: Number(maxScore) }); };
-  return (
-    <form onSubmit={handle} className="space-y-4">
-      <div><label className="block text-sm font-medium mb-1">Tên chỉ tiêu *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Mã</label><input type="text" value={code} onChange={e => setCode(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Nhóm *</label><select value={categoryId} onChange={e => setCategoryId(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">{groups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
-      </div>
-      <div><label className="block text-sm font-medium mb-1">Công thức</label><input type="text" value={formula} onChange={e => setFormula(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      <div className="grid grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Đơn vị</label><input type="text" value={unit} onChange={e => setUnit(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Hướng</label><select value={direction} onChange={e => setDirection(e.target.value as 'higher_better' | 'lower_better')} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"><option value="higher_better">Cao hơn tốt hơn</option><option value="lower_better">Thấp hơn tốt hơn</option></select></div>
-        <div><label className="block text-sm font-medium mb-1">Cần MC?</label><select value={requiredEvidence ? 'yes' : 'no'} onChange={e => setRequiredEvidence(e.target.value === 'yes')} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"><option value="yes">Có</option><option value="no">Không</option></select></div>
-      </div>
-      <div className="grid grid-cols-1 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Điểm tối đa</label><input type="number" value={maxScore} onChange={e => setMaxScore(Number(e.target.value))} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      </div>
-      <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
-    </form>
-  );
-}
-
-function UnitCatalogForm({ item, onSubmit, onCancel }: { item: UnitKPICatalog | null; onSubmit: (data: any) => void; onCancel: () => void }) {
-  const [name, setName] = useState(item?.name || '');
-  const [code, setCode] = useState(item?.code || '');
-  const [unit, setUnit] = useState(item?.unit || '%');
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, unit }); };
-  return (
-    <form onSubmit={handle} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Tên KPI *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Mã *</label><input type="text" value={code} onChange={e => setCode(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      </div>
-      <div><label className="block text-sm font-medium mb-1">Đơn vị tính</label><input type="text" value={unit} onChange={e => setUnit(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
-    </form>
-  );
-}
-
-function IndividualCatalogForm({ item, positionCodes, onSubmit, onCancel }: { item: IndividualKPICatalog | null; positionCodes: string[]; onSubmit: (data: any) => void; onCancel: () => void }) {
-  const [name, setName] = useState(item?.name || '');
-  const [code, setCode] = useState(item?.code || '');
-  const [positionCode, setPositionCode] = useState(item?.positionCode || positionCodes[0] || '');
-  const [unit, setUnit] = useState(item?.unit || '%');
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, positionCode, unit }); };
-  return (
-    <form onSubmit={handle} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Tên KPI *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Mã *</label><input type="text" value={code} onChange={e => setCode(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Vị trí</label><select value={positionCode} onChange={e => setPositionCode(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">{positionCodes.map(pc => <option key={pc} value={pc}>{pc}</option>)}</select></div>
-        <div><label className="block text-sm font-medium mb-1">Đơn vị tính</label><input type="text" value={unit} onChange={e => setUnit(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      </div>
-      <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
-    </form>
-  );
-}
-
-function GroupCatalogForm({ item, onSubmit, onCancel }: { item: KPIGroupCatalog | null; onSubmit: (data: any) => void; onCancel: () => void }) {
-  const [name, setName] = useState(item?.name || '');
-  const [code, setCode] = useState(item?.code || '');
-  const [defaultWeight, setDefaultWeight] = useState(item?.defaultWeight ?? 10);
-  const [targetLevel, setTargetLevel] = useState(item?.targetLevel || 'school');
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, defaultWeight, targetLevel }); };
-  return (
-    <form onSubmit={handle} className="space-y-4">
-      <div><label className="block text-sm font-medium mb-1">Tên nhóm *</label><input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-      <div className="grid grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-1">Mã *</label><input type="text" value={code} onChange={e => setCode(e.target.value)} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Trọng số mặc định *</label><input type="number" value={defaultWeight} onChange={e => setDefaultWeight(Number(e.target.value))} required className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" /></div>
-        <div><label className="block text-sm font-medium mb-1">Cấp</label><select value={targetLevel} onChange={e => setTargetLevel(e.target.value as 'school' | 'unit' | 'individual')} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"><option value="school">Trường</option><option value="unit">Đơn vị</option><option value="individual">Cá nhân</option></select></div>
-      </div>
-      <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
-    </form>
   );
 }
 

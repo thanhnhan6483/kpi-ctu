@@ -215,15 +215,6 @@ export interface IndividualPlan {
 
 // ====== NEW TYPES FOR MISSING USE CASES ======
 
-export interface KPIField {
-  id: string;
-  name: string;
-  code: string;
-  description: string;
-  status: 'active' | 'inactive';
-  sortOrder: number;
-}
-
 export interface DataSource {
   id: string;
   name: string;
@@ -562,7 +553,7 @@ export interface SchoolKPICatalog {
   name: string;
   categoryId: string;
   formula: string;
-  unit: string;
+  unitId: string;
   direction: 'higher_better' | 'lower_better';
   requiredEvidence: boolean;
   maxScore: number;
@@ -582,7 +573,7 @@ export interface UnitKPICatalog {
   id: string;
   code: string;
   name: string;
-  unit: string;
+  unitId: string;
   linkedCatalogId: string | null;
   status: 'active' | 'inactive';
 }
@@ -592,7 +583,7 @@ export interface IndividualKPICatalog {
   code: string;
   name: string;
   positionCode: string;
-  unit: string;
+  unitId: string;
   linkedCatalogId: string | null;
   status: 'active' | 'inactive';
 }

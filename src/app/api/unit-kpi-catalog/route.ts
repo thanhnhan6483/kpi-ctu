@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     id: `catuk_${generateId()}`,
     code: body.code,
     name: body.name,
-    unit: body.unit,
+    unitId: body.unitId,
     linkedCatalogId: body.linkedCatalogId || null,
     status: 'active',
   };

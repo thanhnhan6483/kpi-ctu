@@ -8,5 +8,16 @@
   { "id": "mu007", "name": "VNĐ", "description": "Đơn vị tiền Việt Nam", "status": "active" },
   { "id": "mu008", "name": "số lượng", "description": "Đếm số lượng", "status": "active" },
   { "id": "mu009", "name": "sinh viên", "description": "Số lượng sinh viên", "status": "active" },
-  { "id": "mu010", "name": "đợt", "description": "Số đợt tuyển sinh, đào tạo", "status": "active" }
+  { "id": "mu010", "name": "đợt", "description": "Số đợt tuyển sinh, đào tạo", "status": "active" },
+  { "id": "mu011", "name": "vi phạm", "description": "Số lần vi phạm", "status": "active" },
+  { "id": "mu012", "name": "sáng kiến", "description": "Số lượng sáng kiến", "status": "active" },
+  { "id": "mu013", "name": "điểm", "description": "Thang điểm đánh giá", "status": "active" },
+  { "id": "mu014", "name": "buổi", "description": "Số buổi", "status": "active" },
+  { "id": "mu015", "name": "sự kiện", "description": "Số sự kiện", "status": "active" },
+  { "id": "mu016", "name": "cơ hội", "description": "Số cơ hội", "status": "active" },
+  { "id": "mu017", "name": "nhiệm vụ", "description": "Số nhiệm vụ", "status": "active" },
+  { "id": "mu018", "name": "khóa", "description": "Số khóa học", "status": "active" },
+  { "id": "mu019", "name": "cải tiến", "description": "Số cải tiến", "status": "active" },
+  { "id": "mu020", "name": "hoạt động", "description": "Số hoạt động", "status": "active" },
+  { "id": "mu021", "name": "sản phẩm", "description": "Số sản phẩm", "status": "active" }
 ]

@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     name: body.name,
     categoryId: body.categoryId,
     formula: body.formula,
-    unit: body.unit,
+    unitId: body.unitId,
     direction: body.direction || 'higher_better',
     requiredEvidence: body.requiredEvidence ?? true,
     maxScore: body.maxScore,
