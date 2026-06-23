@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Play, FileText, Layers, X, AlertCircle } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
@@ -257,7 +258,7 @@ export default function KPITemplatesPage() {
               filtered.map((item, idx) => (
                 <tr key={item.id}>
                   <td>{idx + 1}</td>
-                  <td><button onClick={() => openIndicators(item)} className="font-medium text-left hover:text-primary transition-colors">{item.name}</button><div className="text-xs text-text-light">{item.description}</div></td>
+                  <td><Link href={`/kpi/kpi-templates/${item.id}`} className="font-medium text-left hover:text-primary transition-colors">{item.name}</Link><div className="text-xs text-text-light">{item.description}</div></td>
                   <td><span className="badge badge-info">{levelLabels[item.targetLevel]}</span></td>
                   <td className="text-center">{item.indicatorCount}</td>
                   <td className="text-center">{item.totalWeight}%</td>

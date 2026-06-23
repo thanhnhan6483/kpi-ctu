@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "timqpykhcscmto57vbfha",
+    "templateId": "tpl001",
+    "indicatorId": "CTU-KPI-16",
+    "weight": 5,
+    "targetValue": 0,
+    "capRate": 100
+  },
+  {
+    "id": "timqpykk6cna7s5evvwfa",
+    "templateId": "tpl001",
+    "indicatorId": "CTU-KPI-17",
+    "weight": 5,
+    "targetValue": 0,
+    "capRate": 100
+  }
+]
