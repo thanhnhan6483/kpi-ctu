@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Play, FileText, List } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, FileText, List } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import academicYearsData from '@/data/academic-years.json';
@@ -70,7 +70,7 @@ export default function KPITemplatesPage() {
   };
 
   const handleStatusChange = async (item: KPITemplate, status: string) => {
-    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', active: 'kích hoạt', locked: 'khóa', inactive: 'ngừng sử dụng' };
+    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', active: 'kích hoạt', locked: 'khóa', draft: 'mở khóa', inactive: 'ngừng sử dụng' };
     if (!confirm(`${labels[status] || status} bộ KPI mẫu "${item.name}"?`)) return;
     const updates: Partial<KPITemplate> = { status: status as any };
     if (status === 'approved') updates.approvedAt = new Date().toISOString();
@@ -155,6 +155,7 @@ export default function KPITemplatesPage() {
                       {item.status === 'submitted' && <button onClick={() => handleStatusChange(item, 'approved')} className="p-1 text-green-600 hover:bg-green-50 rounded" title="Phê duyệt"><CheckCircle size={14} /></button>}
                       {item.status === 'approved' && <button onClick={() => handleStatusChange(item, 'active')} className="p-1 text-blue-600 hover:bg-blue-50 rounded" title="Kích hoạt"><Play size={14} /></button>}
                       {item.status === 'active' && <button onClick={() => handleStatusChange(item, 'locked')} className="p-1 text-red-600 hover:bg-red-50 rounded" title="Khóa"><Lock size={14} /></button>}
+                      {item.status === 'locked' && <button onClick={() => handleStatusChange(item, 'draft')} className="p-1 text-orange-600 hover:bg-orange-50 rounded" title="Mở khóa"><Unlock size={14} /></button>}
                       {item.status === 'draft' && <button onClick={() => { setSelected(item); setShowEdit(true); }} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>}
                       {item.status !== 'locked' && item.status !== 'active' && <button onClick={() => handleDelete(item.id)} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>}
                     </div>

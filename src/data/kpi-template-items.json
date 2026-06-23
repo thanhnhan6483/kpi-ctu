@@ -14,5 +14,21 @@
     "weight": 5,
     "targetValue": 0,
     "capRate": 100
+  },
+  {
+    "id": "timqpyto2nifzr0ld1qpn",
+    "templateId": "tplmqpyny0q6vhv31y5v5b",
+    "indicatorId": "CTU-KPI-15",
+    "weight": 5,
+    "targetValue": 1,
+    "capRate": 100
+  },
+  {
+    "id": "timqpyu25qht7cw13l3j8",
+    "templateId": "tplmqpyny0q6vhv31y5v5b",
+    "indicatorId": "CTU-KPI-06",
+    "weight": 5,
+    "targetValue": 0,
+    "capRate": 100
   }
 ]

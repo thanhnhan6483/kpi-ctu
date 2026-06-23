@@ -9,10 +9,10 @@
     "indicatorCount": 2,
     "totalWeight": 10,
     "createdAt": "2024-08-01T00:00:00Z",
-    "updatedAt": "2026-06-23T01:22:18.071Z",
-    "approvedAt": "2024-08-15T00:00:00Z",
-    "activatedAt": "2024-09-01T00:00:00Z",
-    "lockedAt": "2026-06-23T01:22:16.755Z"
+    "updatedAt": "2026-06-23T01:30:35.619Z",
+    "approvedAt": "2026-06-23T01:30:28.059Z",
+    "activatedAt": "2026-06-23T01:30:31.715Z",
+    "lockedAt": "2026-06-23T01:30:35.507Z"
   },
   {
     "id": "tpl002",
@@ -36,9 +36,9 @@
     "targetLevel": "school",
     "status": "draft",
     "description": "qq",
-    "indicatorCount": 0,
-    "totalWeight": 0,
+    "indicatorCount": 2,
+    "totalWeight": 10,
     "createdAt": "2026-06-23T01:23:49.370Z",
-    "updatedAt": "2026-06-23T01:23:49.370Z"
+    "updatedAt": "2026-06-23T01:28:34.738Z"
   }
 ]

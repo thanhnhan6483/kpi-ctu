@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Plus, Edit, Trash2, Send, CheckCircle, Lock, Play, ArrowLeft, Save, X, AlertCircle, FileText } from 'lucide-react';
+import { Plus, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, ArrowLeft, Save, X, AlertCircle, FileText } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import type { SchoolKPICatalog, UnitKPICatalog, IndividualKPICatalog, KPITemplateItem } from '@/types';
@@ -100,7 +100,7 @@ export default function KPITemplateDetailPage() {
 
   const handleStatusChange = async (status: string) => {
     if (!template) return;
-    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', active: 'kích hoạt', locked: 'khóa', inactive: 'ngừng sử dụng' };
+    const labels: Record<string, string> = { submitted: 'trình duyệt', approved: 'phê duyệt', active: 'kích hoạt', locked: 'khóa', draft: 'mở khóa', inactive: 'ngừng sử dụng' };
     if (!confirm(`${labels[status] || status} bộ KPI mẫu "${template.name}"?`)) return;
     const updates: Partial<KPITemplate> = { status: status as any };
     if (status === 'approved') updates.approvedAt = new Date().toISOString();
@@ -227,6 +227,7 @@ export default function KPITemplateDetailPage() {
           {template.status === 'submitted' && <button onClick={() => handleStatusChange('approved')} className="btn-primary text-xs flex items-center gap-1"><CheckCircle size={14} /> Phê duyệt</button>}
           {template.status === 'approved' && <button onClick={() => handleStatusChange('active')} className="btn-primary text-xs flex items-center gap-1"><Play size={14} /> Kích hoạt</button>}
           {template.status === 'active' && <button onClick={() => handleStatusChange('locked')} className="btn-primary text-xs flex items-center gap-1"><Lock size={14} /> Khóa</button>}
+          {template.status === 'locked' && <button onClick={() => handleStatusChange('draft')} className="btn-primary text-xs flex items-center gap-1" style={{background: '#f97316'}}><Unlock size={14} /> Mở khóa</button>}
           {template.status === 'draft' && <button onClick={() => setEditInfo(true)} className="btn-secondary text-xs flex items-center gap-1"><Edit size={14} /> Sửa thông tin</button>}
           {template.status === 'draft' && <button onClick={handleDelete} className="px-3 py-1.5 border border-accent-red/30 text-accent-red rounded-lg text-xs flex items-center gap-1 hover:bg-red-50"><Trash2 size={14} /> Xóa</button>}
         </div>
