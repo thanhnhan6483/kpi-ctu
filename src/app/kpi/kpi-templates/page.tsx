@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, FileText, List } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, FileText, List, Eye } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import academicYearsData from '@/data/academic-years.json';
+import type { SchoolKPICatalog, UnitKPICatalog, IndividualKPICatalog, KPITemplateItem } from '@/types';
 
 interface KPITemplate {
   id: string;
@@ -44,11 +45,31 @@ export default function KPITemplatesPage() {
   const [showClone, setShowClone] = useState(false);
   const [selected, setSelected] = useState<KPITemplate | null>(null);
   const [loading, setLoading] = useState(true);
+  const [viewItems, setViewItems] = useState<KPITemplateItem[]>([]);
+  const [viewName, setViewName] = useState('');
+  const [showView, setShowView] = useState(false);
+  const [schoolCatalog, setSchoolCatalog] = useState<SchoolKPICatalog[]>([]);
+  const [unitCatalog, setUnitCatalog] = useState<UnitKPICatalog[]>([]);
+  const [indCatalog, setIndCatalog] = useState<IndividualKPICatalog[]>([]);
+  const [measurementUnits, setMeasurementUnits] = useState<{ id: string; name: string }[]>([]);
+  const [templateItems, setTemplateItems] = useState<KPITemplateItem[]>([]);
 
   const load = useCallback(async () => {
     try {
-      const data = await apiGet<KPITemplate[]>('/api/kpi-templates');
+      const [data, sc, uc, ic, mu, ti] = await Promise.all([
+        apiGet<KPITemplate[]>('/api/kpi-templates'),
+        apiGet<SchoolKPICatalog[]>('/api/school-kpi-catalog'),
+        apiGet<UnitKPICatalog[]>('/api/unit-kpi-catalog'),
+        apiGet<IndividualKPICatalog[]>('/api/individual-kpi-catalog'),
+        apiGet<{ id: string; name: string }[]>('/api/measurement-units'),
+        apiGet<KPITemplateItem[]>('/api/kpi-template-items'),
+      ]);
       setItems(data);
+      setSchoolCatalog(sc.filter(s => s.status === 'active'));
+      setUnitCatalog(uc.filter(u => u.status === 'active'));
+      setIndCatalog(ic.filter(i => i.status === 'active'));
+      setMeasurementUnits(mu);
+      setTemplateItems(ti);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
@@ -94,6 +115,27 @@ export default function KPITemplatesPage() {
     if (!confirm('Xóa bộ KPI mẫu này?')) return;
     await apiDelete(`/api/kpi-templates/${id}`);
     setItems(items.filter(i => i.id !== id));
+  };
+
+  const openView = (item: KPITemplate) => {
+    const found = templateItems.filter(ti => ti.templateId === item.id);
+    setViewItems(found);
+    setViewName(item.name);
+    setShowView(true);
+  };
+
+  const resolveName = (indicatorId: string) => {
+    const from = (arr: any[]) => arr.find((x: any) => x.id === indicatorId);
+    const found = from(schoolCatalog) || from(unitCatalog) || from(indCatalog);
+    return found ? `${found.code} — ${found.name}` : indicatorId;
+  };
+
+  const resolveUnit = (indicatorId: string) => {
+    const from = (arr: any[]) => arr.find((x: any) => x.id === indicatorId);
+    const found = from(schoolCatalog) || from(unitCatalog) || from(indCatalog);
+    if (!found) return '';
+    const unit = measurementUnits.find(m => m.id === found.unitId);
+    return unit?.name || '';
   };
 
   const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<KPITemplate>) => void; initial?: KPITemplate }) => {
@@ -145,7 +187,7 @@ export default function KPITemplatesPage() {
                   <td>{idx + 1}</td>
                   <td><div className="font-medium">{item.name}</div><div className="text-xs text-text-light">{item.description}</div></td>
                   <td><span className="badge badge-info">{levelLabels[item.targetLevel]}</span></td>
-                  <td className="text-center">{item.indicatorCount}</td>
+                  <td className="text-center"><button onClick={() => openView(item)} className="text-primary hover:underline font-medium">{item.indicatorCount}</button></td>
                   <td className="text-center">{item.totalWeight}%</td>
                   <td><span className={`badge ${statusConfig[item.status]?.color}`}>{statusConfig[item.status]?.label}</span></td>
                   <td>
@@ -166,6 +208,31 @@ export default function KPITemplatesPage() {
           </table>
         </div>
       </div>
+
+      {/* View items modal */}
+      <Modal isOpen={showView} onClose={() => setShowView(false)} title={`Chỉ tiêu trong: ${viewName}`} maxWidth="max-w-3xl">
+        {viewItems.length === 0 ? (
+          <p className="text-sm text-text-light py-4 text-center">Chưa có chỉ số nào</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead><tr className="bg-bg-cream border-b"><th className="text-left px-3 py-2 font-medium text-xs">STT</th><th className="text-left px-3 py-2 font-medium text-xs">Chỉ số</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>ĐVT</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>Trọng số</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>Mục tiêu</th><th className="text-center px-3 py-2 font-medium text-xs" style={{width:70}}>CapRate</th></tr></thead>
+              <tbody>
+                {viewItems.map((ti, idx) => (
+                  <tr key={ti.id} className="border-b border-border/50">
+                    <td className="px-3 py-2 text-text-light">{idx + 1}</td>
+                    <td className="px-3 py-2">{resolveName(ti.indicatorId)}</td>
+                    <td className="px-3 py-2 text-center text-text-light text-xs">{resolveUnit(ti.indicatorId)}</td>
+                    <td className="px-3 py-2 text-center">{ti.weight}%</td>
+                    <td className="px-3 py-2 text-center">{ti.targetValue}</td>
+                    <td className="px-3 py-2 text-center">{ti.capRate}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Modal>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo bộ KPI mẫu mới"><Form onSubmit={handleCreate} /></Modal>
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa">{selected && <Form onSubmit={async (d) => { await apiPut(`/api/kpi-templates/${selected.id}`, d); load(); setShowEdit(false); }} initial={selected} />}</Modal>
