@@ -91,6 +91,7 @@ export interface KPITemplate {
 }
 
 export interface KPITemplateItem {
+  id: string;
   templateId: string;
   indicatorId: string;
   weight: number;

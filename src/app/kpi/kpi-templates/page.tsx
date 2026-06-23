@@ -1,12 +1,11 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Unlock, Play, Pause, Copy, FileText } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Send, CheckCircle, Lock, Play, FileText, Layers, X, AlertCircle } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
-import kpiGroupsData from '@/data/kpi-groups.json';
-import indicatorsData from '@/data/indicators.json';
 import academicYearsData from '@/data/academic-years.json';
+import type { SchoolKPICatalog, UnitKPICatalog, IndividualKPICatalog, KPITemplateItem } from '@/types';
 
 interface KPITemplate {
   id: string;
@@ -35,6 +34,13 @@ const statusConfig: Record<string, { label: string; color: string }> = {
 
 const levelLabels: Record<string, string> = { school: 'Cấp Trường', unit: 'Cấp Đơn vị', department: 'Cấp Bộ môn', individual: 'Cấp Cá nhân' };
 
+const levelToCatalog: Record<string, string> = {
+  school: 'school-catalog',
+  unit: 'unit-catalog',
+  department: 'unit-catalog',
+  individual: 'individual-catalog',
+};
+
 export default function KPITemplatesPage() {
   const [items, setItems] = useState<KPITemplate[]>([]);
   const [search, setSearch] = useState('');
@@ -42,13 +48,38 @@ export default function KPITemplatesPage() {
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showClone, setShowClone] = useState(false);
+  const [showIndicators, setShowIndicators] = useState(false);
   const [selected, setSelected] = useState<KPITemplate | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const [schoolCatalog, setSchoolCatalog] = useState<SchoolKPICatalog[]>([]);
+  const [unitCatalog, setUnitCatalog] = useState<UnitKPICatalog[]>([]);
+  const [indCatalog, setIndCatalog] = useState<IndividualKPICatalog[]>([]);
+  const [measurementUnits, setMeasurementUnits] = useState<{ id: string; name: string }[]>([]);
+  const [templateItems, setTemplateItems] = useState<KPITemplateItem[]>([]);
+
+  // Add-item form state
+  const [addCatalogId, setAddCatalogId] = useState('');
+  const [addWeight, setAddWeight] = useState(5);
+  const [addTargetValue, setAddTargetValue] = useState(0);
+  const [addCapRate, setAddCapRate] = useState(100);
+
   const load = useCallback(async () => {
     try {
-      const data = await apiGet<KPITemplate[]>('/api/kpi-templates');
+      const [data, sc, uc, ic, mu, ti] = await Promise.all([
+        apiGet<KPITemplate[]>('/api/kpi-templates'),
+        apiGet<SchoolKPICatalog[]>('/api/school-kpi-catalog'),
+        apiGet<UnitKPICatalog[]>('/api/unit-kpi-catalog'),
+        apiGet<IndividualKPICatalog[]>('/api/individual-kpi-catalog'),
+        apiGet<{ id: string; name: string }[]>('/api/measurement-units'),
+        apiGet<KPITemplateItem[]>('/api/kpi-template-items'),
+      ]);
       setItems(data);
+      setSchoolCatalog(sc.filter(s => s.status === 'active'));
+      setUnitCatalog(uc.filter(u => u.status === 'active'));
+      setIndCatalog(ic.filter(i => i.status === 'active'));
+      setMeasurementUnits(mu);
+      setTemplateItems(ti);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
@@ -97,8 +128,86 @@ export default function KPITemplatesPage() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('Xóa bộ KPI mẫu này?')) return;
+    // Cascade delete template items
+    const relatedItems = templateItems.filter(ti => ti.templateId === id);
+    for (const ti of relatedItems) {
+      await apiDelete(`/api/kpi-template-items/${ti.id}`);
+    }
     await apiDelete(`/api/kpi-templates/${id}`);
     setItems(items.filter(i => i.id !== id));
+    setTemplateItems(templateItems.filter(ti => ti.templateId !== id));
+  };
+
+  const openIndicators = (item: KPITemplate) => {
+    setSelected(item);
+    setAddCatalogId('');
+    setAddWeight(5);
+    setAddTargetValue(0);
+    setAddCapRate(100);
+    setShowIndicators(true);
+  };
+
+  const currentItems = templateItems.filter(ti => ti.id === selected?.id);
+
+  const getCatalogLabel = () => {
+    if (!selected) return '';
+    const catKey = levelToCatalog[selected.targetLevel];
+    if (catKey === 'school-catalog') return 'Chỉ tiêu Trường';
+    if (catKey === 'unit-catalog') return 'KPI Đơn vị';
+    if (catKey === 'individual-catalog') return 'KPI Cá nhân';
+    return 'Chỉ tiêu';
+  };
+
+  const getCatalogOptions = () => {
+    if (!selected) return [];
+    const catKey = levelToCatalog[selected.targetLevel];
+    const usedIds = new Set(templateItems.filter(ti => ti.templateId === selected.id).map(ti => ti.indicatorId));
+    if (catKey === 'school-catalog') return schoolCatalog.filter(s => !usedIds.has(s.id)).map(s => ({ id: s.id, name: s.name, code: s.code }));
+    if (catKey === 'unit-catalog') return unitCatalog.filter(u => !usedIds.has(u.id)).map(u => ({ id: u.id, name: u.name, code: u.code }));
+    if (catKey === 'individual-catalog') return indCatalog.filter(i => !usedIds.has(i.id)).map(i => ({ id: i.id, name: i.name, code: i.code }));
+    return [];
+  };
+
+  const getIndicatorName = (indicatorId: string) => {
+    const from = (arr: any[]) => arr.find((x: any) => x.id === indicatorId);
+    const found = from(schoolCatalog) || from(unitCatalog) || from(indCatalog);
+    return found ? `${found.code} — ${found.name}` : indicatorId;
+  };
+
+  const getIndicatorUnit = (indicatorId: string) => {
+    const from = (arr: any[]) => arr.find((x: any) => x.id === indicatorId);
+    const found = from(schoolCatalog) || from(unitCatalog) || from(indCatalog);
+    if (!found) return '';
+    const unit = measurementUnits.find(m => m.id === found.unitId);
+    return unit?.name || '';
+  };
+
+  const handleAddIndicator = async () => {
+    if (!selected || !addCatalogId) return;
+    const newItem = await apiPost<KPITemplateItem>('/api/kpi-template-items', {
+      templateId: selected.id,
+      indicatorId: addCatalogId,
+      weight: addWeight,
+      targetValue: addTargetValue,
+      capRate: addCapRate,
+    });
+    setTemplateItems([...templateItems, newItem]);
+    // Update the template count
+    const tItems = [...templateItems.filter(ti => ti.templateId === selected.id), newItem];
+    setItems(items.map(i => i.id === selected.id ? { ...i, indicatorCount: tItems.length, totalWeight: tItems.reduce((s, ti) => s + ti.weight, 0) } : i));
+    setAddCatalogId('');
+    setAddWeight(5);
+    setAddTargetValue(0);
+    setAddCapRate(100);
+  };
+
+  const handleRemoveIndicator = async (itemId: string) => {
+    if (!selected) return;
+    await apiDelete(`/api/kpi-template-items/${itemId}`);
+    const newItems = templateItems.filter(ti => ti.id !== itemId);
+    setTemplateItems(newItems);
+    const tItems = newItems.filter(ti => ti.templateId === selected.id);
+    setItems(items.map(i => i.id === selected.id ? { ...i, indicatorCount: tItems.length, totalWeight: tItems.reduce((s, ti) => s + ti.weight, 0) } : i));
   };
 
   const Form = ({ onSubmit, initial }: { onSubmit: (d: Partial<KPITemplate>) => void; initial?: KPITemplate }) => {
@@ -124,7 +233,7 @@ export default function KPITemplatesPage() {
           <p className="text-text-light mt-1">Quản lý, duyệt, kích hoạt và khóa bộ KPI mẫu (III.1-III.8)</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={() => setShowClone(true)} className="px-3 py-2 border rounded-lg text-sm flex items-center gap-1"><Copy size={14} /> Sao chép từ chu kỳ trước</button>
+          <button onClick={() => setShowClone(true)} className="px-3 py-2 border rounded-lg text-sm flex items-center gap-1"><Plus size={14} /> Sao chép từ chu kỳ trước</button>
           <button onClick={() => setShowCreate(true)} className="btn-primary text-xs flex items-center gap-1"><Plus size={14} /> Tạo mới</button>
         </div>
       </div>
@@ -141,10 +250,10 @@ export default function KPITemplatesPage() {
         </div>
         <div className="overflow-x-auto">
           <table className="table">
-            <thead><tr><th>STT</th><th>Tên bộ KPI mẫu</th><th>Cấp</th><th>Số KPI</th><th>Tổng trọng số</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+            <thead><tr><th>STT</th><th>Tên bộ KPI mẫu</th><th>Cấp</th><th>Số KPI</th><th>Tổng trọng số</th><th>Trạng thái</th><th>Khai báo chỉ số</th><th>Thao tác</th></tr></thead>
             <tbody>
-              {loading ? <tr><td colSpan={7} className="text-center py-8">Đang tải...</td></tr> :
-              filtered.length === 0 ? <tr><td colSpan={7} className="text-center py-8">Chưa có bộ KPI mẫu</td></tr> :
+              {loading ? <tr><td colSpan={8} className="text-center py-8">Đang tải...</td></tr> :
+              filtered.length === 0 ? <tr><td colSpan={8} className="text-center py-8">Chưa có bộ KPI mẫu</td></tr> :
               filtered.map((item, idx) => (
                 <tr key={item.id}>
                   <td>{idx + 1}</td>
@@ -153,6 +262,11 @@ export default function KPITemplatesPage() {
                   <td className="text-center">{item.indicatorCount}</td>
                   <td className="text-center">{item.totalWeight}%</td>
                   <td><span className={`badge ${statusConfig[item.status]?.color}`}>{statusConfig[item.status]?.label}</span></td>
+                  <td>
+                    <button onClick={() => openIndicators(item)} className="p-1 text-blue-600 hover:bg-blue-50 rounded" title="Khai báo chỉ số">
+                      <Layers size={14} />
+                    </button>
+                  </td>
                   <td>
                     <div className="flex gap-1">
                       {item.status === 'draft' && <button onClick={() => handleStatusChange(item, 'submitted')} className="p-1 text-blue-600 hover:bg-blue-50 rounded" title="Trình duyệt"><Send size={12} /></button>}
@@ -169,6 +283,93 @@ export default function KPITemplatesPage() {
           </table>
         </div>
       </div>
+
+      {/* Khai báo chỉ số Modal */}
+      <Modal isOpen={showIndicators} onClose={() => setShowIndicators(false)} title={`Khai báo chỉ số: ${selected?.name || ''}`} maxWidth="max-w-4xl">
+        {selected && (
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 text-sm text-text-light">
+              <span className="badge badge-info">{levelLabels[selected.targetLevel]}</span>
+              <span>Danh mục nguồn: <strong>{getCatalogLabel()}</strong></span>
+              <span>Số chỉ số: <strong>{currentItems.length}</strong></span>
+              <span>Tổng trọng số: <strong>{currentItems.reduce((s, i) => s + i.weight, 0)}%</strong></span>
+            </div>
+
+            {/* Current items */}
+            <div>
+              <h4 className="text-sm font-medium text-text-dark mb-2">Danh sách chỉ số hiện tại</h4>
+              {currentItems.length === 0 ? (
+                <p className="text-xs text-text-light py-4 text-center border rounded-lg bg-bg-cream">Chưa có chỉ số nào. Thêm chỉ số từ danh mục bên dưới.</p>
+              ) : (
+                <div className="border rounded-lg overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-bg-cream border-b">
+                        <th className="text-left px-3 py-2 font-medium text-xs">STT</th>
+                        <th className="text-left px-3 py-2 font-medium text-xs">Chỉ số</th>
+                        <th className="text-center px-3 py-2 font-medium text-xs" style={{ width: 80 }}>ĐVT</th>
+                        <th className="text-center px-3 py-2 font-medium text-xs" style={{ width: 80 }}>Trọng số</th>
+                        <th className="text-center px-3 py-2 font-medium text-xs" style={{ width: 80 }}>Mục tiêu</th>
+                        <th className="text-center px-3 py-2 font-medium text-xs" style={{ width: 80 }}>CapRate</th>
+                        <th className="text-center px-3 py-2 font-medium text-xs" style={{ width: 50 }}></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {currentItems.map((ti, idx) => (
+                        <tr key={ti.id} className="border-b border-border/50">
+                          <td className="px-3 py-2 text-text-light">{idx + 1}</td>
+                          <td className="px-3 py-2">{getIndicatorName(ti.indicatorId)}</td>
+                          <td className="px-3 py-2 text-center text-text-light text-xs">{getIndicatorUnit(ti.indicatorId)}</td>
+                          <td className="px-3 py-2 text-center">{ti.weight}%</td>
+                          <td className="px-3 py-2 text-center">{ti.targetValue}</td>
+                          <td className="px-3 py-2 text-center">{ti.capRate}%</td>
+                          <td className="px-3 py-2 text-center">
+                            <button onClick={() => handleRemoveIndicator(ti.id)} className="p-1 text-accent-red hover:bg-red-50 rounded" title="Xóa">
+                              <X size={12} />
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+
+            {/* Add item */}
+            <div className="border-t pt-4">
+              <h4 className="text-sm font-medium text-text-dark mb-3">Thêm chỉ số từ danh mục {getCatalogLabel()}</h4>
+              {(() => {
+                const options = getCatalogOptions();
+                if (!levelToCatalog[selected.targetLevel]) {
+                  return <p className="text-xs text-accent-red flex items-center gap-1"><AlertCircle size={12} /> Chưa có danh mục cho cấp này.</p>;
+                }
+                return (
+                  <div className="space-y-3">
+                    <div><label className="block text-xs font-medium text-text-light mb-1">Chọn chỉ số</label>
+                      <select value={addCatalogId} onChange={e => setAddCatalogId(e.target.value)} className="w-full px-3 py-2 border rounded-lg text-sm">
+                        <option value="">-- Chọn --</option>
+                        {options.map(o => <option key={o.id} value={o.id}>{o.code} — {o.name}</option>)}
+                      </select>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div><label className="block text-xs font-medium text-text-light mb-1">Trọng số (%)</label>
+                        <input type="number" value={addWeight} onChange={e => setAddWeight(Number(e.target.value))} min={0} max={100} className="w-full px-3 py-2 border rounded-lg text-sm" /></div>
+                      <div><label className="block text-xs font-medium text-text-light mb-1">Giá trị mục tiêu</label>
+                        <input type="number" value={addTargetValue} onChange={e => setAddTargetValue(Number(e.target.value))} className="w-full px-3 py-2 border rounded-lg text-sm" /></div>
+                      <div><label className="block text-xs font-medium text-text-light mb-1">Tỉ lệ tối đa (%)</label>
+                        <input type="number" value={addCapRate} onChange={e => setAddCapRate(Number(e.target.value))} min={0} max={200} className="w-full px-3 py-2 border rounded-lg text-sm" /></div>
+                    </div>
+                    <div className="flex justify-end">
+                      <button onClick={handleAddIndicator} disabled={!addCatalogId} className="btn-primary text-xs flex items-center gap-1"><Plus size={14} /> Thêm vào danh sách</button>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+        )}
+      </Modal>
 
       <Modal isOpen={showCreate} onClose={() => setShowCreate(false)} title="Tạo bộ KPI mẫu mới"><Form onSubmit={handleCreate} /></Modal>
       <Modal isOpen={showEdit} onClose={() => { setShowEdit(false); setSelected(null); }} title="Chỉnh sửa">{selected && <Form onSubmit={(d) => { const updated = items.map(i => i.id === selected.id ? { ...i, ...d, updatedAt: new Date().toISOString() } : i); saveToStorage(updated); setShowEdit(false); }} initial={selected} />}</Modal>

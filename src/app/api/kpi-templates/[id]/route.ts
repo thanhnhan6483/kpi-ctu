@@ -42,5 +42,8 @@ export async function DELETE(_request: NextRequest, { params }: { params: Promis
   const filtered = items.filter(i => i.id !== id);
   if (filtered.length === items.length) return NextResponse.json({ error: 'Not found' }, { status: 404 });
   writeDb('kpi-templates', filtered);
+  // Cascade delete related template items
+  const tItems = readDb<any>('kpi-template-items');
+  writeDb('kpi-template-items', tItems.filter((ti: any) => ti.templateId !== id));
   return NextResponse.json({ success: true });
 }
