@@ -354,7 +354,7 @@ export default function CascadeAssignmentsPage() {
       <div className="card">
         <div className="card-header"><h3 className="text-white flex items-center gap-2"><Calculator size={16} /> Phân bổ gợi ý</h3></div>
         <div className="p-4">
-          <SuggestedDistribution cycleId={selectedCycleId} items={cycleFiltered} unitsData={unitsData as { id: string; name: string }[]} onApply={() => load()} />
+          <SuggestedDistribution cycleId={selectedCycleId} items={cycleFiltered} unitsData={unitsData as { id: string; name: string }[]} onApply={() => load(selectedYearId)} />
         </div>
       </div>
 
